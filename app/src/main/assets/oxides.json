@@ -1,0 +1,807 @@
+[
+  {
+  "formula": "Cu2O",
+  "name": "copper_1_oxide",
+  "charge": 1,
+  "classification": "amphoteric",
+  "difficult": 2
+},
+  {
+    "formula": "Cs2O",
+    "name": "caesium_oxide",
+    "charge": 1,
+    "classification": "basic",
+    "difficult": 2
+  },
+  {
+    "formula": "C2O",
+    "name": "dicarbon_monoxide",
+    "charge": 1,
+    "classification": "non_salt_forming",
+    "difficult": 3
+  },
+  {
+    "formula": "Cl2O",
+    "name": "dichlorine_monoxide",
+    "charge": 1,
+    "classification": "acidic",
+    "difficult": 2
+  },
+  {
+    "formula": "Ga2O",
+    "name": "gallium_1_oxide",
+    "charge": 1,
+    "classification": "basic",
+    "difficult": 2
+  },
+  {
+  "formula": "Li2O",
+  "name": "lithium_oxide",
+  "charge": 1,
+  "classification": "basic",
+  "difficult": 1
+  },
+  {
+    "formula": "K2O",
+    "name": "potassium_oxide",
+    "charge": 1,
+    "classification": "basic",
+    "difficult": 1
+  },
+  {
+    "formula": "Rb2O",
+    "name": "rubidium_oxide",
+    "charge": 1,
+    "classification": "basic",
+    "difficult": 2
+  },
+  {
+    "formula": "Ag2O",
+    "name": "silver_oxide",
+    "charge": 1,
+    "classification": "basic",
+    "difficult": 2
+  },
+  {
+    "formula": "Tl2O",
+    "name": "thallium_1_oxide",
+    "charge": 1,
+    "classification": "basic",
+    "difficult": 3
+  },
+  {
+  "formula": "Na2O",
+  "name": "sodium_oxide",
+  "charge": 1,
+  "classification": "basic",
+  "difficult": 1
+  },
+  {
+    "formula": "H2O",
+    "name": "hydrogen_oxide",
+    "charge": 1,
+    "classification": "non_salt_forming",
+    "difficult": 1
+  },
+  {
+    "formula": "BaO",
+    "name": "barium_oxide",
+    "charge": 2,
+    "classification": "basic",
+    "difficult": 1
+  },
+  {
+    "formula": "BeO",
+    "name": "beryllium_oxide",
+    "charge": 2,
+    "classification": "amphoteric",
+    "difficult": 1
+  },
+  {
+    "formula": "CdO",
+    "name": "cadmium_oxide",
+    "charge": 2,
+    "classification": "basic",
+    "difficult": 3
+  },
+  {
+  "formula": "CaO",
+  "name": "calcium_oxide",
+  "charge": 2,
+  "classification": "basic",
+  "difficult": 1
+  },
+  {
+    "formula": "CO",
+    "name": "carbon_monoxide",
+    "charge": 2,
+    "classification": "non_salt_forming",
+    "difficult": 1
+  },
+  {
+    "formula": "CrO",
+    "name": "chromium_2_oxide",
+    "charge": 2,
+    "classification": "basic",
+    "difficult": 2
+  },
+  {
+    "formula": "CoO",
+    "name": "cobalt_2_oxide",
+    "charge": 2,
+    "classification": "basic",
+    "difficult": 3
+  },
+  {
+    "formula": "CuO",
+    "name": "copper_2_oxide",
+    "charge": 2,
+    "classification": "amphoteric",
+    "difficult": 1
+  },
+  {
+  "formula": "GeO",
+  "name": "germanium_monoxide",
+  "charge": 2,
+  "classification": "basic",
+  "difficult": 3
+  },
+  {
+    "formula": "FeO",
+    "name": "iron_2_oxide",
+    "charge": 2,
+    "classification": "basic",
+    "difficult": 1
+  },
+  {
+    "formula": "PbO",
+    "name": "lead_2_oxide",
+    "charge": 2,
+    "classification": "amphoteric",
+    "difficult": 1
+  },
+  {
+    "formula": "MgO",
+    "name": "magnesium_oxide",
+    "charge": 2,
+    "classification": "basic",
+    "difficult": 1
+  },
+  {
+    "formula": "MnO",
+    "name": "manganese_2_oxide",
+    "charge": 2,
+    "classification": "basic",
+    "difficult": 2
+  },
+  {
+  "formula": "HgO",
+  "name": "mercury_2_oxide",
+  "charge": 2,
+  "classification": "basic",
+  "difficult": 2
+  },
+  {
+    "formula": "NiO",
+    "name": "nickel_2_oxide",
+    "charge": 2,
+    "classification": "amphoteric",
+    "difficult": 2
+  },
+  {
+    "formula": "NO",
+    "name": "nitric_oxide",
+    "charge": 2,
+    "classification": "non_salt_forming",
+    "difficult": 1
+  },
+  {
+    "formula": "PdO",
+    "name": "palladium_2_oxide",
+    "charge": 2,
+    "classification": "amphoteric",
+    "difficult": 2
+  },
+  {
+    "formula": "SiO",
+    "name": "silicon_monoxide",
+    "charge": 2,
+    "classification": "non_salt_forming",
+    "difficult": 2
+  },
+  {
+  "formula": "SrO",
+  "name": "strontium_oxide",
+  "charge": 2,
+  "classification": "basic",
+  "difficult": 2
+  },
+  {
+    "formula": "SO",
+    "name": "sulfur_monoxide",
+    "charge": 2,
+    "classification": "non_salt_forming",
+    "difficult": 3
+  },
+  {
+    "formula": "S2O2",
+    "name": "disulfur_dioxide",
+    "charge": 2,
+    "classification": "non_salt_forming",
+    "difficult": 3
+  },
+  {
+    "formula": "SnO",
+    "name": "tin_2_oxide",
+    "charge": 2,
+    "classification": "amphoteric",
+    "difficult": 2
+  },
+  {
+    "formula": "TiO",
+    "name": "titanium_2_oxide",
+    "charge": 2,
+    "classification": "basic",
+    "difficult": 2
+  },
+  {
+  "formula": "VO",
+  "name": "vanadium_2_oxide",
+  "charge": 2,
+  "classification": "basic",
+  "difficult": 3
+  },
+  {
+    "formula": "ZnO",
+    "name": "zinc_oxide",
+    "charge": 2,
+    "classification": "amphoteric",
+    "difficult": 1
+  },
+  {
+    "formula": "Al2O3",
+    "name": "aluminium_oxide",
+    "charge": 3,
+    "classification": "amphoteric",
+    "difficult": 1
+  },
+  {
+    "formula": "Sb2O3",
+    "name": "antimony_trioxide",
+    "charge": 3,
+    "classification": "amphoteric",
+    "difficult": 3
+  },
+  {
+    "formula": "As2O3",
+    "name": "arsenic_trioxide",
+    "charge": 3,
+    "classification": "amphoteric",
+    "difficult": 2
+  },
+  {
+  "formula": "Bi2O3",
+  "name": "bismuth_3_oxide",
+  "charge": 3,
+  "classification": "amphoteric",
+  "difficult": 3
+  },
+  {
+    "formula": "B2O3",
+    "name": "boron_trioxide",
+    "charge": 3,
+    "classification": "acidic",
+    "difficult": 2
+  },
+  {
+    "formula": "Ce2O3",
+    "name": "cerium_3_oxide",
+    "charge": 3,
+    "classification": "amphoteric",
+    "difficult": 3
+  },
+  {
+    "formula": "Br2O3",
+    "name": "dibromine_trioxide",
+    "charge": 3,
+    "classification": "acidic",
+    "difficult": 2
+  },
+  {
+    "formula": "Cr2O3",
+    "name": "chromium_3_oxide",
+    "charge": 3,
+    "classification": "amphoteric",
+    "difficult": 2
+  },
+  {
+  "formula": "N2O3",
+  "name": "dinitrogen_trioxide",
+  "charge": 3,
+  "classification": "acidic",
+  "difficult": 1
+  },
+  {
+    "formula": "Eu2O3",
+    "name": "europium_3_oxide",
+    "charge": 3,
+    "classification": "basic",
+    "difficult": 3
+  },
+  {
+    "formula": "Ga2O3",
+    "name": "gallium_3_oxide",
+    "charge": 3,
+    "classification": "amphoteric",
+    "difficult": 3
+  },
+  {
+    "formula": "In2O3",
+    "name": "indium_3_oxide",
+    "charge": 3,
+    "classification": "amphoteric",
+    "difficult": 2
+  },
+  {
+    "formula": "Fe2O3",
+    "name": "iron_3_oxide",
+    "charge": 3,
+    "classification": "amphoteric",
+    "difficult": 1
+  },
+  {
+  "formula": "La2O3",
+  "name": "lanthanum_oxide",
+  "charge": 3,
+  "classification": "basic",
+  "difficult": 3
+  },
+  {
+    "formula": "Mn2O3",
+    "name": "manganese_3_oxide",
+    "charge": 3,
+    "classification": "amphoteric",
+    "difficult": 2
+  },
+  {
+    "formula": "P4O6",
+    "name": "phosphorus_trioxide",
+    "charge": 3,
+    "classification": "acidic",
+    "difficult": 1
+  },
+  {
+    "formula": "Pr2O3",
+    "name": "praseodymium_3_oxide",
+    "charge": 3,
+    "classification": "basic",
+    "difficult": 3
+  },
+  {
+    "formula": "Sm2O3",
+    "name": "samarium_3_oxide",
+    "charge": 3,
+    "classification": "basic",
+    "difficult": 3
+  },
+  {
+  "formula": "Sc2O3",
+  "name": "scandium_oxide",
+  "charge": 3,
+  "classification": "amphoteric",
+  "difficult": 3
+  },
+  {
+    "formula": "Tb2O3",
+    "name": "terbium_3_oxide",
+    "charge": 3,
+    "classification": "basic",
+    "difficult": 3
+  },
+  {
+    "formula": "Tl2O3",
+    "name": "thallium_3_oxide",
+    "charge": 3,
+    "classification": "amphoteric",
+    "difficult": 3
+  },
+  {
+    "formula": "V2O3",
+    "name": "vanadium_3_oxide",
+    "charge": 3,
+    "classification": "basic",
+    "difficult": 3
+  },
+  {
+    "formula": "Y2O3",
+    "name": "yttrium_3_oxide",
+    "charge": 3,
+    "classification": "basic",
+    "difficult": 3
+  },
+  {
+  "formula": "CO2",
+  "name": "carbon_dioxide",
+  "charge": 4,
+  "classification": "acidic",
+  "difficult": 1
+  },
+  {
+    "formula": "ClO2",
+    "name": "chlorine_dioxide",
+    "charge": 4,
+    "classification": "acidic",
+    "difficult": 2
+  },
+  {
+    "formula": "CrO2",
+    "name": "chromium_4_oxide",
+    "charge": 4,
+    "classification": "amphoteric",
+    "difficult": 2
+  },
+  {
+    "formula": "N2O4",
+    "name": "dinitrogen_tetroxide",
+    "charge": 4,
+    "classification": "acidic",
+    "difficult": 2
+  },
+  {
+    "formula": "GeO2",
+    "name": "germanium_dioxide",
+    "charge": 4,
+    "classification": "amphoteric",
+    "difficult": 2
+  },
+  {
+  "formula": "HfO2",
+  "name": "hafnium_4_oxide",
+  "charge": 4,
+  "classification": "amphoteric",
+  "difficult": 3
+  },
+  {
+    "formula": "PbO2",
+    "name": "lead_dioxide",
+    "charge": 4,
+    "classification": "amphoteric",
+    "difficult": 2
+  },
+  {
+    "formula": "MnO2",
+    "name": "manganese_dioxide",
+    "charge": 4,
+    "classification": "amphoteric",
+    "difficult": 1
+  },
+  {
+    "formula": "NO2",
+    "name": "nitrogen_dioxide",
+    "charge": 4,
+    "classification": "acidic",
+    "difficult": 1
+  },
+  {
+    "formula": "RuO2",
+    "name": "ruthenium_4_oxide",
+    "charge": 4,
+    "classification": "amphoteric",
+    "difficult": 3
+  },
+  {
+  "formula": "SeO2",
+  "name": "selenium_dioxide",
+  "charge": 4,
+  "classification": "acidic",
+  "difficult": 2
+  },
+  {
+    "formula": "SiO2",
+    "name": "silicon_dioxide",
+    "charge": 4,
+    "classification": "acidic",
+    "difficult": 1
+  },
+  {
+    "formula": "SO2",
+    "name": "sulfur_dioxide",
+    "charge": 4,
+    "classification": "acidic",
+    "difficult": 1
+  },
+  {
+    "formula": "TeO2",
+    "name": "tellurium_dioxide",
+    "charge": 4,
+    "classification": "amphoteric",
+    "difficult": 3
+  },
+  {
+    "formula": "SnO2",
+    "name": "tin_dioxide",
+    "charge": 4,
+    "classification": "amphoteric",
+    "difficult": 3
+  },
+  {
+  "formula": "TiO2",
+  "name": "titanium_dioxide",
+  "charge": 4,
+  "classification": "amphoteric",
+  "difficult": 2
+  },
+  {
+    "formula": "WO2",
+    "name": "tungsten_4_oxide",
+    "charge": 4,
+    "classification": "amphoteric",
+    "difficult": 3
+  },
+  {
+    "formula": "VO2",
+    "name": "vanadium_4_oxide",
+    "charge": 4,
+    "classification": "amphoteric",
+    "difficult": 3
+  },
+  {
+    "formula": "ZrO2",
+    "name": "zirconium_dioxide",
+    "charge": 4,
+    "classification": "amphoteric",
+    "difficult": 3
+  },
+  {
+    "formula": "Sb2O5",
+    "name": "antimony_pentoxide",
+    "charge": 5,
+    "classification": "acidic",
+    "difficult": 3
+  },
+  {
+  "formula": "As2O5",
+  "name": "arsenic_pentoxide",
+  "charge": 5,
+  "classification": "acidic",
+  "difficult": 2
+  },
+  {
+    "formula": "N2O5",
+    "name": "dinitrogen_pentoxide",
+    "charge": 5,
+    "classification": "acidic",
+    "difficult": 1
+  },
+  {
+    "formula": "Nb2O5",
+    "name": "niobium_pentoxide",
+    "charge": 5,
+    "classification": "acidic",
+    "difficult": 3
+  },
+  {
+    "formula": "P2O5",
+    "name": "phosphorus_pentoxide",
+    "charge": 5,
+    "classification": "acidic",
+    "difficult": 1
+  },
+  {
+    "formula": "Ta2O5",
+    "name": "tantalum_pentoxide",
+    "charge": 5,
+    "classification": "amphoteric",
+    "difficult": 3
+  },
+  {
+  "formula": "V2O5",
+  "name": "vanadium_5_oxide",
+  "charge": 5,
+  "classification": "amphoteric",
+  "difficult": 2
+  },
+  {
+    "formula": "CrO3",
+    "name": "chromium_trioxide",
+    "charge": 6,
+    "classification": "acidic",
+    "difficult": 2
+  },
+  {
+    "formula": "ReO3",
+    "name": "rhenium_trioxide",
+    "charge": 6,
+    "classification": "acidic",
+    "difficult": 3
+  },
+  {
+    "formula": "SeO3",
+    "name": "selenium_trioxide",
+    "charge": 6,
+    "classification": "acidic",
+    "difficult": 2
+  },
+  {
+    "formula": "SO3",
+    "name": "sulfur_trioxide",
+    "charge": 6,
+    "classification": "acidic",
+    "difficult": 1
+  },
+  {
+  "formula": "TeO3",
+  "name": "tellurium_trioxide",
+  "charge": 6,
+  "classification": "acidic",
+  "difficult": 3
+  },
+  {
+    "formula": "WO3",
+    "name": "tungsten_trioxide",
+    "charge": 6,
+    "classification": "acidic",
+    "difficult": 2
+  },
+  {
+    "formula": "UO3",
+    "name": "uranium_trioxide",
+    "charge": 6,
+    "classification": "amphoteric",
+    "difficult": 3
+  },
+  {
+    "formula": "XeO3",
+    "name": "xenon_trioxide",
+    "charge": 6,
+    "classification": "acidic",
+    "difficult": 3
+  },
+  {
+    "formula": "Cl2O7",
+    "name": "dichlorine_heptoxide",
+    "charge": 7,
+    "classification": "acidic",
+    "difficult": 2
+  },
+  {
+  "formula": "Mn2O7",
+  "name": "manganese_heptoxide",
+  "charge": 7,
+  "classification": "acidic",
+  "difficult": 2
+  },
+  {
+    "formula": "Re2O7",
+    "name": "rhenium_7_oxide",
+    "charge": 7,
+    "classification": "acidic",
+    "difficult": 3
+  },
+  {
+    "formula": "Tc2O7",
+    "name": "technetium_7_oxide",
+    "charge": 7,
+    "classification": "acidic",
+    "difficult": 3
+  },
+  {
+    "formula": "OsO4",
+    "name": "osmium_tetroxide",
+    "charge": 8,
+    "classification": "acidic",
+    "difficult": 3
+  },
+  {
+    "formula": "RuO4",
+    "name": "ruthenium_tetroxide",
+    "charge": 8,
+    "classification": "acidic",
+    "difficult": 3
+  },
+  {
+  "formula": "XeO4",
+  "name": "xenon_tetroxide",
+  "charge": 8,
+  "classification": "acidic",
+  "difficult": 3
+  },
+  {
+    "formula": "Sb2O4",
+    "name": "antimony_tetroxide",
+    "charge": 0,
+    "classification": "mixed",
+    "difficult": 3
+  },
+  {
+    "formula": "Co3O4",
+    "name": "cobalt_2_3_oxide",
+    "charge": 0,
+    "classification": "mixed",
+    "difficult": 2
+  },
+  {
+    "formula": "Eu3O4",
+    "name": "europium_2_3_oxide",
+    "charge": 0,
+    "classification": "mixed",
+    "difficult": 3
+  },
+  {
+    "formula": "Fe3O4",
+    "name": "iron_2_3_oxide",
+    "charge": 0,
+    "classification": "mixed",
+    "difficult": 1
+  },
+  {
+  "formula": "Pb3O4",
+  "name": "lead_2_4_oxide",
+  "charge": 0,
+  "classification": "mixed",
+  "difficult": 2
+  },
+  {
+    "formula": "Mn3O4",
+    "name": "manganese_2_3_oxide",
+    "charge": 0,
+    "classification": "mixed",
+    "difficult": 2
+  },
+  {
+    "formula": "Ag2O2",
+    "name": "silver_1_3_oxide",
+    "charge": 0,
+    "classification": "mixed",
+    "difficult": 3
+  },
+  {
+    "formula": "U3O8",
+    "name": "triuranium_octoxide",
+    "charge": 0,
+    "classification": "mixed",
+    "difficult": 3
+  },
+  {
+    "formula": "C3O2",
+    "name": "carbon_suboxide",
+    "charge": 0,
+    "classification": "mixed",
+    "difficult": 3
+  },
+  {
+  "formula": "Pr6O11",
+  "name": "praseodymium_3_4_oxide",
+  "charge": 0,
+  "classification": "mixed",
+  "difficult": 3
+  },
+  {
+    "formula": "Tb4O7",
+    "name": "terbium_3_4_oxide",
+    "charge": 0,
+    "classification": "mixed",
+    "difficult": 3
+  },
+  {
+    "formula": "Al2O",
+    "name": "aluminium_1_oxide",
+    "charge": 1,
+    "classification": "basic",
+    "difficult": 3
+  },
+  {
+    "formula": "S2O",
+    "name": "disulfur_monoxide",
+    "charge": 1,
+    "classification": "non_salt_forming",
+    "difficult": 3
+  },
+  {
+    "formula": "N2O",
+    "name": "nitrous_oxide",
+    "charge": 1,
+    "classification": "non_salt_forming",
+    "difficult": 2
+  }
+]

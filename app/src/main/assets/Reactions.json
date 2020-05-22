@@ -1,0 +1,117 @@
+{
+  "reactions_arr" :
+          [
+            {
+              "element" : "H",
+              "reactions" : [
+                "H2 + Hal2 = 2HHal",
+                "2H2 + O2 = 2H2O"
+              ]
+            },
+            {
+              "element" : "H",
+              "reactions" : [
+                "",
+                ""
+              ]
+            },
+            {
+              "element" : "H",
+              "reactions" : [
+                "",
+                ""
+              ]
+            },
+            {
+              "element" : "H",
+              "reactions" : [
+                "",
+                ""
+              ]
+            },
+            {
+              "element" : "H",
+              "reactions" : [
+                "",
+                ""
+              ]
+            },
+            {
+              "element" : "H",
+              "reactions" : [
+                "",
+                ""
+              ]
+            },
+            {
+              "element" : "H",
+              "reactions" : [
+                "",
+                ""
+              ]
+            },
+            {
+              "element" : "H",
+              "reactions" : [
+                "",
+                ""
+              ]
+            },
+            {
+              "element" : "H",
+              "reactions" : [
+                "",
+                ""
+              ]
+            },
+            {
+              "element" : "H",
+              "reactions" : [
+                "",
+                ""
+              ]
+            },
+            {
+              "element" : "H",
+              "reactions" : [
+                "",
+                ""
+              ]
+            },
+            {
+              "element" : "H",
+              "reactions" : [
+                "",
+                ""
+              ]
+            },
+            {
+              "element" : "H",
+              "reactions" : [
+                "",
+                ""
+              ]
+            },
+            {
+              "element" : "H",
+              "reactions" : [
+                "",
+                ""
+              ]
+            },
+            {
+              "element" : "H",
+              "reactions" : [
+                "",
+                ""
+              ]
+            },
+            {
+              "element" : "H",
+              "reactions" : [
+                "",
+                ""
+              ]
+            }
+          ]
+}

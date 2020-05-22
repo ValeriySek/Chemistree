@@ -1,0 +1,650 @@
+[
+  {
+    "formula": "HCl",
+    "name": "hydrochloric",
+    "nameSalt": "chloride",
+    "anion": "Cl",
+    "charge": -1,
+    "classification": "",
+    "difficult": 1
+  },
+  {
+    "formula": "HClO",
+    "name": "hypochlorous",
+    "nameSalt": "hypochlorite",
+    "anion": "ClO",
+    "charge": -1,
+    "classification": "",
+    "difficult": 2
+  },
+  {
+    "formula": "HClO2",
+    "name": "chlorous",
+    "nameSalt": "chlorite",
+    "anion": "ClO2",
+    "charge": -1,
+    "classification": "",
+    "difficult": 2
+  },
+  {
+    "formula": "HClO3",
+    "name": "chloric",
+    "nameSalt": "chlorate",
+    "anion": "ClO3",
+    "charge": -1,
+    "classification": "",
+    "difficult": 2
+  },
+  {
+    "formula": "HClO4",
+    "name": "perchloric",
+    "nameSalt": "perchlorate",
+    "anion": "ClO4",
+    "charge": -1,
+    "classification": "",
+    "difficult": 2
+  },
+  {
+    "formula": "HBr",
+    "name": "hydrobromic",
+    "nameSalt": "bromide",
+    "anion": "Br",
+    "charge": -1,
+    "classification": "",
+    "difficult": 1
+  },
+  {
+    "formula": "HBrO",
+    "name": "hypobromous",
+    "nameSalt": "hypobromite",
+    "anion": "BrO",
+    "charge": -1,
+    "classification": "",
+    "difficult": 2
+  },
+  {
+    "formula": "HBrO2",
+    "name": "bromous",
+    "nameSalt": "bromite",
+    "anion": "BrO2",
+    "charge": -1,
+    "classification": "",
+    "difficult": 2
+  },
+  {
+    "formula": "HBrO3",
+    "name": "bromic",
+    "nameSalt": "bromate",
+    "anion": "BrO3",
+    "charge": -1,
+    "classification": "",
+    "difficult": 2
+  },
+  {
+    "formula": "HBrO4",
+    "name": "perbromic",
+    "nameSalt": "perbromate",
+    "anion": "BrO4",
+    "charge": -1,
+    "classification": "",
+    "difficult": 2
+  },
+  {
+    "formula": "HI",
+    "name": "hydroiodic",
+    "nameSalt": "iodide",
+    "anion": "I",
+    "charge": -1,
+    "classification": "",
+    "difficult": 1
+  },
+  {
+    "formula": "HIO",
+    "name": "hypoiodous",
+    "nameSalt": "hypoiodite",
+    "anion": "IO",
+    "charge": -1,
+    "classification": "",
+    "difficult": 2
+  },
+  {
+    "formula": "HIO2",
+    "name": "iodous",
+    "nameSalt": "iodite",
+    "anion": "IO2",
+    "charge": -1,
+    "classification": "",
+    "difficult": 2
+  },
+  {
+    "formula": "HIO3",
+    "name": "iodic",
+    "nameSalt": "iodate",
+    "anion": "IO3",
+    "charge": -1,
+    "classification": "",
+    "difficult": 2
+  },
+  {
+    "formula": "HIO4",
+    "name": "periodic",
+    "nameSalt": "periodate",
+    "anion": "IO4",
+    "charge": -1,
+    "classification": "",
+    "difficult": 2
+  },
+  {
+    "formula": "HF",
+    "name": "hydrofluoric",
+    "nameSalt": "fluoride",
+    "anion": "F",
+    "charge": -1,
+    "classification": "",
+    "difficult": 1
+  },
+  {
+    "formula": "HFO",
+    "name": "hypofluorous",
+    "nameSalt": "hypofluorite",
+    "anion": "FO",
+    "charge": -1,
+    "classification": "",
+    "difficult": 3
+  },
+  {
+    "formula": "H2S",
+    "name": "hydrosulfuric",
+    "nameSalt": "hydrosulfate",
+    "anion": "S",
+    "charge": -2,
+    "classification": "",
+    "difficult": 1
+  },
+  {
+    "formula": "H2SO2",
+    "name": "hyposulfurous",
+    "nameSalt": "hyposulfite",
+    "anion": "SO2",
+    "charge": -2,
+    "classification": "",
+    "difficult": 3
+  },
+  {
+    "formula": "H2SO3",
+    "name": "sulfurous",
+    "nameSalt": "sulfite",
+    "anion": "SO3",
+    "charge": -2,
+    "classification": "",
+    "difficult": 1
+  },
+  {
+    "formula": "H2SO4",
+    "name": "sulfuric",
+    "nameSalt": "sulfate",
+    "anion": "SO4",
+    "charge": -2,
+    "classification": "",
+    "difficult": 1
+  },
+  {
+    "formula": "H2SO5",
+    "name": "persulfuric",
+    "nameSalt": "persulfate",
+    "anion": "SO5",
+    "charge": -2,
+    "classification": "",
+    "difficult": 3
+  },
+  {
+    "formula": "H2S2O3",
+    "name": "thiosulfuric",
+    "nameSalt": "thiosulfate",
+    "anion": "S2O3",
+    "charge": -2,
+    "classification": "",
+    "difficult": 2
+  },
+  {
+    "formula": "H2S2O4",
+    "name": "dithionous",
+    "nameSalt": "dithionite",
+    "anion": "S2O4",
+    "charge": -2,
+    "classification": "",
+    "difficult": 3
+  },
+  {
+    "formula": "H2S2O5",
+    "name": "disulfurous",
+    "nameSalt": "disulfite",
+    "anion": "S2O5",
+    "charge": -2,
+    "classification": "",
+    "difficult": 3
+  },
+  {
+    "formula": "H2S2O6",
+    "name": "dithionic",
+    "nameSalt": "dithionate",
+    "anion": "S2O6",
+    "charge": -2,
+    "classification": "",
+    "difficult": 3
+  },
+  {
+    "formula": "H2S2O7",
+    "name": "pyrosulfuric",
+    "nameSalt": "pyrosulfate",
+    "anion": "S2O7",
+    "charge": -2,
+    "classification": "",
+    "difficult": 3
+  },
+  {
+    "formula": "H2S2O8",
+    "name": "peroxydisulfuric",
+    "nameSalt": "peroxydisulfate",
+    "anion": "S2O8",
+    "charge": -2,
+    "classification": "",
+    "difficult": 3
+  },
+  {
+    "formula": "H2S3O6",
+    "name": "trithionic",
+    "nameSalt": "trithionate",
+    "anion": "S3O6",
+    "charge": -2,
+    "classification": "",
+    "difficult": 3
+  },
+  {
+    "formula": "H2S4O6",
+    "name": "tetrathionic",
+    "nameSalt": "tetrathionate",
+    "anion": "S4O6",
+    "charge": -2,
+    "classification": "",
+    "difficult": 2
+  },
+  {
+    "formula": "H2S5O6",
+    "name": "pentathionic",
+    "nameSalt": "pentathionate",
+    "anion": "S5O6",
+    "charge": -2,
+    "classification": "",
+    "difficult": 3
+  },
+  {
+    "formula": "HN3",
+    "name": "hydrazoic",
+    "nameSalt": "azide",
+    "anion": "N3",
+    "charge": -1,
+    "classification": "",
+    "difficult": 2
+  },
+  {
+    "formula": "H2N2O2",
+    "name": "hyponitrous",
+    "nameSalt": "hyponitrite",
+    "anion": "N2O2",
+    "charge": -2,
+    "classification": "",
+    "difficult": 3
+  },
+  {
+    "formula": "HNO2",
+    "name": "nitrous",
+    "nameSalt": "nitrite",
+    "anion": "NO2",
+    "charge": -1,
+    "classification": "",
+    "difficult": 1
+  },
+  {
+    "formula": "HNO3",
+    "name": "nitric",
+    "nameSalt": "nitrate",
+    "anion": "NO3",
+    "charge": -1,
+    "classification": "",
+    "difficult": 1
+  },
+  {
+    "formula": "H3PO2",
+    "name": "hypophosphous",
+    "nameSalt": "hypophosphite",
+    "anion": "H2PO2",
+    "charge": -1,
+    "classification": "",
+    "difficult": 2
+  },
+  {
+    "formula": "H3PO3",
+    "name": "phosphorous",
+    "nameSalt": "phosphite",
+    "anion": "HPO3",
+    "charge": -2,
+    "classification": "",
+    "difficult": 2
+  },
+  {
+    "formula": "H3PO4",
+    "name": "phosphoric",
+    "nameSalt": "phosphate",
+    "anion": "PO4",
+    "charge": -3,
+    "classification": "",
+    "difficult": 1
+  },
+  {
+    "formula": "H4P2O7",
+    "name": "pyrophosphoric",
+    "nameSalt": "pyrophosphate",
+    "anion": "P2O7",
+    "charge": -4,
+    "classification": "",
+    "difficult": 3
+  },
+  {
+    "formula": "HPO3",
+    "name": "metaphosphoric",
+    "nameSalt": "metaphosphate",
+    "anion": "PO3",
+    "charge": -1,
+    "classification": "",
+    "difficult": 2
+  },
+  {
+    "formula": "H4P2O6",
+    "name": "hypophosphoric",
+    "nameSalt": "hypophosphate",
+    "anion": "P2O6",
+    "charge": -4,
+    "classification": "",
+    "difficult": 3
+  },
+  {
+    "formula": "H2CO3",
+    "name": "carbonic",
+    "nameSalt": "carbonate",
+    "anion": "CO3",
+    "charge": -2,
+    "classification": "",
+    "difficult": 1
+  },
+  {
+    "formula": "H2CrO4",
+    "name": "chromic",
+    "nameSalt": "chromate",
+    "anion": "CrO4",
+    "charge": -2,
+    "classification": "",
+    "difficult": 2
+  },
+  {
+    "formula": "H2Cr2O7",
+    "name": "dichromic",
+    "nameSalt": "dichromate",
+    "anion": "Cr2O7",
+    "charge": -2,
+    "classification": "",
+    "difficult": 2
+  },
+  {
+    "formula": "H2Se",
+    "name": "hydroselenic",
+    "nameSalt": "selenide",
+    "anion": "Se",
+    "charge": -2,
+    "classification": "",
+    "difficult": 3
+  },
+  {
+    "formula": "H2SeO3",
+    "name": "selenous",
+    "nameSalt": "selenite",
+    "anion": "SeO3",
+    "charge": -2,
+    "classification": "",
+    "difficult": 3
+  },
+  {
+    "formula": "H2SeO4",
+    "name": "selenic",
+    "nameSalt": "selenate",
+    "anion": "SeO4",
+    "charge": -2,
+    "classification": "",
+    "difficult": 3
+  },
+  {
+    "formula": "H2SiO3",
+    "name": "silicic",
+    "nameSalt": "silicate",
+    "anion": "SiO3",
+    "charge": -2,
+    "classification": "",
+    "difficult": 1
+  },
+  {
+    "formula": "H4SiO4",
+    "name": "orthosilicic",
+    "nameSalt": "orthosilicate",
+    "anion": "SiO4",
+    "charge": -4,
+    "classification": "",
+    "difficult": 3
+  },
+  {
+    "formula": "H2SiF6",
+    "name": "silicofluoric",
+    "nameSalt": "silicofluorate",
+    "anion": "SiF6",
+    "charge": -2,
+    "classification": "",
+    "difficult": 3
+  },
+  {
+    "formula": "HMnO4",
+    "name": "permanganic",
+    "nameSalt": "permanganate",
+    "anion": "MnO4",
+    "charge": -1,
+    "classification": "",
+    "difficult": 2
+  },
+  {
+    "formula": "H2MnO4",
+    "name": "manganic",
+    "nameSalt": "manganate",
+    "anion": "MnO4",
+    "charge": -2,
+    "classification": "",
+    "difficult": 2
+  },
+  {
+    "formula": "H3BO3",
+    "name": "boric",
+    "nameSalt": "borate",
+    "anion": "BO3",
+    "charge": -3,
+    "classification": "",
+    "difficult": 2
+  },
+  {
+    "formula": "H2B4O7",
+    "name": "tetraboric",
+    "nameSalt": "tetraborate",
+    "anion": "B4O7",
+    "charge": -2,
+    "classification": "",
+    "difficult": 2
+  },
+  {
+    "formula": "HSbO3",
+    "name": "antimonic",
+    "nameSalt": "antimonate",
+    "anion": "SbO3",
+    "charge": -1,
+    "classification": "",
+    "difficult": 3
+  },
+  {
+    "formula": "H2TeO3",
+    "name": "tellurous",
+    "nameSalt": "tellurite",
+    "anion": "TeO3",
+    "charge": -2,
+    "classification": "",
+    "difficult": 3
+  },
+  {
+    "formula": "H6TeO6",
+    "name": "telluric",
+    "nameSalt": "tellurate",
+    "anion": "TeO6",
+    "charge": -6,
+    "classification": "",
+    "difficult": 3
+  },
+  {
+    "formula": "H2MoO4",
+    "name": "molybdic",
+    "nameSalt": "molybdate",
+    "anion": "MoO4",
+    "charge": -2,
+    "classification": "",
+    "difficult": 3
+  },
+  {
+    "formula": "H4XeO6",
+    "name": "perxenic",
+    "nameSalt": "perxenate",
+    "anion": "XeO6",
+    "charge": -4,
+    "classification": "",
+    "difficult": 3
+  },
+  {
+    "formula": "H2XeO4",
+    "name": "xenic",
+    "nameSalt": "xenate",
+    "anion": "XeO4",
+    "charge": -2,
+    "classification": "",
+    "difficult": 3
+  },
+  {
+    "formula": "H2WO4",
+    "name": "tungstic",
+    "nameSalt": "tungstate",
+    "anion": "WO4",
+    "charge": -2,
+    "classification": "",
+    "difficult": 3
+  },
+  {
+    "formula": "H2TiO3",
+    "name": "titanic",
+    "nameSalt": "titanate",
+    "anion": "TiO3",
+    "charge": -2,
+    "classification": "",
+    "difficult": 3
+  },
+  {
+    "formula": "H3AsO4",
+    "name": "arsenica",
+    "nameSalt": "arsenate",
+    "anion": "AsO4",
+    "charge": -3,
+    "classification": "",
+    "difficult": 3
+  },
+  {
+    "formula": "HTcO4",
+    "name": "pertechnetic",
+    "nameSalt": "pertechnetate",
+    "anion": "TcO4",
+    "charge": -1,
+    "classification": "",
+    "difficult": 3
+  },
+  {
+    "formula": "H2SnO3",
+    "name": "metastannic",
+    "nameSalt": "metastannate",
+    "anion": "SnO3",
+    "charge": -2,
+    "classification": "",
+    "difficult": 3
+  },
+  {
+    "formula": "HNCO",
+    "name": "cyanic",
+    "nameSalt": "cyanate",
+    "anion": "NCO",
+    "charge": -1,
+    "classification": "",
+    "difficult": 2
+  },
+  {
+    "formula": "HCN",
+    "name": "hydrocyanic",
+    "nameSalt": "cyanide",
+    "anion": "CN",
+    "charge": -1,
+    "classification": "",
+    "difficult": 2
+  },
+  {
+    "formula": "HSCN",
+    "name": "thiocyanic",
+    "nameSalt": "thiocyanate",
+    "anion": "SCN",
+    "charge": -1,
+    "classification": "",
+    "difficult": 2
+  },
+  {
+    "formula": "H2UO4",
+    "name": "uranic",
+    "nameSalt": "uranate",
+    "anion": "UO4",
+    "charge": -2,
+    "classification": "",
+    "difficult": 3
+  },
+  {
+    "formula": "H2U2O7",
+    "name": "diuranic",
+    "nameSalt": "diuranate",
+    "anion": "U2O7",
+    "charge": -2,
+    "classification": "",
+    "difficult": 3
+  },
+  {
+    "formula": "HReO4",
+    "name": "perrhenic",
+    "nameSalt": "perrhenate",
+    "anion": "ReO4",
+    "charge": -1,
+    "classification": "",
+    "difficult": 3
+  },
+  {
+    "formula": "HAsO2",
+    "name": "arsenous",
+    "nameSalt": "arsenite",
+    "anion": "AsO2",
+    "charge": -1,
+    "classification": "",
+    "difficult": 3
+  }
+]

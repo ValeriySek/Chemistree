@@ -1,0 +1,207 @@
+[
+    {
+      "reaction": "Zn + 2HCl = ZnCl2 + H2↑",
+      "condition": "(HCl - 20%, в  присутствии  CuSO4)",
+      "stateOfAggregation": ["s", "soln", "soln", "g"],
+      "oxidation": "",
+      "reduction": ""
+    },
+  {
+    "reaction": "Fe + H2SO4 = FeSO4 + H2↑",
+    "condition": "",
+    "stateOfAggregation": ["s", "soln", "soln", "g"],
+    "oxidation": "",
+    "reduction": ""
+  },
+  {
+    "reaction": "2Al + 2NaOH + 6H2O = 2Na[Al(OH)4] + 3H2↑",
+    "condition": "",
+    "stateOfAggregation": [],
+    "oxidation": "",
+    "reduction": ""
+  },
+  {
+    "reaction": "Zn + 2NaOH + 2H2O = Na2[Zn(OH)4] + H2↑",
+    "condition": "",
+    "stateOfAggregation": [],
+    "oxidation": "",
+    "reduction": ""
+  },
+  {
+    "reaction": "2H2O = 2H2 + O2",
+    "condition": "",
+    "stateOfAggregation": [],
+    "oxidation": "",
+    "reduction": ""
+  },
+  {
+    "reaction": "2NaCl + 2H2O = H2 + Cl2 + 2NaOH",
+    "condition": "",
+    "stateOfAggregation": [],
+    "oxidation": "",
+    "reduction": ""
+  },
+  {
+    "reaction": "2CH4 + O2 + 2H2O = 2CO2 + 6H2",
+    "condition": "(800-900°С, кат)",
+    "stateOfAggregation": [],
+    "oxidation": "",
+    "reduction": ""
+  },
+  {
+    "reaction": "3CH4 + O2 + Н2O = 3СО + 7Н2",
+    "condition": "(800-900°С, кат, недостаток O2)",
+    "stateOfAggregation": [],
+    "oxidation": "",
+    "reduction": ""
+  },
+  {
+    "reaction": "2СН4 + O2 = 2СО + 4Н2 + Q",
+    "condition": "(800-900°С, кат: Ni)",
+    "stateOfAggregation": [],
+    "oxidation": "",
+    "reduction": ""
+  },
+  {
+    "reaction": "CH4 + H2O = CO + 3H2 – Q",
+    "condition": "(800-900°С, кат: Ni)",
+    "stateOfAggregation": [],
+    "oxidation": "",
+    "reduction": ""
+  },
+  {
+    "reaction": "СO + Н2O = СO2 + Н2 + Q",
+    "condition": "(400°С, кат: FeO/CoO)",
+    "stateOfAggregation": [],
+    "oxidation": "",
+    "reduction": ""
+  },
+  {
+    "reaction": "СН4 + 2Н2O = СO2 + 4Н2",
+    "condition": "(800°С, конверсия метана)",
+    "stateOfAggregation": [],
+    "oxidation": "",
+    "reduction": ""
+  },
+  {
+    "reaction": "СН4 = С + 2Н2",
+    "condition": "",
+    "stateOfAggregation": [],
+    "oxidation": "",
+    "reduction": ""
+  },
+  {
+    "reaction": "3Fe + 4Н2O = Fe3O4 + 4Н2",
+    "condition": "(900-1000°С)",
+    "stateOfAggregation": [],
+    "oxidation": "",
+    "reduction": ""
+  },
+  {
+    "reaction": "",
+    "condition": "",
+    "stateOfAggregation": [],
+    "oxidation": "",
+    "reduction": ""
+  },
+  {
+    "reaction": "",
+    "condition": "",
+    "stateOfAggregation": [],
+    "oxidation": "",
+    "reduction": ""
+  },
+  {
+    "reaction": "",
+    "condition": "",
+    "stateOfAggregation": [],
+    "oxidation": "",
+    "reduction": ""
+  },
+  {
+    "reaction": "",
+    "condition": "",
+    "stateOfAggregation": [],
+    "oxidation": "",
+    "reduction": ""
+  },
+  {
+    "reaction": "",
+    "condition": "",
+    "stateOfAggregation": [],
+    "oxidation": "",
+    "reduction": ""
+  },
+  {
+    "reaction": "",
+    "condition": "",
+    "stateOfAggregation": [],
+    "oxidation": "",
+    "reduction": ""
+  },
+  {
+    "reaction": "",
+    "condition": "",
+    "stateOfAggregation": [],
+    "oxidation": "",
+    "reduction": ""
+  },
+  {
+    "reaction": "",
+    "condition": "",
+    "stateOfAggregation": [],
+    "oxidation": "",
+    "reduction": ""
+  },
+  {
+    "reaction": "",
+    "condition": "",
+    "stateOfAggregation": [],
+    "oxidation": "",
+    "reduction": ""
+  },
+  {
+    "reaction": "",
+    "condition": "",
+    "stateOfAggregation": [],
+    "oxidation": "",
+    "reduction": ""
+  },
+  {
+    "reaction": "",
+    "condition": "",
+    "stateOfAggregation": [],
+    "oxidation": "",
+    "reduction": ""
+  },
+  {
+    "reaction": "",
+    "condition": "",
+    "stateOfAggregation": [],
+    "oxidation": "",
+    "reduction": ""
+  },
+  {
+    "reaction": "",
+    "condition": "",
+    "stateOfAggregation": [],
+    "oxidation": "",
+    "reduction": ""
+  },
+  {
+    "reaction": "",
+    "condition": "",
+    "stateOfAggregation": [],
+    "oxidation": "",
+    "reduction": ""
+  },
+  {
+    "reaction": "",
+    "condition": "",
+    "stateOfAggregation": [],
+    "oxidation": "",
+    "reduction": ""
+  }
+
+]
+

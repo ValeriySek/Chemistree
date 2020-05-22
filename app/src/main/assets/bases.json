@@ -1,0 +1,586 @@
+[
+  {
+    "formula": "NH4OH",
+    "name": "ammonium",
+    "oxidationState": 1,
+    "cation": "NH4",
+    "classification": "",
+    "difficult": 1
+  },
+  {
+    "formula": "CsOH",
+    "name": "cesium1",
+    "oxidationState": 1,
+    "cation": "Cs",
+    "classification": "",
+    "difficult": 1
+  },
+  {
+    "formula": "CuOH",
+    "name": "copper1",
+    "oxidationState": 1,
+    "cation": "Cu",
+    "classification": "",
+    "difficult": 2
+  },
+  {
+    "formula": "AuOH",
+    "name": "gold1",
+    "oxidationState": 1,
+    "cation": "Au",
+    "classification": "",
+    "difficult": 2
+  },
+  {
+    "formula": "InOH",
+    "name": "indium1",
+    "oxidationState": 1,
+    "cation": "In",
+    "classification": "",
+    "difficult": 3
+  },
+  {
+    "formula": "LiOH",
+    "name": "lithium1",
+    "oxidationState": 1,
+    "cation": "Li",
+    "classification": "",
+    "difficult": 1
+  },
+  {
+    "formula": "NiOOH",
+    "name": "nickel1",
+    "oxidationState": 1,
+    "cation": "",
+    "classification": "",
+    "difficult": 3
+  },
+  {
+    "formula": "KOH",
+    "name": "potassium1",
+    "oxidationState": 1,
+    "cation": "K",
+    "classification": "",
+    "difficult": 1
+  },
+  {
+    "formula": "RbOH",
+    "name": "rubidium1",
+    "oxidationState": 1,
+    "cation": "Rb",
+    "classification": "",
+    "difficult": 2
+  },
+  {
+    "formula": "AgOH",
+    "name": "silver1",
+    "oxidationState": 1,
+    "cation": "Ag",
+    "classification": "",
+    "difficult": 1
+  },
+  {
+    "formula": "NaOH",
+    "name": "sodium1",
+    "oxidationState": 1,
+    "cation": "Na",
+    "classification": "",
+    "difficult": 1
+  },
+  {
+    "formula": "TlOH",
+    "name": "thallium1",
+    "oxidationState": 1,
+    "cation": "Tl",
+    "classification": "",
+    "difficult": 3
+  },
+  {
+    "formula": "Be(OH)2",
+    "name": "beryllium2",
+    "oxidationState": 2,
+    "cation": "Be",
+    "classification": "",
+    "difficult": 1
+  },
+  {
+    "formula": "Cd(OH)2",
+    "name": "cadmium2",
+    "oxidationState": 2,
+    "cation": "Cd",
+    "classification": "",
+    "difficult": 3
+  },
+  {
+    "formula": "Ca(OH)2",
+    "name": "calcium2",
+    "oxidationState": 2,
+    "cation": "Ca",
+    "classification": "",
+    "difficult": 1
+  },
+  {
+    "formula": "Cr(OH)2",
+    "name": "chromium2",
+    "oxidationState": 2,
+    "cation": "Cr",
+    "classification": "",
+    "difficult": 2
+  },
+  {
+    "formula": "Co(OH)2",
+    "name": "cobalt2",
+    "oxidationState": 2,
+    "cation": "Co",
+    "classification": "",
+    "difficult": 2
+  },
+  {
+    "formula": "Ga(OH)2",
+    "name": "gallium2",
+    "oxidationState": 2,
+    "cation": "Ga",
+    "classification": "",
+    "difficult": 3
+  },
+  {
+    "formula": "Cu(OH)2",
+    "name": "copper2",
+    "oxidationState": 2,
+    "cation": "Cu",
+    "classification": "",
+    "difficult": 1
+  },
+  {
+    "formula": "In(OH)2",
+    "name": "indium2",
+    "oxidationState": 2,
+    "cation": "In",
+    "classification": "",
+    "difficult": 3
+  },
+  {
+    "formula": "Fe(OH)2",
+    "name": "iron2",
+    "oxidationState": 2,
+    "cation": "Fe",
+    "classification": "",
+    "difficult": 1
+  },
+  {
+    "formula": "Pb(OH)2",
+    "name": "lead2",
+    "oxidationState": 2,
+    "cation": "Pb",
+    "classification": "",
+    "difficult": 2
+  },
+  {
+    "formula": "Mg(OH)2",
+    "name": "magnesium2",
+    "oxidationState": 2,
+    "cation": "Mg",
+    "classification": "",
+    "difficult": 1
+  },
+  {
+    "formula": "Mn(OH)2",
+    "name": "manganese2",
+    "oxidationState": 2,
+    "cation": "Mn",
+    "classification": "",
+    "difficult": 2
+  },
+  {
+    "formula": "Hg(OH)2",
+    "name": "mercury2",
+    "oxidationState": 2,
+    "cation": "Hg",
+    "classification": "",
+    "difficult": 2
+  },
+  {
+    "formula": "Ni(OH)2",
+    "name": "nickel2",
+    "oxidationState": 2,
+    "cation": "Ni",
+    "classification": "",
+    "difficult": 2
+  },
+  {
+    "formula": "Ba(OH)2",
+    "name": "barium2",
+    "oxidationState": 2,
+    "cation": "Ba",
+    "classification": "",
+    "difficult": 1
+  },
+  {
+    "formula": "Pd(OH)2",
+    "name": "palladium2",
+    "oxidationState": 2,
+    "cation": "Pd",
+    "classification": "",
+    "difficult": 2
+  },
+  {
+    "formula": "Pt(OH)2",
+    "name": "platinum2",
+    "oxidationState": 2,
+    "cation": "Pt",
+    "classification": "",
+    "difficult": 2
+  },
+  {
+    "formula": "Ra(OH)2",
+    "name": "radium2",
+    "oxidationState": 2,
+    "cation": "Ra",
+    "classification": "",
+    "difficult": 3
+  },
+  {
+    "formula": "Sr(OH)2",
+    "name": "strontium2",
+    "oxidationState": 2,
+    "cation": "Sr",
+    "classification": "",
+    "difficult": 2
+  },
+  {
+    "formula": "Tc(OH)2",
+    "name": "technetium2",
+    "oxidationState": 2,
+    "cation": "Tc",
+    "classification": "",
+    "difficult": 3
+  },
+  {
+    "formula": "Sn(OH)2",
+    "name": "tin2",
+    "oxidationState": 2,
+    "cation": "Sn",
+    "classification": "",
+    "difficult": 2
+  },
+  {
+    "formula": "Ti(OH)2",
+    "name": "titanium2",
+    "oxidationState": 2,
+    "cation": "Ti",
+    "classification": "",
+    "difficult": 3
+  },
+  {
+    "formula": "W(OH)2",
+    "name": "tungsten2",
+    "oxidationState": 2,
+    "cation": "W",
+    "classification": "",
+    "difficult": 3
+  },
+  {
+    "formula": "V(OH)2",
+    "name": "vanadium2",
+    "oxidationState": 2,
+    "cation": "V",
+    "classification": "",
+    "difficult": 2
+  },
+  {
+    "formula": "Zn(OH)2",
+    "name": "zinc2",
+    "oxidationState": 2,
+    "cation": "Zn",
+    "classification": "",
+    "difficult": 1
+  },
+  {
+    "formula": "UO2(OH)2",
+    "name": "uranyl",
+    "oxidationState": 2,
+    "cation": "UO2",
+    "classification": "",
+    "difficult": 3
+  },
+  {
+    "formula": "Al(OH)3",
+    "name": "aluminum3",
+    "oxidationState": 3,
+    "cation": "Al",
+    "classification": "",
+    "difficult": 1
+  },
+  {
+    "formula": "As(OH)3",
+    "name": "arsenic3",
+    "oxidationState": 3,
+    "cation": "As",
+    "classification": "",
+    "difficult": 3
+  },
+  {
+    "formula": "Bi(OH)3",
+    "name": "bismuth3",
+    "oxidationState": 3,
+    "cation": "Bi",
+    "classification": "",
+    "difficult": 3
+  },
+  {
+    "formula": "Ce(OH)3",
+    "name": "cerium3",
+    "oxidationState": 3,
+    "cation": "Ce",
+    "classification": "",
+    "difficult": 3
+  },
+  {
+    "formula": "Cr(OH)3",
+    "name": "chromium3",
+    "oxidationState": 3,
+    "cation": "Cr",
+    "classification": "",
+    "difficult": 2
+  },
+  {
+    "formula": "Co(OH)3",
+    "name": "cobalt3",
+    "oxidationState": 3,
+    "cation": "Co",
+    "classification": "",
+    "difficult": 2
+  },
+  {
+    "formula": "Ga(OH)3",
+    "name": "gallium3",
+    "oxidationState": 3,
+    "cation": "Ga",
+    "classification": "",
+    "difficult": 3
+  },
+  {
+    "formula": "Au(OH)3",
+    "name": "gold3",
+    "oxidationState": 3,
+    "cation": "Au",
+    "classification": "",
+    "difficult": 2
+  },
+  {
+    "formula": "In(OH)3",
+    "name": "indium3",
+    "oxidationState": 3,
+    "cation": "In",
+    "classification": "",
+    "difficult": 3
+  },
+  {
+    "formula": "Ir(OH)3",
+    "name": "iridium3",
+    "oxidationState": 3,
+    "cation": "Ir",
+    "classification": "",
+    "difficult": 3
+  },
+  {
+    "formula": "La(OH)3",
+    "name": "lanthanum3",
+    "oxidationState": 3,
+    "cation": "La",
+    "classification": "",
+    "difficult": 3
+  },
+  {
+    "formula": "Fe(OH)3",
+    "name": "iron3",
+    "oxidationState": 3,
+    "cation": "Fe",
+    "classification": "",
+    "difficult": 1
+  },
+  {
+    "formula": "Mn(OH)3",
+    "name": "manganese3",
+    "oxidationState": 3,
+    "cation": "Mn",
+    "classification": "",
+    "difficult": 2
+  },
+  {
+    "formula": "Mo(OH)3",
+    "name": "molybdenum3",
+    "oxidationState": 3,
+    "cation": "Mo",
+    "classification": "",
+    "difficult": 2
+  },
+  {
+    "formula": "Nd(OH)3",
+    "name": "neodymium3",
+    "oxidationState": 3,
+    "cation": "Nd",
+    "classification": "",
+    "difficult": 3
+  },
+  {
+    "formula": "Ni(OH)3",
+    "name": "nickel3",
+    "oxidationState": 3,
+    "cation": "Ni",
+    "classification": "",
+    "difficult": 2
+  },
+  {
+    "formula": "Nb(OH)3",
+    "name": "niobium3",
+    "oxidationState": 3,
+    "cation": "Nb",
+    "classification": "",
+    "difficult": 2
+  },
+  {
+    "formula": "Ru(OH)3",
+    "name": "ruthenium3",
+    "oxidationState": 3,
+    "cation": "Ru",
+    "classification": "",
+    "difficult": 3
+  },
+  {
+    "formula": "Sc(OH)3",
+    "name": "scandium3",
+    "oxidationState": 3,
+    "cation": "Sc",
+    "classification": "",
+    "difficult": 2
+  },
+  {
+    "formula": "Tl(OH)3",
+    "name": "thallium3",
+    "oxidationState": 3,
+    "cation": "Tl",
+    "classification": "",
+    "difficult": 3
+  },
+  {
+    "formula": "Ti(OH)3",
+    "name": "titanium3",
+    "oxidationState": 3,
+    "cation": "Ti",
+    "classification": "",
+    "difficult": 3
+  },
+  {
+    "formula": "V(OH)3",
+    "name": "vanadium3",
+    "oxidationState": 3,
+    "cation": "V",
+    "classification": "",
+    "difficult": 3
+  },
+  {
+    "formula": "Yb(OH)3",
+    "name": "ytterbium3",
+    "oxidationState": 3,
+    "cation": "Yb",
+    "classification": "",
+    "difficult": 3
+  },
+  {
+    "formula": "Y(OH)3",
+    "name": "yttrium3",
+    "oxidationState": 3,
+    "cation": "Y",
+    "classification": "",
+    "difficult": 3
+  },
+  {
+    "formula": "Pb(OH)4",
+    "name": "lead4",
+    "oxidationState": 4,
+    "cation": "Pb",
+    "classification": "",
+    "difficult": 3
+  },
+  {
+    "formula": "Mn(OH)4",
+    "name": "manganese4",
+    "oxidationState": 4,
+    "cation": "Mn",
+    "classification": "",
+    "difficult": 3
+  },
+  {
+    "formula": "Os(OH)4",
+    "name": "osmium4",
+    "oxidationState": 4,
+    "cation": "Os",
+    "classification": "",
+    "difficult": 3
+  },
+  {
+    "formula": "Pd(OH)4",
+    "name": "palladium4",
+    "oxidationState": 4,
+    "cation": "Pd",
+    "classification": "",
+    "difficult": 3
+  },
+  {
+    "formula": "Pt(OH)4",
+    "name": "platinum4",
+    "oxidationState": 4,
+    "cation": "Pt",
+    "classification": "",
+    "difficult": 3
+  },
+  {
+    "formula": "Pu(OH)4",
+    "name": "plutonium4",
+    "oxidationState": 4,
+    "cation": "Pu",
+    "classification": "",
+    "difficult": 3
+  },
+  {
+    "formula": "Si(OH)4",
+    "name": "silicon4",
+    "oxidationState": 4,
+    "cation": "Si",
+    "classification": "",
+    "difficult": 3
+  },
+  {
+    "formula": "Th(OH)4",
+    "name": "thorium4",
+    "oxidationState": 4,
+    "cation": "Th",
+    "classification": "",
+    "difficult": 3
+  },
+  {
+    "formula": "Sn(OH)4",
+    "name": "tin4",
+    "oxidationState": 4,
+    "cation": "Sn",
+    "classification": "",
+    "difficult": 2
+  },
+  {
+    "formula": "Ti(OH)4",
+    "name": "titanium4",
+    "oxidationState": 4,
+    "cation": "Ti",
+    "classification": "",
+    "difficult": 2
+  },
+  {
+    "formula": "Zr(OH)4",
+    "name": "zirconium4",
+    "oxidationState": 4,
+    "cation": "Zr",
+    "classification": "",
+    "difficult": 3
+  }
+]

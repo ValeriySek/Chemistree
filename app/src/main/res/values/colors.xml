@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">@color/colorAccent</color>
+    <color name="colorPrimaryDark">#4DD0E1</color>
+    <color name="colorAccent">#B2EBF2</color>
+    <color name="toolbarIconColor">@color/textColorPrimary</color>
+    <color name="loginPageBackgroundColor">#FFFFFF</color>
+    <color name="productGridBackgroundColor">#FFFFFF</color>
+    <color name="textColorPrimary">#006064</color>
+    <color name="white">#FFFFFF</color>
+    <color name="white95">#95FFFFFF</color>
+    <color name="gas">#8E69B5</color>
+    <color name="tableBackground">#2C2C30</color>
+    <color name="tableElementsBackground">#2C2C30</color>
+    <color name="tableElementsBackground50">#414147</color>
+    <color name="backgroundGrayColor">#EEEDED</color>
+    <color name="сBlue">#2A3677</color>
+    <color name="сBlue95">#992A3677</color>
+    <color name="backgroundBlue20">#2026368D</color>
+    <color name="сGreen">#1F7A27</color>
+    <color name="cAirBlue">#72A0C1</color>
+    <color name="cAfricanViolet">#AA60BD</color>
+    <color name="cAntiqueFuchsia">#915C83</color>
+    <color name="cAntiqueRuby">#772634</color>
+    <color name="cBlueViolet">#702CB3</color>
+    <color name="cBlueVioletDark">#451C6E</color>
+    <color name="cBlueViolet95">#994E2972</color>
+    <color name="cBlueViolet10">#104E2972</color>
+    <color name="cBritishGreen">#0A4B2F</color>
+    <color name="cBurntUmber">#8A3324</color>
+    <color name="cCeladonBlue">#007BA7</color>
+    <color name="cCopperRed">#BE6246</color>
+    <color name="cFuzzyWuzzy">#87421F</color>
+    <color name="cOlive">#808000</color>
+    <color name="cQueenBlue">#436B95</color>
+    <color name="cPurpleNavy">#4E5180</color>
+    <color name="cPurpleNavy90">#904E5180</color>
+    <color name="cSandyBrown">#E98F40</color>
+    <color name="cSmokeWhite">#bbbbbb</color>
+    <color name="cSmokeWhite20">#20bbbbbb</color>
+    <color name="cSmoWhite">#dddddd</color>
+    <color name="cSmoWhite90">#90DDDDDD</color>
+    <color name="cSmoWhite70">#70DDDDDD</color>
+    <color name="cSmoWhite50">#50dddddd</color>
+    <color name="cSmoWhite20">#20dddddd</color>
+
+
+</resources>
