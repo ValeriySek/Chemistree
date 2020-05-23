@@ -1,5 +1,6 @@
 package com.selflearning.chemistree.games.game4;
 
+import android.app.Application;
 import android.content.Context;
 import android.os.Bundle;
 import android.os.Handler;
@@ -57,7 +58,7 @@ public class GameFragment2 extends BaseGameFragment {
         View view = inflater.inflate(R.layout.fragment_game2, container, false);
         context = getActivity();
         gameName = "GameFragment2";
-        viewModel = new ViewModelProvider(this).get(GameFragment2ViewModel.class);
+        viewModel = new GameFragment2ViewModel((Application) getContext().getApplicationContext());
         getLifecycle().addObserver(new GameObserver(getActivity()));
 
         tvQuestion = view.findViewById(R.id.tvGame3Question);

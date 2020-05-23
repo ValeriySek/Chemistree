@@ -18,7 +18,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class GameFragment2ViewModel extends AndroidViewModel {
+public class GameFragment2ViewModel {
 
     private MutableLiveData<List<String>> mutableStringsRV = new MutableLiveData<>();
     private MutableLiveData<List<Boolean>> mutableBooleansRV = new MutableLiveData<>();
@@ -45,7 +45,6 @@ public class GameFragment2ViewModel extends AndroidViewModel {
     private ElementRepository repository;
 
     public GameFragment2ViewModel(@NonNull Application application) {
-        super(application);
         repository = new ElementRepository(application);
         acidsList = repository.getAcidsList();
         elementList = repository.getAllElements();

@@ -92,9 +92,9 @@ public class StatisticFragment extends Fragment {
                 }
                 dataSet1 = new LineDataSet(entries, "score");
                 setScore();
-                tvStatScore.setText(String.valueOf(
-                        Collections.max(longs)
-                ));
+
+                long l = longs.size() == 0 ? 0 : Collections.max(longs);
+                tvStatScore.setText(String.valueOf(l));
             }
         });
 
