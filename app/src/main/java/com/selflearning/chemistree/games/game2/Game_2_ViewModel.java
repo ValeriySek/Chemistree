@@ -9,13 +9,15 @@ import androidx.lifecycle.LifecycleObserver;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 
+import com.selflearning.chemistree.chemistry.elements.ElementRepository;
 import com.selflearning.chemistree.chemistry.inorganic.acids.Acids;
 import com.selflearning.chemistree.dBHelper.DatabaseAccess;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class Game_2_ViewModel extends AndroidViewModel implements LifecycleObserver {
+public class Game_2_ViewModel{
+
     private final String TAG = this.getClass().getSimpleName();
 
     private MutableLiveData<List<String>> mutableLiveData;
@@ -28,13 +30,12 @@ public class Game_2_ViewModel extends AndroidViewModel implements LifecycleObser
 
 
     public Game_2_ViewModel(@NonNull Application application) {
-        super(application);
-        acids = DatabaseAccess.getInstance(getApplication()).getAllAcids();
+        acids = new ElementRepository(application).getAcidsList();
         mutableLiveData = new MutableLiveData<>();
         stringQuestion = new MutableLiveData<>();
         acidsList = new ArrayList<>();
         stringList = new ArrayList<>();
-//        loadData();
+        loadData();
     }
 
 
@@ -45,7 +46,7 @@ public class Game_2_ViewModel extends AndroidViewModel implements LifecycleObser
             int j = (int)(Math.random() * acids.size());
             if(!acidsList.contains(acids.get(j))){
                 acidsList.add(acids.get(j));
-//                stringList.add(acids.get(j).getAcidFormulaForTv());
+                stringList.add(acids.get(j).getFormula());
                 i++;
             } else {
                 Log.i(TAG, "acidsList contain " + i + " " + j);
@@ -53,7 +54,7 @@ public class Game_2_ViewModel extends AndroidViewModel implements LifecycleObser
         }
         rightAnswer = (int)(Math.random() * COUNT_OF_BUTTONS);
         mutableLiveData.setValue(stringList);
-//        stringQuestion.setValue(acidsList.get(rightAnswer).getAcidRuName());
+        stringQuestion.setValue(acidsList.get(rightAnswer).getName());
     }
 
     public LiveData<List<String>> getAnswers(){

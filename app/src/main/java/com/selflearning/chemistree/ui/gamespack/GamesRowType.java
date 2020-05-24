@@ -43,7 +43,6 @@ public class GamesRowType implements RowType {
         return new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-
                 ActivityUtilities.getInstance().invokeNewActivity(activity, PreGameActivity.class, typeFr, false);
             }
         };

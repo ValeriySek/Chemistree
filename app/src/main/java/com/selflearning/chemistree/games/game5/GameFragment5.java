@@ -16,15 +16,15 @@ import com.selflearning.chemistree.R;
 import com.selflearning.chemistree.games.GameScoreActivity;
 import com.selflearning.chemistree.utilities.ActivityUtilities;
 
-public class GameFragment1 extends Fragment {
+public class GameFragment5 extends Fragment {
 
     private static final int TYPE = 0;
 
     private TextView tvScore;
     ConstraintLayout constraintLayout;
 
-    public static GameFragment1 getInstance(){
-        GameFragment1 preGame = new GameFragment1();
+    public static GameFragment5 getInstance(){
+        GameFragment5 preGame = new GameFragment5();
         return preGame;
     }
 

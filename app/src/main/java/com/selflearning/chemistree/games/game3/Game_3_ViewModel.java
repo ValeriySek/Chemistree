@@ -8,13 +8,15 @@ import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 
+import com.selflearning.chemistree.chemistry.elements.AppDatabase;
+import com.selflearning.chemistree.chemistry.elements.ElementRepository;
 import com.selflearning.chemistree.dBHelper.DatabaseAccess;
 import com.selflearning.chemistree.chemistry.elements.Element;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class Game_3_ViewModel extends AndroidViewModel {
+public class Game_3_ViewModel {
 
     private final String TAG = this.getClass().getSimpleName();
     private final int COUNT_OF_BUTTONS = 8;
@@ -37,8 +39,7 @@ public class Game_3_ViewModel extends AndroidViewModel {
     private String stringAnswer = "";
 
     public Game_3_ViewModel(@NonNull Application application) {
-        super(application);
-//        elements = DatabaseAccess.getInstance(getApplication()).getAllElements();
+        elements = new ElementRepository(application).getAllElements();
         mutableLiveData = new MutableLiveData<>();
         booleanLD = new MutableLiveData<>();
         stringQuestion = new MutableLiveData<>();
@@ -51,7 +52,7 @@ public class Game_3_ViewModel extends AndroidViewModel {
         loadData();
     }
 
-    public void loadData(){
+    void loadData(){
         elementList.clear();
         stringList.clear();
         for(int i = 0; i < COUNT_OF_BUTTONS; ){

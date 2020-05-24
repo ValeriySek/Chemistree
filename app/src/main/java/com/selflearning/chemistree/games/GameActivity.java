@@ -11,18 +11,20 @@ import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Display;
-import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 
 import com.selflearning.chemistree.R;
 import com.selflearning.chemistree.constants.AppConstants;
-import com.selflearning.chemistree.games.game4.GameFragment2;
-import com.selflearning.chemistree.games.game5.GameFragment1;
+import com.selflearning.chemistree.games.game1.GameFragment1;
+import com.selflearning.chemistree.games.game2.GameFragment2;
+import com.selflearning.chemistree.games.game3.GameFragment3;
+import com.selflearning.chemistree.games.game4.GameFragment4;
+import com.selflearning.chemistree.games.game5.GameFragment5;
 import com.selflearning.chemistree.utilities.ActivityUtilities;
 
-public class GameActivity extends BaseGameActivity implements GameInterface{
+public class GameActivity extends BaseGameActivity implements GameInterface {
 
 
     private Dialog dialog;
@@ -48,9 +50,13 @@ public class GameActivity extends BaseGameActivity implements GameInterface{
     private Fragment getFragment() {
         switch (type){
             case 0 :
-             return GameFragment1.getInstance();
+             return GameFragment3.getInstance(this);
             case 1 :
-             return GameFragment2.getInstance(this);
+             return GameFragment4.getInstance(this);
+            case 2 :
+                return GameFragment2.getInstance(this);
+            case 3 :
+                return GameFragment1.getInstance(this);
              default:
              return null;
         }
@@ -67,26 +73,18 @@ public class GameActivity extends BaseGameActivity implements GameInterface{
         Button buttonMenu = dialog.findViewById(R.id.buttonMenu);
         Button buttonResume = dialog.findViewById(R.id.buttonResume);
         Button buttonRestart = dialog.findViewById(R.id.buttonRestart);
-        buttonMenu.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                dialog.cancel();
-                finish();
-            }
+
+        buttonMenu.setOnClickListener(v -> {
+            dialog.cancel();
+            finish();
         });
-        buttonResume.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                dialog.dismiss();
-            }
-        });
-        buttonRestart.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                dialog.cancel();
-                ActivityUtilities.getInstance().invokeNewActivity(GameActivity.this, PreGameActivity.class,
-                        type, true);
-            }
+
+        buttonResume.setOnClickListener(v -> dialog.dismiss());
+
+        buttonRestart.setOnClickListener(v -> {
+            dialog.cancel();
+            ActivityUtilities.getInstance().invokeNewActivity(GameActivity.this, PreGameActivity.class,
+                    type, true);
         });
 
         dialog.getWindow().setLayout(width, WindowManager.LayoutParams.WRAP_CONTENT);

@@ -51,10 +51,6 @@ public class Game_1_Activity extends AppCompatActivity {
     private Activity activity;
     private Context context;
 
-    private Button button0;
-    private Button button1;
-    private Button button2;
-    private Button button3;
     private TextView textView;
     private TextView textView3;
     private TextView tvDialogQ;
@@ -71,7 +67,6 @@ public class Game_1_Activity extends AppCompatActivity {
 
     private List<SoundUtilities> soundsList;
     private List<Acids> acidsList;
-    private List<Button> buttons = new ArrayList<>();
     private ArrayList<ReportModels> reportModels = new ArrayList<>();
 
     private CountDownTimer countDownTimer;
@@ -90,10 +85,6 @@ public class Game_1_Activity extends AppCompatActivity {
     private long score = 0;
     private boolean isFinish = false;
 
-
-    private String acidName;
-    private String acidFormula;
-    private Acids acid;
 
     private String chosenName;
     private String correctName;
@@ -114,10 +105,6 @@ public class Game_1_Activity extends AppCompatActivity {
 
     private void initView(){
         setContentView(R.layout.activity_game_1);
-        button0 = findViewById(R.id.game_1_button_0);
-        button1 = findViewById(R.id.game_1_button_1);
-        button2 = findViewById(R.id.game_1_button_2);
-        button3 = findViewById(R.id.game_1_button_3);
         textView = findViewById(R.id.game_1_textView);
         progressBar = findViewById(R.id.stats_progressbar);
         progressBar.setProgress(100);
@@ -128,14 +115,13 @@ public class Game_1_Activity extends AppCompatActivity {
     private void initVar(){
         activity = Game_1_Activity.this;
         context = activity.getApplicationContext();
+
         acidsList = DatabaseAccess.getInstance(this).getAllAcids();
         acidsListLength = acidsList.size();
-        buttons.add(button0);
-        buttons.add(button1);
-        buttons.add(button2);
-        buttons.add(button3);
+
         soundsBox = new SoundsBox(context);
         soundsList = soundsBox.getmSoundsList();
+
         vibrator = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
         dialog = new Dialog(activity);
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
@@ -153,39 +139,41 @@ public class Game_1_Activity extends AppCompatActivity {
         });
     }
 
-    private void initListener(){
-        View.OnClickListener onClickListener = new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                onButtonClick(v);
-            }
-        };
-        for(Button b : buttons){
-            b.setOnClickListener(onClickListener);
-        }
-    }
+//    private void initListener(){
+//        View.OnClickListener onClickListener = new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                onButtonClick(v);
+//            }
+//        };
+////        for(Button b : buttons){
+////            b.setOnClickListener(onClickListener);
+//        }
+//    }
 
-    private void playNext(){
-        textView.setVisibility(View.VISIBLE);
-        time = System.currentTimeMillis();
-        rightAcidNumber = (int) (Math.random() * acidsListLength);
-        Acids acid = acidsList.get(rightAcidNumber);
-        pickForReport(acid);
+//    private void playNext(){
+//        textView.setVisibility(View.VISIBLE);
+
+//        time = System.currentTimeMillis();
+
+//        rightAcidNumber = (int) (Math.random() * acidsListLength);
+//        Acids acid = acidsList.get(rightAcidNumber);
+//        pickForReport(acid);
 //        acidFormula = acid.getAcidFormulaForTv();
 //        acidName = acid.getAcidRuName();
-        tvDialogQ.setText(Html.fromHtml(acidFormula));
-        tvDialogTip.setText(Html.fromHtml(acidName));
-        textView.setText(Html.fromHtml(acidFormula));
-        rightNumberPosition = (int) (Math.random() * buttons.size());
-        for(int i = 0; i < buttons.size(); i++){
-            if(i == rightNumberPosition){
+//        tvDialogQ.setText(Html.fromHtml(acidFormula));
+//        tvDialogTip.setText(Html.fromHtml(acidName));
+//        textView.setText(Html.fromHtml(acidFormula));
+//        rightNumberPosition = (int) (Math.random() * buttons.size());
+//        for(int i = 0; i < buttons.size(); i++){
+//            if(i == rightNumberPosition){
 //                buttons.get(i).setText(acid.getAcidRuName());
-            }else{
+//            }else{
 //                String wrong = generateWrongAnswer();
 //                buttons.get(i).setText(wrong);
-            }
-        }
-    }
+//            }
+//        }
+//    }
 
 //    private String generateWrongAnswer(){
 //        int num;
@@ -237,7 +225,7 @@ public class Game_1_Activity extends AppCompatActivity {
                 vibrator.vibrate(200);
             }
             button.setBackgroundTintList(ContextCompat.getColorStateList(this, android.R.color.holo_red_light));
-            buttons.get(rightNumberPosition).setBackgroundTintList(ContextCompat.getColorStateList(this, android.R.color.holo_green_light));
+//            buttons.get(rightNumberPosition).setBackgroundTintList(ContextCompat.getColorStateList(this, android.R.color.holo_green_light));
             mGivenAns = button.getText().toString();
             showDialog();
         }
@@ -255,10 +243,10 @@ public class Game_1_Activity extends AppCompatActivity {
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
-                for(int i = 0; i < buttons.size(); i++) {
-                    buttons.get(i).setBackgroundTintList(ContextCompat.getColorStateList(context, R.color.colorAccent));
-                }
-                playNext();
+//                for(int i = 0; i < buttons.size(); i++) {
+//                    buttons.get(i).setBackgroundTintList(ContextCompat.getColorStateList(context, R.color.colorAccent));
+//                }
+//                playNext();
             }
         }, ms);
     }

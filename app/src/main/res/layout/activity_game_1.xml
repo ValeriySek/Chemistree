@@ -10,71 +10,15 @@
 
 
     <LinearLayout
-        android:id="@+id/linearLayout"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
-
-        <Button
-            android:id="@+id/game_1_button_0"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:tag="0"
-            android:text="Button"
-            android:textAllCaps="false"
-            android:textColor="@color/design_default_color_primary_dark"
-            android:textSize="18sp" />
-
-        <Button
-            android:id="@+id/game_1_button_1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:tag="1"
-            android:text="Button"
-            android:textAllCaps="false"
-            android:textColor="@color/design_default_color_primary_dark"
-            android:textSize="18sp" />
-
-        <Button
-            android:id="@+id/game_1_button_2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:tag="2"
-            android:text="Button"
-            android:textAllCaps="false"
-            android:textColor="@color/design_default_color_primary_dark"
-            android:textSize="18sp" />
-
-        <Button
-            android:id="@+id/game_1_button_3"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:tag="3"
-            android:text="Button"
-            android:textAllCaps="false"
-            android:textColor="@color/design_default_color_primary_dark"
-            android:textSize="18sp" />
-
-    </LinearLayout>
-
-    <LinearLayout
         android:id="@+id/linearLayout3"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:gravity="center"
         android:orientation="vertical"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintBottom_toTopOf="@+id/rvGame1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
-        app:layout_constraintVertical_bias="1.0">
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout">
 
 
         <TextView
@@ -140,6 +84,14 @@
         app:layout_constraintBottom_toTopOf="@+id/linearLayout3"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvGame1"
+        android:layout_width="400dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

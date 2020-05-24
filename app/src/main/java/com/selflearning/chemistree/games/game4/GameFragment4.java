@@ -14,7 +14,6 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.lifecycle.Observer;
-import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -27,12 +26,13 @@ import com.selflearning.chemistree.games.GameObserver;
 import com.selflearning.chemistree.listeners.OnItemClickListener;
 
 import java.util.List;
+import java.util.Objects;
 
-public class GameFragment2 extends BaseGameFragment {
+public class GameFragment4 extends BaseGameFragment {
 
     private static final int TYPE = 1;
 
-    private static Context context;
+    private Context context;
 
     private TextView tvQuestion;
     private TextView tvAnswer;
@@ -43,12 +43,12 @@ public class GameFragment2 extends BaseGameFragment {
     private MaterialButton mbDelete;
 
     private GameButtonsAdapter adapter;
-    private GameFragment2ViewModel viewModel;
+    private GameFragment4ViewModel viewModel;
     private int lives = 3;
 
-    public static GameFragment2 getInstance(GameInterface gameInterface){
+    public static GameFragment4 getInstance(GameInterface gameInterface){
         gameI = gameInterface;
-        return new GameFragment2();
+        return new GameFragment4();
     }
 
     @Nullable
@@ -58,7 +58,7 @@ public class GameFragment2 extends BaseGameFragment {
         View view = inflater.inflate(R.layout.fragment_game2, container, false);
         context = getActivity();
         gameName = "GameFragment2";
-        viewModel = new GameFragment2ViewModel((Application) getContext().getApplicationContext());
+        viewModel = new GameFragment4ViewModel(getActivity().getApplication());
         getLifecycle().addObserver(new GameObserver(getActivity()));
 
         tvQuestion = view.findViewById(R.id.tvGame3Question);
@@ -68,7 +68,6 @@ public class GameFragment2 extends BaseGameFragment {
         mbDelete = view.findViewById(R.id.mbGame3Delete);
         tvAnswer = view.findViewById(R.id.tvGame3Answer);
         tvScore = view.findViewById(R.id.tvGame2Score);
-
 
         recyclerView.setLayoutManager(new GridLayoutManager(context, 4, GridLayoutManager.VERTICAL, false));
         adapter = new GameButtonsAdapter(context, 1);
@@ -193,5 +192,4 @@ public class GameFragment2 extends BaseGameFragment {
         super.onDestroy();
         Log.i("TAG", "GameFragment2 destroyed");
     }
-
 }

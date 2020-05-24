@@ -1,25 +1,35 @@
 package com.selflearning.chemistree.games.game2;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.lifecycle.Observer;
-import androidx.lifecycle.ViewModelProviders;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
 import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
+
+import androidx.annotation.NonNull;
+import androidx.fragment.app.Fragment;
+import androidx.lifecycle.Observer;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
 import android.os.Handler;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.selflearning.chemistree.R;
 import com.selflearning.chemistree.adapter.GameButtonsAdapter;
+import com.selflearning.chemistree.games.BaseGameFragment;
+import com.selflearning.chemistree.games.GameInterface;
 import com.selflearning.chemistree.listeners.OnItemClickListener;
 
 import java.util.List;
 
-public class Game_2_Activity extends AppCompatActivity {
+/**
+ * A simple {@link Fragment} subclass.
+ */
+public class GameFragment2 extends BaseGameFragment {
+
 
     private Activity activity;
     private Context context;
@@ -30,29 +40,30 @@ public class Game_2_Activity extends AppCompatActivity {
     private RecyclerView recyclerView;
     private TextView tvQuestion;
 
+    public static GameFragment2 getInstance(GameInterface gameInterface) {
+        gameI = gameInterface;
+        return new GameFragment2();
+    }
+
+
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.activity_game_2, container, false);
 
-        initVar();
-        initView();
-        loadData();
-        initListener();
-    }
+        context = getActivity();
 
-    private void initVar(){
-        activity = Game_2_Activity.this;
-        context = activity.getApplicationContext();
-        game2ViewModel = ViewModelProviders.of(this).get(Game_2_ViewModel.class);
-    }
+        game2ViewModel = new Game_2_ViewModel(getActivity().getApplication());
 
-    private void initView(){
-        setContentView(R.layout.activity_game_2);
-        tvQuestion = findViewById(R.id.tvGame2);
-        recyclerView = findViewById(R.id.rvGame2);
+        tvQuestion = view.findViewById(R.id.tvGame2);
+        recyclerView = view.findViewById(R.id.rvGame2);
         recyclerView.setLayoutManager(new LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false));
         adapter = new GameButtonsAdapter(context, 0);
         recyclerView.setAdapter(adapter);
+
+        loadData();
+        initListener();
+
+        return view;
     }
 
     private void initListener(){
@@ -70,13 +81,13 @@ public class Game_2_Activity extends AppCompatActivity {
     }
 
     private void loadData(){
-        game2ViewModel.getAnswers().observe(this, new Observer<List<String>>() {
+        game2ViewModel.getAnswers().observe(getViewLifecycleOwner(), new Observer<List<String>>() {
             @Override
             public void onChanged(List<String> strings) {
                 adapter.setList(strings);
             }
         });
-        game2ViewModel.getStringQuestion().observe(this, new Observer<String>() {
+        game2ViewModel.getStringQuestion().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
             public void onChanged(String s) {
                 tvQuestion.setText(s);
@@ -86,11 +97,6 @@ public class Game_2_Activity extends AppCompatActivity {
 
     private void smthWait(){
         Handler handler = new Handler();
-        handler.postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                game2ViewModel.loadData();
-            }
-        }, 1000);
+        handler.postDelayed(() -> game2ViewModel.loadData(), 1000);
     }
 }

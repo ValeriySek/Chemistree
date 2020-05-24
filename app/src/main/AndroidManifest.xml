@@ -45,8 +45,6 @@
             android:screenOrientation="portrait" />
         <activity android:name=".games.BaseGameActivity" />
         <activity android:name=".login.LoginActivity0" />
-        <activity android:name=".games.game3.Game_3_Activity" />
-        <activity android:name=".games.game2.Game_2_Activity" />
         <activity android:name=".games.game1.PreGame_1_Screen" />
         <activity android:name=".games.game1.PostGame_1_Screen" />
         <activity android:name=".games.game1.Game_1_Activity" />

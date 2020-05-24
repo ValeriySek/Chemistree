@@ -18,7 +18,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class GameFragment2ViewModel {
+public class GameFragment4ViewModel {
 
     private MutableLiveData<List<String>> mutableStringsRV = new MutableLiveData<>();
     private MutableLiveData<List<Boolean>> mutableBooleansRV = new MutableLiveData<>();
@@ -44,7 +44,7 @@ public class GameFragment2ViewModel {
 
     private ElementRepository repository;
 
-    public GameFragment2ViewModel(@NonNull Application application) {
+    public GameFragment4ViewModel(@NonNull Application application) {
         repository = new ElementRepository(application);
         acidsList = repository.getAcidsList();
         elementList = repository.getAllElements();
@@ -143,9 +143,6 @@ public class GameFragment2ViewModel {
 
         return scoreL;
     }
-
-
-
 
 
     public LiveData<List<String>> getMutableStringsRV() {

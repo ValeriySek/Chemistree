@@ -56,7 +56,6 @@ public class GamesPack extends Fragment {
         gameComponentsList = new GameComponentsList();
 
 
-
         rowTypeList.add(new DividerRowType("ORGANIC"));
 
         rowTypeList.add(new GamesRowType(activity, gameComponentsList.getGameComponentsList().get(0)));

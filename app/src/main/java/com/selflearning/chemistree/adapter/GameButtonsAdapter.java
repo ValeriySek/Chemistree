@@ -21,7 +21,6 @@ import java.util.List;
 public class GameButtonsAdapter extends RecyclerView.Adapter {
 
     private Context context;
-    private Activity activity;
     private OnItemClickListener onItemClickListener;
     private List<String> list;
     private List<Boolean> booleans;
