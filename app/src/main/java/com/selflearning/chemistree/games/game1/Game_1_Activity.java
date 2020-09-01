@@ -123,6 +123,7 @@ public class Game_1_Activity extends AppCompatActivity {
         soundsList = soundsBox.getmSoundsList();
 
         vibrator = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+
         dialog = new Dialog(activity);
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
         dialog.setContentView(R.layout.dialog_tip);
@@ -158,13 +159,18 @@ public class Game_1_Activity extends AppCompatActivity {
 
 //        rightAcidNumber = (int) (Math.random() * acidsListLength);
 //        Acids acid = acidsList.get(rightAcidNumber);
+
 //        pickForReport(acid);
+
 //        acidFormula = acid.getAcidFormulaForTv();
 //        acidName = acid.getAcidRuName();
+
 //        tvDialogQ.setText(Html.fromHtml(acidFormula));
 //        tvDialogTip.setText(Html.fromHtml(acidName));
 //        textView.setText(Html.fromHtml(acidFormula));
+
 //        rightNumberPosition = (int) (Math.random() * buttons.size());
+
 //        for(int i = 0; i < buttons.size(); i++){
 //            if(i == rightNumberPosition){
 //                buttons.get(i).setText(acid.getAcidRuName());
@@ -175,17 +181,10 @@ public class Game_1_Activity extends AppCompatActivity {
 //        }
 //    }
 
-//    private String generateWrongAnswer(){
-//        int num;
-//        do {
-//            num = generateWrongNum();
-//        }
-//        while (num == rightAcidNumber);
-////        return acidsList.get(num).getAcidRuName();
-//    }
+
 
     private int generateWrongNum(){
-        return (int)(Math.random()*acidsListLength);
+        return (int)(Math.random() * acidsListLength);
     }
 
     private void onButtonClick(View v){
@@ -200,6 +199,7 @@ public class Game_1_Activity extends AppCompatActivity {
             increaseScore(t);
 
             button.setBackgroundTintList(ContextCompat.getColorStateList(this, android.R.color.holo_green_light));
+
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
                 int cx = textView.getWidth() / 2;
                 int cy = textView.getHeight() / 2;
@@ -217,6 +217,7 @@ public class Game_1_Activity extends AppCompatActivity {
             } else {
                 textView.setVisibility(View.INVISIBLE);
             }
+
         } else {
             soundsBox.play(soundsList.get(AppConstants.BUNDLE_KEY_TWO_INDEX));
             if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.O){
@@ -266,9 +267,6 @@ public class Game_1_Activity extends AppCompatActivity {
         }.start();
     }
 
-    private void finishGame(){
-        ActivityUtilities.getInstance().invokeCommonAppActivity(activity, PostGame_1_Screen.class, score, reportModels, true);
-    }
 
     private void updateProgressTimer(){
         long progress =  mTimeLeft * 100 / MILLIS_IN_FUTURE;
@@ -285,7 +283,7 @@ public class Game_1_Activity extends AppCompatActivity {
 //        correctDesc = acid.getAcidRuName();
         chosenName = " ";
         chosenDesc = " ";
-        reportModels.add(new ReportModels(chosenName,correctName, chosenDesc, correctDesc));
+        reportModels.add(new ReportModels(chosenName, correctName, chosenDesc, correctDesc));
     }
 
     @Override
@@ -316,16 +314,6 @@ public class Game_1_Activity extends AppCompatActivity {
         }
     }
 
-    @Override
-    public void onBackPressed() {
-        super.onBackPressed();
-    }
-
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        Log.d("Pause", "destroy");
-    }
 
     private void showDialog(){
 
@@ -350,5 +338,9 @@ public class Game_1_Activity extends AppCompatActivity {
         dialog.getWindow().addFlags(WindowManager.LayoutParams.FLAG_DIM_BEHIND);
         dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
         dialog.getWindow().getAttributes().windowAnimations = R.style.DialogAnimation;
+    }
+
+    private void finishGame(){
+        ActivityUtilities.getInstance().invokeCommonAppActivity(activity, PostGame_1_Screen.class, score, reportModels, true);
     }
 }

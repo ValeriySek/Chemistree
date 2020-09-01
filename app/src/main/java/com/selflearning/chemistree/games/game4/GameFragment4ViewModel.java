@@ -3,20 +3,18 @@ package com.selflearning.chemistree.games.game4;
 import android.app.Application;
 
 import androidx.annotation.NonNull;
-import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 
-import com.selflearning.chemistree.chemistry.elements.AppDatabase;
 import com.selflearning.chemistree.chemistry.elements.ElementRepository;
 import com.selflearning.chemistree.chemistry.inorganic.acids.Acids;
-import com.selflearning.chemistree.dBHelper.DatabaseAccess;
 import com.selflearning.chemistree.chemistry.elements.Element;
 import com.selflearning.chemistree.games.FormulaTransformations;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.Random;
 
 public class GameFragment4ViewModel {
 
@@ -29,83 +27,84 @@ public class GameFragment4ViewModel {
 
     private final int COUNT_OF_BUTTONS = 8;
 
-    private List<Acids> acidsList;
-    private List<Element> elementList;
+    private List<Acids> mAcidsList;
+    private List<Element> mElementList;
 
-    private List<String> listForRV = new ArrayList<>();
-    private List<String> stackList = new ArrayList<>();
-    private List<Boolean> isButtonsEnableList = new ArrayList<>();
-    private List<Integer> integerList = new ArrayList<>();
+    private List<String> mListForRV = new ArrayList<>();
+    private List<String> mStackList = new ArrayList<>();
+    private List<Boolean> mIsButtonsEnableList = new ArrayList<>();
+    private List<Integer> mIntegerList = new ArrayList<>();
 
     private String stringAnswer = "";
-    private String formula;
-    private long timeStart;
+    private String mFormula;
+    private long mTimeStart;
     private long scoreL;
 
-    private ElementRepository repository;
+    private Random random = new Random();
 
-    public GameFragment4ViewModel(@NonNull Application application) {
-        repository = new ElementRepository(application);
-        acidsList = repository.getAcidsList();
-        elementList = repository.getAllElements();
+    GameFragment4ViewModel(@NonNull Application application) {
+        ElementRepository repository = new ElementRepository(application);
+//        acidsList = repository.getAcidsList();
+        mAcidsList = repository.getAcidsByLvl(3);
+        mElementList = repository.getAllElements();
         loadData();
     }
 
     public void loadData(){
 
-        timeStart = System.currentTimeMillis();
+        mTimeStart = System.currentTimeMillis();
 
-        stackList.clear();
-        listForRV.clear();
-        isButtonsEnableList.clear();
+        mStackList.clear();
+        mListForRV.clear();
+        mIsButtonsEnableList.clear();
 
         refreshText();
 
-        int randomAcid = (int) (Math.random() * acidsList.size());
-        formula = acidsList.get(randomAcid).getFormula();
-        List<String> stringList = FormulaTransformations.disassembleFormula(formula);
+        int randomAcid = random.nextInt(mAcidsList.size());
+        mFormula = mAcidsList.get(randomAcid).getFormula();
+        List<String> stringList = FormulaTransformations.disassembleFormula(mFormula);
 
-        String question = acidsList.get(randomAcid).getName();
-        listForRV.addAll(stringList);
+        String question = mAcidsList.get(randomAcid).getName();
+        mListForRV.addAll(stringList);
 
         for(int i = 0; i < COUNT_OF_BUTTONS; i++){
-            isButtonsEnableList.add(true);
+            mIsButtonsEnableList.add(true);
         }
 
-        for(int i = listForRV.size(); i < COUNT_OF_BUTTONS; i++){
-            int randomElement = (int) (Math.random() * elementList.size());
-            listForRV.add(elementList.get(randomElement).getSymbol());
+        for(int i = mListForRV.size(); i < COUNT_OF_BUTTONS; i++){
+            int randomElement = (int) (Math.random() * mElementList.size());
+            mListForRV.add(mElementList.get(randomElement).getSymbol());
         }
 
-        Collections.shuffle(listForRV);
+        Collections.shuffle(mListForRV);
 
-        mutableStringsRV.setValue(listForRV);
-        mutableBooleansRV.setValue(isButtonsEnableList);
+        mutableStringsRV.setValue(mListForRV);
+        mutableBooleansRV.setValue(mIsButtonsEnableList);
         stringQuestion.setValue(question);
     }
 
 
 
-    public void changeEnable(int position, String s){
-        isButtonsEnableList.remove(position);
-        stackList.add(s);
-        isButtonsEnableList.add(position, false);
-        integerList.add(position);
+    void changeEnable(int position, String s){
+        mIsButtonsEnableList.remove(position);
+        mStackList.add(s);
+        mIsButtonsEnableList.add(position, false);
+        mIntegerList.add(position);
 
-        mutableBooleansRV.setValue(isButtonsEnableList);
+        mutableBooleansRV.setValue(mIsButtonsEnableList);
         refreshText();
     }
 
 
 
-    public void deleteLast(){
-        if(stackList.size() != 0) {
-            stackList.remove(stackList.size() - 1);
-            int i = integerList.get(integerList.size()-1);
-            isButtonsEnableList.remove(i);
-            isButtonsEnableList.add(i, true);
-            integerList.remove(integerList.size()-1);
-            mutableBooleansRV.setValue(isButtonsEnableList);
+    void deleteLast(){
+        if(mStackList.size() != 0) {
+            mStackList.remove(mStackList.size() - 1);
+            int i = mIntegerList.get(mIntegerList.size()-1);
+            mIsButtonsEnableList.remove(i);
+            mIsButtonsEnableList.add(i, true);
+            mIntegerList.remove(mIntegerList.size()-1);
+            mutableBooleansRV.setValue(mIsButtonsEnableList);
             refreshText();
         }
     }
@@ -114,7 +113,7 @@ public class GameFragment4ViewModel {
 
     private void refreshText(){
         stringAnswer = "";
-        for(String h : stackList){
+        for(String h : mStackList){
             stringAnswer += h;
         }
         editTextAnswer.setValue(stringAnswer);
@@ -127,17 +126,17 @@ public class GameFragment4ViewModel {
 
 
 
-    public void setAllEnabled(){
-        isButtonsEnableList.clear();
+    void setAllEnabled(){
+        mIsButtonsEnableList.clear();
         for(int i = 0; i < COUNT_OF_BUTTONS; i++){
-            isButtonsEnableList.add(false);
+            mIsButtonsEnableList.add(false);
         }
-        mutableBooleansRV.setValue(isButtonsEnableList);
+        mutableBooleansRV.setValue(mIsButtonsEnableList);
     }
 
 
-    public long setScore(){
-        long timeFinish = System.currentTimeMillis() - timeStart;
+    long setScore(){
+        long timeFinish = System.currentTimeMillis() - mTimeStart;
         scoreL += 1000000 / timeFinish;
         score.setValue(String.valueOf(scoreL));
 
@@ -145,23 +144,23 @@ public class GameFragment4ViewModel {
     }
 
 
-    public LiveData<List<String>> getMutableStringsRV() {
+    LiveData<List<String>> getMutableStringsRV() {
         return mutableStringsRV;
     }
 
-    public LiveData<List<Boolean>> getMutableBooleansRV() {
+    LiveData<List<Boolean>> getMutableBooleansRV() {
         return mutableBooleansRV;
     }
 
-    public LiveData<String> getStringQuestion() {
+    LiveData<String> getStringQuestion() {
         return stringQuestion;
     }
 
-    public LiveData<String> getEditTextAnswer() {
+    LiveData<String> getEditTextAnswer() {
         return editTextAnswer;
     }
 
-    public LiveData<Boolean> isDeleteButtonEnable() {
+    LiveData<Boolean> isDeleteButtonEnable() {
         return isDeleteButtonEnable;
     }
 
@@ -170,7 +169,7 @@ public class GameFragment4ViewModel {
     }
 
     public String getFormula() {
-        return formula;
+        return mFormula;
     }
 
 }

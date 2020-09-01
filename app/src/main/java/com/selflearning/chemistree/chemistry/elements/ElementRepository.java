@@ -62,6 +62,15 @@ public class ElementRepository {
         return null;
     }
 
+    public List<Acids> getAcidsByLvl(int lvl){
+        try {
+            return new GetAcidsByLvl().execute(lvl).get();
+        } catch (ExecutionException | InterruptedException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
     private static class GetElementTask extends AsyncTask<Integer, Void, Element>{
         @Override
         protected Element doInBackground(Integer... integers) {
@@ -80,6 +89,13 @@ public class ElementRepository {
         @Override
         protected List<Element> doInBackground(Void... voids) {
             return elementDao.getAllElements();
+        }
+    }
+
+    private static class GetAcidsByLvl extends AsyncTask<Integer, Void, List<Acids>>{
+        @Override
+        protected List<Acids> doInBackground(Integer... integers) {
+            return acidsDao.getAcidsByLevel(integers[0]);
         }
     }
 }

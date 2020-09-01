@@ -19,6 +19,4 @@ public abstract class BaseGameActivity extends AppCompatActivity {
         w.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
     }
-
-
 }

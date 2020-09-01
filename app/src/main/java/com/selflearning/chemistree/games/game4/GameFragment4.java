@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -25,6 +26,7 @@ import com.selflearning.chemistree.games.GameInterface;
 import com.selflearning.chemistree.games.GameObserver;
 import com.selflearning.chemistree.listeners.OnItemClickListener;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
@@ -34,17 +36,18 @@ public class GameFragment4 extends BaseGameFragment {
 
     private Context context;
 
-    private TextView tvQuestion;
-    private TextView tvAnswer;
-    private TextView tvScore;
+    private TextView tvQuestion, tvAnswer, tvScore, tvQuestionNumber;
     private RecyclerView recyclerView;
     private MaterialButton mbSkip;
     private MaterialButton mbSubmit;
     private MaterialButton mbDelete;
+    private ImageView ivHeart1, ivHeart2, ivHeart3;
+    private List<ImageView> heartsPack = new ArrayList<>();
 
     private GameButtonsAdapter adapter;
     private GameFragment4ViewModel viewModel;
     private int lives = 3;
+    private int numberOfQuestions = 10, question;
 
     public static GameFragment4 getInstance(GameInterface gameInterface){
         gameI = gameInterface;
@@ -68,10 +71,20 @@ public class GameFragment4 extends BaseGameFragment {
         mbDelete = view.findViewById(R.id.mbGame3Delete);
         tvAnswer = view.findViewById(R.id.tvGame3Answer);
         tvScore = view.findViewById(R.id.tvGame2Score);
+        tvQuestionNumber = view.findViewById(R.id.tvQuestionNumber);
+        ivHeart1 = view.findViewById(R.id.imageViewHeart1);
+        ivHeart2 = view.findViewById(R.id.imageViewHeart2);
+        ivHeart3 = view.findViewById(R.id.imageViewHeart3);
+
+        heartsPack.add(ivHeart3);
+        heartsPack.add(ivHeart2);
+        heartsPack.add(ivHeart1);
 
         recyclerView.setLayoutManager(new GridLayoutManager(context, 4, GridLayoutManager.VERTICAL, false));
         adapter = new GameButtonsAdapter(context, 1);
         recyclerView.setAdapter(adapter);
+
+        tvQuestionNumber.setText(question + " / " + numberOfQuestions);
 
         loadData();
         initListener();
@@ -119,19 +132,9 @@ public class GameFragment4 extends BaseGameFragment {
     }
 
     private void initListener(){
-        adapter.setOnItemClickListener(new OnItemClickListener() {
-            @Override
-            public void onItemClick(int position) {
-                viewModel.changeEnable(position, adapter.getList().get(position));
-            }
-        });
+        adapter.setOnItemClickListener(position -> viewModel.changeEnable(position, adapter.getList().get(position)));
 
-        mbSkip.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                viewModel.loadData();
-            }
-        });
+        mbSkip.setOnClickListener(v -> viewModel.loadData());
 
         mbDelete.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -144,52 +147,57 @@ public class GameFragment4 extends BaseGameFragment {
             @Override
             public void onClick(View v) {
                 if(tvAnswer.getText().equals(viewModel.getFormula())){
-                    score = viewModel.setScore();
-                    Toast.makeText(getActivity(), "true", Toast.LENGTH_SHORT).show();
-                    tvAnswer.setBackgroundColor(getResources().getColor(android.R.color.holo_green_dark));
+                    onRightAnswer();
                 }else {
-                    increaseLives();
-                    viewModel.setAllEnabled();
-                    mbDelete.setEnabled(false);
-                    mbSkip.setEnabled(false);
-                    mbSubmit.setEnabled(false);
-                    Toast.makeText(getActivity(), "false", Toast.LENGTH_SHORT).show();
-                    tvAnswer.setText(viewModel.getFormula());
-                    tvAnswer.setBackgroundColor(getResources().getColor(android.R.color.holo_red_dark));
+                    onWrongAnswer();
                 }
                 wait500ms();
             }
         });
     }
 
+    private void onRightAnswer(){
+        tvQuestionNumber.setText(++question + " / " + numberOfQuestions);
+        score = viewModel.setScore();
+        Toast.makeText(getActivity(), "true", Toast.LENGTH_SHORT).show();
+        tvAnswer.setBackgroundColor(getResources().getColor(android.R.color.holo_green_dark));
+    }
+
+    private void onWrongAnswer(){
+        increaseLives();
+        viewModel.setAllEnabled();
+        mbDelete.setEnabled(false);
+        mbSkip.setEnabled(false);
+        mbSubmit.setEnabled(false);
+        Toast.makeText(getActivity(), "false", Toast.LENGTH_SHORT).show();
+        tvAnswer.setText(viewModel.getFormula());
+        tvAnswer.setBackgroundColor(getResources().getColor(android.R.color.holo_red_dark));
+    }
+
     private void increaseLives(){
-        if(--lives == 0){
-            isFinish = true;
-        }
+        heartsPack.get(lives-1).setImageDrawable(getContext().getResources().getDrawable(R.drawable.ic_heart_filled_white_10));
+        --lives;
     }
 
     private void wait500ms(){
         Handler handler = new Handler();
-        handler.postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                tvAnswer.setBackgroundResource(R.drawable.white_stroke_3dp);
-                if(!isFinish){
-                    viewModel.loadData();
-                } else {
-                    BaseGameFragment.finishGame();
-                    return;
-                }
-
-                mbSkip.setEnabled(true);
-                mbSubmit.setEnabled(true);
-            }
-        }, 500);
+        handler.postDelayed(this::returnOriginalForm, 500);
     }
 
-    @Override
-    public void onDestroy() {
-        super.onDestroy();
-        Log.i("TAG", "GameFragment2 destroyed");
+    private void returnOriginalForm(){
+        if(lives == 0 || question == numberOfQuestions){
+            isFinish = true;
+        }
+        tvAnswer.setBackgroundResource(R.drawable.white_stroke_3dp);
+        if(!isFinish){
+            viewModel.loadData();
+        } else {
+            BaseGameFragment.finishGame();
+            return;
+        }
+
+        mbSkip.setEnabled(true);
+        mbSubmit.setEnabled(true);
     }
+
 }

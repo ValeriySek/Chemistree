@@ -15,6 +15,7 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 
+import com.selflearning.chemistree.MenuDialogFragment;
 import com.selflearning.chemistree.R;
 import com.selflearning.chemistree.constants.AppConstants;
 import com.selflearning.chemistree.games.game1.GameFragment1;
@@ -24,11 +25,11 @@ import com.selflearning.chemistree.games.game4.GameFragment4;
 import com.selflearning.chemistree.games.game5.GameFragment5;
 import com.selflearning.chemistree.utilities.ActivityUtilities;
 
-public class GameActivity extends BaseGameActivity implements GameInterface {
+public class GameActivity extends BaseGameActivity
+        implements GameInterface {
 
-
-    private Dialog dialog;
-
+    private MenuDialogFragment dialogFragment;
+//    private OnDialogFragmentShow dialogFragmentShow;
 
     private int type;
 
@@ -63,38 +64,19 @@ public class GameActivity extends BaseGameActivity implements GameInterface {
     }
 
     private void createDialog(){
-        Display display = getWindowManager().getDefaultDisplay();
-        Point point = new Point();
-        display.getSize(point);
-        int width = point.x - 30;
-        dialog = new Dialog(this);
-        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
-        dialog.setContentView(R.layout.dialog_pause_game);
-        Button buttonMenu = dialog.findViewById(R.id.buttonMenu);
-        Button buttonResume = dialog.findViewById(R.id.buttonResume);
-        Button buttonRestart = dialog.findViewById(R.id.buttonRestart);
+        dialogFragment = new MenuDialogFragment(this, type);
 
-        buttonMenu.setOnClickListener(v -> {
-            dialog.cancel();
-            finish();
-        });
 
-        buttonResume.setOnClickListener(v -> dialog.dismiss());
+//        Display display = getWindowManager().getDefaultDisplay();
+//        Point point = new Point();
+//        display.getSize(point);
+//        int width = point.x - 30;
 
-        buttonRestart.setOnClickListener(v -> {
-            dialog.cancel();
-            ActivityUtilities.getInstance().invokeNewActivity(GameActivity.this, PreGameActivity.class,
-                    type, true);
-        });
-
-        dialog.getWindow().setLayout(width, WindowManager.LayoutParams.WRAP_CONTENT);
-        dialog.getWindow().addFlags(WindowManager.LayoutParams.FLAG_DIM_BEHIND);
-        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
     }
 
     @Override
     public void onBackPressed() {
-        dialog.show();
+        dialogFragment.show(getSupportFragmentManager(), MenuDialogFragment.TAG);
     }
 
     @Override
@@ -119,6 +101,12 @@ public class GameActivity extends BaseGameActivity implements GameInterface {
     @Override
     public void finishGame(long score) {
         ActivityUtilities.getInstance().invokePostGameActivity(this, GameScoreActivity.class, type, score, true);
+    }
+
+    @Override
+    public void observerMenuDialog(OnDialogFragmentShow dialogFragmentShow) {
+        dialogFragment.setDialogFragmentShow(dialogFragmentShow);
+//        this.dialogFragmentShow = dialogFragmentShow;
     }
 
 }

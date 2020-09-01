@@ -6,24 +6,27 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <LinearLayout
+    <androidx.constraintlayout.motion.widget.MotionLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        app:layoutDescription="@xml/activity_element_info_scene"
+        tools:showPaths="true">
 
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="100dp" />
 
         <TextView
             android:id="@+id/tvSymbol"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="72dp"
             android:gravity="center"
             android:paddingStart="16dp"
             android:paddingEnd="16dp"
             android:textAppearance="?attr/textAppearanceHeadline3"
             android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
             tools:text="H" />
 
         <TextView
@@ -34,24 +37,35 @@
             android:paddingStart="16dp"
             android:paddingEnd="16dp"
             android:textAppearance="?attr/textAppearanceHeadline6"
-            tools:text="Водород" />
+            tools:text="Водород"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvSymbol"/>
 
         <TextView
             android:id="@+id/tvWeight"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:textAppearance="?attr/textAppearanceBody2"
             android:paddingStart="16dp"
             android:paddingEnd="16dp"
-            tools:text="115" />
+            android:textAppearance="?attr/textAppearanceBody2"
+            tools:text="115"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvTitle"/>
 
         <LinearLayout
+            android:id="@+id/linearLayout6"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
             android:background="?attr/selectableItemBackground"
             android:minHeight="64dp"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvWeight">
 
             <TextView
                 android:layout_width="match_parent"
@@ -80,11 +94,15 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/linearLayout7"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="?attr/selectableItemBackground"
             android:minHeight="64dp"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="@+id/tvSymbol"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout6">
 
             <TextView
                 android:layout_width="match_parent"
@@ -113,11 +131,15 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/linearLayout8"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="?attr/selectableItemBackground"
             android:minHeight="64dp"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="@+id/tvSymbol"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout7">
 
             <TextView
                 android:layout_width="match_parent"
@@ -146,11 +168,15 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/linearLayout9"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="?attr/selectableItemBackground"
             android:minHeight="64dp"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="@+id/tvSymbol"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout8">
 
             <TextView
                 android:layout_width="match_parent"
@@ -179,11 +205,15 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/linearLayout10"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="?attr/selectableItemBackground"
             android:minHeight="64dp"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="@+id/tvSymbol"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout9">
 
             <TextView
                 android:layout_width="match_parent"
@@ -213,11 +243,15 @@
 
 
         <LinearLayout
+            android:id="@+id/linearLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal" />
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="@+id/tvSymbol"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout10" />
 
-    </LinearLayout>
+    </androidx.constraintlayout.motion.widget.MotionLayout>
 
 </ScrollView>
 

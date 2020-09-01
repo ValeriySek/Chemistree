@@ -13,6 +13,9 @@ public interface AcidsDao {
     @Query("SELECT * FROM acids")
     List<Acids> getAcids();
 
+    @Query("SELECT * FROM acids WHERE difficult < :lvl")
+    List<Acids> getAcidsByLevel(int lvl);
+
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     void insertAll(List<Acids> acids);
 }
