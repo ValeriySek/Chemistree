@@ -74,7 +74,7 @@ public class GameFragment1 extends BaseGameFragment {
 
         recycler = v.findViewById(R.id.rvGame1);
         recycler.setLayoutManager(new LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false));
-        adapter = new GameButtonsAdapter(context, 0);
+        adapter = new GameButtonsAdapter(0);
         recycler.setAdapter(adapter);
 
         loadData();

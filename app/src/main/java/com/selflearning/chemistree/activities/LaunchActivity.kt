@@ -18,10 +18,9 @@ class LaunchActivity : AppCompatActivity() {
         user = User.getInstance()
         if (mAuth!!.currentUser != null) {
             startActivity(Intent(this, MainActivity::class.java))
-            finish()
         } else {
             startActivity(Intent(this, RegisterActivity::class.java))
-            finish()
         }
+        finish()
     }
 }

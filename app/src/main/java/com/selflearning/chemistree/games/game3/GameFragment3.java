@@ -65,7 +65,7 @@ public class GameFragment3 extends BaseGameFragment {
         tvAnswer = view.findViewById(R.id.tvGame3Answer);
 
         recyclerView.setLayoutManager(new GridLayoutManager(context, 4, GridLayoutManager.VERTICAL, false));
-        adapter = new GameButtonsAdapter(context, 1);
+        adapter = new GameButtonsAdapter(1);
         recyclerView.setAdapter(adapter);
 
         loadData();
