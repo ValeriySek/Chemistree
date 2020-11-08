@@ -1,11 +1,11 @@
-package com.selflearning.chemistree.ui.home.mendeleevTable;
+package com.selflearning.chemistree.f_mendeleevtable;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
 import com.selflearning.chemistree.R;
-import com.selflearning.chemistree.ui.home.mendeleevTable.LongTable.LongTable;
+import com.selflearning.chemistree.f_mendeleevtable.long_table.LongTable;
 
 public class MendeleevTable extends AppCompatActivity {
 

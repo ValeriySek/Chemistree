@@ -34,7 +34,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".MainActivity"
+            android:name=".activities.MainActivity"
             android:label="@string/app_name"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
@@ -48,7 +48,7 @@
         <activity android:name=".games.game1.PreGame_1_Screen" />
         <activity android:name=".games.game1.PostGame_1_Screen" />
         <activity android:name=".games.game1.Game_1_Activity" />
-        <activity android:name=".ui.home.mendeleevTable.MendeleevTable" />
+        <activity android:name=".f_mendeleevtable.MendeleevTable" />
 
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"

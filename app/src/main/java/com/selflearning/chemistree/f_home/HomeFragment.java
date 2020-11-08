@@ -1,4 +1,4 @@
-package com.selflearning.chemistree.ui.home;
+package com.selflearning.chemistree.f_home;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -26,6 +26,7 @@ import com.selflearning.chemistree.R;
 import com.selflearning.chemistree.activities.RegisterActivity;
 import com.selflearning.chemistree.adapter.ReactionAdapter;
 import com.selflearning.chemistree.data.User;
+
 import java.util.HashMap;
 import java.util.Locale;
 import java.util.Map;

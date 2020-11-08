@@ -1,4 +1,4 @@
-package com.selflearning.chemistree.ui.notifications;
+package com.selflearning.chemistree.f_notification;
 
 import android.app.Activity;
 import android.content.Intent;

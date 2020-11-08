@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/navigation_home"
-        android:name="com.selflearning.chemistree.ui.home.HomeFragment"
+        android:name="com.selflearning.chemistree.f_home.HomeFragment"
         android:label="@string/title_home"
         tools:layout="@layout/fragment_home" >
         <action
@@ -18,7 +18,7 @@
 
     <fragment
         android:id="@+id/navigation_dashboard"
-        android:name="com.selflearning.chemistree.ui.dashboard.DashboardFragment"
+        android:name="com.selflearning.chemistree.f_dachboard.DashboardFragment"
         android:label="@string/title_dashboard"
         tools:layout="@layout/fragment_dashboard" >
         <action
@@ -28,7 +28,7 @@
 
     <fragment
         android:id="@+id/navigation_games_pack"
-        android:name="com.selflearning.chemistree.ui.gamespack.GamesPack"
+        android:name="com.selflearning.chemistree.f_games.gamespack.GamesPack"
         android:label="@string/title_dashboard"
         tools:layout="@layout/games_pack_fragment" >
         <action
@@ -38,13 +38,13 @@
 
     <fragment
         android:id="@+id/navigation_notifications"
-        android:name="com.selflearning.chemistree.ui.notifications.NotificationsFragment"
+        android:name="com.selflearning.chemistree.f_notification.NotificationsFragment"
         android:label="@string/title_notifications"
         tools:layout="@layout/fragment_notifications" />
 
     <fragment
         android:id="@+id/navigation_statistic"
-        android:name="com.selflearning.chemistree.ui.statistic.StatisticFragment"
+        android:name="com.selflearning.chemistree.f_statistic.StatisticFragment"
         android:label="fragment_statistic"
         tools:layout="@layout/fragment_statistic" >
         <action

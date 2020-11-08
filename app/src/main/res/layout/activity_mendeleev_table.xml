@@ -6,7 +6,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:scrollbars="none"
     android:background="@color/tableBackground"
-    tools:context=".ui.home.mendeleevTable.MendeleevTable">
+    tools:context=".f_mendeleevtable.MendeleevTable">
 
     <LinearLayout
         android:layout_width="match_parent"

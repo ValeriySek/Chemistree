@@ -1,4 +1,4 @@
-package com.selflearning.chemistree.ui.gamespack;
+package com.selflearning.chemistree.f_games.gamespack;
 
 public class DividerRowType implements RowType {
 

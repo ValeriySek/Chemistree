@@ -14,9 +14,9 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.google.android.material.card.MaterialCardView;
 import com.selflearning.chemistree.R;
 import com.selflearning.chemistree.listeners.OnItemClickListener;
-import com.selflearning.chemistree.ui.gamespack.DividerRowType;
-import com.selflearning.chemistree.ui.gamespack.GamesRowType;
-import com.selflearning.chemistree.ui.gamespack.RowType;
+import com.selflearning.chemistree.f_games.gamespack.DividerRowType;
+import com.selflearning.chemistree.f_games.gamespack.GamesRowType;
+import com.selflearning.chemistree.f_games.gamespack.RowType;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;

@@ -1,4 +1,4 @@
-package com.selflearning.chemistree.ui.gamespack;
+package com.selflearning.chemistree.f_games.gamespack;
 
 import androidx.lifecycle.ViewModelProviders;
 

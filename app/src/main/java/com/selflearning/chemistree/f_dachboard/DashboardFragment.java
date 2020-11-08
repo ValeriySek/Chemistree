@@ -1,4 +1,4 @@
-package com.selflearning.chemistree.ui.dashboard;
+package com.selflearning.chemistree.f_dachboard;
 
 import android.content.Context;
 import android.content.Intent;
@@ -15,7 +15,7 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProviders;
 
 import com.selflearning.chemistree.R;
-import com.selflearning.chemistree.ui.home.mendeleevTable.MendeleevTable;
+import com.selflearning.chemistree.f_mendeleevtable.MendeleevTable;
 
 public class DashboardFragment extends Fragment {
 

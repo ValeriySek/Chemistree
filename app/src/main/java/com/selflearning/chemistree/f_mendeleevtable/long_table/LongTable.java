@@ -1,4 +1,4 @@
-package com.selflearning.chemistree.ui.home.mendeleevTable.LongTable;
+package com.selflearning.chemistree.f_mendeleevtable.long_table;
 
 import androidx.lifecycle.ViewModelProviders;
 

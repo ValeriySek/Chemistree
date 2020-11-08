@@ -1,4 +1,4 @@
-package com.selflearning.chemistree.ui.statistic;
+package com.selflearning.chemistree.f_statistic;
 
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
