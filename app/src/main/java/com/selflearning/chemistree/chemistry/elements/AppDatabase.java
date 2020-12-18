@@ -21,7 +21,7 @@ import com.selflearning.chemistree.constants.AppConstants;
 import com.selflearning.chemistree.worker.DatabaseWorker;
 
 
-@Database(entities = {Acids.class, Bases.class, Oxides.class, Element.class}, version = 1, exportSchema = false)
+@Database(entities = {Acids.class, Bases.class, Oxides.class, Element.class}, version = 2, exportSchema = false)
 public abstract class AppDatabase extends RoomDatabase {
     private static volatile AppDatabase INSTANCE;
 
@@ -38,7 +38,7 @@ public abstract class AppDatabase extends RoomDatabase {
 
     private static AppDatabase buildDatabase(final Context context){
         return Room.databaseBuilder(context.getApplicationContext(), AppDatabase.class, AppConstants.DATABASE_NAME)
-//                .fallbackToDestructiveMigration()
+                .fallbackToDestructiveMigration()
                 .allowMainThreadQueries()
                 .addCallback(new Callback() {
                     @Override

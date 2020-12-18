@@ -81,7 +81,7 @@ public class GameFragment4 extends BaseGameFragment {
         heartsPack.add(ivHeart1);
 
         recyclerView.setLayoutManager(new GridLayoutManager(context, 4, GridLayoutManager.VERTICAL, false));
-        adapter = new GameButtonsAdapter(context, 1);
+        adapter = new GameButtonsAdapter(1);
         recyclerView.setAdapter(adapter);
 
         tvQuestionNumber.setText(question + " / " + numberOfQuestions);

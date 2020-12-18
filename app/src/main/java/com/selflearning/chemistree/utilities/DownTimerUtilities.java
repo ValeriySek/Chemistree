@@ -9,13 +9,7 @@ public class DownTimerUtilities extends CountDownTimer {
     private ProgressBar progressBar;
     private boolean ifFinifh;
     Class aClass;
-    /**
-     * @param millisInFuture    The number of millis in the future from the call
-     *                          to {@link #start()} until the countdown is done and {@link #onFinish()}
-     *                          is called.
-     * @param countDownInterval The interval along the way to receive
-     *                          {@link #onTick(long)} callbacks.
-     */
+
     public DownTimerUtilities(long millisInFuture, long countDownInterval, ProgressBar progressBar, boolean ifFinifh, Class<?> tClass) {
         super(millisInFuture, countDownInterval);
         this.progressBar = progressBar;

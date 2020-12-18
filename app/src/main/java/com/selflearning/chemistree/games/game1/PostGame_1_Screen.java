@@ -40,7 +40,7 @@ public class PostGame_1_Screen extends AppCompatActivity {
         initVar();
         initView();
 
-        adapter = new PostGameReviewAdapter(context, activity, reportModels);
+        adapter = new PostGameReviewAdapter(reportModels);
         recyclerView.setAdapter(adapter);
 
     }
