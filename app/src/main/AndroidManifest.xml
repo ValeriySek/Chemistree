@@ -45,10 +45,10 @@
             android:screenOrientation="portrait" />
         <activity android:name=".games.BaseGameActivity" />
         <activity android:name=".login.LoginActivity0" />
-        <activity android:name=".games.game1.PreGame_1_Screen" />
+        <activity android:name=".games.game1.PreGame1Screen" />
         <activity android:name=".games.game1.PostGame_1_Screen" />
         <activity android:name=".games.game1.Game_1_Activity" />
-        <activity android:name=".f_mendeleevtable.MendeleevTable" />
+        <activity android:name=".f_mendeleev_table.MendeleevTable" />
 
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"

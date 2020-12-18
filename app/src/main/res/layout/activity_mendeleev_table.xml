@@ -1,101 +1,150 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
-    android:scrollbars="none"
+    android:layout_width="wrap_content"
+    android:id="@+id/tableContainer"
+    android:layout_height="match_parent"
     android:background="@color/tableBackground"
-    tools:context=".f_mendeleevtable.MendeleevTable">
+    tools:context=".f_mendeleev_table.MendeleevTable">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
+<!--    <LinearLayout-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:orientation="horizontal">-->
 
-        <LinearLayout
-            android:layout_width="20dp"
-            android:layout_height="match_parent"
-            android:gravity="center"
-            android:orientation="vertical"
-            android:background="#222222"
-            android:paddingTop="5dp">
+<!--        <LinearLayout-->
+<!--            android:layout_width="20dp"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:background="#222222"-->
+<!--            android:orientation="vertical"-->
+<!--            android:paddingTop="15dp">-->
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="58dp"
-                android:layout_marginTop="15dp"
-                android:gravity="center"
-                android:text="1"
-                android:textColor="@android:color/white" />
+<!--            <View-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="1dp"-->
+<!--                android:layout_marginStart="5dp"-->
+<!--                android:layout_marginEnd="5dp"-->
+<!--                android:background="#333333" />-->
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="58dp"
-                android:gravity="center"
-                android:text="2"
-                android:textColor="@android:color/white" />
+<!--            <TextView-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="@dimen/mend_table_period_height"-->
+<!--                android:gravity="center"-->
+<!--                android:text="1"-->
+<!--                android:textColor="@android:color/white" />-->
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="58dp"
-                android:gravity="center"
-                android:text="3"
-                android:textColor="@android:color/white" />
+<!--            <View-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="1dp"-->
+<!--                android:layout_marginStart="5dp"-->
+<!--                android:layout_marginEnd="5dp"-->
+<!--                android:background="#333333" />-->
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="58dp"
-                android:gravity="center"
-                android:text="4"
-                android:textColor="@android:color/white" />
+<!--            <TextView-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="@dimen/mend_table_period_height"-->
+<!--                android:gravity="center"-->
+<!--                android:text="2"-->
+<!--                android:textColor="@android:color/white" />-->
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="58dp"
-                android:gravity="center"
-                android:text="5"
-                android:textColor="@android:color/white" />
+<!--            <View-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="1dp"-->
+<!--                android:layout_marginStart="5dp"-->
+<!--                android:layout_marginEnd="5dp"-->
+<!--                android:background="#333333" />-->
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="58dp"
-                android:gravity="center"
-                android:text="6"
-                android:textColor="@android:color/white" />
+<!--            <TextView-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="@dimen/mend_table_period_height"-->
+<!--                android:gravity="center"-->
+<!--                android:text="3"-->
+<!--                android:textColor="@android:color/white" />-->
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="58dp"
-                android:gravity="center"
-                android:text="7"
-                android:textColor="@android:color/white" />
+<!--            <View-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="1dp"-->
+<!--                android:layout_marginStart="5dp"-->
+<!--                android:layout_marginEnd="5dp"-->
+<!--                android:background="#333333" />-->
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="58dp"
-                android:gravity="center"
-                android:text="8"
-                android:textColor="@android:color/white" />
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="58dp"
-                android:gravity="center" />
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="58dp"
-                android:gravity="center" />
+<!--            <TextView-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="@dimen/mend_table_period_height"-->
+<!--                android:gravity="center"-->
+<!--                android:text="4"-->
+<!--                android:textColor="@android:color/white" />-->
 
-        </LinearLayout>
-        <HorizontalScrollView
-            android:id="@+id/tableContainer"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:scrollbars="none">
+<!--            <View-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="1dp"-->
+<!--                android:layout_marginStart="5dp"-->
+<!--                android:layout_marginEnd="5dp"-->
+<!--                android:background="#333333" />-->
 
-        </HorizontalScrollView>
+<!--            <TextView-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="@dimen/mend_table_period_height"-->
+<!--                android:gravity="center"-->
+<!--                android:text="5"-->
+<!--                android:textColor="@android:color/white" />-->
 
-    </LinearLayout>
+<!--            <View-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="1dp"-->
+<!--                android:layout_marginStart="5dp"-->
+<!--                android:layout_marginEnd="5dp"-->
+<!--                android:background="#333333" />-->
+
+<!--            <TextView-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="@dimen/mend_table_period_height"-->
+<!--                android:gravity="center"-->
+<!--                android:text="6"-->
+<!--                android:textColor="@android:color/white" />-->
+
+<!--            <View-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="1dp"-->
+<!--                android:layout_marginStart="5dp"-->
+<!--                android:layout_marginEnd="5dp"-->
+<!--                android:background="#333333" />-->
+
+<!--            <TextView-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="@dimen/mend_table_period_height"-->
+<!--                android:gravity="center"-->
+<!--                android:text="7"-->
+<!--                android:textColor="@android:color/white" />-->
+
+<!--            <View-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="1dp"-->
+<!--                android:layout_marginStart="5dp"-->
+<!--                android:layout_marginEnd="5dp"-->
+<!--                android:background="#333333" />-->
+
+<!--            <TextView-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="@dimen/mend_table_period_height"-->
+<!--                android:gravity="center" />-->
+
+<!--            <TextView-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="@dimen/mend_table_period_height"-->
+<!--                android:gravity="center" />-->
+
+<!--        </LinearLayout>-->
+
+<!--        <androidx.fragment.app.FragmentContainerView-->
+<!--            android:id="@+id/tableContainer"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="match_parent">-->
+
+<!--        </androidx.fragment.app.FragmentContainerView>-->
 
 
-</ScrollView>
+<!--    </LinearLayout>-->
+
+</FrameLayout>

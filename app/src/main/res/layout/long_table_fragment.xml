@@ -4,7 +4,7 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    tools:context=".f_mendeleevtable.long_table.LongTable">
+    tools:context=".f_mendeleev_table.long_table.LongTable">
 
     <LinearLayout
         android:layout_width="wrap_content"

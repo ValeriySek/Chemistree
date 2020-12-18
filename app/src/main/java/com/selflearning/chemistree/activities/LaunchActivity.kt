@@ -15,7 +15,7 @@ class LaunchActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_launch)
         mAuth = FirebaseAuth.getInstance()
-        user = User.getInstance()
+        user = User.instance
         if (mAuth!!.currentUser != null) {
             startActivity(Intent(this, MainActivity::class.java))
         } else {

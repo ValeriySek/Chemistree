@@ -52,4 +52,15 @@
         <item name="android:layout_height">60dp</item>
     </style>
 
+    <style name="MendTableItemDesc">
+        <item name="android:ellipsize">end</item>
+        <item name="android:layout_gravity">bottom|center</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:paddingBottom">@dimen/mend_table_item_desc_padding_bottom</item>
+        <item name="android:paddingStart">@dimen/mend_table_item_desc_padding_start</item>
+        <item name="android:paddingEnd">@dimen/mend_table_item_desc_padding_end</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
 </resources>

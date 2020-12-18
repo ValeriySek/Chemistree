@@ -116,7 +116,7 @@ public class Game_1_Activity extends AppCompatActivity {
         activity = Game_1_Activity.this;
         context = activity.getApplicationContext();
 
-        acidsList = DatabaseAccess.getInstance(this).getAllAcids();
+//        acidsList = DatabaseAccess.getInstance(this).getAllAcids();
         acidsListLength = acidsList.size();
 
         soundsBox = new SoundsBox(context);
@@ -262,7 +262,7 @@ public class Game_1_Activity extends AppCompatActivity {
             @Override
             public void onFinish() {
                 progressBar.setProgress(0);
-                finishGame();
+//                finishGame();
             }
         }.start();
     }
@@ -340,7 +340,7 @@ public class Game_1_Activity extends AppCompatActivity {
         dialog.getWindow().getAttributes().windowAnimations = R.style.DialogAnimation;
     }
 
-    private void finishGame(){
-        ActivityUtilities.getInstance().invokeCommonAppActivity(activity, PostGame_1_Screen.class, score, reportModels, true);
-    }
+//    private void finishGame(){
+//        ActivityUtilities.getInstance().invokeCommonAppActivity(activity, PostGame_1_Screen.class, score, reportModels, true);
+//    }
 }

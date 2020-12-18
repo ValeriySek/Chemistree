@@ -3,5 +3,14 @@
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
     <dimen name="fifteen_dp">15dp</dimen>
+
+    <!--Table-->
     <dimen name="text_size_mend">10sp</dimen>
+    <dimen name="mend_table_item_width">58dp</dimen>
+    <dimen name="mend_table_item_height">58dp</dimen>
+    <dimen name="mend_table_period_height">59dp</dimen>
+    <dimen name="mend_table_item_desc_padding_start">5dp</dimen>
+    <dimen name="mend_table_item_desc_padding_end">5dp</dimen>
+    <dimen name="mend_table_item_desc_padding_bottom">2dp</dimen>
+    <dimen name="mend_table_item_num_padding_start">58dp</dimen>
 </resources>
