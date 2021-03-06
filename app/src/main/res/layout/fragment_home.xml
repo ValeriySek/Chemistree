@@ -31,12 +31,10 @@
 <!--        app:layout_constraintStart_toStartOf="parent"-->
 <!--        app:layout_constraintTop_toTopOf="parent" />-->
 
-    <com.selflearning.chemistree.views.MendItemView
-        android:layout_width="60dp"
-        android:layout_height="60dp"
+    <com.selflearning.chemistree.f_mendeleev_table.MendItemView
+        android:layout_width="400dp"
+        android:layout_height="400dp"
         app:exampleColor="@color/brown_600"
-        app:exampleDimension="24dp"
-        app:exampleString="dfh"
         app:layout_constraintBottom_toTopOf="@+id/signOut"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

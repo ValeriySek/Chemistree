@@ -1,2 +1,7 @@
+include ':i-google-services'
+include ':i-room'
+include ':core'
+include ':domain'
+include ':libraries:actions'
+include ':f-mendeleev-table'
 include ':app'
-rootProject.name='Unnamed'

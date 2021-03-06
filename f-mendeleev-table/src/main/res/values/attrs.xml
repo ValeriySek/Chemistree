@@ -1,0 +1,11 @@
+<resources>
+    <declare-styleable name="MendItemView">
+        <attr name="topLeftText" format="string"/>
+        <attr name="centerText" format="string"/>
+        <attr name="bottomCenterText" format="string"/>
+        <attr name="exampleString" format="string" />
+        <attr name="exampleDimension" format="dimension" />
+        <attr name="exampleColor" format="color" />
+        <attr name="exampleDrawable" format="color|reference" />
+    </declare-styleable>
+</resources>

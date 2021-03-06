@@ -4,8 +4,8 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.selflearning.chemistree.adapter.ElementsAdapter.ElementsViewHolder
-import com.selflearning.chemistree.chemistry.elements.Element
 import com.selflearning.chemistree.databinding.ElementsListBinding
+import selflearning.chemistree.domain.chemistry.elements.Element
 
 class ElementsAdapter : RecyclerView.Adapter<ElementsViewHolder>() {
     private lateinit var elementList: List<Element>
