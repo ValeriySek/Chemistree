@@ -47,7 +47,7 @@ class PreGameActivity : BaseGameActivity() {
         private fun waitH() {
             Log.i("Tag", "wait")
             handler!!.postDelayed({
-                isButtonEnabled = repository!!.allElements.size != 0
+//                isButtonEnabled = repository!!.allElements.size != 0
                 booleanMutableLiveData.value = isButtonEnabled
                 if (!isButtonEnabled) {
                     waitH()

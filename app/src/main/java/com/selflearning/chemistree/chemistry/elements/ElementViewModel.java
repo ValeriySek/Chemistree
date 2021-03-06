@@ -4,11 +4,12 @@ import android.app.Application;
 
 import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
-import androidx.lifecycle.LiveData;
 
 import com.selflearning.chemistree.chemistry.inorganic.bases.Bases;
+import selflearning.chemistree.domain.chemistry.elements.Element;
 
 import java.util.List;
+
 
 public class ElementViewModel extends AndroidViewModel {
 
@@ -19,7 +20,7 @@ public class ElementViewModel extends AndroidViewModel {
     public ElementViewModel(@NonNull Application application) {
         super(application);
         repository = new ElementRepository(application);
-        mAllElements = repository.getAllElements();
+//        mAllElements = repository.getAllElements();
         bases = repository.getBasesList();
     }
 

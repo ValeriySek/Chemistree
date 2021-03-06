@@ -7,11 +7,9 @@ import androidx.annotation.NonNull;
 import androidx.work.Worker;
 import androidx.work.WorkerParameters;
 
-import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
 import com.google.gson.stream.JsonReader;
 import com.selflearning.chemistree.chemistry.elements.AppDatabase;
-import com.selflearning.chemistree.chemistry.elements.Element;
+import selflearning.chemistree.domain.chemistry.elements.Element;
 import com.selflearning.chemistree.chemistry.inorganic.acids.Acids;
 import com.selflearning.chemistree.chemistry.inorganic.bases.Bases;
 import com.selflearning.chemistree.chemistry.inorganic.oxides.Oxides;
@@ -25,7 +23,6 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.lang.reflect.Type;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
@@ -56,7 +53,7 @@ public class DatabaseWorker extends Worker {
             List<Acids> acids = loadAcids();
             List<Oxides> oxides = loadOxides();
 
-            appDatabase.elementDao().insertAll(elements);
+//            appDatabase.elementDao().insertAll(elements);
             appDatabase.basesDao().insertAllBase(bases);
             appDatabase.acidsDao().insertAll(acids);
             appDatabase.oxidesDao().insertAll(oxides);

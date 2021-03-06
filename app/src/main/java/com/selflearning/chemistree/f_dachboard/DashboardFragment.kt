@@ -1,5 +1,6 @@
 package com.selflearning.chemistree.f_dachboard
 
+import android.content.ComponentName
 import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -11,7 +12,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.selflearning.chemistree.R
 import com.selflearning.chemistree.databinding.FragmentDashboardBinding
-import com.selflearning.chemistree.f_mendeleev_table.MendeleevTable
+import selflearning.libraries.actions.Actions
 
 class DashboardFragment : Fragment() {
 
@@ -24,8 +25,11 @@ class DashboardFragment : Fragment() {
         val binding = FragmentDashboardBinding.inflate(inflater, container, false)
         setUpToolbar(binding.root)
         binding.imageButtonMendeleev.setOnClickListener{
-            val intent = Intent(activity, MendeleevTable::class.java)
-            startActivity(intent)
+//            val intent = Intent("com.selflearning.chemistree.open"
+//                    requireContext(), Class.forName("com.selflearning.chemistree.f_mendeleev_table.MyMyActivity")
+//            ).setPackage(requireContext().packageName)
+//            intent.component = ComponentName("com.selflearning.chemistree.f_mendeleev_table", "com.selflearning.chemistree.f_mendeleev_table.MyMyActivity")
+            startActivity(Actions.openFirstIntent(requireContext()))
         }
 
 

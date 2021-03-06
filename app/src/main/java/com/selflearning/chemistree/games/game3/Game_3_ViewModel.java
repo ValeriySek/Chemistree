@@ -4,17 +4,16 @@ import android.app.Application;
 import android.util.Log;
 
 import androidx.annotation.NonNull;
-import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 
-import com.selflearning.chemistree.chemistry.elements.AppDatabase;
 import com.selflearning.chemistree.chemistry.elements.ElementRepository;
-import com.selflearning.chemistree.dBHelper.DatabaseAccess;
-import com.selflearning.chemistree.chemistry.elements.Element;
+
 
 import java.util.ArrayList;
 import java.util.List;
+
+import selflearning.chemistree.domain.chemistry.elements.Element;
 
 public class Game_3_ViewModel {
 
@@ -39,7 +38,7 @@ public class Game_3_ViewModel {
     private String stringAnswer = "";
 
     public Game_3_ViewModel(@NonNull Application application) {
-        elements = new ElementRepository(application).getAllElements();
+//        elements = new ElementRepository(application).getAllElements();
         mutableLiveData = new MutableLiveData<>();
         booleanLD = new MutableLiveData<>();
         stringQuestion = new MutableLiveData<>();

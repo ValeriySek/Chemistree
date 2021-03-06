@@ -1,0 +1,3 @@
+package selflearning.chemistree.domain.chemistry.inorganic
+
+interface Inorganic

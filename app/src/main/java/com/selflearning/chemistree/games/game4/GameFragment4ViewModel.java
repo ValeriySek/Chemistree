@@ -8,7 +8,7 @@ import androidx.lifecycle.MutableLiveData;
 
 import com.selflearning.chemistree.chemistry.elements.ElementRepository;
 import com.selflearning.chemistree.chemistry.inorganic.acids.Acids;
-import com.selflearning.chemistree.chemistry.elements.Element;
+import selflearning.chemistree.domain.chemistry.elements.Element;
 import com.selflearning.chemistree.games.FormulaTransformations;
 
 import java.util.ArrayList;
@@ -46,7 +46,7 @@ public class GameFragment4ViewModel {
         ElementRepository repository = new ElementRepository(application);
 //        acidsList = repository.getAcidsList();
         mAcidsList = repository.getAcidsByLvl(3);
-        mElementList = repository.getAllElements();
+//        mElementList = repository.getAllElements();
         loadData();
     }
 

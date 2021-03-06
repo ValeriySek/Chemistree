@@ -1,8 +1,8 @@
 package com.selflearning.chemistree.games.game4
 
 import android.content.Context
-import com.selflearning.chemistree.chemistry.elements.Element
 import com.selflearning.chemistree.chemistry.inorganic.acids.Acids
+import selflearning.chemistree.domain.chemistry.elements.Element
 import java.util.*
 
 const val COUNT_OF_BUTTONS = 8
