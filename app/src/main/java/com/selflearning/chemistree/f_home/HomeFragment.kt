@@ -16,12 +16,11 @@ import androidx.recyclerview.widget.RecyclerView
 import com.google.android.gms.ads.AdView
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
-import com.selflearning.chemistree.activities.RegisterActivity
+import com.selflearning.chemistree.f_registration.RegisterActivity
 import com.selflearning.chemistree.adapter.ReactionAdapter
 import com.selflearning.chemistree.data.User.Companion.instance
 import com.selflearning.chemistree.databinding.FragmentHomeBinding
 import com.selflearning.chemistree.utilities.extentions.dpi
-import com.selflearning.chemistree.utilities.extentions.viewWidth
 import java.util.*
 
 class HomeFragment : Fragment() {

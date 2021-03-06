@@ -1,17 +1,13 @@
 package com.selflearning.chemistree.activities
 
-import android.animation.ObjectAnimator
 import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import android.util.Log
-import android.view.View
-import android.view.animation.Animation
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.gms.common.GoogleApiAvailability
 import com.google.firebase.auth.FirebaseAuth
-import com.selflearning.chemistree.R
-import com.selflearning.chemistree.activities.RegisterActivity
+import com.selflearning.chemistree.f_registration.RegisterActivity
 import com.selflearning.chemistree.data.User
 import com.selflearning.chemistree.databinding.ActivityLaunchBinding
 

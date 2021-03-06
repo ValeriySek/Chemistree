@@ -1,4 +1,4 @@
-package com.selflearning.chemistree.activities
+package com.selflearning.chemistree.f_registration
 
 import android.content.Intent
 import android.os.Bundle
@@ -16,39 +16,36 @@ import com.google.android.gms.common.api.ApiException
 import com.google.android.material.button.MaterialButton
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.GoogleAuthProvider
+import com.selflearning.chemistree.ChemistreeApplication
 import com.selflearning.chemistree.R
-import com.selflearning.chemistree.activities.RegisterActivity
+import com.selflearning.chemistree.activities.MainActivity
 import com.selflearning.chemistree.login.LoginActivity0
+import javax.inject.Inject
 
 class RegisterActivity : AppCompatActivity() {
     private lateinit var registerEmail: MaterialButton
     private lateinit var registerGoogle: SignInButton
     private lateinit var alreadyHaveAcc: TextView
-    private var mGoogleSignInClient: GoogleSignInClient? = null
 
-    private var mAuth: FirebaseAuth? = null
+    @Inject lateinit var auth: FirebaseAuth
+    @Inject lateinit var gso: GoogleSignInOptions
+    @Inject lateinit var googleSignInClient: GoogleSignInClient
+
     override fun onCreate(savedInstanceState: Bundle?) {
+        (application as ChemistreeApplication).appComponentFactory.inject(this)
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_register)
         registerEmail = findViewById(R.id.registerEmail)
         alreadyHaveAcc = findViewById(R.id.registerTVIHaveAcc)
         registerGoogle = findViewById(R.id.registerGoogle)
 
-        // Configure Google Sign In
-        val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-                .requestIdToken(getString(R.string.default_web_client_id))
-                .requestEmail()
-                .build()
-        mGoogleSignInClient = GoogleSignIn.getClient(this, gso)
-        if (mGoogleSignInClient != null) {
-            mGoogleSignInClient!!.revokeAccess().addOnCompleteListener(this) { task ->
-                if (task.isSuccessful) {
-                    Toast.makeText(this@RegisterActivity, "mGoogleSignInClient.revokeAccess", Toast.LENGTH_SHORT).show()
-                }
+        googleSignInClient.revokeAccess().addOnCompleteListener(this) { task ->
+            if (task.isSuccessful) {
+                Toast.makeText(this@RegisterActivity, "mGoogleSignInClient.revokeAccess", Toast.LENGTH_SHORT).show()
             }
         }
-        mAuth = FirebaseAuth.getInstance()
-        registerEmail.setOnClickListener(View.OnClickListener { })
+
+        registerEmail.setOnClickListener { }
         alreadyHaveAcc.setOnClickListener {
             startActivity(Intent(this@RegisterActivity, LoginActivity0::class.java))
             finish()
@@ -57,7 +54,7 @@ class RegisterActivity : AppCompatActivity() {
     }
 
     private fun signIn() {
-        val signInIntent = mGoogleSignInClient!!.signInIntent
+        val signInIntent = googleSignInClient.signInIntent
         startActivityForResult(signInIntent, RC_SIGN_IN)
     }
 
@@ -79,7 +76,7 @@ class RegisterActivity : AppCompatActivity() {
     private fun firebaseAuthWithGoogle(acct: GoogleSignInAccount) {
         Log.d("TAG", "firebaseAuthWithGoogle:" + acct.id)
         val credential = GoogleAuthProvider.getCredential(acct.idToken, null)
-        mAuth!!.signInWithCredential(credential)
+        auth.signInWithCredential(credential)
                 .addOnCompleteListener(this) { task ->
                     if (task.isSuccessful) {
                         // Sign in success, update UI with the signed-in user's information
