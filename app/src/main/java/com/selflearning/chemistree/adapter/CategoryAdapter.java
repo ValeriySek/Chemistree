@@ -29,7 +29,7 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.Tables
     @NonNull
     @Override
     public TablesViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.tables_card, parent, false);
+        View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_iten_dashboard_tables_card, parent, false);
         return new TablesViewHolder(itemView);
     }
 

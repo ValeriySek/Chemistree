@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#4C4C4C"
-    tools:context=".f_statistic.StatisticFragment">
+    tools:context=".feature.f_statistic.StatisticFragment">
 
     <TextView
         android:id="@+id/tvStat"

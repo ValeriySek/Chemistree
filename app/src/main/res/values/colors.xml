@@ -2,7 +2,8 @@
 <resources>
     <color name="colorPrimary">@color/colorAccent</color>
     <color name="colorPrimaryDark">#4DD0E1</color>
-    <color name="colorAccent">#B2EBF2</color>
+    <color name="colorAccent">#E74A19</color>
+<!--    <color name="colorAccent">#E7195A</color>-->
     <color name="toolbarIconColor">@color/textColorPrimary</color>
     <color name="loginPageBackgroundColor">#FFFFFF</color>
     <color name="productGridBackgroundColor">#FFFFFF</color>
@@ -14,6 +15,7 @@
     <color name="tableElementsBackground">#2C2C30</color>
     <color name="tableElementsBackground50">#414147</color>
     <color name="backgroundGrayColor">#EEEDED</color>
+
     <color name="сBlue">#2A3677</color>
     <color name="сBlue95">#992A3677</color>
     <color name="backgroundBlue20">#2026368D</color>

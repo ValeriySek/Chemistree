@@ -162,8 +162,8 @@ class MendItemView @JvmOverloads constructor(
     override fun onLayout(changed: Boolean, left: Int, top: Int, right: Int, bottom: Int) {
         super.onLayout(changed, left, top, right, bottom)
         val density = context.resources.displayMetrics.scaledDensity
-        viewHeight = 100f * density
-        viewWidth = 100f * density
+        viewHeight = 60f * density
+        viewWidth = 60f * density
         centerTextSize = viewHeight / 2
         topLeftTextSize = viewHeight / 6
         bottomCenterTextSize = viewHeight / 4

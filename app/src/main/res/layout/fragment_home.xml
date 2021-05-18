@@ -32,7 +32,7 @@
 <!--        app:layout_constraintTop_toTopOf="parent" />-->
 
     <com.selflearning.chemistree.f_mendeleev_table.MendItemView
-        android:layout_width="400dp"
+        android:layout_width="match_parent"
         android:layout_height="400dp"
         app:exampleColor="@color/brown_600"
         app:layout_constraintBottom_toTopOf="@+id/signOut"

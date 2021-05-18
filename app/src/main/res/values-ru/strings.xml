@@ -3,7 +3,8 @@
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_games_pack">Games Pack</string>
-    <string name="title_notifications">Notifications</string>
+    <string name="title_notifications">Profile</string>
+
     <string name="hydrogen">Водород</string>
     <string name="helium">Гелий</string>
     <string name="lithium">Литий</string>

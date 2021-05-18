@@ -93,37 +93,37 @@ public class GameFragment4 extends BaseGameFragment {
     }
 
     private void loadData(){
-        viewModel.getMutableStringsRV().observe(getActivity(), new Observer<List<String>>() {
+        viewModel.getMutableStringsRV().observe(requireActivity(), new Observer<List<String>>() {
             @Override
             public void onChanged(List<String> strings) {
                 adapter.setList(strings);
             }
         });
-        viewModel.getMutableBooleansRV().observe(getActivity(), new Observer<List<Boolean>>() {
+        viewModel.getMutableBooleansRV().observe(requireActivity(), new Observer<List<Boolean>>() {
             @Override
             public void onChanged(List<Boolean> booleans) {
                 adapter.setBooleans(booleans);
             }
         });
-        viewModel.getStringQuestion().observe(getActivity(), new Observer<String>() {
+        viewModel.getStringQuestion().observe(requireActivity(), new Observer<String>() {
             @Override
             public void onChanged(String s) {
                 tvQuestion.setText(s);
             }
         });
-        viewModel.getEditTextAnswer().observe(getActivity(), new Observer<String>() {
+        viewModel.getEditTextAnswer().observe(requireActivity(), new Observer<String>() {
             @Override
             public void onChanged(String s) {
                 tvAnswer.setText(s);
             }
         });
-        viewModel.isDeleteButtonEnable().observe(getActivity(), new Observer<Boolean>() {
+        viewModel.isDeleteButtonEnable().observe(requireActivity(), new Observer<Boolean>() {
             @Override
             public void onChanged(Boolean aBoolean) {
                 mbDelete.setEnabled(aBoolean);
             }
         });
-        viewModel.getScore().observe(getActivity(), new Observer<String>() {
+        viewModel.getScore().observe(requireActivity(), new Observer<String>() {
             @Override
             public void onChanged(String s) {
                 tvScore.setText(s);
@@ -136,23 +136,15 @@ public class GameFragment4 extends BaseGameFragment {
 
         mbSkip.setOnClickListener(v -> viewModel.loadData());
 
-        mbDelete.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                viewModel.deleteLast();
-            }
-        });
+        mbDelete.setOnClickListener(v -> viewModel.deleteLast());
 
-        mbSubmit.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if(tvAnswer.getText().equals(viewModel.getFormula())){
-                    onRightAnswer();
-                }else {
-                    onWrongAnswer();
-                }
-                wait500ms();
+        mbSubmit.setOnClickListener(v -> {
+            if(tvAnswer.getText().equals(viewModel.getFormula())){
+                onRightAnswer();
+            }else {
+                onWrongAnswer();
             }
+            wait500ms();
         });
     }
 

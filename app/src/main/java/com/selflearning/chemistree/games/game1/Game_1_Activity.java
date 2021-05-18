@@ -49,7 +49,6 @@ import java.util.List;
 public class Game_1_Activity extends AppCompatActivity {
 
     private Activity activity;
-    private Context context;
 
     private TextView textView;
     private TextView textView3;
@@ -114,12 +113,11 @@ public class Game_1_Activity extends AppCompatActivity {
 
     private void initVar(){
         activity = Game_1_Activity.this;
-        context = activity.getApplicationContext();
 
 //        acidsList = DatabaseAccess.getInstance(this).getAllAcids();
         acidsListLength = acidsList.size();
 
-        soundsBox = new SoundsBox(context);
+        soundsBox = new SoundsBox(getBaseContext());
         soundsList = soundsBox.getmSoundsList();
 
         vibrator = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);

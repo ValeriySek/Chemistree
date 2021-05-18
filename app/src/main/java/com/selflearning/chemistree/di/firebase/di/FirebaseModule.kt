@@ -13,7 +13,6 @@ import javax.inject.Singleton
 @Module
 class FirebaseModule {
 
-
     // Configure Google Sign In
     @Provides
     @Singleton

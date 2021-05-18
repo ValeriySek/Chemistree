@@ -21,12 +21,12 @@ public class ElementRepository {
     private List<Acids> acidsList;
 
     public ElementRepository(Application application){
-        AppDatabase database = AppDatabase.getInstance(application);
+//        AppDatabase database = AppDatabase.getInstance(application);
 //        elementDao = database.elementDao();
-        basesDao = database.basesDao();
-        acidsDao = database.acidsDao();
+//        basesDao = database.basesDao();
+//        acidsDao = database.acidsDao();
         acidsList = acidsDao.getAcids();
-        basesList = basesDao.getAllBases();
+//        basesList = basesDao.getAllBases();
 //        mAllElements = elementDao.getAllElements();
     }
 

@@ -4,40 +4,65 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp"
-    tools:context=".f_registration.RegisterActivity">
+    tools:context=".feature.f_registration.RegisterActivity">
 
-    <LinearLayout
+
+    <ImageView
+        android:id="@+id/imageView3"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/fragment_container"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_second_icon" />
 
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/registerEmail"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Регистрация по Email"
-            android:textAllCaps="false"
-            app:icon="@android:drawable/ic_dialog_email" />
+    <FrameLayout
+        android:id="@+id/fragment_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
 
-        <com.google.android.gms.common.SignInButton
-            android:id="@+id/registerGoogle"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Регистрация через Google"
-            android:textAllCaps="false" />
+<!--    <LinearLayout-->
+<!--        android:id="@+id/register_btn_container"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="300dp"-->
+<!--        android:layout_margin="16dp"-->
+<!--        android:gravity="center"-->
+<!--        android:orientation="vertical"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintHeight_percent="0.5"-->
+<!--        app:layout_constraintStart_toStartOf="parent">-->
 
-        <TextView
-            android:id="@+id/registerTVIHaveAcc"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:padding="8dp"
-            android:text="У меня уже есть аккаунт" />
-    </LinearLayout>
+<!--        <Button-->
+<!--            android:id="@+id/registerEmail"-->
+<!--            android:background="@drawable/gradient"-->
+<!--            app:backgroundTint="@null"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="Регистрация по Email"-->
+<!--            android:textAllCaps="false"-->
+<!--            app:icon="@android:drawable/ic_dialog_email" />-->
+
+<!--        <com.google.android.gms.common.SignInButton-->
+<!--            android:id="@+id/registerGoogle"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="Регистрация через Google"-->
+<!--            android:textAllCaps="false" />-->
+
+<!--        <com.google.android.material.button.MaterialButton-->
+<!--            android:id="@+id/registerTVIHaveAcc"-->
+<!--            style="@style/Widget.MaterialComponents.Button.TextButton"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:gravity="center"-->
+<!--            android:padding="8dp"-->
+<!--            android:text="У меня уже есть аккаунт"-->
+<!--            android:textAllCaps="false" />-->
+<!--    </LinearLayout>-->
 
 </androidx.constraintlayout.widget.ConstraintLayout>

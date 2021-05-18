@@ -3,12 +3,23 @@
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
         <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+<!--        <item name="colorPrimary">@color/deep_purple_400</item>-->
+<!--        <item name="colorPrimaryDark">#222232</item>-->
+<!--        <item name="colorAccent">@color/deep_purple_400</item>-->
+        <item name="colorPrimary">@color/colorAccent</item>
+        <item name="colorPrimaryDark">#222232</item>
         <item name="colorAccent">@color/colorAccent</item>
-        <item name="android:windowLightStatusBar" tools:targetApi="m">true</item>
+        <item name="colorSurface">#2E2D43</item>
+        <item name="android:colorBackground">#2E2D43</item>
+        <item name="colorOnBackground">#FFFFFF</item>
         <item name="android:textColorPrimary">@color/textColorPrimary</item>
-        <item name="android:fontFamily">@font/jet_brains_mono_regular</item>
+        <item name="android:fontFamily">@font/nunito_sans</item>
+        <item name="android:colorControlActivated">@color/deep_purple_200</item>
+        <item name="colorOnSurface">#FFFFFF</item>
+<!--        <item name="android:statusBarColor">#282828</item>-->
+        <item name="android:windowLightStatusBar" tools:targetApi="m">false</item>
+
+<!--        <item name="textInputStyle">@style/Widget.App.TextInputLayout</item>-->
     </style>
 
     <style name="SelectableItemTheme">
@@ -61,6 +72,23 @@
         <item name="android:paddingEnd">@dimen/mend_table_item_desc_padding_end</item>
         <item name="android:textColor">@android:color/white</item>
         <item name="android:textSize">12sp</item>
+    </style>
+
+
+
+    <style name="Widget.App.TextInputLayout" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="boxCornerRadiusBottomEnd">10dp</item>
+        <item name="boxCornerRadiusBottomStart">10dp</item>
+        <item name="boxCornerRadiusTopEnd">10dp</item>
+        <item name="boxCornerRadiusTopStart">10dp</item>
+        <item name="android:textColorHint">#939393</item>
+<!--        <item name="hintTextColor">#D87D4A</item>-->
+        <item name="hintTextColor">@color/deep_purple_200</item>
+        <item name="startIconTint">#939393</item>
+        <item name="endIconTint">#939393</item>
+    </style>
+
+    <style name="Widget.App.EditText" parent="">
     </style>
 
 </resources>

@@ -107,10 +107,10 @@ class MendAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
         fun bind(element: Element) {
             Log.i("TAGG", "${element.atomicNumber}")
             setBack(element.elementCategory)
-//        binding.mendItem.strokeBackground = back
-//        binding.mendItem.topLeftText = element.atomicNumber.toString()
-//        binding.mendItem.centerText = element.symbol
-//        binding.mendItem.bottomCenterText = element.title
+        binding.mendItem.strokeBackground = back
+        binding.mendItem.topLeftText = element.atomicNumber.toString()
+        binding.mendItem.centerText = element.symbol
+        binding.mendItem.bottomCenterText = element.title
         }
 
         private fun setBack(category: String) {
