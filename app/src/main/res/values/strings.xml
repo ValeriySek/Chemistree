@@ -141,7 +141,7 @@
     <string name="nobleGas">Noble gas</string>
     <string name="alkaliMetal">Alkali metal</string>
     <string name="alkalineEarthMetal">Alkaline earth metal</string>
-    <string name="metalloid">metalloid</string>
+    <string name="metalloid">Metalloid</string>
     <string name="postTransitionMetal">Post-transition metal</string>
     <string name="transitionMetal">Transition metal</string>
     <string name="lanthanide">Lanthanide</string>
@@ -491,8 +491,6 @@
     <string name="acidic">Acidic</string>
     <string name="mixed">Mixed</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_statistic">stat</string>
 
 </resources>

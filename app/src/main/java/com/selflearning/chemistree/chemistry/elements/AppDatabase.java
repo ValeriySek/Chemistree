@@ -1,26 +1,17 @@
 package com.selflearning.chemistree.chemistry.elements;
 
-import android.content.Context;
-
-import androidx.annotation.NonNull;
 import androidx.room.Database;
-import androidx.room.Room;
 import androidx.room.RoomDatabase;
-import androidx.sqlite.db.SupportSQLiteDatabase;
-import androidx.work.OneTimeWorkRequest;
-import androidx.work.WorkManager;
 
-import com.selflearning.chemistree.chemistry.inorganic.acids.Acids;
+import com.selflearning.chemistree.chemistry.inorganic.acids.Acid;
 import com.selflearning.chemistree.chemistry.inorganic.acids.AcidsDao;
 import com.selflearning.chemistree.chemistry.inorganic.bases.Bases;
 import com.selflearning.chemistree.chemistry.inorganic.bases.BasesDao;
 import com.selflearning.chemistree.chemistry.inorganic.oxides.Oxides;
 import com.selflearning.chemistree.chemistry.inorganic.oxides.OxidesDao;
-import com.selflearning.chemistree.constants.AppConstants;
-import com.selflearning.chemistree.worker.DatabaseWorker;
 
 
-@Database(entities = {Acids.class, Bases.class, Oxides.class}, version = 2, exportSchema = false)
+@Database(entities = {Acid.class, Bases.class, Oxides.class, Element.class}, version = 2, exportSchema = false)
 public abstract class AppDatabase extends RoomDatabase {
     private static volatile AppDatabase INSTANCE;
 
@@ -52,7 +43,8 @@ public abstract class AppDatabase extends RoomDatabase {
 //                .build();
 //    }
 
-    //    public abstract ElementDao elementDao();
+        public abstract ElementDao elementDao();
+
     public abstract BasesDao basesDao();
 
     public abstract AcidsDao acidsDao();

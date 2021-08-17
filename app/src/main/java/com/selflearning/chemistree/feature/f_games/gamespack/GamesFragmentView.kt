@@ -26,6 +26,7 @@ class GamesFragmentView : Fragment() {
     private val rowTypeList = mutableListOf<BindableItem>()
     private lateinit var gameComponentsList: GameComponentsList
 //    private var mViewModel: GamesPackViewModel? = null
+
     private lateinit var binding: GamesPackFragmentBinding
 
     private val gamesController = GamesController {
@@ -50,19 +51,21 @@ class GamesFragmentView : Fragment() {
         gridLayoutManager = GridLayoutManager(requireContext(), 2, GridLayoutManager.VERTICAL, false)
         gameComponentsList = GameComponentsList()
 
-        rowTypeList.add(BindableItem(DividerRowType("ORGANIC"), GamesDividerController()))
-        rowTypeList.add(BindableItem(GamesRowType(gameComponentsList.gameComponentsList[0]), gamesController))
-        rowTypeList.add(BindableItem(GamesRowType(gameComponentsList.gameComponentsList[4]), gamesController))
-        rowTypeList.add(BindableItem(GamesRowType(gameComponentsList.gameComponentsList[5]), gamesController))
-        rowTypeList.add(BindableItem(GamesRowType(gameComponentsList.gameComponentsList[2]), gamesController))
-        rowTypeList.add(BindableItem(GamesRowType(gameComponentsList.gameComponentsList[2]), gamesController))
-        rowTypeList.add(BindableItem(DividerRowType("INORGANIC"), GamesDividerController()))
-        rowTypeList.add(BindableItem(GamesRowType(gameComponentsList.gameComponentsList[0]), gamesController))
-        rowTypeList.add(BindableItem(GamesRowType(gameComponentsList.gameComponentsList[1]), gamesController))
-        rowTypeList.add(BindableItem(GamesRowType(gameComponentsList.gameComponentsList[2]), gamesController))
-        rowTypeList.add(BindableItem(GamesRowType(gameComponentsList.gameComponentsList[3]), gamesController))
-        rowTypeList.add(BindableItem(GamesRowType(gameComponentsList.gameComponentsList[4]), gamesController))
-        rowTypeList.add(BindableItem(GamesRowType(gameComponentsList.gameComponentsList[5]), gamesController))
+        rowTypeList.apply {
+            add(BindableItem(DividerRowType("ORGANIC"), GamesDividerController()))
+            add(BindableItem(GamesRowType(gameComponentsList.gameComponentsList[0]), gamesController))
+            add(BindableItem(GamesRowType(gameComponentsList.gameComponentsList[4]), gamesController))
+            add(BindableItem(GamesRowType(gameComponentsList.gameComponentsList[5]), gamesController))
+            add(BindableItem(GamesRowType(gameComponentsList.gameComponentsList[2]), gamesController))
+            add(BindableItem(GamesRowType(gameComponentsList.gameComponentsList[2]), gamesController))
+            add(BindableItem(DividerRowType("INORGANIC"), GamesDividerController()))
+            add(BindableItem(GamesRowType(gameComponentsList.gameComponentsList[0]), gamesController))
+            add(BindableItem(GamesRowType(gameComponentsList.gameComponentsList[1]), gamesController))
+            add(BindableItem(GamesRowType(gameComponentsList.gameComponentsList[2]), gamesController))
+            add(BindableItem(GamesRowType(gameComponentsList.gameComponentsList[3]), gamesController))
+            add(BindableItem(GamesRowType(gameComponentsList.gameComponentsList[4]), gamesController))
+            add(BindableItem(GamesRowType(gameComponentsList.gameComponentsList[5]), gamesController))
+        }
 
         gridLayoutManager!!.spanSizeLookup = object : SpanSizeLookup() {
             override fun getSpanSize(position: Int): Int {
@@ -85,10 +88,4 @@ class GamesFragmentView : Fragment() {
     }
 
     private fun initListener() {}
-
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-//        mViewModel = ViewModelProviders.of(this).get(GamesPackViewModel::class.java)
-//        // TODO: Use the ViewModel
-    }
 }

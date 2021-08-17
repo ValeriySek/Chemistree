@@ -10,7 +10,7 @@ import androidx.room.Query
 interface BasesDao {
 
     @Query("SELECT * FROM bases")
-    fun getAllBases(): LiveData<List<Bases>>
+    fun getAll(): LiveData<List<Bases>>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insertBase(base: Bases)

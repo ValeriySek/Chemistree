@@ -7,8 +7,6 @@ import androidx.annotation.NonNull;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 
-import com.selflearning.chemistree.chemistry.elements.ElementRepository;
-
 
 import java.util.ArrayList;
 import java.util.List;

@@ -2,14 +2,14 @@ package com.selflearning.chemistree.activities
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.selflearning.chemistree.chemistry.elements.ElementRepository
+import com.selflearning.chemistree.chemistry.elements.Repository
 import com.selflearning.chemistree.databinding.ActivityElementInfoBinding
 
 class ElementInfoActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityElementInfoBinding
 
-    private lateinit var repository: ElementRepository
+    private lateinit var repository: Repository
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -18,7 +18,7 @@ class ElementInfoActivity : AppCompatActivity() {
         binding = ActivityElementInfoBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        repository = ElementRepository(application)
+//        repository = ElementRepository(application)
         var elementNum = -1
         val intent = intent
         if (intent != null) {

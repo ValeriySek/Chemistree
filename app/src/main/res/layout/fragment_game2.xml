@@ -43,7 +43,7 @@
         app:layout_constraintTop_toBottomOf="@+id/tvGame3Question" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvGame3"
+        android:id="@+id/game_2_fragment_rv"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
@@ -58,7 +58,7 @@
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/rvGame3">
+        app:layout_constraintTop_toBottomOf="@+id/game_2_fragment_rv">
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/mbGame3Skip"
@@ -151,6 +151,4 @@
         android:textColor="@color/white"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-
 </androidx.constraintlayout.widget.ConstraintLayout>

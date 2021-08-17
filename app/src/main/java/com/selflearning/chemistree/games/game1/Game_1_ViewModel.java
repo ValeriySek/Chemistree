@@ -6,8 +6,7 @@ import androidx.annotation.NonNull;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 
-import com.selflearning.chemistree.chemistry.elements.ElementRepository;
-import com.selflearning.chemistree.chemistry.inorganic.acids.Acids;
+import com.selflearning.chemistree.chemistry.inorganic.acids.Acid;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,8 +20,8 @@ class Game_1_ViewModel {
 
     private Random random = new Random();
 
-    private List<Acids> acids;
-    private List<Acids> acidsTempList;
+    private List<Acid> acids;
+    private List<Acid> acidsTempList;
     private List<String> strings;
 
     int rightAnswer;
@@ -31,7 +30,7 @@ class Game_1_ViewModel {
 
     Game_1_ViewModel(@NonNull Application application){
 
-        acids = new ElementRepository(application).getAcidsList();
+//        acids = new ElementRepository(application).getAcidsList();
 
         acidsTempList = new ArrayList<>();
         strings = new ArrayList<>();

@@ -15,7 +15,8 @@ import javax.inject.Inject
 
 class LaunchActivity : AppCompatActivity() {
 
-    @Inject lateinit var auth: FirebaseAuth
+    @Inject
+    lateinit var auth: FirebaseAuth
     private var user: User? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -26,17 +27,16 @@ class LaunchActivity : AppCompatActivity() {
 
         user = User.instance
         val handler = Handler()
-        val av = GoogleApiAvailability.getInstance().isGooglePlayServicesAvailable(applicationContext)
+        val av =
+            GoogleApiAvailability.getInstance().isGooglePlayServicesAvailable(applicationContext)
         Log.i("TAGG", "isGooglePlayServicesAvailable $av")
-        handler.postDelayed(
-                {
-                    if (av != 0 || auth.currentUser != null) {
-                        startActivity(Intent(this, MainActivity::class.java))
-                    } else {
-                        startActivity(Intent(this, RegisterActivity::class.java))
-                    }
-                    finish()
-                },
-                1500)
+        handler.postDelayed({
+            if (av != 0 || auth.currentUser != null) {
+                startActivity(Intent(this, MainActivity::class.java))
+            } else {
+                startActivity(Intent(this, RegisterActivity::class.java))
+            }
+            finish()
+        }, 1500)
     }
 }

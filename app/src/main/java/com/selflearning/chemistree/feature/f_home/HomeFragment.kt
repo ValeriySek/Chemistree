@@ -55,6 +55,18 @@ class HomeFragment : Fragment() {
 
             Log.i("TAGG", "allBases  ${it}")
         })
+//        homeViewModel.getAcids().observe(viewLifecycleOwner, {
+//
+//            Log.i("TAGG", "getAcids  ${it}")
+//        })
+        homeViewModel.getOxides().observe(viewLifecycleOwner, {
+
+            Log.i("TAGG", "getOxides  ${it}")
+        })
+//        homeViewModel.getElements().observe(viewLifecycleOwner, {
+//
+//            Log.i("TAGG", "getElements  ${it}")
+//        })
 
         var dpi = dpi()
 

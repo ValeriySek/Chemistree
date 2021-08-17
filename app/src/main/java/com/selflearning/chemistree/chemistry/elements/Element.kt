@@ -3,9 +3,9 @@ package com.selflearning.chemistree.chemistry.elements
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
-@Entity(tableName = "elements")
-class Element(
-        @field:PrimaryKey val atomicNumber: Int,
+@Entity(tableName = "element")
+data class Element(
+        @PrimaryKey val atomicNumber: Int = 0,
         val symbol: String,
         val title: String,
         val weight: Double,
@@ -18,24 +18,9 @@ class Element(
         val electronsPerShell: String,
         val phase: String
 ) {
-    constructor(atomicNumber: Int,
-                symbol: String,
-                title: String,
-                weight: Double,
-                elementCategory: String)
-            : this(
-            atomicNumber,
-            symbol,
-            title,
-            weight,
-            -1,
-            "",
-            -1,
-            "",
-            elementCategory,
-            "",
-            "",
-            "") {
 
-    }
+        override fun toString(): String {
+                return "Element(atomicNumber=$atomicNumber, "
+//                        "symbol='$symbol', title='$title', weight=$weight, group=$group, subgroup='$subgroup', period=$period, block='$block', elementCategory='$elementCategory', electronConfiguration='$electronConfiguration', electronsPerShell='$electronsPerShell', phase='$phase')\n"
+        }
 }

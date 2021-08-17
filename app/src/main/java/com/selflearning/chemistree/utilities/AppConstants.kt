@@ -1,4 +1,4 @@
-package com.selflearning.chemistree.constants
+package com.selflearning.chemistree.utilities
 
 object AppConstants {
     const val APP_PREFERENCE_NAME = "app_preference_name"
@@ -12,6 +12,7 @@ object AppConstants {
 
     const val BUNDLE_KEY_REPORT_MODEL = "report_model"
     const val BUNDLE_KEY_TYPE_OF_FRAGMENT = "fragment_type"
+    const val BUNDLE_KEY_LIST = "list"
     const val DATABASE_NAME = "chemistree-db"
     const val ELEMENT_DATA_FILENAME = "elements.json"
 }

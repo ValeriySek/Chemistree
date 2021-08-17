@@ -2,13 +2,8 @@ package com.selflearning.chemistree.games
 
 import android.os.Bundle
 import android.view.View
-import android.view.ViewGroup
-import android.widget.LinearLayout
-import android.widget.TextView
-import com.selflearning.chemistree.R
-import com.selflearning.chemistree.constants.AppConstants
+import com.selflearning.chemistree.utilities.AppConstants
 import com.selflearning.chemistree.databinding.ActivityGameScoreBinding
-import com.selflearning.chemistree.databinding.ActivityGamesBinding
 import com.selflearning.chemistree.utilities.ActivityUtilities
 
 class GameScoreActivity : BaseGameActivity() {

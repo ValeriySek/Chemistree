@@ -10,11 +10,13 @@ import com.selflearning.chemistree.data.WinData
 import java.util.*
 
 class FirestoreUtilities {
+
     private val db: FirebaseFirestore
     private val user: User?
     private lateinit var reference: DocumentReference
     private val mutableLiveData = MutableLiveData<String>()
     private val mutableLiveData1 = MutableLiveData<List<Long>>()
+
     fun saveScore(gameName: String?, score: Long) {
         val refer = reference?.collection("games")?.document(gameName!!)
                 .collection("scores")

@@ -19,7 +19,6 @@ import android.os.CountDownTimer;
 import android.os.Handler;
 import android.os.VibrationEffect;
 import android.os.Vibrator;
-import android.text.Html;
 import android.util.Log;
 import android.view.Display;
 import android.view.Gravity;
@@ -33,13 +32,10 @@ import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
-import com.selflearning.chemistree.chemistry.inorganic.acids.Acids;
-import com.selflearning.chemistree.constants.AppConstants;
-import com.selflearning.chemistree.dBHelper.DatabaseAccess;
+import com.selflearning.chemistree.chemistry.inorganic.acids.Acid;
+import com.selflearning.chemistree.utilities.AppConstants;
 import com.selflearning.chemistree.R;
 import com.selflearning.chemistree.models.ReportModels;
-import com.selflearning.chemistree.utilities.ActivityUtilities;
-import com.selflearning.chemistree.utilities.MyDialogFragment;
 import com.selflearning.chemistree.utilities.SoundUtilities;
 import com.selflearning.chemistree.utilities.SoundsBox;
 
@@ -65,7 +61,7 @@ public class Game_1_Activity extends AppCompatActivity {
     private Interpolator interpolator;
 
     private List<SoundUtilities> soundsList;
-    private List<Acids> acidsList;
+    private List<Acid> acidsList;
     private ArrayList<ReportModels> reportModels = new ArrayList<>();
 
     private CountDownTimer countDownTimer;
@@ -276,7 +272,7 @@ public class Game_1_Activity extends AppCompatActivity {
         textView3.setText(String.format("%s", score));
     }
 
-    private void pickForReport(Acids acid){
+    private void pickForReport(Acid acid){
 //        correctName = acid.getAcidFormulaForTv();
 //        correctDesc = acid.getAcidRuName();
         chosenName = " ";

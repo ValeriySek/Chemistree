@@ -1,64 +1,68 @@
 package com.selflearning.chemistree.games
 
 import android.os.Bundle
-import android.os.Handler
 import android.util.Log
-import android.view.View
-import android.widget.TextView
-import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.content.ContextCompat
-import androidx.lifecycle.MutableLiveData
-import com.google.android.material.button.MaterialButton
-import com.selflearning.chemistree.R
-import com.selflearning.chemistree.chemistry.elements.ElementRepository
-import com.selflearning.chemistree.constants.AppConstants
-import com.selflearning.chemistree.databinding.ActivityPostGameBinding
+import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.lifecycleScope
+import com.selflearning.chemistree.ChemistreeApplication
+import com.selflearning.chemistree.utilities.AppConstants
 import com.selflearning.chemistree.databinding.ActivityPreGameBinding
+import com.selflearning.chemistree.di.view_model.di.ViewModelFactory
+import com.selflearning.chemistree.games.game4.Game4ViewModel
+import com.selflearning.chemistree.games.models.PreGameModel
 import com.selflearning.chemistree.utilities.ActivityUtilities
+import kotlinx.coroutines.flow.collect
+import javax.inject.Inject
 
 class PreGameActivity : BaseGameActivity() {
-    private var repository: ElementRepository? = null
-    private var handler: Handler? = null
-    private var isButtonEnabled = false
+
+    @Inject lateinit var viewModelFactory: ViewModelFactory
+    private lateinit var viewModel: PreGameViewModel
+
+    private lateinit var list: PreGameModel
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        (application as ChemistreeApplication).appComponentFactory.inject(this)
+
         val binding = ActivityPreGameBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        repository = ElementRepository(application)
-        handler = Handler()
-        MyLiveData().booleanMutableLiveData.observe(this, { aBoolean ->
-            binding.preGameButton.isEnabled = aBoolean!!
-        })
-        val intent = intent
+
+        viewModel = ViewModelProvider(this, viewModelFactory)[PreGameViewModel::class.java]
+
         val type = intent.getIntExtra(AppConstants.BUNDLE_KEY_TYPE_OF_FRAGMENT, -1)
+
+
+
+
+
         val components = GameComponentsList()
         val gameComponents = components.gameComponentsList[type]
         val drawable = ContextCompat.getDrawable(this, gameComponents.back)
+
         binding.preGameLayout.background = drawable
         binding.preGameText.text = gameComponents.nameOfGame
-        binding.preGameButton.setOnClickListener {
-            ActivityUtilities.invokeNewActivity(this@PreGameActivity, GameActivity::class.java,
-                    type, true)
-        }
-    }
 
-    internal inner class MyLiveData {
-        var booleanMutableLiveData = MutableLiveData<Boolean>()
-        private fun waitH() {
-            Log.i("Tag", "wait")
-            handler!!.postDelayed({
-//                isButtonEnabled = repository!!.allElements.size != 0
-                booleanMutableLiveData.value = isButtonEnabled
-                if (!isButtonEnabled) {
-                    waitH()
+        viewModel.loadElements()
+        lifecycleScope.launchWhenStarted {
+            viewModel.uiState.collect {
+                when(it) {
+                    is Game4ViewModel.ViewState.Loading -> {
+                        binding.preGameButton.isEnabled = false
+                    }
+                    is Game4ViewModel.ViewState.Success -> {
+                        Log.i("TAGG", "PreGameActivity  list   ${it.list}")
+                        binding.preGameButton.isEnabled = true
+                    }
                 }
-            }, 100)
-        }
-
-        init {
-            if (!isButtonEnabled) {
-                waitH()
             }
+        }
+        binding.preGameButton.setOnClickListener {
+            ActivityUtilities.invokeNewActivity(
+                this@PreGameActivity,
+                GameActivity::class.java,
+                    type, true)
         }
     }
 }

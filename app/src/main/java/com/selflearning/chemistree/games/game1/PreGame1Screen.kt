@@ -37,23 +37,5 @@ class PreGame1Screen : AppCompatActivity() {
         val d = this.resources.getDrawable(R.drawable.ic_benzol)
         binding.imageView2.setImageDrawable(d)
 
-//        Picasso picasso = new Picasso.Builder(context).listener(new Picasso.Listener() {
-//            @Override
-//            public void onImageLoadFailed(Picasso picasso, Uri uri, Exception exception) {
-//
-//            }
-//        }).build();
-//
-//            picasso.load(R.drawable.ic_benzol)
-//                    .error(R.drawable.mendeleev)
-//                    .into(imageView);
-
-//        try {
-//            InputStream is = getAssets().open("img/ic_benzol.xml");
-//            Drawable d = Drawable.createFromStream(is, null);
-//            imageView.setImageDrawable(d);
-//        } catch (IOException e) {
-//            return;
-//        }
     }
 }

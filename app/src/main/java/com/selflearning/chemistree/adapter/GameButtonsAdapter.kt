@@ -46,7 +46,7 @@ class GameButtonsAdapter(viewType: Int) : RecyclerView.Adapter<RecyclerView.View
         return list.size
     }
 
-    fun getList(): List<String>? {
+    fun getList(): List<String> {
         return list
     }
 
@@ -55,7 +55,7 @@ class GameButtonsAdapter(viewType: Int) : RecyclerView.Adapter<RecyclerView.View
         notifyDataSetChanged()
     }
 
-    fun getBooleans(): List<Boolean>? {
+    fun getBooleans(): List<Boolean> {
         return booleans
     }
 

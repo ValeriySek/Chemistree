@@ -6,7 +6,6 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.Observer;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -21,9 +20,6 @@ import com.selflearning.chemistree.R;
 import com.selflearning.chemistree.adapter.GameButtonsAdapter;
 import com.selflearning.chemistree.games.BaseGameFragment;
 import com.selflearning.chemistree.games.GameInterface;
-import com.selflearning.chemistree.listeners.OnItemClickListener;
-
-import java.util.List;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -57,7 +53,7 @@ public class GameFragment3 extends BaseGameFragment {
 
         game3ViewModel = new Game_3_ViewModel(getActivity().getApplication());
 
-        recyclerView = view.findViewById(R.id.rvGame3);
+        recyclerView = view.findViewById(R.id.game_2_fragment_rv);
         tvQuestion = view.findViewById(R.id.tvGame3Question);
         tvSkip = view.findViewById(R.id.tvGame3Skip);
         tvSubmit = view.findViewById(R.id.tvGame3Submit);

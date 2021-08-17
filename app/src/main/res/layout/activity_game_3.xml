@@ -5,8 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:paddingStart="16dp"
-    android:paddingEnd="16dp"
-    tools:context=".games.game3.Game_3_Activity">
+    android:paddingEnd="16dp">
 
     <TextView
         android:id="@+id/tvGame3Question"
@@ -31,7 +30,7 @@
         app:layout_constraintTop_toBottomOf="@+id/tvGame3Question" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvGame3"
+        android:id="@+id/game_2_fragment_rv"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
@@ -46,7 +45,7 @@
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/rvGame3">
+        app:layout_constraintTop_toBottomOf="@+id/game_2_fragment_rv">
 
         <TextView
             android:id="@+id/tvGame3Skip"

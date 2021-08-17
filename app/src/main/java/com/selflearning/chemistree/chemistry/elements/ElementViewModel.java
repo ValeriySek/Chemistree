@@ -13,15 +13,15 @@ import java.util.List;
 
 public class ElementViewModel extends AndroidViewModel {
 
-    private ElementRepository repository;
+    private Repository repository;
     private List<Element> mAllElements;
     private List<Bases> bases;
 
     public ElementViewModel(@NonNull Application application) {
         super(application);
-        repository = new ElementRepository(application);
+//        repository = new ElementRepository(application);
 //        mAllElements = repository.getAllElements();
-        bases = repository.getBasesList();
+//        bases = repository.getBasesList();
     }
 
     public List<Bases> getBases() {

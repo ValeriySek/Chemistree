@@ -1,7 +1,7 @@
 package com.selflearning.chemistree.games.game4
 
 import android.content.Context
-import com.selflearning.chemistree.chemistry.inorganic.acids.Acids
+import com.selflearning.chemistree.chemistry.inorganic.acids.Acid
 import selflearning.chemistree.domain.chemistry.elements.Element
 import java.util.*
 
@@ -10,7 +10,7 @@ const val COUNT_OF_BUTTONS = 8
 class GameProvider internal constructor(context: Context?) {
     private val listForRV: MutableList<String?> = ArrayList()
     private val isButtonsEnableList: MutableList<Boolean> = ArrayList()
-    private val acidsList: List<Acids>? = null
+    private val acidsList: List<Acid>? = null
     private val elementList: List<Element>? = null
     val question: String? = null
 

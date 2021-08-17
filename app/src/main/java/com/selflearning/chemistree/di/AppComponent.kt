@@ -10,6 +10,8 @@ import com.selflearning.chemistree.feature.f_home.HomeFragment
 import com.selflearning.chemistree.feature.f_profile.ProfileFragment
 import com.selflearning.chemistree.feature.f_registration.RegisterActivity
 import com.selflearning.chemistree.feature.f_registration.RegisterFragment
+import com.selflearning.chemistree.games.PreGameActivity
+import com.selflearning.chemistree.games.game4.GameFragment4
 import dagger.Component
 import javax.inject.Singleton
 
@@ -26,7 +28,10 @@ interface AppComponent {
     fun inject(activity: RegisterActivity)
     fun inject(activity: LaunchActivity)
     fun inject(activity: MainActivity)
+    fun inject(activity: PreGameActivity)
+
     fun inject(fragment: RegisterFragment)
     fun inject(fragment: ProfileFragment)
     fun inject(fragment: HomeFragment)
+    fun inject(fragment: GameFragment4)
 }
