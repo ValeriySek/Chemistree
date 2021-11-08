@@ -32,7 +32,7 @@ import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
-import com.selflearning.chemistree.chemistry.inorganic.acids.Acid;
+import com.selflearning.chemistree.domain.chemistry.inorganic.acids.Acid;
 import com.selflearning.chemistree.utilities.AppConstants;
 import com.selflearning.chemistree.R;
 import com.selflearning.chemistree.models.ReportModels;
@@ -114,7 +114,7 @@ public class Game_1_Activity extends AppCompatActivity {
         acidsListLength = acidsList.size();
 
         soundsBox = new SoundsBox(getBaseContext());
-        soundsList = soundsBox.getmSoundsList();
+        soundsList = soundsBox.getSoundsList();
 
         vibrator = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
 

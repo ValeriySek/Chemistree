@@ -7,7 +7,7 @@ import androidx.annotation.NonNull;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 
-import com.selflearning.chemistree.chemistry.inorganic.acids.Acid;
+import com.selflearning.chemistree.domain.chemistry.inorganic.acids.Acid;
 
 import java.util.ArrayList;
 import java.util.List;

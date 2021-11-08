@@ -5,7 +5,7 @@
     android:id="@+id/preGameLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".games.PreGameActivity">
+    tools:context=".games.before_game.PreGameActivity">
 
     <ScrollView
         android:layout_width="0dp"

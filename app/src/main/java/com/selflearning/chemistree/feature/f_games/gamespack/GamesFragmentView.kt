@@ -15,7 +15,7 @@ import com.selflearning.chemistree.databinding.GamesPackFragmentBinding
 import com.selflearning.chemistree.feature.f_games.gamespack.controller.GamesController
 import com.selflearning.chemistree.feature.f_games.gamespack.controller.GamesDividerController
 import com.selflearning.chemistree.games.GameComponentsList
-import com.selflearning.chemistree.games.PreGameActivity
+import com.selflearning.chemistree.games.before_game.PreGameActivity
 import com.selflearning.chemistree.utilities.ActivityUtilities
 
 class GamesFragmentView : Fragment() {

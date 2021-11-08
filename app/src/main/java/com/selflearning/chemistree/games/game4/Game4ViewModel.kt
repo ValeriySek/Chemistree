@@ -1,13 +1,12 @@
 package com.selflearning.chemistree.games.game4
 
-import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.selflearning.chemistree.chemistry.elements.Element
-import com.selflearning.chemistree.chemistry.elements.Repository
-import com.selflearning.chemistree.chemistry.inorganic.acids.Acid
+import com.selflearning.chemistree.domain.chemistry.elements.Element
+import com.selflearning.chemistree.domain.chemistry.elements.Repository
+import com.selflearning.chemistree.domain.chemistry.inorganic.acids.Acid
 import com.selflearning.chemistree.games.FormulaTransformations
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.*

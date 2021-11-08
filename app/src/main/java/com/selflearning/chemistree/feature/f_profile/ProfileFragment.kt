@@ -51,11 +51,11 @@ class ProfileFragment : Fragment() {
         binding.tvUserName.text = name
         binding.tvUserEmail.text = email
 
-        binding.civUser.setOnClickListener {
-            val intent = Intent(Intent.ACTION_PICK)
-            intent.type = "image/*"
-            startActivityForResult(intent, RESULT_LOAD)
-        }
+//        binding.civUser.setOnClickListener {
+//            val intent = Intent(Intent.ACTION_PICK)
+//            intent.type = "image/*"
+//            startActivityForResult(intent, RESULT_LOAD)
+//        }
         binding.profileSignOutBtn.setOnClickListener {
             signOut()
         }
@@ -80,7 +80,7 @@ class ProfileFragment : Fragment() {
                 }
                 val bitmap = MediaStore.Images.Media.getBitmap(requireActivity().contentResolver, imageUrl)
 
-                Picasso.get().load(imageUrl).fit().centerCrop().into(binding.civUser)
+//                Picasso.get().load(imageUrl).fit().centerCrop().into(binding.civUser)
             } catch (e: FileNotFoundException) {
                 e.printStackTrace()
             } catch (e: IOException) {

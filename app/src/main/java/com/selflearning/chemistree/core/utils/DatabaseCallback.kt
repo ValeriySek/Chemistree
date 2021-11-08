@@ -1,19 +1,14 @@
 package com.selflearning.chemistree.core.utils
 
 import android.content.Context
-import android.content.res.AssetManager
-import android.content.res.Resources
 import android.util.Log
-import androidx.room.Room
 import androidx.room.RoomDatabase
 import androidx.sqlite.db.SupportSQLiteDatabase
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
-import com.selflearning.chemistree.R
-import com.selflearning.chemistree.chemistry.elements.AppDatabase
-import com.selflearning.chemistree.chemistry.inorganic.bases.Bases
-import com.selflearning.chemistree.chemistry.inorganic.bases.BasesDao
-import kotlinx.coroutines.CoroutineScope
+import com.selflearning.chemistree.domain.chemistry.elements.AppDatabase
+import com.selflearning.chemistree.domain.chemistry.inorganic.bases.Bases
+import com.selflearning.chemistree.domain.chemistry.inorganic.bases.BasesDao
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 import javax.inject.Inject

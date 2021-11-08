@@ -11,7 +11,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.DialogFragment
 import com.selflearning.chemistree.games.OnDialogFragmentShow
-import com.selflearning.chemistree.games.PreGameActivity
+import com.selflearning.chemistree.games.before_game.PreGameActivity
 import com.selflearning.chemistree.utilities.ActivityUtilities
 import java.util.*
 

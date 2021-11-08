@@ -26,7 +26,6 @@ import com.selflearning.chemistree.games.GameInterface;
  */
 public class GameFragment3 extends BaseGameFragment {
 
-    private Activity activity;
     private Context context;
 
     private RecyclerView recyclerView;
