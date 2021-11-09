@@ -12,7 +12,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.DialogFragment
 import com.selflearning.chemistree.games.OnDialogFragmentShow
 import com.selflearning.chemistree.games.before_game.PreGameActivity
-import com.selflearning.chemistree.utilities.ActivityUtilities
+import com.selflearning.chemistree.utils.ActivityUtilities
 import java.util.*
 
 class MenuDialogFragment(private val activity: Activity, private val type: Int) : DialogFragment(), View.OnClickListener {

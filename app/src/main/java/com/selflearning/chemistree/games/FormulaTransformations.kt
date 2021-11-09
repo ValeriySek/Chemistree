@@ -1,7 +1,6 @@
 package com.selflearning.chemistree.games
 
-import com.selflearning.chemistree.utilities.extentions.allLetters
-import com.selflearning.chemistree.utilities.extentions.notDigit
+import com.selflearning.chemistree.utils.extentions.allLetters
 import java.util.ArrayList
 
 object FormulaTransformations {
@@ -34,10 +33,11 @@ object FormulaTransformations {
     }
 
     fun List<String>.numberOfElements(): Int {
-        return this.filter {
-            it.allLetters()
-        }.size
+        return getElementsFromFormula().size
     }
+
+
+    fun List<String>.getElementsFromFormula(): List<String> = filter { it.allLetters() }
 
     fun List<String>.lastElementIsOxygen(): Boolean {
         return if(!last().allLetters()) {

@@ -5,13 +5,10 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
-import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.fragment.app.Fragment
-import com.selflearning.chemistree.R
 import com.selflearning.chemistree.databinding.FragmentGame1Binding
 import com.selflearning.chemistree.games.GameScoreActivity
-import com.selflearning.chemistree.utilities.ActivityUtilities
+import com.selflearning.chemistree.utils.ActivityUtilities
 
 class GameFragment5 : Fragment() {
 

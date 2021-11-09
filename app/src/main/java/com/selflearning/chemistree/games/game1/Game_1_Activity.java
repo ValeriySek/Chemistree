@@ -33,11 +33,11 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.selflearning.chemistree.domain.chemistry.inorganic.acids.Acid;
-import com.selflearning.chemistree.utilities.AppConstants;
+import com.selflearning.chemistree.utils.AppConstants;
 import com.selflearning.chemistree.R;
 import com.selflearning.chemistree.models.ReportModels;
-import com.selflearning.chemistree.utilities.SoundUtilities;
-import com.selflearning.chemistree.utilities.SoundsBox;
+import com.selflearning.chemistree.utils.SoundUtilities;
+import com.selflearning.chemistree.utils.SoundsBox;
 
 import java.util.ArrayList;
 import java.util.List;

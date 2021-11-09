@@ -1,4 +1,4 @@
-package com.selflearning.chemistree.utilities.extentions
+package com.selflearning.chemistree.utils.extentions
 
 import android.view.View
 import kotlinx.coroutines.*

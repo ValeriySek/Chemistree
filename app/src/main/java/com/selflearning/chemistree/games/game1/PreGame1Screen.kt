@@ -1,14 +1,10 @@
 package com.selflearning.chemistree.games.game1
 
-import android.app.Activity
-import android.content.Context
 import android.os.Bundle
-import android.widget.Button
-import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import com.selflearning.chemistree.R
 import com.selflearning.chemistree.databinding.ActivityPreGame1ScreenBinding
-import com.selflearning.chemistree.utilities.ActivityUtilities
+import com.selflearning.chemistree.utils.ActivityUtilities
 
 class PreGame1Screen : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

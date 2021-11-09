@@ -6,14 +6,14 @@ import androidx.core.content.ContextCompat
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
 import com.selflearning.chemistree.ChemistreeApplication
-import com.selflearning.chemistree.utilities.AppConstants
+import com.selflearning.chemistree.utils.AppConstants
 import com.selflearning.chemistree.databinding.ActivityPreGameBinding
 import com.selflearning.chemistree.di.view_model.di.ViewModelFactory
 import com.selflearning.chemistree.games.BaseGameActivity
 import com.selflearning.chemistree.games.GameActivity
 import com.selflearning.chemistree.games.GameComponentsList
 import com.selflearning.chemistree.games.models.PreGameModel
-import com.selflearning.chemistree.utilities.ActivityUtilities
+import com.selflearning.chemistree.utils.ActivityUtilities
 import kotlinx.coroutines.flow.collect
 import javax.inject.Inject
 
