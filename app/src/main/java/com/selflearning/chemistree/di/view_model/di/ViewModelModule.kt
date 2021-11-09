@@ -1,17 +1,16 @@
 package com.selflearning.chemistree.di.view_model.di
 
 import androidx.lifecycle.ViewModel
-import com.selflearning.chemistree.chemistry.elements.AppDatabase
-import com.selflearning.chemistree.chemistry.elements.Repository
+import com.selflearning.chemistree.domain.chemistry.elements.AppDatabase
+import com.selflearning.chemistree.domain.chemistry.elements.Repository
 import com.selflearning.chemistree.feature.f_home.HomeViewModel
 import com.selflearning.chemistree.feature.f_profile.ProfileViewModel
 import com.selflearning.chemistree.feature.f_profile.UnregisterUser
 import com.selflearning.chemistree.feature.f_registration.RegisterUser
 import com.selflearning.chemistree.feature.f_registration.RegisterViewModel
-import com.selflearning.chemistree.games.PreGameViewModel
+import com.selflearning.chemistree.games.before_game.PreGameViewModel
 import com.selflearning.chemistree.games.game.Game0ViewModel
 import com.selflearning.chemistree.games.game4.Game4ViewModel
-import com.selflearning.chemistree.games.game4.GameProvider
 import dagger.Module
 import dagger.Provides
 import dagger.multibindings.IntoMap

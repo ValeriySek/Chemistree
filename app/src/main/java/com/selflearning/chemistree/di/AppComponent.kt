@@ -10,7 +10,7 @@ import com.selflearning.chemistree.feature.f_home.HomeFragment
 import com.selflearning.chemistree.feature.f_profile.ProfileFragment
 import com.selflearning.chemistree.feature.f_registration.RegisterActivity
 import com.selflearning.chemistree.feature.f_registration.RegisterFragment
-import com.selflearning.chemistree.games.PreGameActivity
+import com.selflearning.chemistree.games.before_game.PreGameActivity
 import com.selflearning.chemistree.games.game4.GameFragment4
 import dagger.Component
 import javax.inject.Singleton

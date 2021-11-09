@@ -2,7 +2,7 @@ package com.selflearning.chemistree.activities
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.selflearning.chemistree.chemistry.elements.Repository
+import com.selflearning.chemistree.domain.chemistry.elements.Repository
 import com.selflearning.chemistree.databinding.ActivityElementInfoBinding
 
 class ElementInfoActivity : AppCompatActivity() {

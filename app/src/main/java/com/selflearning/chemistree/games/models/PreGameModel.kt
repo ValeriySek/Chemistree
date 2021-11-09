@@ -4,13 +4,13 @@ import android.os.Parcelable
 import kotlinx.android.parcel.Parcelize
 
 @Parcelize
-class PreGameModel(
+data class PreGameModel(
     val gameQuestions: List<GameQuestion>,
     val auxiliaryList: List<String>
 ) : Parcelable
 
 @Parcelize
-class GameQuestion(
+data class GameQuestion(
     val question: String,
     val answer: String
 ) : Parcelable

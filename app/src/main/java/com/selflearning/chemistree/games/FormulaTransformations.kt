@@ -1,5 +1,7 @@
 package com.selflearning.chemistree.games
 
+import com.selflearning.chemistree.utilities.extentions.allLetters
+import com.selflearning.chemistree.utilities.extentions.notDigit
 import java.util.ArrayList
 
 object FormulaTransformations {
@@ -22,7 +24,8 @@ object FormulaTransformations {
                     strings.add(name)
                 }
                 if (i < length && (formula[i] == '(' || formula[i] == ')')) {
-                    val name = formula.substring(i, ++i)
+                    val start = i++
+                    val name = formula.substring(start, i)
                     strings.add(name)
                 }
             }
@@ -30,29 +33,19 @@ object FormulaTransformations {
         return strings
     }
 
-//    fun disassembleFormula(formula: String): List<String> {
-//        val length = formula.length
-//        val strings: MutableList<String> = ArrayList()
-////        var i = 0
-//        for (i in 0 until length) {
-//            if (Character.isLetter(formula[i])) {
-//                val iStart = i + 1
-//                if (i < length && Character.isLowerCase(formula[i])) continue
-//                val name = formula.substring(iStart, i)
-//                strings.add(name)
-//            } else {
-//                val iStart = i
-//                if (Character.isDigit(formula[i])) {
-//                    if (i < length && Character.isDigit(formula[i])) continue
-//                    val name = formula.substring(iStart, i)
-//                    strings.add(name)
-//                }
-//                if (i < length && (formula[i] == '(' || formula[i] == ')')) {
-//                    val name = formula.substring(i, i + 1)
-//                    strings.add(name)
-//                }
-//            }
-//        }
-//        return strings
-//    }
+    fun List<String>.numberOfElements(): Int {
+        return this.filter {
+            it.allLetters()
+        }.size
+    }
+
+    fun List<String>.lastElementIsOxygen(): Boolean {
+        return if(!last().allLetters()) {
+            slice(0 until lastIndex).lastElementIsOxygen()
+        } else {
+            last() == "O"
+        }
+    }
+
+    fun List<String>.isOxide(): Boolean = numberOfElements() == 2 && lastElementIsOxygen()
 }

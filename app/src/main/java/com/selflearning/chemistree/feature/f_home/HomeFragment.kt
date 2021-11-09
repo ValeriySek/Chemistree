@@ -11,14 +11,12 @@ import android.widget.ImageView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.gms.ads.AdView
 import com.google.firebase.auth.FirebaseAuth
 import com.selflearning.chemistree.ChemistreeApplication
 import com.selflearning.chemistree.activities.MainActivity
-import com.selflearning.chemistree.chemistry.elements.AppDatabase
-import com.selflearning.chemistree.chemistry.inorganic.bases.BasesDao
+import com.selflearning.chemistree.domain.chemistry.elements.AppDatabase
 import com.selflearning.chemistree.data.User.Companion.instance
 import com.selflearning.chemistree.databinding.FragmentHomeBinding
 import com.selflearning.chemistree.di.view_model.di.ViewModelFactory

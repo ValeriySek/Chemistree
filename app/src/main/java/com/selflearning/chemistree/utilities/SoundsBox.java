@@ -75,7 +75,7 @@ public class SoundsBox {
         mSoundPool.release();
     }
 
-    public List<SoundUtilities> getmSoundsList() {
+    public List<SoundUtilities> getSoundsList() {
         return soundsList;
     }
 }

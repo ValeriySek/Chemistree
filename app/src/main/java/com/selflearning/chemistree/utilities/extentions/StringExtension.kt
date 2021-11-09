@@ -25,3 +25,7 @@ fun String.getCationName(): String {
         this.replace("[а-яА-Я]*\\s".toRegex(), "")
     }
 }
+
+fun String.notDigit(): Boolean = toIntOrNull() == null
+
+fun String.allLetters(): Boolean = toCharArray().all { it.isLetter() }

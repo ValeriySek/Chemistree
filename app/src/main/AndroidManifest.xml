@@ -16,7 +16,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".games.game.Game0Activity"></activity>
-        <activity android:name=".games.PostGameActivity" />
+        <activity android:name=".games.after_game.PostGameActivity" />
         <activity android:name=".activities.ElementInfoActivity" />
         <activity android:name=".activities.BannerActivity" />
         <activity android:name=".activities.trening.TrainingLoginActivity" />
@@ -41,12 +41,12 @@
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
         <activity android:name=".games.GameScoreActivity" />
-        <activity android:name=".games.PreGameActivity" />
+        <activity android:name=".games.before_game.PreGameActivity" />
         <activity
             android:name=".games.GameActivity"
             android:screenOrientation="portrait" />
         <activity android:name=".games.BaseGameActivity" />
-        <activity android:name=".login.LoginActivity0" />
+        <activity android:name=".feature.login.LoginActivity0" />
         <activity android:name=".games.game1.PreGame1Screen" />
         <activity android:name=".games.game1.PostGame_1_Screen" />
         <activity android:name=".games.game1.Game_1_Activity" />

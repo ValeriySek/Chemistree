@@ -30,12 +30,12 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
-            <com.selflearning.chemistree.views.MyLineChart
-                android:id="@+id/lineChart"
-                android:layout_width="wrap_content"
-                android:layout_height="150dp"
-                android:layout_weight="5"
-                android:padding="8dp" />
+<!--            <com.selflearning.chemistree.views.MyLineChart-->
+<!--                android:id="@+id/lineChart"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="150dp"-->
+<!--                android:layout_weight="5"-->
+<!--                android:padding="8dp" />-->
 
 
         </LinearLayout>

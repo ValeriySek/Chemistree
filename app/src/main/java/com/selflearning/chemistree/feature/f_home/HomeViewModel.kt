@@ -3,11 +3,9 @@ package com.selflearning.chemistree.feature.f_home
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.selflearning.chemistree.chemistry.elements.AppDatabase
-import com.selflearning.chemistree.chemistry.elements.Element
-import com.selflearning.chemistree.chemistry.inorganic.acids.Acid
-import com.selflearning.chemistree.chemistry.inorganic.bases.Bases
-import com.selflearning.chemistree.chemistry.inorganic.oxides.Oxides
+import com.selflearning.chemistree.domain.chemistry.elements.AppDatabase
+import com.selflearning.chemistree.domain.chemistry.inorganic.bases.Bases
+import com.selflearning.chemistree.domain.chemistry.inorganic.oxides.Oxides
 import javax.inject.Inject
 
 class HomeViewModel @Inject constructor(

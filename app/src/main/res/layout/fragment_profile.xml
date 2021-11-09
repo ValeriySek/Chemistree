@@ -18,22 +18,21 @@
             android:layout_height="250dp"
             android:background="@color/cAirBlue">
 
-            <de.hdodenhof.circleimageview.CircleImageView
-                android:id="@+id/civUser"
-                android:layout_width="96dp"
-                android:layout_height="96dp"
-                android:layout_centerInParent="true"
-                android:layout_gravity="center"
-                android:src="@drawable/image1"
-                app:civ_border_color="@color/cAfricanViolet"
-                app:civ_border_width="2dp" />
+<!--            <de.hdodenhof.circleimageview.CircleImageView-->
+<!--                android:id="@+id/civUser"-->
+<!--                android:layout_width="96dp"-->
+<!--                android:layout_height="96dp"-->
+<!--                android:layout_centerInParent="true"-->
+<!--                android:layout_gravity="center"-->
+<!--                android:src="@drawable/image1"-->
+<!--                app:civ_border_color="@color/cAfricanViolet"-->
+<!--                app:civ_border_width="2dp" />-->
 
             <TextView
                 android:id="@+id/tvUserName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:layout_below="@id/civUser"
                 android:padding="16dp"
                 android:textColor="@android:color/background_light"
                 android:textSize="24sp"
