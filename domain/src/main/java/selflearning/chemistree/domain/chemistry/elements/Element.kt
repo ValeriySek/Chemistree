@@ -14,7 +14,7 @@ class Element(
         val electronConfiguration: String,
         val electronsPerShell: String,
         val phase: String
-) {
+): Data() {
     constructor(atomicNumber: Int,
                 symbol: String,
                 title: String,
