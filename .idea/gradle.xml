@@ -19,10 +19,10 @@
             <option value="$PROJECT_DIR$/i-room" />
             <option value="$PROJECT_DIR$/libraries" />
             <option value="$PROJECT_DIR$/libraries/actions" />
+            <option value="$PROJECT_DIR$/table-app" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />
-        <option name="useQualifiedModuleNames" value="true" />
       </GradleProjectSettings>
     </option>
   </component>
