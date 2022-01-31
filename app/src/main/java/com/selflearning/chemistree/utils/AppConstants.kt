@@ -1,4 +1,4 @@
-package com.selflearning.chemistree.utilities
+package com.selflearning.chemistree.utils
 
 object AppConstants {
     const val APP_PREFERENCE_NAME = "app_preference_name"

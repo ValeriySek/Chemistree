@@ -1,5 +1,6 @@
 package com.selflearning.chemistree.games
 
+import com.selflearning.chemistree.games.FormulaTransformations.getElementsFromFormula
 import com.selflearning.chemistree.games.FormulaTransformations.isOxide
 import com.selflearning.chemistree.games.FormulaTransformations.lastElementIsOxygen
 import com.selflearning.chemistree.games.FormulaTransformations.numberOfElements
@@ -73,5 +74,17 @@ class FormulaTransformationsTest{
     fun `isOxide H2SO4 return false`() {
         val result = FormulaTransformations.disassembleFormula("H2SO4").isOxide()
         assertEquals(result, false)
+    }
+
+    @Test
+    fun `getElementsFromFormula HCl to H, Cl`() {
+        val result = FormulaTransformations.disassembleFormula("HCl").getElementsFromFormula()
+        assertEquals(result, listOf("H", "Cl"))
+    }
+
+    @Test
+    fun `getElementsFromFormula Al2(SO4)3 to Al, S, O`() {
+        val result = FormulaTransformations.disassembleFormula("Al2(SO4)3").getElementsFromFormula()
+        assertEquals(result, listOf("Al", "S", "O"))
     }
 }

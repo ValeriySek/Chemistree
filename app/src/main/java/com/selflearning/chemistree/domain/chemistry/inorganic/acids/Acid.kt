@@ -4,7 +4,7 @@ import android.os.Parcelable
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 import com.selflearning.chemistree.domain.chemistry.inorganic.Inorganic
-import com.selflearning.chemistree.utilities.EMPTY_STRING
+import com.selflearning.chemistree.utils.EMPTY_STRING
 import kotlinx.android.parcel.Parcelize
 
 @Entity(tableName = "acids")

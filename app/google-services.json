@@ -23,6 +23,22 @@
           }
         },
         {
+          "client_id": "52476942019-r8h4ggl2ruo8rckfk47ejs7kaj240pp1.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.selflearning.chemistree",
+            "certificate_hash": "900136431dcb46c7177e07bbb3efbd6fa48fd18f"
+          }
+        },
+        {
+          "client_id": "52476942019-s0hfd984v64cabnlt7i1vtkdm5o86q93.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.selflearning.chemistree",
+            "certificate_hash": "0bd18c092b102e151de423b531f9a5ee2cf8d2a3"
+          }
+        },
+        {
           "client_id": "52476942019-adeos5ohg3r0e4ot2r7d21bg3293nn9c.apps.googleusercontent.com",
           "client_type": 3
         }
@@ -41,7 +57,8 @@
             }
           ]
         }
-      }
+      },
+      "admob_app_id": "ca-app-pub-6484527932538223~1621561795"
     }
   ],
   "configuration_version": "1"

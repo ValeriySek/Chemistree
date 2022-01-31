@@ -1,4 +1,4 @@
-package com.selflearning.chemistree.utilities
+package com.selflearning.chemistree.utils
 
 import android.app.Activity
 import android.content.Intent

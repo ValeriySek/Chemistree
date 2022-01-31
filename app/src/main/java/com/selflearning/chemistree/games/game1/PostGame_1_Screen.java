@@ -14,7 +14,7 @@ import android.widget.TextView;
 
 import com.selflearning.chemistree.R;
 import com.selflearning.chemistree.adapter.PostGameReviewAdapter;
-import com.selflearning.chemistree.utilities.AppConstants;
+import com.selflearning.chemistree.utils.AppConstants;
 import com.selflearning.chemistree.models.ReportModels;
 
 import java.util.ArrayList;

@@ -1,19 +1,13 @@
 package com.selflearning.chemistree.games.after_game;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.content.ContextCompat;
-import androidx.lifecycle.Observer;
 
-import android.graphics.Color;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.widget.TextView;
 
 import com.selflearning.chemistree.R;
-import com.selflearning.chemistree.utilities.FirestoreUtilities;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 public class PostGameActivity extends AppCompatActivity {

@@ -4,7 +4,7 @@ import android.util.Log;
 
 import androidx.fragment.app.Fragment;
 
-import com.selflearning.chemistree.utilities.FirestoreUtilities;
+import com.selflearning.chemistree.utils.FirestoreUtilities;
 
 public class BaseGameFragment extends Fragment implements OnDialogFragmentShow {
 

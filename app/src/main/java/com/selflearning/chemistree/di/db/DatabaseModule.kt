@@ -18,10 +18,10 @@ import com.selflearning.chemistree.domain.chemistry.inorganic.bases.Bases
 import com.selflearning.chemistree.domain.chemistry.inorganic.bases.BasesDao
 import com.selflearning.chemistree.domain.chemistry.inorganic.oxides.OxideRequest
 import com.selflearning.chemistree.domain.chemistry.inorganic.oxides.Oxides
-import com.selflearning.chemistree.utilities.AppConstants
-import com.selflearning.chemistree.utilities.extentions.getCationName
-import com.selflearning.chemistree.utilities.extentions.getStringResource
-import com.selflearning.chemistree.utilities.extentions.replaceOnSubstringString
+import com.selflearning.chemistree.utils.AppConstants
+import com.selflearning.chemistree.utils.extentions.getCationName
+import com.selflearning.chemistree.utils.extentions.getStringResource
+import com.selflearning.chemistree.utils.extentions.replaceOnSubstringString
 import dagger.Module
 import dagger.Provides
 import kotlinx.coroutines.GlobalScope

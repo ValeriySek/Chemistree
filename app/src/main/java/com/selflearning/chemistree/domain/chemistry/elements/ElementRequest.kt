@@ -1,7 +1,7 @@
 package com.selflearning.chemistree.domain.chemistry.elements
 
 import com.google.gson.annotations.SerializedName
-import com.selflearning.chemistree.utilities.EMPTY_STRING
+import com.selflearning.chemistree.utils.EMPTY_STRING
 
 class ElementRequest(
     @SerializedName("atomic_number") val atomicNumber: Int = 0,

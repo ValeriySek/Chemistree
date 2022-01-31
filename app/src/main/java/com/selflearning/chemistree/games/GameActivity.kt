@@ -5,8 +5,8 @@ import androidx.fragment.app.Fragment
 import com.selflearning.chemistree.MenuDialogFragment
 import com.selflearning.chemistree.R
 import com.selflearning.chemistree.games.new_approach.BlankFragment
-import com.selflearning.chemistree.utilities.ActivityUtilities
-import com.selflearning.chemistree.utilities.AppConstants
+import com.selflearning.chemistree.utils.ActivityUtilities
+import com.selflearning.chemistree.utils.AppConstants
 
 class GameActivity : BaseGameActivity(), GameInterface {
 
