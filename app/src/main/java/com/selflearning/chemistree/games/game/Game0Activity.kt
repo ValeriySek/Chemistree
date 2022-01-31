@@ -12,13 +12,13 @@ class Game0Activity : AppCompatActivity() {
 
     private lateinit var binding: ActivityGame0Binding
 
-    @Inject lateinit var viewModelFactory: ViewModelFactory
+//    @Inject lateinit var viewModelFactory: ViewModelFactory
     lateinit var viewModel: Game0ViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityGame0Binding.inflate(layoutInflater)
         setContentView(binding.root)
-        viewModel = ViewModelProvider(this, viewModelFactory)[Game0ViewModel::class.java]
+//        viewModel = ViewModelProvider(this, viewModelFactory)[Game0ViewModel::class.java]
     }
 }

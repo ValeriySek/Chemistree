@@ -13,7 +13,7 @@ class ViewModelFactory @Inject constructor(
         private val providerMap: MutableMap<Class<out ViewModel>, Provider<ViewModel>>
 ): ViewModelProvider.Factory {
 
-    override fun <T : ViewModel?> create(modelClass: Class<T>): T {
+    override fun <T : ViewModel> create(modelClass: Class<T>): T {
         return providerMap[modelClass]?.get() as T
     }
 }
