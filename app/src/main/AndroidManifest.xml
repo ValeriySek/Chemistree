@@ -27,6 +27,7 @@
         <activity
             android:name=".activities.LaunchActivity"
             android:launchMode="singleTask"
+            android:exported="true"
             android:noHistory="true"
             android:screenOrientation="portrait">
             <intent-filter>
