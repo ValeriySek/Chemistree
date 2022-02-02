@@ -52,6 +52,10 @@
         <activity android:name=".games.game1.PostGame_1_Screen" />
         <activity android:name=".games.game1.Game_1_Activity" />
 
+        <receiver
+            android:name=".utils.daily_notifications.AlarmReceiver"
+            android:enabled="true" />
+
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
             android:value="ca-app-pub-6484527932538223~1621561795" />

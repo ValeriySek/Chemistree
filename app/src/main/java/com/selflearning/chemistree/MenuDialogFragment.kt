@@ -16,6 +16,7 @@ import com.selflearning.chemistree.utils.ActivityUtilities
 import java.util.*
 
 class MenuDialogFragment(private val activity: Activity, private val type: Int) : DialogFragment(), View.OnClickListener {
+
     private var dialogFragmentShow: OnDialogFragmentShow? = null
 
     interface MyDialogListener {
