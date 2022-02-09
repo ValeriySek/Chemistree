@@ -2,10 +2,37 @@
 
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+
+        <item name="colorPrimary">@color/colorAccent</item>
+        <item name="colorPrimaryDark">#69B13D</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorSecondary">@color/colorAccent</item>
+
+<!--        <item name="colorSurface">#2E2D43</item>-->
+<!--        <item name="colorOnBackground">#FFFFFF</item>-->
+<!--        <item name="colorOnSurface">#FFFFFF</item>-->
+
+        <item name="android:colorBackground">#FFFFFF</item>
+        <item name="android:windowBackground">#FFFFFF</item>
+
+        <item name="android:textColorPrimary">@color/textColorPrimary</item>
+        <item name="android:fontFamily">@font/nunito_sans</item>
+        <item name="colorControlActivated">@color/deep_purple_200</item>
+        <item name="colorControlHighlight">@color/deep_purple_100</item>
+
+
+
+        <item name="android:statusBarColor">#ffffff</item>
+        <item name="android:windowLightStatusBar" tools:targetApi="m">true</item>
+
+        <item name="switchStyle">@style/Widget.App.Switch</item>
+    </style>
+
+    <style name="AppTheme.Dark" parent="Theme.MaterialComponents.Light.NoActionBar">
         <!-- Customize your theme here. -->
-<!--        <item name="colorPrimary">@color/deep_purple_400</item>-->
-<!--        <item name="colorPrimaryDark">#222232</item>-->
-<!--        <item name="colorAccent">@color/deep_purple_400</item>-->
+        <!--        <item name="colorPrimary">@color/deep_purple_400</item>-->
+        <!--        <item name="colorPrimaryDark">#222232</item>-->
+        <!--        <item name="colorAccent">@color/deep_purple_400</item>-->
         <item name="colorPrimary">@color/colorAccent</item>
         <item name="colorPrimaryDark">#222232</item>
         <item name="colorAccent">@color/colorAccent</item>
@@ -14,12 +41,14 @@
         <item name="colorOnBackground">#FFFFFF</item>
         <item name="android:textColorPrimary">@color/textColorPrimary</item>
         <item name="android:fontFamily">@font/nunito_sans</item>
-        <item name="android:colorControlActivated">@color/deep_purple_200</item>
         <item name="colorOnSurface">#FFFFFF</item>
-<!--        <item name="android:statusBarColor">#282828</item>-->
-        <item name="android:windowLightStatusBar" tools:targetApi="m">false</item>
+        <item name="colorControlActivated">@color/deep_purple_200</item>
+        <item name="colorControlHighlight">@color/deep_purple_100</item>
 
-<!--        <item name="textInputStyle">@style/Widget.App.TextInputLayout</item>-->
+
+
+        <item name="android:statusBarColor">#000000</item>
+        <item name="android:windowLightStatusBar" tools:targetApi="m">true</item>
     </style>
 
     <style name="SelectableItemTheme">
@@ -54,6 +83,21 @@
     <style name="CustomRVButtons" parent="Widget.MaterialComponents.Button.TextButton">
         <item name="backgroundTint">@color/mb_blue</item>
         <item name="android:textAllCaps">false</item>
+    </style>
+
+    <style name="Widget.App.Switch" parent="Widget.MaterialComponents.CompoundButton.Switch">
+        <item name="materialThemeOverlay">@style/ThemeOverlay.App.Switch</item>
+    </style>
+
+    <style name="ThemeOverlay.App.Switch" parent="">
+        <item name="colorSecondary">@color/colorAccent</item>
+        <item name="colorControlActivated">@color/colorAccent</item>
+        <item name="colorControlHighlight">@color/colorAccent</item>
+    </style>
+
+    <style name="OutlinedButton" parent="Widget.MaterialComponents.Button.OutlinedButton">
+        <item name="android:textAllCaps">false</item>
+        <item name="android:minWidth">0dp</item>
     </style>
 
     <style name="CustomButton" parent="Widget.MaterialComponents.Button.TextButton">

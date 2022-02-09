@@ -10,7 +10,9 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import com.selflearning.chemistree.ChemistreeApplication
+import com.selflearning.chemistree.R
 import com.selflearning.chemistree.activities.MainActivity
 import com.selflearning.chemistree.data.User
 import com.selflearning.chemistree.data.User.Companion.instance
@@ -41,15 +43,13 @@ class ProfileFragment : Fragment() {
         return binding.root
     }
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
 
         user = instance
-        val name = user!!.firstName
-        val email = user!!.uid
-
-        binding.tvUserName.text = name
-        binding.tvUserEmail.text = email
+        binding.profileSettingsBtn.setOnClickListener {
+            findNavController().navigate(R.id.action_navigation_notifications_to_settingsFragmentView)
+        }
 
 //        binding.civUser.setOnClickListener {
 //            val intent = Intent(Intent.ACTION_PICK)

@@ -43,9 +43,16 @@
 
     <Button
         android:id="@+id/signOut"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="64dp"
+        android:minWidth="20dp"
+        android:paddingStart="8dp"
+        android:paddingLeft="8dp"
+        android:paddingTop="16dp"
+        android:paddingRight="8dp"
+        android:text="Text"
+        app:cornerRadius="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -59,7 +66,7 @@
         ads:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-<!--    <ImageView-->
+    <!--    <ImageView-->
 <!--        android:id="@+id/imageView4"-->
 <!--        android:layout_width="200dp"-->
 <!--        android:layout_height="100dp"-->

@@ -1,5 +1,8 @@
 package com.selflearning.chemistree.feature.f_home
 
+import android.animation.ObjectAnimator
+import android.animation.PropertyValuesHolder
+import android.animation.StateListAnimator
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -25,12 +28,13 @@ import java.util.*
 import javax.inject.Inject
 
 class HomeFragment : Fragment() {
+
     private val recyclerView: RecyclerView? = null
 //    private val adapter: ReactionAdapter? = null
     private var mAuth: FirebaseAuth? = null
     private val imageViewInner: ImageView? = null
     private val imageViewOuter: ImageView? = null
-    private var signOut: Button? = null
+    private lateinit var signOut: Button
     @Inject lateinit var viewModelFactory: ViewModelFactory
     private lateinit var homeViewModel: HomeViewModel
     var animation1: Animation? = null
@@ -158,9 +162,33 @@ class HomeFragment : Fragment() {
 //        imageViewInner.startAnimation(animation1);
 //        imageViewOuter.startAnimation(animation2);
         Toast.makeText(activity, "" + Locale.getDefault().language, Toast.LENGTH_SHORT).show()
-        signOut?.setOnClickListener(View.OnClickListener {
 
+        val sla = StateListAnimator()
 
+//        sla.addState(
+//            intArrayOf(android.R.attr.state_pressed),
+//            ObjectAnimator.ofFloat(signOut, "scaleX", 1.3f)
+//        )
+        sla.addState(
+            intArrayOf(android.R.attr.state_pressed),
+            ObjectAnimator.ofPropertyValuesHolder(
+                signOut,
+                PropertyValuesHolder.ofFloat("scaleX", 1.3f),
+                PropertyValuesHolder.ofFloat("scaleY", 1.3f)
+            ).apply { duration = 200 }
+        )
+        sla.addState(
+            intArrayOf(-android.R.attr.state_pressed),
+            ObjectAnimator.ofPropertyValuesHolder(
+                signOut,
+                PropertyValuesHolder.ofFloat("scaleX", 1f),
+                PropertyValuesHolder.ofFloat("scaleY", 1f)
+            ).apply { duration = 200 }
+        )
+
+        signOut.stateListAnimator = sla
+
+        signOut.setOnClickListener(View.OnClickListener {
 
             getData()
 

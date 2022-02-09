@@ -21,6 +21,7 @@ class ChemistreeApplication : Application() {
             .build()
 
     override fun onCreate() {
+        setTheme(R.style.AppTheme_Dark)
         super.onCreate()
         createNotificationsChannels()
         RemindersManager.startReminder(this)

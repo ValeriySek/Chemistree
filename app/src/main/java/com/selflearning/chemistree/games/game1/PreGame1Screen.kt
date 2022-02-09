@@ -30,8 +30,6 @@ class PreGame1Screen : AppCompatActivity() {
     }
 
     private fun loadImage(binding: ActivityPreGame1ScreenBinding) {
-        val d = this.resources.getDrawable(R.drawable.ic_benzol)
-        binding.imageView2.setImageDrawable(d)
 
     }
 }

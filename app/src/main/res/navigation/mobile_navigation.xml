@@ -40,7 +40,15 @@
         android:id="@+id/navigation_notifications"
         android:name="com.selflearning.chemistree.feature.f_profile.ProfileFragment"
         android:label="@string/title_notifications"
-        tools:layout="@layout/fragment_profile" />
+        tools:layout="@layout/fragment_profile" >
+        <action
+            android:id="@+id/action_navigation_notifications_to_settingsFragmentView"
+            app:destination="@id/settingsFragmentView"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
 
     <fragment
         android:id="@+id/navigation_statistic"
@@ -51,4 +59,9 @@
 <!--            android:id="@+id/action_statisticFragment_to_navigation_dashboard"-->
 <!--            app:destination="@id/navigation_dashboard" />-->
     </fragment>
+    <fragment
+        android:id="@+id/settingsFragmentView"
+        android:name="com.selflearning.chemistree.feature.f_profile.settings.SettingsFragmentView"
+        android:label="fragment_settings"
+        tools:layout="@layout/fragment_settings" />
 </navigation>
