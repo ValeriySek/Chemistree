@@ -11,6 +11,7 @@ class BaseAdapter : RecyclerView.Adapter<BindableViewHolder>() {
     private var bindableItems = mutableListOf<BindableItem>()
 
     fun add(bindableItems: List<BindableItem>){
+        this.bindableItems.clear()
         this.bindableItems.addAll(bindableItems)
             Log.i("TAGG", "bindableItem ${bindableItems[0]}")
 

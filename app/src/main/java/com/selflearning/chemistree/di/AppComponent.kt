@@ -2,12 +2,14 @@ package com.selflearning.chemistree.di
 
 import com.selflearning.chemistree.activities.LaunchActivity
 import com.selflearning.chemistree.activities.MainActivity
+import com.selflearning.chemistree.di.db.DataStoreModule
 import com.selflearning.chemistree.di.db.DatabaseModule
 import com.selflearning.chemistree.di.firebase.di.FirebaseModule
 import com.selflearning.chemistree.di.registration.di.RegistrationModule
 import com.selflearning.chemistree.di.view_model.di.ViewModelModule
 import com.selflearning.chemistree.feature.f_home.HomeFragment
 import com.selflearning.chemistree.feature.f_profile.ProfileFragment
+import com.selflearning.chemistree.feature.f_profile.settings.SettingsFragmentView
 import com.selflearning.chemistree.feature.f_registration.RegisterActivity
 import com.selflearning.chemistree.feature.f_registration.RegisterFragment
 import com.selflearning.chemistree.games.before_game.PreGameActivity
@@ -16,13 +18,16 @@ import dagger.Component
 import javax.inject.Singleton
 
 @Singleton
-@Component(modules = [
-    AppModule::class,
-    RegistrationModule::class,
-    FirebaseModule::class,
-    ViewModelModule::class,
-    DatabaseModule::class
-])
+@Component(
+    modules = [
+        AppModule::class,
+        RegistrationModule::class,
+        FirebaseModule::class,
+        ViewModelModule::class,
+        DatabaseModule::class,
+        DataStoreModule::class
+    ]
+)
 interface AppComponent {
 
     fun inject(activity: RegisterActivity)
@@ -34,4 +39,5 @@ interface AppComponent {
     fun inject(fragment: ProfileFragment)
     fun inject(fragment: HomeFragment)
     fun inject(fragment: GameFragment4)
+    fun inject(fragment: SettingsFragmentView)
 }

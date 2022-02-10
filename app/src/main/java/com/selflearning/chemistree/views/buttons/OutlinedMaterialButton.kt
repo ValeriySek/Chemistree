@@ -17,8 +17,8 @@ class OutlinedMaterialButton(
         cornerRadius = dpToPx(24)
         strokeColor = ColorStateList(
             arrayOf(
-                intArrayOf(android.R.attr.state_pressed),
-                intArrayOf(-android.R.attr.state_pressed),
+                intArrayOf(android.R.attr.state_pressed, android.R.attr.state_enabled),
+                intArrayOf(-android.R.attr.state_pressed, android.R.attr.state_enabled),
                 intArrayOf(-android.R.attr.state_enabled),
             ),
             intArrayOf(
@@ -42,6 +42,14 @@ class OutlinedMaterialButton(
             right = dpToPx(12),
             bottom = dpToPx(8)
         )
-        setTextAppearance(R.style.Text_Regular_12_PrimaryColor)
+        stateChanged(isEnabled)
+    }
+
+    fun stateChanged(isEnabled: Boolean) {
+        val textStyle = if (isEnabled)
+            R.style.Text_Regular_12_PrimaryColor
+        else
+            R.style.Text_Regular_12_SecondaryColor
+        setTextAppearance(textStyle)
     }
 }

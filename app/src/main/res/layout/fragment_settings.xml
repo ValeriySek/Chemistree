@@ -28,12 +28,23 @@
 
     </FrameLayout>
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/settings_rv"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:overScrollMode="never"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/settings_container_ll"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" />
+    </ScrollView>
+
+    <!--    <androidx.recyclerview.widget.RecyclerView-->
+<!--        android:id="@+id/settings_rv"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="0dp"-->
+<!--        android:layout_weight="1"-->
+<!--        android:overScrollMode="never"-->
+<!--        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>-->
 
 </LinearLayout>

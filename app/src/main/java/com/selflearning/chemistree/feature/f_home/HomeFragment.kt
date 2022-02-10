@@ -19,10 +19,10 @@ import com.google.android.gms.ads.AdView
 import com.google.firebase.auth.FirebaseAuth
 import com.selflearning.chemistree.ChemistreeApplication
 import com.selflearning.chemistree.activities.MainActivity
-import com.selflearning.chemistree.domain.chemistry.elements.AppDatabase
 import com.selflearning.chemistree.data.User.Companion.instance
 import com.selflearning.chemistree.databinding.FragmentHomeBinding
 import com.selflearning.chemistree.di.view_model.di.ViewModelFactory
+import com.selflearning.chemistree.domain.chemistry.elements.AppDatabase
 import com.selflearning.chemistree.utils.extentions.dpi
 import java.util.*
 import javax.inject.Inject
@@ -232,6 +232,9 @@ class HomeFragment : Fragment() {
 //                textView.setText(s);
 //            }
 //        });
+
+
+
         return binding.root
     }
 

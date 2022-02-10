@@ -1,6 +1,9 @@
 package com.selflearning.chemistree.views.rv_items
 
 import android.content.Context
+import android.content.res.ColorStateList
+import android.graphics.Color
+import android.util.Log
 import android.util.TypedValue
 import android.view.Gravity
 import android.widget.LinearLayout
@@ -17,11 +20,10 @@ class TextWithSwitchOrMaterialButton(
     context: Context
 ) : LinearLayout(context) {
 
-    private val textView = TextView(context).apply {
-        setTextAppearance(R.style.Text_Regular_12_PrimaryColor)
-    }
+    private val textView = TextView(context)
     private val materialButton = OutlinedMaterialButton(context)
-    private val switchButton = SwitchMaterial(ContextThemeWrapper(context, R.style.Widget_App_Switch))
+    private val switchButton =
+        SwitchMaterial(ContextThemeWrapper(context, R.style.Widget_App_Switch))
 
     var text = "Text"
         set(value) {
@@ -31,32 +33,55 @@ class TextWithSwitchOrMaterialButton(
 
     fun initView(
         text: String = "",
-        isEnabled: Boolean = true,
+        isChecked: Boolean = false,
         onButtonClick: (SettingsItemType) -> Unit,
         onItemClick: (SettingsItemType) -> Unit,
         onSwitchClick: (SettingsItemType, Boolean) -> Unit,
         buttonType: ButtonType,
-        itemType: SettingsItemType
+        itemType: SettingsItemType,
+        isEnabled: Boolean = true
     ) {
+        removeView(materialButton)
+        removeView(switchButton)
+
+        enabled(isEnabled)
         materialButton.apply {
             this.text = text
-            this.isEnabled = isEnabled
             setOnClickListener { onButtonClick(itemType) }
         }
+        if (switchButton.isChecked != isChecked)
+            switchButton.isChecked = isChecked
         setOnClickListener { onItemClick(itemType) }
-        switchButton.setOnCheckedChangeListener { _, isChecked ->
-            onSwitchClick(itemType, isChecked)
+        switchButton.setOnCheckedChangeListener { _, checked ->
+            onSwitchClick(itemType, checked)
         }
         when (buttonType) {
-            is ButtonType.MaterialButton -> addView(
-                materialButton,
-                wrapContent(Gravity.CENTER_VERTICAL)
-            )
-            is ButtonType.SwitchButton -> addView(switchButton,
-                wrapContent(Gravity.CENTER_VERTICAL)
-            )
-            is ButtonType.NoneButton -> { /* do nothing*/ }
+            ButtonType.MaterialButton -> {
+                addView(
+                    materialButton,
+                    wrapContent(Gravity.CENTER_VERTICAL)
+                )
+            }
+            ButtonType.SwitchButton -> {
+                addView(
+                    switchButton,
+                    wrapContent(Gravity.CENTER_VERTICAL)
+                )
+            }
+            ButtonType.NoneButton -> { /* do nothing*/ }
         }
+    }
+
+    fun enabled(enabled: Boolean) {
+        materialButton.isEnabled = enabled
+        materialButton.stateChanged(enabled)
+        textView.isEnabled = enabled
+
+        val textStyle = if (enabled)
+            R.style.Text_Regular_12_PrimaryColor
+        else
+            R.style.Text_Regular_12_SecondaryColor
+        textView.setTextAppearance(textStyle)
     }
 
     init {
@@ -68,6 +93,5 @@ class TextWithSwitchOrMaterialButton(
         setBackgroundResource(tv.resourceId)
 
         addView(textView, wrapContent(Gravity.CENTER_VERTICAL, 1f))
-
     }
 }

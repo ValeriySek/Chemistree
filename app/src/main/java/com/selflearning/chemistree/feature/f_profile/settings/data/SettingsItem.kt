@@ -5,9 +5,9 @@ import com.selflearning.chemistree.views.rv_items.data.ButtonType
 
 sealed class SettingsItem {
 
-    class Title(title: String) : SettingsItem()
+    data class Title(val title: String) : SettingsItem()
 
-    class ItemList(
+    data class ItemList(
         val itemType: SettingsItemType,
         val buttonType: ButtonType,
         val text: String,
@@ -16,5 +16,5 @@ sealed class SettingsItem {
         val buttonTextStyle: Int = R.style.Text_Regular_12_PrimaryColor,
         val isEnabled: Boolean = true,
         val isChecked: Boolean = false
-    )
+    ) : SettingsItem()
 }

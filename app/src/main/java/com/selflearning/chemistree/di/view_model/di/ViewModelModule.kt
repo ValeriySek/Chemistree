@@ -6,11 +6,14 @@ import com.selflearning.chemistree.domain.chemistry.elements.Repository
 import com.selflearning.chemistree.feature.f_home.HomeViewModel
 import com.selflearning.chemistree.feature.f_profile.ProfileViewModel
 import com.selflearning.chemistree.feature.f_profile.UnregisterUser
+import com.selflearning.chemistree.feature.f_profile.settings.SettingsRepository
+import com.selflearning.chemistree.feature.f_profile.settings.SettingsViewModel
 import com.selflearning.chemistree.feature.f_registration.RegisterUser
 import com.selflearning.chemistree.feature.f_registration.RegisterViewModel
 import com.selflearning.chemistree.games.before_game.PreGameViewModel
 import com.selflearning.chemistree.games.game.Game0ViewModel
 import com.selflearning.chemistree.games.game4.Game4ViewModel
+import com.selflearning.chemistree.utils.storage.PreferenceManager
 import dagger.Module
 import dagger.Provides
 import dagger.multibindings.IntoMap
@@ -66,5 +69,12 @@ class ViewModelModule {
     @ViewModelKey(Game4ViewModel::class)
     fun provideGameFragment4ViewModel(repository: Repository): ViewModel {
         return Game4ViewModel(repository)
+    }
+
+    @Provides
+    @IntoMap
+    @ViewModelKey(SettingsViewModel::class)
+    fun provideSettingsViewModel(repository: SettingsRepository): ViewModel {
+        return SettingsViewModel(repository)
     }
 }
