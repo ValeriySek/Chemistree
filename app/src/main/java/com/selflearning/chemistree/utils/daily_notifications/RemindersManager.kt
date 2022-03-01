@@ -6,7 +6,14 @@ import android.content.Context
 import android.content.Intent
 import android.util.Log
 import com.selflearning.chemistree.utils.REMINDER_NOTIFICATION_REQUEST_CODE
+import com.selflearning.chemistree.utils.storage.PreferenceManager
+import com.selflearning.chemistree.utils.storage.dataStore
+import kotlinx.coroutines.flow.first
+import kotlinx.coroutines.flow.map
+import kotlinx.coroutines.runBlocking
 import java.util.*
+import javax.inject.Inject
+import javax.inject.Singleton
 
 object RemindersManager {
 
@@ -17,7 +24,13 @@ object RemindersManager {
     ) {
         val alarmManager = context.getSystemService(Context.ALARM_SERVICE) as AlarmManager
 
-        val (hours, min) = reminderTime.split(":").map { it.toInt() }
+        val time = runBlocking {
+            context.dataStore.data.map { settings ->
+                settings[PreferenceManager.Settings.PREF_DAILY_NOTIFICATION_TIME] ?: reminderTime
+            }.first()
+        }
+
+        val (hours, min) = time.split(":").map { it.toInt() }
         val intent =
             Intent(context.applicationContext, AlarmReceiver::class.java).let { intent ->
                 PendingIntent.getBroadcast(
@@ -50,6 +63,7 @@ object RemindersManager {
             intent
         )
     }
+
 
     fun stopReminder(
         context: Context,

@@ -3,6 +3,7 @@ package com.selflearning.chemistree.feature.f_home
 import android.animation.ObjectAnimator
 import android.animation.PropertyValuesHolder
 import android.animation.StateListAnimator
+import android.graphics.*
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -26,6 +27,11 @@ import com.selflearning.chemistree.domain.chemistry.elements.AppDatabase
 import com.selflearning.chemistree.utils.extentions.dpi
 import java.util.*
 import javax.inject.Inject
+
+import android.widget.TextView
+
+
+
 
 class HomeFragment : Fragment() {
 
@@ -77,6 +83,18 @@ class HomeFragment : Fragment() {
 
 //        Log.i("TAGG", "${binding.imageView4.width}")
 
+        val textView = binding.textView
+
+        val textShader: Shader = LinearGradient(
+            0f,
+            0f,
+            textView.paint.measureText(textView.text.toString()),
+            textView.textSize,
+            intArrayOf(Color.GREEN, Color.BLUE),
+            floatArrayOf(0f, 1f),
+            Shader.TileMode.CLAMP
+        )
+        textView.paint.shader = textShader
 
 
         mAuth = FirebaseAuth.getInstance()
@@ -191,6 +209,13 @@ class HomeFragment : Fragment() {
         signOut.setOnClickListener(View.OnClickListener {
 
             getData()
+
+
+
+            val bitmap = Bitmap.createBitmap(binding.container.measuredWidth, binding.container.measuredHeight, Bitmap.Config.ARGB_8888)
+            val canvas = Canvas(bitmap)
+            binding.container.draw(canvas)
+            binding.imgCont.setImageBitmap(bitmap)
 
 
 

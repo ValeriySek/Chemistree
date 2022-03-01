@@ -1,4 +1,4 @@
-package com.selflearning.chemistree.feature.f_games.gamespack
+package com.selflearning.chemistree.feature.f_games.gamespack.data
 
 import com.selflearning.chemistree.games.GameComponents
 

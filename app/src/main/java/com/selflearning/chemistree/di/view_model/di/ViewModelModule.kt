@@ -1,6 +1,8 @@
 package com.selflearning.chemistree.di.view_model.di
 
+import android.content.Context
 import androidx.lifecycle.ViewModel
+import com.selflearning.chemistree.ChemistreeApplication
 import com.selflearning.chemistree.domain.chemistry.elements.AppDatabase
 import com.selflearning.chemistree.domain.chemistry.elements.Repository
 import com.selflearning.chemistree.feature.f_home.HomeViewModel

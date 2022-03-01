@@ -15,7 +15,6 @@ import com.selflearning.chemistree.activities.MainActivity
 class AlarmReceiver : BroadcastReceiver() {
 
     override fun onReceive(context: Context, intent: Intent) {
-        Log.i("TAGG", "onReceive")
 //        val notificationManager = ContextCompat.getSystemService(
 //            context,
 //            NotificationManager::class.java

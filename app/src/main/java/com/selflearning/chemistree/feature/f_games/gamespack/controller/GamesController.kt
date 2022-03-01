@@ -5,8 +5,7 @@ import android.view.ViewGroup
 import com.selflearning.chemistree.core.adapter.BindableItemController
 import com.selflearning.chemistree.core.adapter.BindableViewHolder
 import com.selflearning.chemistree.databinding.ListItemGamesCardBinding
-import com.selflearning.chemistree.feature.f_games.gamespack.GamesRowType
-import com.squareup.picasso.Picasso
+import com.selflearning.chemistree.feature.f_games.gamespack.data.GamesRowType
 
 class GamesController(
         val clickListener: (Int) -> Unit
@@ -30,7 +29,7 @@ class GamesController(
 
         override fun bind(data: Any) {
             item = data as GamesRowType
-            Picasso.get().load(item.background).into(binding.ivBackgroundGameCard)
+//            Picasso.get().load(item.background).into(binding.ivBackgroundGameCard)
             binding.tvNameGameCard.text = item.name
         }
     }

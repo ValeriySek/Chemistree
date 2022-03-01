@@ -1,9 +1,11 @@
 package com.selflearning.chemistree.feature.f_profile.settings
 
+import android.content.Context
 import android.util.Log
 import com.selflearning.chemistree.feature.f_profile.settings.data.SettingsData
 import com.selflearning.chemistree.feature.f_profile.settings.data.SettingsItemType
 import com.selflearning.chemistree.feature.f_profile.settings.data.SettingsItemType.*
+import com.selflearning.chemistree.utils.daily_notifications.RemindersManager
 import com.selflearning.chemistree.utils.storage.PreferenceManager
 import com.selflearning.chemistree.utils.storage.PreferenceManager.Settings.PREF_DAILY_NOTIFICATION
 import com.selflearning.chemistree.utils.storage.PreferenceManager.Settings.PREF_DAILY_NOTIFICATION_TIME
@@ -14,7 +16,8 @@ import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
 
 class SettingsRepository @Inject constructor(
-    val preferenceManager: PreferenceManager
+    val preferenceManager: PreferenceManager,
+    val context: Context
 ) {
 
 
@@ -26,11 +29,16 @@ class SettingsRepository @Inject constructor(
     suspend fun saveDAILY_NOTIFICATIONSS(value: Boolean) {
         Log.i("TAGGG", "saveDAILY_NOTIFICATIONSS value $value")
         preferenceManager.preferencesKey(PREF_DAILY_NOTIFICATION, value as Boolean)
+        if(value) {
+            RemindersManager.startReminder(context)
+        } else {
+            RemindersManager.stopReminder(context)
+        }
     }
 
     suspend fun saveTIME_OF_NOTIFICATION(value: String) {
-        Log.i("TAGGG", "saveTIME_OF_NOTIFICATION value $value")
-        preferenceManager.preferencesKey(PREF_DAILY_NOTIFICATION_TIME, value as String)
+        preferenceManager.preferencesKey(PREF_DAILY_NOTIFICATION_TIME, value)
+        RemindersManager.startReminder(context)
     }
 
     suspend fun saveMENDELEEV_TABLE_TYPE(value: Int) {

@@ -5,7 +5,7 @@ import android.view.ViewGroup
 import com.selflearning.chemistree.core.adapter.BindableItemController
 import com.selflearning.chemistree.core.adapter.BindableViewHolder
 import com.selflearning.chemistree.databinding.ListItemGamePackDividerBinding
-import com.selflearning.chemistree.feature.f_games.gamespack.DividerRowType
+import com.selflearning.chemistree.feature.f_games.gamespack.data.DividerRowType
 
 class GamesDividerController : BindableItemController() {
 

@@ -72,7 +72,7 @@ class TextWithSwitchOrMaterialButton(
         }
     }
 
-    fun enabled(enabled: Boolean) {
+    fun enabled(enabled: Boolean): TextWithSwitchOrMaterialButton {
         materialButton.isEnabled = enabled
         materialButton.stateChanged(enabled)
         textView.isEnabled = enabled
@@ -82,6 +82,11 @@ class TextWithSwitchOrMaterialButton(
         else
             R.style.Text_Regular_12_SecondaryColor
         textView.setTextAppearance(textStyle)
+        return this
+    }
+    fun buttonText(text: String) : TextWithSwitchOrMaterialButton {
+        materialButton.text = text
+        return this
     }
 
     init {

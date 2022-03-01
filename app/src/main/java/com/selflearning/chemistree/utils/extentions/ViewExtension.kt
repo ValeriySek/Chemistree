@@ -21,6 +21,17 @@ fun View.wrapContent(): ViewGroup.LayoutParams =
 
 fun View.viewWidth(int: Int) {
     this.layoutParams.width = (this.resources.displayMetrics.density * int).toInt()
+
+}
+
+/**
+ * Установка отступа от верха View.
+ *
+ * @param topMarginPx величина отступа в px.
+ */
+fun View.setTopMargin(topMarginPx: Int) {
+    val params = layoutParams as? ViewGroup.MarginLayoutParams
+    params?.topMargin = topMarginPx
 }
 
 inline fun <T> View.doAsync(

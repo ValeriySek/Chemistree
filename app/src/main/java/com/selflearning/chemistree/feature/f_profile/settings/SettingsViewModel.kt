@@ -8,6 +8,7 @@ import androidx.lifecycle.viewModelScope
 import com.selflearning.chemistree.feature.f_profile.settings.data.SettingsData
 import com.selflearning.chemistree.feature.f_profile.settings.data.SettingsItem
 import com.selflearning.chemistree.feature.f_profile.settings.data.SettingsItemType
+import com.selflearning.chemistree.utils.daily_notifications.RemindersManager
 import com.selflearning.chemistree.views.rv_items.data.ButtonType
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
@@ -99,6 +100,12 @@ class SettingsViewModel(
                 repository.savePUSH_NOTIFICATIONS(value)
             else
                 repository.saveDAILY_NOTIFICATIONSS(value)
+        }
+    }
+
+    fun saveTime(time: String) {
+        viewModelScope.launch {
+                repository.saveTIME_OF_NOTIFICATION(time)
         }
     }
 

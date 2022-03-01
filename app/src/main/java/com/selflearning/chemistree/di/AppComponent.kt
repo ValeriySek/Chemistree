@@ -24,8 +24,9 @@ import javax.inject.Singleton
         RegistrationModule::class,
         FirebaseModule::class,
         ViewModelModule::class,
-        DatabaseModule::class,
-        DataStoreModule::class
+        DatabaseModule::class
+//        ,
+//        DataStoreModule::class
     ]
 )
 interface AppComponent {

@@ -1,0 +1,609 @@
+[
+  {
+    "formula": "NH3",
+    "name": [
+      {
+        "lang": "ru",
+        "trivial_name": [
+          "Аммиак"
+        ],
+        "systematic_name": [
+          "Нитрид водорода"
+        ]
+      },
+      {
+        "lang": "en",
+        "trivial_name": [
+        ],
+        "systematic_name": []
+      }
+    ],
+    "difficult": 1
+  },
+  {
+    "formula": "LiAlH4",
+    "name": [
+      {
+        "lang": "ru",
+        "trivial_name": [
+          "Аланат лития"
+        ],
+        "systematic_name": [
+          "Алюмогидрид лития"
+        ]
+      },
+      {
+        "lang": "en",
+        "trivial_name": [
+        ],
+        "systematic_name": [
+          ""
+        ]
+      }
+    ],
+    "difficult": 1
+  },
+  {
+    "formula": "C",
+    "name": [
+      {
+        "lang": "ru",
+        "trivial_name": [
+          "Сажа",
+          "Уголь",
+          "Кокс",
+          "Алмаз",
+          "Графит"
+        ],
+        "systematic_name": [
+          "Углерод"
+        ]
+      },
+      {
+        "lang": "en",
+        "trivial_name": [
+        ],
+        "systematic_name": [
+          ""
+        ]
+      }
+    ],
+    "difficult": 1
+  },
+  {
+    "formula": "KAl(SO4)2 \u2022 12H2O",
+    "name": [
+      {
+        "lang": "ru",
+        "trivial_name": [
+          "Алюмокалиевые квасцы"
+        ],
+        "systematic_name": [
+          "Додекагидрат сульфата алюминия-калия"
+        ]
+      },
+      {
+        "lang": "en",
+        "trivial_name": [
+        ],
+        "systematic_name": [
+          ""
+        ]
+      }
+    ],
+    "difficult": 1
+  },
+  {
+    "formula": "N2O4",
+    "name": [
+      {
+        "lang": "ru",
+        "trivial_name": [
+          "Амил",
+          "Азотный тетраоксид"
+        ],
+        "systematic_name": [
+          "Тетраоксид диазота"
+        ]
+      },
+      {
+        "lang": "en",
+        "trivial_name": [
+        ],
+        "systematic_name": [
+          ""
+        ]
+      }
+    ],
+    "difficult": 1
+  },
+  {
+    "formula": "CaSO4",
+    "name": [
+      {
+        "lang": "ru",
+        "trivial_name": [
+          "Ангидрит"
+        ],
+        "systematic_name": [
+          "Сульфат кальция безводный"
+        ]
+      },
+      {
+        "lang": "en",
+        "trivial_name": [
+        ],
+        "systematic_name": []
+      }
+    ],
+    "difficult": 1
+  },
+  {
+    "formula": "Mg(ClO4)2",
+    "name": [
+      {
+        "lang": "ru",
+        "trivial_name": [
+          "Ангидрон"
+        ],
+        "systematic_name": [
+          "Перхлорат магния"
+        ]
+      },
+      {
+        "lang": "en",
+        "trivial_name": [
+        ],
+        "systematic_name": [
+          ""
+        ]
+      }
+    ],
+    "difficult": 1
+  },
+  {
+    "formula": "Na2S2O3 \u2022 5H2O",
+    "name": [
+      {
+        "lang": "ru",
+        "trivial_name": [
+          "Антихлор",
+          "Гипосульфит",
+          "Сульфидотриоксосульфат натрия",
+          "Натрий серноватистокислый"
+        ],
+        "systematic_name": [
+          "Пентагидрат тиосульфата натрия"
+        ]
+      },
+      {
+        "lang": "en",
+        "trivial_name": [
+        ],
+        "systematic_name": ""
+      }
+    ],
+    "difficult": 1
+  },
+  {
+    "formula": "AsH3",
+    "name": [
+      {
+        "lang": "ru",
+        "trivial_name": [
+          "Арсин"
+        ],
+        "systematic_name": [
+          "Гидрид мышьяка(III)"
+        ]
+      },
+      {
+        "lang": "en",
+        "trivial_name": [
+        ],
+        "systematic_name": [
+          ""
+        ]
+      }
+    ],
+    "difficult": 1
+  },
+  {
+    "formula": "Ba(NO3)2",
+    "name": [
+      {
+        "lang": "ru",
+        "trivial_name": [
+          "Бариевая селитра",
+          "Баритовая селитра"
+        ],
+        "systematic_name": [
+          "Нитрат бария"
+        ]
+      },
+      {
+        "lang": "en",
+        "trivial_name": [
+        ],
+        "systematic_name": [
+          ""
+        ]
+      }
+    ],
+    "difficult": 1
+  },
+  {
+    "formula": "BaSO4",
+    "name": [
+      {
+        "lang": "ru",
+        "trivial_name": [
+          "Барит",
+          "Белила баритовые",
+          "Бланфикс",
+          "Баритовая каша"
+        ],
+        "systematic_name": [
+          "Сульфат бария"
+        ]
+      },
+      {
+        "lang": "en",
+        "trivial_name": [
+        ],
+        "systematic_name": ""
+      }
+    ],
+    "difficult": 1
+  },
+  {
+    "formula": "Ba(OH)2",
+    "name": [
+      {
+        "lang": "ru",
+        "trivial_name": [
+          "Баритовая вода",
+          "Едкий барит"
+        ],
+        "systematic_name": [
+          "Гидроксид бария"
+        ]
+      },
+      {
+        "lang": "en",
+        "trivial_name": [
+        ],
+        "systematic_name": [
+          ""
+        ]
+      }
+    ],
+    "difficult": 1
+  },
+  {
+    "formula": "TiO2",
+    "name": [
+      {
+        "lang": "ru",
+        "trivial_name": [
+          "Титановые белила"
+        ],
+        "systematic_name": [
+          "Оксид титана(IV)"
+        ]
+      },
+      {
+        "lang": "en",
+        "trivial_name": [
+        ],
+        "systematic_name": [
+          ""
+        ]
+      }
+    ],
+    "difficult": 1
+  },
+  {
+    "formula": "KClO3",
+    "name": [
+      {
+        "lang": "ru",
+        "trivial_name": [
+          "Бертолетова соль"
+        ],
+        "systematic_name": [
+          "Хлорат калия"
+        ]
+      },
+      {
+        "lang": "en",
+        "trivial_name": [
+        ],
+        "systematic_name": [
+          ""
+        ]
+      }
+    ],
+    "difficult": 1
+  },
+  {
+    "formula": "MgCl2 \u2022 6H2O",
+    "name": [
+      {
+        "lang": "ru",
+        "trivial_name": [
+          "Бишофит"
+        ],
+        "systematic_name": [
+          "Гексагидрат хлорида магния"
+        ]
+      },
+      {
+        "lang": "en",
+        "trivial_name": [
+        ],
+        "systematic_name": [
+          ""
+        ]
+      }
+    ],
+    "difficult": 1
+  },
+  {
+    "formula": "Al2O3",
+    "name": [
+      {
+        "lang": "ru",
+        "trivial_name": [
+          "Боксит",
+          "Глинозем",
+          "Корунд"
+        ],
+        "systematic_name": [
+          "Оксид алюминия"
+        ]
+      },
+      {
+        "lang": "en",
+        "trivial_name": [
+        ],
+        "systematic_name": ""
+      }
+    ],
+    "difficult": 1
+  },
+  {
+    "formula": "BN",
+    "name": [
+      {
+        "lang": "ru",
+        "trivial_name": [
+          "Боразон"
+        ],
+        "systematic_name": [
+          "Нитрид бора"
+        ]
+      },
+      {
+        "lang": "en",
+        "trivial_name": [
+        ],
+        "systematic_name": ""
+      }
+    ],
+    "difficult": 1
+  },
+  {
+    "formula": "BH3",
+    "name": [
+      {
+        "lang": "ru",
+        "trivial_name": [
+          "Боран"
+        ],
+        "systematic_name": [
+          "Гидрид бора"
+        ]
+      },
+      {
+        "lang": "en",
+        "trivial_name": [
+        ],
+        "systematic_name": [
+          ""
+        ]
+      }
+    ],
+    "difficult": 1
+  },
+  {
+    "formula": "Na2B4O7 \u2022 10H2O",
+    "name": [
+      {
+        "lang": "ru",
+        "trivial_name": [
+          "Бура",
+          "Боракс",
+          "Тинкал"
+        ],
+        "systematic_name": [
+          "Декагидрат тетрабората натрия"
+        ]
+      },
+      {
+        "lang": "en",
+        "trivial_name": [
+        ],
+        "systematic_name": [
+          ""
+        ]
+      }
+    ],
+    "difficult": 1
+  },
+  {
+    "formula": "Na2B4O7 \u2022 5H2O",
+    "name": [
+      {
+        "lang": "ru",
+        "trivial_name": [
+          "Бура ювелирная"
+        ],
+        "systematic_name": [
+          "Пентагидрат тетрабората натрия"
+        ]
+      },
+      {
+        "lang": "en",
+        "trivial_name": [
+        ],
+        "systematic_name": [
+          ""
+        ]
+      }
+    ],
+    "difficult": 1
+  },
+  {
+    "formula": "Na2B4O7 \u2022 4H2O",
+    "name": [
+      {
+        "lang": "ru",
+        "trivial_name": [
+          "Кернит"
+        ],
+        "systematic_name": [
+          "Тетрагидрат тетрабората натрия"
+        ]
+      },
+      {
+        "lang": "en",
+        "trivial_name": [
+        ],
+        "systematic_name": [
+          ""
+        ]
+      }
+    ],
+    "difficult": 1
+  },
+  {
+    "formula": "NO2",
+    "name": [
+      {
+        "lang": "ru",
+        "trivial_name": [
+          "Бурый газ",
+          "Лисий хвост"
+        ],
+        "systematic_name": [
+          "Оксид азота (IV)"
+        ]
+      },
+      {
+        "lang": "en",
+        "trivial_name": [
+        ],
+        "systematic_name": [
+          ""
+        ]
+      }
+    ],
+    "difficult": 1
+  },
+  {
+    "formula": "N2O",
+    "name": [
+      {
+        "lang": "ru",
+        "trivial_name": [
+          "Веселящий газ",
+          "Закись азота"
+        ],
+        "systematic_name": [
+          "Оксид азота (I)"
+        ]
+      },
+      {
+        "lang": "en",
+        "trivial_name": [
+        ],
+        "systematic_name": [
+          ""
+        ]
+      }
+    ],
+    "difficult": 1
+  },
+  {
+    "formula": "PbS",
+    "name": [
+      {
+        "lang": "ru",
+        "trivial_name": [
+          "Галенит",
+          "Свинцовый блеск"
+        ],
+        "systematic_name": [
+          "Сульфид свинца (II)"
+        ]
+      },
+      {
+        "lang": "en",
+        "trivial_name": [
+        ],
+        "systematic_name": [
+          ""
+        ]
+      }
+    ],
+    "difficult": 1
+  },
+  {
+    "formula": "Ca(OH)2",
+    "name": [
+      {
+        "lang": "ru",
+        "trivial_name": [
+          "Гашеная известь"
+        ],
+        "systematic_name": [
+          "Гидроксид кальция"
+        ]
+      },
+      {
+        "lang": "en",
+        "trivial_name": [
+        ],
+        "systematic_name": [
+          ""
+        ]
+      }
+    ],
+    "difficult": 1
+  },
+  {
+    "formula": "Fe2O3",
+    "name": [
+      {
+        "lang": "ru",
+        "trivial_name": [
+          "Гематит",
+          "Красный железняк"
+        ],
+        "systematic_name": [
+          "Оксид железа (III)"
+        ]
+      },
+      {
+        "lang": "en",
+        "trivial_name": [
+        ],
+        "systematic_name": [
+          ""
+        ]
+      }
+    ],
+    "difficult": 1
+  }
+]

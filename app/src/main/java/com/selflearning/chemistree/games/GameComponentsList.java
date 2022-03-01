@@ -1,7 +1,7 @@
 package com.selflearning.chemistree.games;
 
 import com.selflearning.chemistree.R;
-import com.selflearning.chemistree.feature.f_games.gamespack.GamesRowType;
+import com.selflearning.chemistree.feature.f_games.gamespack.data.GamesRowType;
 
 import java.util.ArrayList;
 import java.util.List;

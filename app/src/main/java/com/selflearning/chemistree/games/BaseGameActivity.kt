@@ -17,5 +17,7 @@ abstract class BaseGameActivity : AppCompatActivity() {
                 WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN
             )
+
+
     }
 }

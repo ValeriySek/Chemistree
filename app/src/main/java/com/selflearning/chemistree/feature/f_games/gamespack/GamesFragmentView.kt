@@ -14,6 +14,8 @@ import com.selflearning.chemistree.core.adapter.BindableItem
 import com.selflearning.chemistree.databinding.GamesPackFragmentBinding
 import com.selflearning.chemistree.feature.f_games.gamespack.controller.GamesController
 import com.selflearning.chemistree.feature.f_games.gamespack.controller.GamesDividerController
+import com.selflearning.chemistree.feature.f_games.gamespack.data.DividerRowType
+import com.selflearning.chemistree.feature.f_games.gamespack.data.GamesRowType
 import com.selflearning.chemistree.games.GameComponentsList
 import com.selflearning.chemistree.games.before_game.PreGameActivity
 import com.selflearning.chemistree.utils.ActivityUtilities
@@ -29,14 +31,7 @@ class GamesFragmentView : Fragment() {
 
     private lateinit var binding: GamesPackFragmentBinding
 
-    private val gamesController = GamesController {
-        ActivityUtilities.invokeNewActivity(
-                requireActivity(),
-                PreGameActivity::class.java,
-                it,
-                false
-        )
-    }
+    private val gamesController = GamesController(::f)
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View {
@@ -85,6 +80,15 @@ class GamesFragmentView : Fragment() {
             adapter = baseAdapter
             baseAdapter.add(rowTypeList)
         }
+    }
+
+    fun f(it: Int) {
+        ActivityUtilities.invokeNewActivity(
+            requireActivity(),
+            PreGameActivity::class.java,
+            it,
+            false
+        )
     }
 
     private fun initListener() {}
