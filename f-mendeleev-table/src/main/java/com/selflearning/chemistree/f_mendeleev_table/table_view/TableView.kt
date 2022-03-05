@@ -5,12 +5,13 @@ import android.annotation.SuppressLint
 import android.content.Context
 import android.graphics.*
 import android.util.AttributeSet
+import android.util.Log
 import android.view.MotionEvent
 import android.view.View
 import com.selflearning.chemistree.f_mendeleev_table.R
 import selflearning.chemistree.domain.chemistry.elements.Data
 import com.selflearning.chemistree.f_mendeleev_table.table_view.data.DataUi
-import com.selflearning.chemistree.f_mendeleev_table.table_view.render.RenderAxix
+import com.selflearning.chemistree.f_mendeleev_table.table_view.render.RenderAxis
 import com.selflearning.chemistree.f_mendeleev_table.table_view.render.RenderTable
 
 class TableView @JvmOverloads constructor(
@@ -19,23 +20,19 @@ class TableView @JvmOverloads constructor(
     defStyleAttr: Int = 0
 ) : View(context, attrs, defStyleAttr) {
 
-    val density = context.resources.displayMetrics.scaledDensity
-
     // Ширина столбца с периодом
-    val cellWidth = (resources.getDimensionPixelSize(R.dimen.gant_row_height)).toInt()
+    var cellWidth = (resources.getDimensionPixelSize(R.dimen.gant_row_height))
 
     // Высота строки
-    val cellHeight = (resources.getDimensionPixelSize(R.dimen.gant_row_height)).toInt()
+    var cellHeight = (resources.getDimensionPixelSize(R.dimen.gant_row_height))
 
     //  отступ
     val cardMargin = resources.getDimension(R.dimen.gant_task_vertical_margin)
 
 
-    val contentWidth: Int
-        get() = cellWidth * dataUi[0].size  + (cellWidth / 2)
+    fun contentWidth(scale: Float = 1f): Float = cellWidth * dataUi[0].size * scale + (cellWidth / 2) + cardMargin * 2
 
-    val contentHeight: Int
-        get() = cellHeight * dataUi.size + (cellWidth / 2)
+    fun contentHeight(scale: Float = 1f): Float = cellHeight * dataUi.size * scale + (cellWidth / 2) + cardMargin * 2
 
     private val rectRow = Rect()
     private val rectPeriod = Rect()
@@ -50,11 +47,11 @@ class TableView @JvmOverloads constructor(
 //    private val scaleGestureDetector = GestureDetector(context, ScaleListener())
 
 
-    lateinit var tRender: RenderTable
-    lateinit var aRender: RenderAxix
+    lateinit var renderTable: RenderTable
+    lateinit var renderAxis: RenderAxis
 
     fun setTableRender(render: RenderTable) {
-        tRender = render
+        renderTable = render
         invalidate()
     }
 
@@ -74,11 +71,11 @@ class TableView @JvmOverloads constructor(
         }
     }
 
-    fun updateDataRects() {
+    fun updateDataRects(scale: Float = 1f) {
         dataUi.forEachIndexed { indexFirst, list ->
             list.forEachIndexed { indexSecond, dataUi ->
                 dataUi ?: return@forEachIndexed
-                dataUi.invalidateRect(Pair(indexFirst, indexSecond))
+                dataUi.invalidateRect(Pair(indexFirst, indexSecond), scale)
             }
         }
         transformations.recalculate()
@@ -86,7 +83,7 @@ class TableView @JvmOverloads constructor(
 
     override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {
         val width = if (MeasureSpec.getMode(widthMeasureSpec) == MeasureSpec.UNSPECIFIED) {
-            contentWidth
+            contentWidth()
         } else {
             // Даже если AT_MOST занимаем все доступное место, т.к. может быть зум
             MeasureSpec.getSize(widthMeasureSpec)
@@ -96,7 +93,7 @@ class TableView @JvmOverloads constructor(
         val heightSpecSize = MeasureSpec.getSize(heightMeasureSpec)
         val height = when (MeasureSpec.getMode(heightMeasureSpec)) {
             // Нас никто не ограничивает - занимаем размер контента
-            MeasureSpec.UNSPECIFIED -> contentHeight
+            MeasureSpec.UNSPECIFIED -> contentHeight()
             // Ограничение "не больше, не меньше" - занимаем столько, сколько пришло в спеке
             MeasureSpec.EXACTLY -> heightSpecSize
             // Можно занять меньше места, чем пришло в спеке, но не больше
@@ -105,14 +102,15 @@ class TableView @JvmOverloads constructor(
             else -> error("Unreachable")
         }
 
-        setMeasuredDimension(width, height)
+        setMeasuredDimension(width.toInt(), height.toInt())
     }
 
     override fun onSizeChanged(w: Int, h: Int, oldw: Int, oldh: Int) {
         rectRow.set(cellHeight / 2, 0, w, cellHeight / 2)
         rectPeriod.set(0, 0, cellWidth / 2, h)
         viewPortHandler.setTableDimens(w.toFloat(), h.toFloat())
-        aRender  = RenderAxix(this)
+        viewPortHandler.setContentRect(offsetLeft = cellHeight / 2f, offsetTop = cellHeight / 2f)
+        renderAxis  = RenderAxis(this)
 
         requestLayout()
         invalidate()
@@ -121,15 +119,15 @@ class TableView @JvmOverloads constructor(
     override fun onDraw(canvas: Canvas) = with(canvas) {
         drawBackground()
         drawCards()
-        aRender.draw(this, dataUi)
+        renderAxis.draw(this, dataUi)
     }
 
     private fun Canvas.drawBackground() {
-        tRender.drawBackground(this)
+        renderTable.drawBackground(this)
     }
 
     private fun Canvas.drawCards() {
-        tRender.draw(this, dataUi)
+        renderTable.draw(this, dataUi)
     }
 
     override fun computeScroll() {
@@ -139,7 +137,7 @@ class TableView @JvmOverloads constructor(
     @SuppressLint("ClickableViewAccessibility")
     override fun onTouchEvent(event: MotionEvent?): Boolean {
         event ?: return false
-        return if (event.pointerCount > 1) false else
+        return if (event.pointerCount > 1) touchListener.scaleGestureDetector.onTouchEvent(event) else
             touchListener.onTouch(this, event)
     }
 }

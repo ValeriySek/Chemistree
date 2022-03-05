@@ -3,14 +3,11 @@ package com.selflearning.chemistree.f_mendeleev_table.table_view
 import android.annotation.SuppressLint
 import android.graphics.PointF
 import android.util.Log
-import android.view.GestureDetector
-import android.view.MotionEvent
-import android.view.VelocityTracker
-import android.view.View
+import android.view.*
 import android.view.animation.AnimationUtils
 import android.widget.Toast
 import selflearning.chemistree.domain.chemistry.elements.Element
-import kotlin.math.abs
+import kotlin.math.*
 
 class TouchListener(
     val tableView: TableView
@@ -28,9 +25,43 @@ class TouchListener(
     private val decelerationVelocity = PointF()
     private val decelerationCurrentPoint = PointF()
 
-    private val cp = PointF()
+    var scaling = 1f
+    var scaleFactor = 1f
+    private var lastDx = 0f
+    private var lastDy = 0f
+    private var lastTrx = 0f
+    private var lastTry = 0f
 
     private val gestureDetector = GestureDetector(tableView.context, this)
+
+    val scaleGestureDetector = ScaleGestureDetector(
+        tableView.context,
+        object : ScaleGestureDetector.SimpleOnScaleGestureListener() {
+
+            override fun onScaleBegin(detector: ScaleGestureDetector?): Boolean {
+                return super.onScaleBegin(detector)
+            }
+
+            override fun onScale(detector: ScaleGestureDetector): Boolean {
+                scaleFactor *= detector.scaleFactor
+                scaleFactor = max(0.1f, min(detector.scaleFactor, 10f))
+                val scal = scaling * scaleFactor
+                scaling = if (scal in 0.5f..2f) scal else scaling
+                val trX = (scaling - 1) * transformations.translationX
+                val dx = (scaling - 1) * detector.focusX
+                val trY = (scaling - 1) * transformations.translationY
+                val dy = (scaling - 1) * detector.focusY
+                val x = (dx - lastDx)
+                val y = (dy - lastDy)
+                transformations.setScale(scaling, x, y)
+                Log.i("TAGGGGG", "detector.focusX scaling $scaling transformations.translationX ${transformations.translationX}")
+                lastDx = dx
+                lastDy = dy
+                lastTrx = trX
+                lastTry = trY
+                return true
+            }
+        })
 
     private var decelerationLastTime = 0L
 
@@ -60,9 +91,8 @@ class TouchListener(
 
             MotionEvent.ACTION_MOVE -> {
                 // Если размер контента меньше размера View - сдвиг недоступен
-                if (viewPortHandler.width < tableView.contentWidth
-//                    * transformations.scaleX
-                    || viewPortHandler.height < tableView.contentHeight
+                if (viewPortHandler.width < (tableView.contentWidth(transformations.scale))
+                    || viewPortHandler.height < (tableView.contentHeight(transformations.scale))
                 ) {
                     val pointerId = event.getPointerId(0)
                     // Чтобы избежать скачков - сдвигаем, только если поинтер(палец) тот же, что и раньше
@@ -112,6 +142,12 @@ class TouchListener(
         }
     }
 
+    private fun getDistance(event: MotionEvent): Float {
+        val dx = event.getX(0) - event.getX(1)
+        val dy = event.getY(0) - event.getY(1)
+        return hypot(dx, dy)
+    }
+
     override fun onSingleTapUp(e: MotionEvent?): Boolean {
         Log.i("TAGG", "onSingleTapUp")
         return super.onSingleTapUp(e)
@@ -121,8 +157,8 @@ class TouchListener(
         tableView.dataUi.forEach { list ->
             list.forEach {
                 if (it != null && it.rect.contains(e.x, e.y)) {
-                    it.data as Element
-                    Toast.makeText(tableView.context, it.data.symbol, Toast.LENGTH_SHORT).show()
+                    val d = it.data as? Element
+                    Toast.makeText(tableView.context, d?.symbol, Toast.LENGTH_SHORT).show()
                 }
             }
         }

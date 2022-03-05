@@ -10,9 +10,6 @@ import android.view.View
 import androidx.annotation.ColorInt
 
 
-/**
- * TODO: document your custom view class.
- */
 class MendItemView @JvmOverloads constructor(
         context: Context,
         attrs: AttributeSet? = null,
