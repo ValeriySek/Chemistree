@@ -1,6 +1,7 @@
 package com.selflearning.chemistree.f_mendeleev_table.table_view.render.table_impl
 
 import android.graphics.*
+import androidx.core.graphics.times
 import com.selflearning.chemistree.f_mendeleev_table.table_view.TableView
 import com.selflearning.chemistree.f_mendeleev_table.table_view.data.DataUi
 import com.selflearning.chemistree.f_mendeleev_table.table_view.render.RenderTable
@@ -49,40 +50,12 @@ class RenderMendeleevTable(
 
     private fun drawCard(canvas: Canvas, dataUi: DataUi) = with(canvas) {
 
-        val element = dataUi.data as Element?
-        element ?: return@with
+        val element = dataUi.data as? Element ?: return@with
 
-        val color = itemColors[element.elementCategory] ?: Color.DKGRAY
-        paintStrokeBackground.color = color
-        paintSecondBackground.color = color
+        setItemColor(element.elementCategory)
+        drawBackgroundAndStroke(dataUi)
+        drawLeftTopRoundRect(dataUi, "${element.atomicNumber}")
 
-        drawBackgroundAndStroke(canvas, dataUi, color)
-
-        val atomicNumber = element.atomicNumber.toString()
-        smallLabelsPaint.getTextBounds(atomicNumber, 0, atomicNumber.length, textRect)
-        val atomicNumberWidth = textRect.width()
-
-        val leftTopRect = RectF(
-            dataUi.rect.left,
-            dataUi.rect.top,
-            dataUi.rect.left + cornerRadius + atomicNumberWidth,
-            dataUi.rect.top + minMargin * 2 + smallLabelsPaint.textHeight()
-        )
-        val ttY = (leftTopRect.top + (leftTopRect.bottom - leftTopRect.top) / 2 )
-        drawPath(
-            getRoundRectPath(
-                getCorners(topLeft = true, bottomRight = true),
-                leftTopRect
-            ),
-            paintSecondBackground
-        )
-        val ttX = (leftTopRect.left + leftTopRect.width() / 2)
-        drawText(
-            atomicNumber,
-            ttX,
-            smallLabelsPaint.getTextBaselineByCenter(ttY),
-            smallLabelsPaint
-        )
         axisLabelsPaint.getTextBounds(element.symbol, 0, element.symbol.length, textRect)
         val tX = (dataUi.rect.left + (dataUi.rect.width()) / 2 ) - textRect.width() / 2
         val tY = (dataUi.rect.top + (dataUi.rect.height()) / 2 )
@@ -94,7 +67,13 @@ class RenderMendeleevTable(
         )
     }
 
-    fun drawBackgroundAndStroke(canvas: Canvas, dataUi: DataUi, color: Int) = with(canvas) {
+    private fun setItemColor(elementCategory: String) {
+        itemColor = itemColors[elementCategory] ?: Color.DKGRAY
+        paintStrokeBackground.color = itemColor
+        paintSecondBackground.color = itemColor
+    }
+
+    private fun Canvas.drawBackgroundAndStroke(dataUi: DataUi) = with(this) {
         drawRoundRect(
             dataUi.rect,
             cornerRadius,
@@ -122,6 +101,31 @@ class RenderMendeleevTable(
 //            dataUi.rect.bottom - dataUi.rect.width() / 2,
 //            0f, 90f, true, paintShadeBackground
 //        )
+    }
+
+    private fun Canvas.drawLeftTopRoundRect(dataUi: DataUi, atomicNumber: String) = with(this) {
+        smallLabelsPaint.getTextBounds(atomicNumber, 0, atomicNumber.length, textRect)
+        val leftTopRect = RectF(
+            dataUi.rect.left,
+            dataUi.rect.top,
+            dataUi.rect.left + cornerRadius + textRect.width(),
+            dataUi.rect.top + minMargin * 2 + smallLabelsPaint.textHeight()
+        )
+        val ttY = (leftTopRect.top + (leftTopRect.bottom - leftTopRect.top) / 2 )
+        drawPath(
+            getRoundRectPath(
+                getCorners(topLeft = true, bottomRight = true),
+                leftTopRect
+            ),
+            paintSecondBackground
+        )
+        val ttX = (leftTopRect.left + leftTopRect.width() / 2)
+        drawText(
+            atomicNumber,
+            ttX,
+            smallLabelsPaint.getTextBaselineByCenter(ttY),
+            smallLabelsPaint
+        )
     }
 
     private fun getCorners(topLeft: Boolean = false, topRight: Boolean = false,

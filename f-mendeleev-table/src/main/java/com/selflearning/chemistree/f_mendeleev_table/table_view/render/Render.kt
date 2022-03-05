@@ -76,6 +76,10 @@ abstract class Render(
         color = Color.DKGRAY
     }
 
+    val defaultItemColor: Int = Color.DKGRAY
+
+    var itemColor: Int = defaultItemColor
+
     fun getTextWidth(text: String): Float {
         return axisLabelsPaint.measureText(text)
     }

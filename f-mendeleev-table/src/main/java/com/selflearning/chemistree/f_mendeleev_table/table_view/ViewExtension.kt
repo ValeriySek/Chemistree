@@ -9,3 +9,5 @@ fun View.getColor(color: Int) = ContextCompat.getColor(context, color)
 fun View.getDimension(dimen: Int) = resources.getDimension(dimen)
 
 fun Context.getDimension(dimen: Int) = resources.getDimension(dimen)
+
+fun Context.getDensity() = this.resources.displayMetrics.scaledDensity
