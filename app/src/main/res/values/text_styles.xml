@@ -47,8 +47,20 @@
         <item name="android:textSize">18sp</item>
     </style>
 
+    <style name="Text.Regular.18.White">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
     <style name="Text.Regular.20">
         <item name="android:textSize">20sp</item>
+    </style>
+
+    <style name="Text.Regular.28">
+        <item name="android:textSize">28sp</item>
+    </style>
+
+    <style name="Text.Regular.28.Primary">
+        <item name="android:textColor">@color/textColorPrimary</item>
     </style>
 
     <style name="Text.Light">

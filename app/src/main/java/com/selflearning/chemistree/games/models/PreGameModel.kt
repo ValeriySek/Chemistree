@@ -1,7 +1,7 @@
 package com.selflearning.chemistree.games.models
 
 import android.os.Parcelable
-import kotlinx.android.parcel.Parcelize
+import kotlinx.parcelize.Parcelize
 
 @Parcelize
 data class PreGameModel(
@@ -13,4 +13,10 @@ data class PreGameModel(
 data class GameQuestion(
     val question: String,
     val answer: String
+) : Parcelable
+
+@Parcelize
+data class GameModel(
+    val gameQuestion: GameQuestion,
+    val auxiliaryList: List<String>
 ) : Parcelable

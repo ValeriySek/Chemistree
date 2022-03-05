@@ -2,30 +2,43 @@ package com.selflearning.chemistree.games.new_approach
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.selflearning.chemistree.games.models.GameModel
 
-class GameViewModelWithActions: ViewModel(), GameLifecycle {
+class GameViewModelWithActions(
+    val gameRepository: GameRepository
+): ViewModel() {
 
-    val startGameLiveData = MutableLiveData<String>()
+    val startGameLiveData = MutableLiveData<GameModel>()
     val rightAnswerLiveData = MutableLiveData<String>()
-    val wrongAnswerLiveData = MutableLiveData<String>()
+    val wrongAnswerLiveData = MutableLiveData<Any>()
     val finishGameLiveData = MutableLiveData<String>()
 
-    override fun onStartGame() {
-        super.onStartGame()
-        startGameLiveData.value = "onStartGame"
+    fun getQuestion() {
+        startGameLiveData.value = gameRepository.getData()
     }
 
-    override fun onRightAnswer() {
+    fun onRightAnswer() {
         rightAnswerLiveData.value = "onRightAnswer"
     }
 
-    override fun onWrongAnswer() {
-        wrongAnswerLiveData.value = "onWrongAnswer"
+    fun onWrongAnswer(data: Any) {
+        wrongAnswerLiveData.value = data
     }
 
-    override fun onFinishGame() {
+    fun onFinishGame() {
         finishGameLiveData.value = "onFinishGame"
     }
 
+    fun answer(answer: String) {
+        when (val answer = gameRepository.answer(answer)) {
+           is GameStages.RightAnswer -> {
+                onRightAnswer()
+            }
+            is GameStages.WrongAnswer -> {
+                onWrongAnswer(answer.data)
+            }
+            else -> onFinishGame()
+        }
+    }
 
 }
