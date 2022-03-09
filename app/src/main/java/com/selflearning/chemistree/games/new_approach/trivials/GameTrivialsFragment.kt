@@ -1,6 +1,8 @@
 package com.selflearning.chemistree.games.new_approach.trivials
 
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -39,18 +41,25 @@ class GameTrivialsFragment : GameFragmentWithActions() {
         super.onStartGame(data)
         binding.trivialsQuestionTv.text = data.gameQuestion.question
         val list = data.auxiliaryList.map {
-            BindableItem(GameTrivialAnswerData(it), GameTrivialButtonController({}))
+            BindableItem(it, GameTrivialButtonController { answer->
+                gameViewModelWithActions.answer(answer)
+            })
         }
         baseAdapter.add(list)
     }
 
     override fun onRightAnswer() {
 
+        Handler(Looper.getMainLooper()).postDelayed({
+            gameViewModelWithActions.getQuestion()
+        }, 500)
     }
 
     override fun onWrongAnswer(data: Any) {
         data as? Trivial
-
+        Handler(Looper.getMainLooper()).postDelayed({
+             gameViewModelWithActions.getQuestion()
+        }, 500)
     }
 
     override fun onFinishGame() {

@@ -1,6 +1,7 @@
 package com.selflearning.chemistree.games.models
 
 import android.os.Parcelable
+import com.selflearning.chemistree.games.new_approach.trivials.GameTrivialAnswerData
 import kotlinx.parcelize.Parcelize
 
 @Parcelize
@@ -18,5 +19,5 @@ data class GameQuestion(
 @Parcelize
 data class GameModel(
     val gameQuestion: GameQuestion,
-    val auxiliaryList: List<String>
+    val auxiliaryList: List<GameTrivialAnswerData>
 ) : Parcelable

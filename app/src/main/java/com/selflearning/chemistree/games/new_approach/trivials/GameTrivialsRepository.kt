@@ -13,8 +13,10 @@ class GameTrivialsRepository : GameRepository {
     private val countAnswerVariants = 3
 
     private lateinit var trivial: Trivial
+    private var gameAnswerData = mutableListOf<GameTrivialAnswerData>()
 
     private var intRange = (0..dataList.lastIndex).toList()
+
 
     override fun getData(): GameModel {
         val questionIndex = getRandom()
@@ -24,25 +26,29 @@ class GameTrivialsRepository : GameRepository {
         return GameModel(gameQuestion, getAuxiliaryList())
     }
 
-    private fun getAuxiliaryList(): List<String> {
-        val auxiliaryList = mutableListOf<String>()
+    private fun getAuxiliaryList(): List<GameTrivialAnswerData> {
+        gameAnswerData.clear()
         var tempRange = intRange
         fun random(): Int {
             val index = tempRange.random()
             tempRange = tempRange - index
             return index
         }
-        for (i in 0 until countAnswerVariants) {
-            auxiliaryList.add(dataList[random()].formula)
+
+        for (i in 0 until countAnswerVariants - 1) {
+            gameAnswerData.add(GameTrivialAnswerData(dataList[random()].formula))
         }
-        auxiliaryList.apply {
-            add(trivial.formula)
+        gameAnswerData.apply {
+            add(GameTrivialAnswerData(trivial.formula))
             shuffle()
         }
-        return auxiliaryList
+        return gameAnswerData
     }
 
     override fun answer(answer: String): GameStages {
+        val i = gameAnswerData.find {
+            it.question == answer
+        }
         return if (answer == trivial.formula) {
             GameStages.RightAnswer(Unit)
         } else {

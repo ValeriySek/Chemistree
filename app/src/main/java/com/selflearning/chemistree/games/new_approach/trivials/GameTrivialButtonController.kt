@@ -1,6 +1,5 @@
 package com.selflearning.chemistree.games.new_approach.trivials
 
-import android.view.View
 import android.view.ViewGroup
 import com.selflearning.chemistree.core.adapter.BindableItemController
 import com.selflearning.chemistree.core.adapter.BindableViewHolder
@@ -17,8 +16,17 @@ class GameTrivialButtonController(
 
     inner class Holder(val view: SharpMaterialButton) : BindableViewHolder(view) {
 
+        private lateinit var question: String
+
+        init {
+            view.setOnClickListener {
+                onClick(question)
+            }
+        }
+
         override fun bind(data: Any) {
             data as GameTrivialAnswerData
+            question = data.question
             view.text = data.question
         }
 

@@ -27,10 +27,7 @@ class TouchListener(
 
     var scaling = 1f
     var scaleFactor = 1f
-    private var lastDx = 0f
-    private var lastDy = 0f
-    private var lastTrx = 0f
-    private var lastTry = 0f
+    var lastScale = 1f
 
     private val gestureDetector = GestureDetector(tableView.context, this)
 
@@ -47,18 +44,11 @@ class TouchListener(
                 scaleFactor = max(0.1f, min(detector.scaleFactor, 10f))
                 val scal = scaling * scaleFactor
                 scaling = if (scal in 0.5f..2f) scal else scaling
-                val trX = (scaling - 1) * transformations.translationX
-                val dx = (scaling - 1) * detector.focusX
-                val trY = (scaling - 1) * transformations.translationY
-                val dy = (scaling - 1) * detector.focusY
-                val x = (dx - lastDx)
-                val y = (dy - lastDy)
-                transformations.setScale(scaling, x, y)
+                val dx = (scaling - lastScale) * (detector.focusX - transformations.translationX)
+                val dy = (scaling - lastScale) * (detector.focusY - transformations.translationY)
+                transformations.setScale(scaling, dx, dy)
                 Log.i("TAGGGGG", "detector.focusX scaling $scaling transformations.translationX ${transformations.translationX}")
-                lastDx = dx
-                lastDy = dy
-                lastTrx = trX
-                lastTry = trY
+                lastScale = scaling
                 return true
             }
         })
