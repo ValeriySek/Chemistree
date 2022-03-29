@@ -34,15 +34,15 @@ class Transforms(
         translationX = (translationX + dx).coerceIn(minTranslationX, 0f)
         translationY = (translationY + dy).coerceIn(minTranslationY, 0f)
         Log.i("TAGGGGGGG", "addTranslation dx $dx translationX $translationX")
-        tableView.invalidate()
+//        tableView.invalidate()
         updateTasks()
     }
 
     fun setScale(scale: Float, dx: Float, dy: Float) {
         this.scale = scale
         tableView.updateDataRects(scale)
-        translationX = (translationX - dx).coerceIn(minTranslationX, 0f)
-        translationY = (translationY - dy).coerceIn(minTranslationY, 0f)
+        translationX = (translationX + dx).coerceIn(minTranslationX, 0f)
+        translationY = (translationY + dy).coerceIn(minTranslationY, 0f)
         Log.i("TAGGGGGGG", "setScale dx $dx translationX $translationX")
         updateTasks()
     }

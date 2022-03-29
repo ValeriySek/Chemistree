@@ -1,6 +1,9 @@
 package com.selflearning.chemistree.f_mendeleev_table.table_view
 
 
+import android.animation.Animator
+import android.animation.AnimatorSet
+import android.animation.ValueAnimator
 import android.annotation.SuppressLint
 import android.content.Context
 import android.graphics.*
@@ -11,8 +14,10 @@ import android.view.View
 import com.selflearning.chemistree.f_mendeleev_table.R
 import selflearning.chemistree.domain.chemistry.elements.Data
 import com.selflearning.chemistree.f_mendeleev_table.table_view.data.DataUi
+import com.selflearning.chemistree.f_mendeleev_table.table_view.data.LongTableElementsList
 import com.selflearning.chemistree.f_mendeleev_table.table_view.render.RenderAxis
 import com.selflearning.chemistree.f_mendeleev_table.table_view.render.RenderTable
+import selflearning.chemistree.domain.chemistry.elements.Element
 
 class TableView @JvmOverloads constructor(
     context: Context,
@@ -30,17 +35,21 @@ class TableView @JvmOverloads constructor(
     val cardMargin = resources.getDimension(R.dimen.gant_task_vertical_margin)
 
 
-    fun contentWidth(scale: Float = 1f): Float = cellWidth * dataUi[0].size * scale + (cellWidth / 2) + cardMargin * 2
+    fun contentWidth(scale: Float = 1f): Float =
+        cellWidth * dataUi[0].size * scale + (cellWidth / 2) + cardMargin * 2
 
-    fun contentHeight(scale: Float = 1f): Float = cellHeight * dataUi.size * scale + (cellWidth / 2) + cardMargin * 2
+    fun contentHeight(scale: Float = 1f): Float =
+        cellHeight * dataUi.size * scale + (cellWidth / 2) + cardMargin * 2
 
     private val rectRow = Rect()
+
     private val rectPeriod = Rect()
 
     val viewPortHandler = ViewPortHandler()
 
     // Отвечает за зум и сдвиги
     val transformations = Transforms(this)
+
     val touchListener = TouchListener(this)
 
 //    // Обнаружение и расчет скейла
@@ -48,6 +57,7 @@ class TableView @JvmOverloads constructor(
 
 
     lateinit var renderTable: RenderTable
+
     lateinit var renderAxis: RenderAxis
 
     fun setTableRender(render: RenderTable) {
@@ -56,10 +66,11 @@ class TableView @JvmOverloads constructor(
     }
 
     private var data: List<List<Data?>> = emptyList()
+
     var dataUi: List<List<DataUi?>> = emptyList()
 
     fun setData(data: List<List<Data?>>) {
-        if(this.data != data) {
+        if (this.data != data) {
             this.data = data
             dataUi = data.map { datas ->
                 datas.map {
@@ -69,6 +80,30 @@ class TableView @JvmOverloads constructor(
             updateDataRects()
             invalidate()
         }
+    }
+
+    fun animates() {
+        createAnimator().start()
+    }
+
+
+    private fun createAnimator(): Animator {
+        val animator = ValueAnimator
+            .ofFloat(0f, 1f).apply {
+                duration = 3000
+                addUpdateListener { va ->
+                    dataUi.forEach {
+                        it.forEach { dataUi ->
+                            dataUi ?: return@forEach
+                            dataUi.updateTempRect(va.animatedValue as Float)
+                            transformations.recalculate()
+                        }
+                    }
+//                    invalidate()
+//                    if (element?.atomicNumber == 56) Log.i("TAFF", data.tempRect.toString())
+                }
+            }
+        return animator
     }
 
     fun updateDataRects(scale: Float = 1f) {
@@ -110,7 +145,7 @@ class TableView @JvmOverloads constructor(
         rectPeriod.set(0, 0, cellWidth / 2, h)
         viewPortHandler.setTableDimens(w.toFloat(), h.toFloat())
         viewPortHandler.setContentRect(offsetLeft = cellHeight / 2f, offsetTop = cellHeight / 2f)
-        renderAxis  = RenderAxis(this)
+        renderAxis = RenderAxis(this)
 
         requestLayout()
         invalidate()

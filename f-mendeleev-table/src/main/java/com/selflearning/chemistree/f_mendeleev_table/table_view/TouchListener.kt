@@ -44,8 +44,8 @@ class TouchListener(
                 scaleFactor = max(0.1f, min(detector.scaleFactor, 10f))
                 val scal = scaling * scaleFactor
                 scaling = if (scal in 0.5f..2f) scal else scaling
-                val dx = (scaling - lastScale) * (detector.focusX - transformations.translationX)
-                val dy = (scaling - lastScale) * (detector.focusY - transformations.translationY)
+                val dx = (scaling - lastScale) * (transformations.translationX)
+                val dy = (scaling - lastScale) * (transformations.translationY)
                 transformations.setScale(scaling, dx, dy)
                 Log.i("TAGGGGG", "detector.focusX scaling $scaling transformations.translationX ${transformations.translationX}")
                 lastScale = scaling
@@ -144,14 +144,15 @@ class TouchListener(
     }
 
     override fun onSingleTapConfirmed(e: MotionEvent): Boolean {
-        tableView.dataUi.forEach { list ->
-            list.forEach {
-                if (it != null && it.rect.contains(e.x, e.y)) {
-                    val d = it.data as? Element
-                    Toast.makeText(tableView.context, d?.symbol, Toast.LENGTH_SHORT).show()
-                }
-            }
-        }
+//        tableView.dataUi.forEach { list ->
+//            list.forEach {
+//                if (it != null && it.rect.contains(e.x, e.y)) {
+//                    val d = it.data as? Element
+//                    Toast.makeText(tableView.context, d?.symbol, Toast.LENGTH_SHORT).show()
+//                }
+//            }
+//        }
+//        tableView.animates()
         return super.onSingleTapConfirmed(e)
     }
 
