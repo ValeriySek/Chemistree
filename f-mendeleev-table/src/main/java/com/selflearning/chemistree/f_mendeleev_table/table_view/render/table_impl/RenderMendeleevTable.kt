@@ -86,7 +86,6 @@ class RenderMendeleevTable(
 
     private fun setItemColor(elementCategory: String) {
         defaultItemColor = itemColors[elementCategory] ?: "444444"
-        Log.i("TAGGF", "itemColor $defaultItemColor")
         paintStrokeBackground.color = Color.parseColor("#${defaultItemColor}")
         paintSecondBackground.color = Color.parseColor("#${defaultItemColor}")
         paintSecondBackgroundAlpha.color = Color.parseColor("#0D${defaultItemColor}")

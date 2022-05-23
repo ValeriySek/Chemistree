@@ -2,22 +2,21 @@ package com.selflearning.chemistree.f_mendeleev_table.table_view
 
 
 import android.animation.Animator
-import android.animation.AnimatorSet
 import android.animation.ValueAnimator
 import android.annotation.SuppressLint
 import android.content.Context
-import android.graphics.*
+import android.graphics.Canvas
+import android.graphics.Rect
 import android.util.AttributeSet
 import android.util.Log
 import android.view.MotionEvent
 import android.view.View
+import android.widget.Scroller
 import com.selflearning.chemistree.f_mendeleev_table.R
-import selflearning.chemistree.domain.chemistry.elements.Data
 import com.selflearning.chemistree.f_mendeleev_table.table_view.data.DataUi
-import com.selflearning.chemistree.f_mendeleev_table.table_view.data.LongTableElementsList
 import com.selflearning.chemistree.f_mendeleev_table.table_view.render.RenderAxis
 import com.selflearning.chemistree.f_mendeleev_table.table_view.render.RenderTable
-import selflearning.chemistree.domain.chemistry.elements.Element
+import selflearning.chemistree.domain.chemistry.elements.Data
 
 class TableView @JvmOverloads constructor(
     context: Context,
@@ -52,6 +51,8 @@ class TableView @JvmOverloads constructor(
 
     val touchListener = TouchListener(this)
 
+    val scroller = Scroller(context)
+
 //    // Обнаружение и расчет скейла
 //    private val scaleGestureDetector = GestureDetector(context, ScaleListener())
 
@@ -77,44 +78,38 @@ class TableView @JvmOverloads constructor(
                     DataUi(it, this)
                 }
             }
-            updateDataRects()
+            transformations.updateDataRects()
             invalidate()
         }
     }
 
     fun animates() {
-        createAnimator().start()
+        transformations.createAnimator().start()
     }
 
-
-    private fun createAnimator(): Animator {
-        val animator = ValueAnimator
-            .ofFloat(0f, 1f).apply {
-                duration = 3000
-                addUpdateListener { va ->
-                    dataUi.forEach {
-                        it.forEach { dataUi ->
-                            dataUi ?: return@forEach
-                            dataUi.updateTempRect(va.animatedValue as Float)
-                            transformations.recalculate()
-                        }
-                    }
-//                    invalidate()
-//                    if (element?.atomicNumber == 56) Log.i("TAFF", data.tempRect.toString())
-                }
-            }
-        return animator
-    }
-
-    fun updateDataRects(scale: Float = 1f) {
-        dataUi.forEachIndexed { indexFirst, list ->
-            list.forEachIndexed { indexSecond, dataUi ->
-                dataUi ?: return@forEachIndexed
-                dataUi.invalidateRect(Pair(indexFirst, indexSecond), scale)
-            }
-        }
-        transformations.recalculate()
-    }
+//
+//    private fun createAnimator(): Animator {
+//        val animator = ValueAnimator
+//            .ofFloat(0f, 1f).apply {
+//                duration = 8000
+//                addUpdateListener { va ->
+//                    val f = va.animatedValue as Float
+//                    updateDataRects(scale = transformations.scale, percents = f)
+//                    transformations.setPercents(f)
+//                }
+//            }
+//        return animator
+//    }
+//
+//    fun updateDataRects(scale: Float = 1f, percents: Float = 0f) {
+//        dataUi.forEachIndexed { indexFirst, list ->
+//            list.forEachIndexed { indexSecond, dataUi ->
+//                dataUi ?: return@forEachIndexed
+//                dataUi.invalidateRect(Pair(indexFirst, indexSecond), scale, percents)
+//            }
+//        }
+//        transformations.recalculate()
+//    }
 
     override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {
         val width = if (MeasureSpec.getMode(widthMeasureSpec) == MeasureSpec.UNSPECIFIED) {
@@ -167,6 +162,12 @@ class TableView @JvmOverloads constructor(
 
     override fun computeScroll() {
         touchListener.computeScroll()
+//        if(scroller.computeScrollOffset()) {
+//            Log.i(
+//                "TAGGFF",
+//                "computeScroll ${scroller.currX} ${scroller.currY}"
+//            )
+//        }
     }
 
     @SuppressLint("ClickableViewAccessibility")

@@ -49,7 +49,10 @@ class DataUi(
                     rect.bottom > 0
         }
 
-    fun invalidateRect(pair: Pair<Int, Int>, scale: Float) {
+    fun invalidateRect(pair: Pair<Int, Int>, scale: Float, percents: Float) {
+        val element = data as? Element ?: return
+        val r = (element.weight / LongTableElementsList.maxWeight) * percents
+
         untransformedRect.set(
             width / 2 + cardMargin + (pair.second * width * scale),
             width / 2 + cardMargin + (pair.first * height * scale),
@@ -59,12 +62,19 @@ class DataUi(
         rect.set(untransformedRect)
         untransformedTempRect.set(
             untransformedRect.left,
-            untransformedRect.bottom,
+            (untransformedRect.bottom - rect.height() * r).toFloat(),
             untransformedRect.right,
             untransformedRect.bottom
         )
         tempRect.set(untransformedTempRect)
     }
+
+//    fun transform(dx: Float, dy: Float) {
+//        rect.left += dx
+//        rect.right += dx
+//        rect.top += dy
+//        rect.bottom += dy
+//    }
 
     fun transform(matrix: Matrix) {
         matrix.mapRect(rect, untransformedRect)
