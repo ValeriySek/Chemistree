@@ -4,6 +4,7 @@ import android.text.Html
 import android.text.Spanned
 import com.selflearning.chemistree.utils.PATTERN_FOR_MOLECULE
 import com.selflearning.chemistree.utils.PATTERN_FOR_REACTION
+import com.selflearning.chemistree.utils.PATTERN_FOR_SHELL
 import java.util.*
 
 fun String.replaceOnSubstringSpanned(): Spanned {
@@ -15,7 +16,11 @@ fun String.replaceOnSubstringString(): String {
 }
 
 fun String.rep(): String {
-    return replace("([a-zA-Z])([0-9]*)".toRegex(), PATTERN_FOR_REACTION)
+    return replace("([A-Za-z]+)([0-9]*)".toRegex(), PATTERN_FOR_REACTION)
+}
+
+fun String.repElConf(): String {
+    return replace("([1-7][spdf])(1*[0-9])".toRegex(), PATTERN_FOR_SHELL)
 }
 
 fun String.getCationName(): String {
