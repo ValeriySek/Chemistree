@@ -30,7 +30,7 @@ abstract class BaseItemController{
     private fun getTypeHashCode(): Int {
 
         hash = if(hash != 0) hash else Random.nextInt()
-        Log.i("TAGG", "hash $hash")
+//        Log.i("TAGG", "hash $hash")
         return hash
     }
 }

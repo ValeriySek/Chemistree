@@ -13,7 +13,7 @@ class BaseAdapter : RecyclerView.Adapter<BindableViewHolder>() {
     fun add(bindableItems: List<BindableItem>){
         this.bindableItems.clear()
         this.bindableItems.addAll(bindableItems)
-            Log.i("TAGG", "bindableItem ${bindableItems[0]}")
+//            Log.i("TAGG", "bindableItem ${bindableItems[0]}")
 
         bindableItems.forEach {
             itemControllers.put(it.itemController.viewType(), it.itemController)
@@ -23,24 +23,24 @@ class BaseAdapter : RecyclerView.Adapter<BindableViewHolder>() {
     }
 
     override fun getItemViewType(position: Int): Int {
-        Log.i("TAGG", "getItemViewType $position")
+//        Log.i("TAGG", "getItemViewType $position")
         return bindableItems[position].itemController.viewType()
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BindableViewHolder {
-        Log.i("TAGG", "onCreateViewHolder")
+//        Log.i("TAGG", "onCreateViewHolder")
         return itemControllers.get(viewType).createViewHolder(parent)
     }
 
     override fun onBindViewHolder(holder: BindableViewHolder, position: Int) {
-        Log.i("TAGG", "onBindViewHolder")
+//        Log.i("TAGG", "onBindViewHolder")
         val item = bindableItems[position]
-        Log.i("TAGG", "onBindViewHolder bindableItem $item")
+//        Log.i("TAGG", "onBindViewHolder bindableItem $item")
         item.itemController.bind(holder, item.data)
     }
 
     override fun getItemCount(): Int {
-        Log.i("TAGG", "getItemCount")
+//        Log.i("TAGG", "getItemCount")
         return bindableItems.size
     }
 }

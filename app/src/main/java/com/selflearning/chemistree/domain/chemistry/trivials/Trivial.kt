@@ -2,7 +2,7 @@ package com.selflearning.chemistree.domain.chemistry.trivials
 
 data class Trivial(
     val formula: String = "",
-    val names: List<NamesByLang>
+    val names: List<NamesByLang> = listOf()
 )
 
 data class NamesByLang(

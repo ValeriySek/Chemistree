@@ -11,39 +11,19 @@ import com.selflearning.chemistree.domain.chemistry.inorganic.oxides.Oxides;
 import com.selflearning.chemistree.domain.chemistry.inorganic.oxides.OxidesDao;
 
 
-@Database(entities = {Acid.class, Bases.class, Oxides.class, Element.class}, version = 2, exportSchema = false)
+@Database(
+        entities = {
+                Acid.class,
+                Bases.class,
+                Oxides.class,
+                Element.class
+        },
+        version = 2,
+        exportSchema = false
+)
 public abstract class AppDatabase extends RoomDatabase {
-    private static volatile AppDatabase INSTANCE;
 
-//    public static AppDatabase getInstance(Context context) {
-//        if (INSTANCE == null) {
-//            synchronized (AppDatabase.class) {
-//                if (INSTANCE == null) {
-//                    INSTANCE = buildDatabase(context);
-//                }
-//            }
-//        }
-//        return INSTANCE;
-//    }
-//
-//    private static AppDatabase buildDatabase(final Context context) {
-//        return Room.databaseBuilder(context.getApplicationContext(), AppDatabase.class, AppConstants.DATABASE_NAME)
-//                .fallbackToDestructiveMigration()
-//                .allowMainThreadQueries()
-//                .addCallback(new Callback() {
-//                    @Override
-//                    public void onCreate(@NonNull SupportSQLiteDatabase db) {
-//                        super.onCreate(db);
-//
-//                        OneTimeWorkRequest request = new OneTimeWorkRequest.Builder(DatabaseWorker.class).build();
-//                        WorkManager.getInstance(context.getApplicationContext()).enqueue(request);
-//
-//                    }
-//                })
-//                .build();
-//    }
-
-        public abstract ElementDao elementDao();
+    public abstract ElementDao elementDao();
 
     public abstract BasesDao basesDao();
 

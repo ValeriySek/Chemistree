@@ -12,12 +12,17 @@ data class PreGameModel(
 
 @Parcelize
 data class GameQuestion(
-    val question: String,
-    val answer: String
+    val question: String = "",
+    val answer: String = ""
 ) : Parcelable
 
 @Parcelize
 data class GameModel(
-    val gameQuestion: GameQuestion,
-    val auxiliaryList: List<GameTrivialAnswerData>
-) : Parcelable
+    val gameQuestion: GameQuestion = GameQuestion(),
+    val auxiliaryList: List<GameTrivialAnswerData> = listOf()
+) : Parcelable {
+
+    override fun toString(): String {
+        return "\n$gameQuestion\n   $auxiliaryList"
+    }
+}

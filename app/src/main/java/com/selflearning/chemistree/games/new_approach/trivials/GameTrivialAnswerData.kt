@@ -5,7 +5,9 @@ import kotlinx.parcelize.Parcelize
 
 @Parcelize
 data class GameTrivialAnswerData(
-    val question: String,
-    val isCorrect: Boolean? = null
+    val answerVariant: String = "",
+    val isCorrect: Boolean? = null,
+    val question: String = "",
+    val isClickable: Boolean = true
 ) : Parcelable {
 }

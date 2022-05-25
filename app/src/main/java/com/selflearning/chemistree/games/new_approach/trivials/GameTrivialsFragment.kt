@@ -1,26 +1,41 @@
 package com.selflearning.chemistree.games.new_approach.trivials
 
+import android.graphics.Color
+import android.graphics.ColorFilter
+import android.graphics.PorterDuff
+import android.graphics.drawable.Drawable
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
+import android.widget.Toast
+import androidx.appcompat.content.res.AppCompatResources
+import androidx.core.content.ContextCompat
+import androidx.core.graphics.drawable.DrawableCompat
+import androidx.core.view.children
+import androidx.core.view.get
+import com.selflearning.chemistree.R
+import com.selflearning.chemistree.adapter.ItemAnim
+import com.selflearning.chemistree.adapter.a.Adapter
+import com.selflearning.chemistree.adapter.a.ItemList
 import com.selflearning.chemistree.core.adapter.BaseAdapter
 import com.selflearning.chemistree.core.adapter.BindableItem
 import com.selflearning.chemistree.databinding.FragmentBlankBinding
-import com.selflearning.chemistree.domain.chemistry.trivials.Trivial
-import com.selflearning.chemistree.games.models.GameModel
 import com.selflearning.chemistree.games.new_approach.GameFragmentWithActions
 import com.selflearning.chemistree.games.new_approach.GameRepository
+import com.selflearning.chemistree.games.new_approach.GameStages
+import com.selflearning.chemistree.games.new_approach.game_utils.Shakable
 
-class GameTrivialsFragment : GameFragmentWithActions() {
+class GameTrivialsFragment : GameFragmentWithActions<GameState>(), Shakable {
 
     override val gameRepository: GameRepository
         get() = GameTrivialsRepository()
 
     private var baseAdapter = BaseAdapter()
-
 
 
     private lateinit var binding: FragmentBlankBinding
@@ -37,10 +52,62 @@ class GameTrivialsFragment : GameFragmentWithActions() {
         return binding.root
     }
 
-    override fun onStartGame(data: GameModel) {
-        super.onStartGame(data)
-        binding.trivialsQuestionTv.text = data.gameQuestion.question
-        val list = data.auxiliaryList.map {
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        binding.apply {
+            trivialsButtonsRv.apply {
+                adapter = baseAdapter
+                itemAnimator = ItemAnim()
+            }
+        }
+    }
+
+    override fun onNewQuestion(data: GameState) {
+
+        val gameModel = data.gameModel
+
+        binding.trivialsQuestionTv.text = gameModel.gameQuestion.question
+        updateAnswers(gameModel.auxiliaryList)
+    }
+
+    override fun onRightAnswer(data: GameState) {
+        onAnswer(data)
+    }
+
+    override fun onWrongAnswer(data: GameState) {
+        updateLives(data.wastedLives)
+        onAnswer(data)
+    }
+
+    private fun onAnswer(data: GameState) {
+        updateScore(data.score)
+        updateAnswers(data.gameModel.auxiliaryList)
+        Handler(Looper.getMainLooper()).postDelayed({
+            gameViewModelWithActions.getQuestion()
+        }, 1000)
+    }
+
+    override fun onFinishGame(data: GameState) {
+        Toast.makeText(requireContext(), "Game End", Toast.LENGTH_SHORT).show()
+    }
+
+    private fun updateLives(lives: Int) {
+
+        val livesContainer = binding.trivialsLivesContainerLl
+
+        for (i in 0 until lives) {
+            val child = livesContainer[i] as ImageView
+            child.drawable.changeColorOfDrawable(Color.LTGRAY)
+        }
+
+    }
+
+    private fun updateScore(score: Int) {
+        binding.trivialsScoreTv.text = score.toString()
+    }
+
+    private fun updateAnswers(answers: List<GameTrivialAnswerData>) {
+        val list = answers.map {
             BindableItem(it, GameTrivialButtonController { answer->
                 gameViewModelWithActions.answer(answer)
             })
@@ -48,33 +115,10 @@ class GameTrivialsFragment : GameFragmentWithActions() {
         baseAdapter.add(list)
     }
 
-    override fun onRightAnswer() {
-
-        Handler(Looper.getMainLooper()).postDelayed({
-            gameViewModelWithActions.getQuestion()
-        }, 500)
+    private fun Drawable.changeColorOfDrawable(color: Int) {
+        val wrappedDrawable: Drawable = DrawableCompat.wrap(this)
+        DrawableCompat.setTint(wrappedDrawable, color)
     }
-
-    override fun onWrongAnswer(data: Any) {
-        data as? Trivial
-        Handler(Looper.getMainLooper()).postDelayed({
-             gameViewModelWithActions.getQuestion()
-        }, 500)
-    }
-
-    override fun onFinishGame() {
-
-    }
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-        binding.apply {
-            trivialsButtonsRv.apply {
-                adapter = baseAdapter
-            }
-        }
-    }
-
 
 
     companion object {

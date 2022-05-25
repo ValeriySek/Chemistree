@@ -2,16 +2,15 @@ package com.selflearning.chemistree.games.new_approach
 
 import android.util.Log
 import com.selflearning.chemistree.games.models.GameModel
+import com.selflearning.chemistree.games.new_approach.trivials.GameTrivialAnswerData
 
-interface GameLifecycle {
+interface GameLifecycle<T> {
 
-    fun onStartGame(data: GameModel) {
-        Log.i("TAGG", "GameLifecycle onStartGame()")
-    }
+    fun onNewQuestion(data: T)
 
-    fun onRightAnswer()
+    fun onRightAnswer(data: T)
 
-    fun onWrongAnswer(data: Any)
+    fun onWrongAnswer(data: T)
 
-    fun onFinishGame()
+    fun onFinishGame(data: T)
 }
