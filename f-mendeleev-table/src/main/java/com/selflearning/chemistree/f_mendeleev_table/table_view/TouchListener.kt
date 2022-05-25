@@ -5,6 +5,7 @@ import android.graphics.PointF
 import android.util.Log
 import android.view.*
 import android.view.animation.AnimationUtils
+import android.widget.Scroller
 import android.widget.Toast
 import selflearning.chemistree.domain.chemistry.elements.Element
 import kotlin.math.*
@@ -29,10 +30,64 @@ class TouchListener(
     var scaleFactor = 1f
     var lastScale = 1f
 
-    private val gestureDetector = GestureDetector(tableView.context, this)
+    //    private val gestureDetector = GestureDetector(tableView.context, this)
+    val gestureDetector =
+        GestureDetector(tableView.context, object : GestureDetector.SimpleOnGestureListener() {
 
-    val scaleGestureDetector = ScaleGestureDetector(
-        tableView.context,
+
+            override fun onScroll(
+                e1: MotionEvent?,
+                e2: MotionEvent?,
+                distanceX: Float,
+                distanceY: Float
+            ): Boolean {
+                Log.i("TAGGF", "distanceX $distanceX distanceY $distanceY")
+
+//            tableView.dataUi.forEach {
+//                it.forEach { dataUi ->
+//                    dataUi ?: return@forEach
+//                    dataUi.transform(-distanceX, -distanceY)
+//                }
+//            }
+//            tableView.invalidate()
+//            transformations.addTranslation(-distanceX, -distanceY)
+                return true
+            }
+
+            override fun onFling(
+                e1: MotionEvent?,
+                e2: MotionEvent?,
+                velocityX: Float,
+                velocityY: Float
+            ): Boolean {
+                tableView.scroller.forceFinished(true)
+                tableView.scroller.fling(
+                    transformations.translationX.toInt(),
+                    transformations.translationY.toInt(),
+                    velocityX.toInt(),
+                    velocityY.toInt(),
+                    transformations.minTranslationX.toInt(),
+                    0,
+                    transformations.minTranslationY.toInt(),
+                    0
+                )
+                return true
+            }
+
+            override fun onSingleTapUp(e: MotionEvent?): Boolean {
+                return super.onSingleTapUp(e)
+            }
+
+            override fun onSingleTapConfirmed(e: MotionEvent): Boolean {
+                return super.onSingleTapConfirmed(e)
+            }
+
+            override fun onDoubleTap(e: MotionEvent?): Boolean {
+                return super.onDoubleTap(e)
+            }
+
+        })
+    val scaleGestureDetector = ScaleGestureDetector(tableView.context,
         object : ScaleGestureDetector.SimpleOnScaleGestureListener() {
 
             override fun onScaleBegin(detector: ScaleGestureDetector?): Boolean {
@@ -44,10 +99,13 @@ class TouchListener(
                 scaleFactor = max(0.1f, min(detector.scaleFactor, 10f))
                 val scal = scaling * scaleFactor
                 scaling = if (scal in 0.5f..2f) scal else scaling
-                val dx = (scaling - lastScale) * (detector.focusX - transformations.translationX)
-                val dy = (scaling - lastScale) * (detector.focusY - transformations.translationY)
+                val dx = (scaling - lastScale) * (transformations.translationX)
+                val dy = (scaling - lastScale) * (transformations.translationY)
                 transformations.setScale(scaling, dx, dy)
-                Log.i("TAGGGGG", "detector.focusX scaling $scaling transformations.translationX ${transformations.translationX}")
+                Log.i(
+                    "TAGGGGG",
+                    "detector.focusX scaling $scaling transformations.translationX ${transformations.translationX}"
+                )
                 lastScale = scaling
                 return true
             }
@@ -144,14 +202,15 @@ class TouchListener(
     }
 
     override fun onSingleTapConfirmed(e: MotionEvent): Boolean {
-        tableView.dataUi.forEach { list ->
-            list.forEach {
-                if (it != null && it.rect.contains(e.x, e.y)) {
-                    val d = it.data as? Element
-                    Toast.makeText(tableView.context, d?.symbol, Toast.LENGTH_SHORT).show()
-                }
-            }
-        }
+//        tableView.dataUi.forEach { list ->
+//            list.forEach {
+//                if (it != null && it.rect.contains(e.x, e.y)) {
+//                    val d = it.data as? Element
+//                    Toast.makeText(tableView.context, d?.symbol, Toast.LENGTH_SHORT).show()
+//                }
+//            }
+//        }
+//        tableView.animates()
         return super.onSingleTapConfirmed(e)
     }
 

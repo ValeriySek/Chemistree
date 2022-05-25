@@ -4,6 +4,8 @@ import selflearning.chemistree.domain.chemistry.elements.Element
 
 object LongTableElementsList {
 
+    val maxWeight = 294.2139
+
     val elements = listOf(
         listOf(
             Element(1, "H", "hydrogen", 1.0079, "reactiveNonmetal"),

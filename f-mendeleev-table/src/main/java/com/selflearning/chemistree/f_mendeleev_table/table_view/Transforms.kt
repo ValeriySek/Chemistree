@@ -1,5 +1,7 @@
 package com.selflearning.chemistree.f_mendeleev_table.table_view
 
+import android.animation.Animator
+import android.animation.ValueAnimator
 import android.graphics.Matrix
 import android.util.Log
 
@@ -9,6 +11,9 @@ class Transforms(
 
     val viewPortHandler = tableView.viewPortHandler
     private val matrix = Matrix()
+
+    var percents = 0f
+        private set
 
     var scale = 1f
         private set
@@ -33,16 +38,25 @@ class Transforms(
     fun addTranslation(dx: Float, dy: Float) {
         translationX = (translationX + dx).coerceIn(minTranslationX, 0f)
         translationY = (translationY + dy).coerceIn(minTranslationY, 0f)
+        Log.i("TAGGF", "translationX $translationX translationY $translationY")
         Log.i("TAGGGGGGG", "addTranslation dx $dx translationX $translationX")
-        tableView.invalidate()
+        val x = if (canScrollX) dx else 0f
+        val y = if (canScrollY) dy else 0f
+//        updateTasks(x, y)
         updateTasks()
+    }
+
+
+
+    fun setPercents(percents: Float) {
+        this.percents = percents
     }
 
     fun setScale(scale: Float, dx: Float, dy: Float) {
         this.scale = scale
-        tableView.updateDataRects(scale)
-        translationX = (translationX - dx).coerceIn(minTranslationX, 0f)
-        translationY = (translationY - dy).coerceIn(minTranslationY, 0f)
+        updateDataRects(scale, percents)
+        translationX = (translationX + dx).coerceIn(minTranslationX, 0f)
+        translationY = (translationY + dy).coerceIn(minTranslationY, 0f)
         Log.i("TAGGGGGGG", "setScale dx $dx translationX $translationX")
         updateTasks()
     }
@@ -65,5 +79,29 @@ class Transforms(
             }
         }
         tableView.invalidate()
+    }
+
+
+    fun createAnimator(): Animator {
+        val animator = ValueAnimator
+            .ofFloat(0f, 1f).apply {
+                duration = 8000
+                addUpdateListener { va ->
+                    val f = va.animatedValue as Float
+                    updateDataRects(scale = scale, percents = f)
+                    setPercents(f)
+                }
+            }
+        return animator
+    }
+
+    fun updateDataRects(scale: Float = 1f, percents: Float = 0f) {
+        tableView.dataUi.forEachIndexed { indexFirst, list ->
+            list.forEachIndexed { indexSecond, dataUi ->
+                dataUi ?: return@forEachIndexed
+                dataUi.invalidateRect(Pair(indexFirst, indexSecond), scale, percents)
+            }
+        }
+        recalculate()
     }
 }

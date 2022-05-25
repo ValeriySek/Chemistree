@@ -15,16 +15,27 @@ abstract class Render(
 //    var viewPortHandler: ViewPortHandler
 ) {
 
+    //    val itemColors = mapOf(
+//        "reactiveNonmetal" to Color.rgb(42, 54, 119),
+//        "nobleGas" to Color.rgb(233, 143, 64),
+//        "alkaliMetal" to Color.rgb(128, 128, 0),
+//        "alkalineEarthMetal" to Color.rgb(31, 122, 39),
+//        "metalloid" to Color.rgb(112, 44, 179),
+//        "postTransitionMetal" to Color.rgb(145, 92, 131),
+//        "transitionMetal" to Color.rgb(0, 123, 167),
+//        "lanthanide" to Color.rgb(141, 110, 99),
+//        "actinide" to Color.rgb(109, 76, 64),
+//    )
     val itemColors = mapOf(
-        "reactiveNonmetal" to Color.rgb(42, 54, 119),
-        "nobleGas" to Color.rgb(233, 143, 64),
-        "alkaliMetal" to Color.rgb(128, 128, 0),
-        "alkalineEarthMetal" to Color.rgb(31, 122, 39),
-        "metalloid" to Color.rgb(112, 44, 179),
-        "postTransitionMetal" to Color.rgb(145, 92, 131),
-        "transitionMetal" to Color.rgb(0, 123, 167),
-        "lanthanide" to Color.rgb(141, 110, 99),
-        "actinide" to Color.rgb(109, 76, 64),
+        "reactiveNonmetal" to "2a3677",
+        "nobleGas" to "e98f40",
+        "alkaliMetal" to "808000",
+        "alkalineEarthMetal" to "1f7a27",
+        "metalloid" to "702cb3",
+        "postTransitionMetal" to "915c83",
+        "transitionMetal" to "007ba7",
+        "lanthanide" to "8d6e63",
+        "actinide" to "6d4c40",
     )
 
     val axisBackgroundPaint = Paint().apply {
@@ -55,7 +66,7 @@ abstract class Render(
 
     val axisLabelsPaint = TextPaint(Paint.ANTI_ALIAS_FLAG).apply {
         textSize = context.getDimension(R.dimen.gant_task_name_text_size)
-        color = ContextCompat.getColor(context, R.color.grey_700)
+        color = ContextCompat.getColor(context, R.color.black)
     }
 
     val paintStrokeBackground: Paint = Paint().apply {
@@ -76,9 +87,13 @@ abstract class Render(
         color = Color.DKGRAY
     }
 
-    val defaultItemColor: Int = Color.DKGRAY
+    val paintSecondBackgroundAlpha: Paint = Paint().apply {
+        isAntiAlias = true
+        style = Paint.Style.FILL
+        color = Color.DKGRAY
+    }
 
-    var itemColor: Int = defaultItemColor
+    var defaultItemColor: String = "444444"
 
     fun getTextWidth(text: String): Float {
         return axisLabelsPaint.measureText(text)

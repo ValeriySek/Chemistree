@@ -1,18 +1,22 @@
 package com.selflearning.chemistree.f_mendeleev_table.table_view
 
 
+import android.animation.Animator
+import android.animation.ValueAnimator
 import android.annotation.SuppressLint
 import android.content.Context
-import android.graphics.*
+import android.graphics.Canvas
+import android.graphics.Rect
 import android.util.AttributeSet
 import android.util.Log
 import android.view.MotionEvent
 import android.view.View
+import android.widget.Scroller
 import com.selflearning.chemistree.f_mendeleev_table.R
-import selflearning.chemistree.domain.chemistry.elements.Data
 import com.selflearning.chemistree.f_mendeleev_table.table_view.data.DataUi
 import com.selflearning.chemistree.f_mendeleev_table.table_view.render.RenderAxis
 import com.selflearning.chemistree.f_mendeleev_table.table_view.render.RenderTable
+import selflearning.chemistree.domain.chemistry.elements.Data
 
 class TableView @JvmOverloads constructor(
     context: Context,
@@ -30,24 +34,31 @@ class TableView @JvmOverloads constructor(
     val cardMargin = resources.getDimension(R.dimen.gant_task_vertical_margin)
 
 
-    fun contentWidth(scale: Float = 1f): Float = cellWidth * dataUi[0].size * scale + (cellWidth / 2) + cardMargin * 2
+    fun contentWidth(scale: Float = 1f): Float =
+        cellWidth * dataUi[0].size * scale + (cellWidth / 2) + cardMargin * 2
 
-    fun contentHeight(scale: Float = 1f): Float = cellHeight * dataUi.size * scale + (cellWidth / 2) + cardMargin * 2
+    fun contentHeight(scale: Float = 1f): Float =
+        cellHeight * dataUi.size * scale + (cellWidth / 2) + cardMargin * 2
 
     private val rectRow = Rect()
+
     private val rectPeriod = Rect()
 
     val viewPortHandler = ViewPortHandler()
 
     // Отвечает за зум и сдвиги
     val transformations = Transforms(this)
+
     val touchListener = TouchListener(this)
+
+    val scroller = Scroller(context)
 
 //    // Обнаружение и расчет скейла
 //    private val scaleGestureDetector = GestureDetector(context, ScaleListener())
 
 
     lateinit var renderTable: RenderTable
+
     lateinit var renderAxis: RenderAxis
 
     fun setTableRender(render: RenderTable) {
@@ -56,30 +67,49 @@ class TableView @JvmOverloads constructor(
     }
 
     private var data: List<List<Data?>> = emptyList()
+
     var dataUi: List<List<DataUi?>> = emptyList()
 
     fun setData(data: List<List<Data?>>) {
-        if(this.data != data) {
+        if (this.data != data) {
             this.data = data
             dataUi = data.map { datas ->
                 datas.map {
                     DataUi(it, this)
                 }
             }
-            updateDataRects()
+            transformations.updateDataRects()
             invalidate()
         }
     }
 
-    fun updateDataRects(scale: Float = 1f) {
-        dataUi.forEachIndexed { indexFirst, list ->
-            list.forEachIndexed { indexSecond, dataUi ->
-                dataUi ?: return@forEachIndexed
-                dataUi.invalidateRect(Pair(indexFirst, indexSecond), scale)
-            }
-        }
-        transformations.recalculate()
+    fun animates() {
+        transformations.createAnimator().start()
     }
+
+//
+//    private fun createAnimator(): Animator {
+//        val animator = ValueAnimator
+//            .ofFloat(0f, 1f).apply {
+//                duration = 8000
+//                addUpdateListener { va ->
+//                    val f = va.animatedValue as Float
+//                    updateDataRects(scale = transformations.scale, percents = f)
+//                    transformations.setPercents(f)
+//                }
+//            }
+//        return animator
+//    }
+//
+//    fun updateDataRects(scale: Float = 1f, percents: Float = 0f) {
+//        dataUi.forEachIndexed { indexFirst, list ->
+//            list.forEachIndexed { indexSecond, dataUi ->
+//                dataUi ?: return@forEachIndexed
+//                dataUi.invalidateRect(Pair(indexFirst, indexSecond), scale, percents)
+//            }
+//        }
+//        transformations.recalculate()
+//    }
 
     override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {
         val width = if (MeasureSpec.getMode(widthMeasureSpec) == MeasureSpec.UNSPECIFIED) {
@@ -110,7 +140,7 @@ class TableView @JvmOverloads constructor(
         rectPeriod.set(0, 0, cellWidth / 2, h)
         viewPortHandler.setTableDimens(w.toFloat(), h.toFloat())
         viewPortHandler.setContentRect(offsetLeft = cellHeight / 2f, offsetTop = cellHeight / 2f)
-        renderAxis  = RenderAxis(this)
+        renderAxis = RenderAxis(this)
 
         requestLayout()
         invalidate()
@@ -132,6 +162,12 @@ class TableView @JvmOverloads constructor(
 
     override fun computeScroll() {
         touchListener.computeScroll()
+//        if(scroller.computeScrollOffset()) {
+//            Log.i(
+//                "TAGGFF",
+//                "computeScroll ${scroller.currX} ${scroller.currY}"
+//            )
+//        }
     }
 
     @SuppressLint("ClickableViewAccessibility")
