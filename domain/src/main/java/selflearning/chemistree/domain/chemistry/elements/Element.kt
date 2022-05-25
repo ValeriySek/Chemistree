@@ -25,7 +25,8 @@ class Element(
         title: String,
         weight: Double,
         elementCategory: String,
-        electronConfiguration: String = ""
+        electronConfiguration: String = "",
+        electronsPerShell: String = ""
     ) : this(
         atomicNumber,
         symbol,
@@ -37,7 +38,7 @@ class Element(
         "",
         elementCategory,
         electronConfiguration,
-        "",
+        electronsPerShell,
         ""
     )
 }
