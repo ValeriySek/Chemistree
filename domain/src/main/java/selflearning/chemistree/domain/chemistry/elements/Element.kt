@@ -10,13 +10,13 @@ class Element(
     val title: String,
     val weight: Double,
     val group: Int,
-    val subgroup: String,
+    val subgroup: Subgroup,
     val period: Int,
     val block: String,
     val elementCategory: String,
     val electronConfiguration: String,
     val electronsPerShell: String,
-    val phase: String
+    val phase: Phase
 ) : Data(), Parcelable {
 
     constructor(
@@ -33,12 +33,26 @@ class Element(
         title,
         weight,
         -1,
-        "",
+        Subgroup.NONE,
         -1,
         "",
         elementCategory,
         electronConfiguration,
         electronsPerShell,
-        ""
+        Phase.UNKNOWN
     )
+}
+
+enum class Phase(phase: String) {
+    GAS("gas"),
+    SOLID("solid"),
+    LIQUID("liquid"),
+    UNKNOWN("unknownPhase"),
+    LIQUID_PREDICTED("liquid")
+}
+
+enum class Subgroup(subgroup: String) {
+    A("A"),
+    B("B"),
+    NONE("")
 }

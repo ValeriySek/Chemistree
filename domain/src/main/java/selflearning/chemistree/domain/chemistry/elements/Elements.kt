@@ -1,21 +1,23 @@
 package selflearning.chemistree.domain.chemistry.elements
 
+import selflearning.chemistree.domain.chemistry.elements.Subgroup.*
+
 object Elements {
 
-    val elements = listOf(
+    val elements = sequenceOf(
         Element(
             1,
             "H",
             "hydrogen",
             1.0079,
             1,
-            "A",
+            A,
             1,
             "s",
             "reactiveNonmetal",
             "1s<sup>1</sup>",
             "1",
-            "gas"
+            Phase.GAS
         ),
         Element(
             2,
@@ -23,13 +25,13 @@ object Elements {
             "helium",
             4.0026,
             8,
-            "A",
+            A,
             1,
             "s",
             "nobleGas",
             "1s<sup>2</sup>",
             "2",
-            "gas"
+            Phase.GAS
         ),
         Element(
             3,
@@ -37,13 +39,13 @@ object Elements {
             "lithium",
             6.941,
             1,
-            "A",
+            A,
             2,
             "s",
             "alkaliMetal",
             "[He] 2s<sup>1</sup>",
             "2 1",
-            "solid"
+            Phase.SOLID
         ),
         Element(
             4,
@@ -51,13 +53,13 @@ object Elements {
             "beryllium",
             9.0121,
             2,
-            "A",
+            A,
             2,
             "s",
             "alkalineEarthMetal",
             "[He] 2s<sup>2</sup>",
             "2 2",
-            "solid"
+            Phase.SOLID
         ),
         Element(
             5,
@@ -65,13 +67,13 @@ object Elements {
             "boron",
             10.811,
             3,
-            "A",
+            A,
             2,
             "p",
             "metalloid",
             "[He] 2s<sup>2</sup> 2p<sup>1</sup>",
             "2 3",
-            "solid"
+            Phase.SOLID
         ),
         Element(
             6,
@@ -79,13 +81,13 @@ object Elements {
             "carbon",
             12.0107,
             4,
-            "A",
+            A,
             2,
             "p",
             "reactiveNonmetal",
             "[He] 2s<sup>2</sup> 2p<sup>2</sup>",
             "2 4",
-            "solid"
+            Phase.SOLID
         ),
         Element(
             7,
@@ -93,13 +95,13 @@ object Elements {
             "nitrogen",
             14.0067,
             5,
-            "A",
+            A,
             2,
             "p",
             "reactiveNonmetal",
             "[He] 2s<sup>2</sup> 2p<sup>3</sup>",
             "2 5",
-            "gas"
+            Phase.GAS
         ),
         Element(
             8,
@@ -107,13 +109,13 @@ object Elements {
             "oxygen",
             15.9994,
             6,
-            "A",
+            A,
             2,
             "p",
             "reactiveNonmetal",
             "[He] 2s<sup>2</sup> 2p<sup>4</sup>",
             "2 6",
-            "gas"
+            Phase.GAS
         ),
         Element(
             9,
@@ -121,13 +123,13 @@ object Elements {
             "fluorine",
             18.9984,
             7,
-            "A",
+            A,
             2,
             "p",
             "reactiveNonmetal",
             "[He] 2s<sup>2</sup> 2p<sup>5</sup>",
             "2 7",
-            "gas"
+            Phase.GAS
         ),
         Element(
             10,
@@ -135,13 +137,13 @@ object Elements {
             "neon",
             20.1797,
             8,
-            "A",
+            A,
             2,
             "p",
             "nobleGas",
             "[He] 2s<sup>2</sup> 2p<sup>6</sup>",
             "2 8",
-            "gas"
+            Phase.GAS
         ),
         Element(
             11,
@@ -149,13 +151,13 @@ object Elements {
             "sodium",
             22.9897,
             1,
-            "A",
+            A,
             3,
             "s",
             "alkaliMetal",
             "[Ne] 3s<sup>1</sup>",
             "2 8 1",
-            "solid"
+            Phase.SOLID
         ),
         Element(
             12,
@@ -163,13 +165,13 @@ object Elements {
             "magnesium",
             24.305,
             2,
-            "A",
+            A,
             3,
             "s",
             "alkalineEarthMetal",
             "[Ne] 3s<sup>2</sup>",
             "2 8 2",
-            "solid"
+            Phase.SOLID
         ),
         Element(
             13,
@@ -177,13 +179,13 @@ object Elements {
             "aluminum",
             26.9815,
             3,
-            "A",
+            A,
             3,
             "p",
             "postTransitionMetal",
             "[Ne] 3s<sup>2</sup> 3p<sup>1</sup>",
             "2 8 3",
-            "solid"
+            Phase.SOLID
         ),
         Element(
             14,
@@ -191,13 +193,13 @@ object Elements {
             "silicon",
             28.0855,
             4,
-            "A",
+            A,
             3,
             "p",
             "metalloid",
             "[Ne] 3s<sup>2</sup> 3p<sup>2</sup>",
             "2 8 4",
-            "solid"
+            Phase.SOLID
         ),
         Element(
             15,
@@ -205,13 +207,13 @@ object Elements {
             "phosphorus",
             30.9737,
             5,
-            "A",
+            A,
             3,
             "p",
             "reactiveNonmetal",
             "[Ne] 3s<sup>2</sup> 3p<sup>3</sup>",
             "2 8 5",
-            "solid"
+            Phase.SOLID
         ),
         Element(
             16,
@@ -219,13 +221,13 @@ object Elements {
             "sulfur",
             32.065,
             6,
-            "A",
+            A,
             3,
             "p",
             "reactiveNonmetal",
             "[Ne] 3s<sup>2</sup> 3p<sup>4</sup>",
             "2 8 6",
-            "solid"
+            Phase.SOLID
         ),
         Element(
             17,
@@ -233,13 +235,13 @@ object Elements {
             "chlorine",
             35.453,
             7,
-            "A",
+            A,
             3,
             "p",
             "reactiveNonmetal",
             "[Ne] 3s<sup>2</sup> 3p<sup>5</sup>",
             "2 8 7",
-            "gas"
+            Phase.GAS
         ),
         Element(
             18,
@@ -247,13 +249,13 @@ object Elements {
             "argon",
             39.948,
             8,
-            "A",
+            A,
             3,
             "p",
             "nobleGas",
             "[Ne] 3s<sup>2</sup> 3p<sup>6</sup>",
             "2 8 8",
-            "gas"
+            Phase.GAS
         ),
         Element(
             19,
@@ -261,13 +263,13 @@ object Elements {
             "potassium",
             39.0983,
             1,
-            "A",
+            A,
             4,
             "s",
             "alkaliMetal",
             "[Ar] 4s<sup>1</sup>",
             "2 8 8 1",
-            "solid"
+            Phase.SOLID
         ),
         Element(
             20,
@@ -275,13 +277,13 @@ object Elements {
             "calcium",
             40.078,
             2,
-            "A",
+            A,
             4,
             "s",
             "alkalineEarthMetal",
             "[Ar] 4s<sup>2</sup>",
             "2 8 8 2",
-            "solid"
+            Phase.SOLID
         ),
         Element(
             21,
@@ -289,13 +291,13 @@ object Elements {
             "scandium",
             44.9559,
             3,
-            "B",
+            B,
             4,
             "d",
             "transitionMetal",
             "[Ar] 3d<sup>1</sup> 4s<sup>2</sup>",
             "2 8 9 2",
-            "solid"
+            Phase.SOLID
         ),
         Element(
             22,
@@ -303,13 +305,13 @@ object Elements {
             "titanium",
             47.867,
             4,
-            "B",
+            B,
             4,
             "d",
             "transitionMetal",
             "[Ar] 3d<sup>2</sup> 4s<sup>2</sup>",
             "2 8 10 2",
-            "solid"
+            Phase.SOLID
         ),
         Element(
             23,
@@ -317,13 +319,13 @@ object Elements {
             "vanadium",
             50.9415,
             5,
-            "B",
+            B,
             4,
             "d",
             "transitionMetal",
             "[Ar] 3d<sup>3</sup> 4s<sup>2</sup>",
             "2 8 11 2",
-            "solid"
+            Phase.SOLID
         ),
         Element(
             24,
@@ -331,13 +333,13 @@ object Elements {
             "chromium",
             51.9961,
             6,
-            "B",
+            B,
             4,
             "d",
             "transitionMetal",
             "[Ar] 3d<sup>5</sup> 4s<sup>1</sup>",
             "2 8 13 1",
-            "solid"
+            Phase.SOLID
         ),
         Element(
             25,
@@ -345,13 +347,13 @@ object Elements {
             "manganese",
             54.938,
             7,
-            "B",
+            B,
             4,
             "d",
             "transitionMetal",
             "[Ar] 3d<sup>5</sup> 4s<sup>2</sup>",
             "2 8 13 2",
-            "solid"
+            Phase.SOLID
         ),
         Element(
             26,
@@ -359,13 +361,13 @@ object Elements {
             "iron",
             55.845,
             8,
-            "B",
+            B,
             4,
             "d",
             "transitionMetal",
             "[Ar] 3d<sup>6</sup> 4s<sup>2</sup>",
             "2 8 14 2",
-            "solid"
+            Phase.SOLID
         ),
         Element(
             27,
@@ -373,13 +375,13 @@ object Elements {
             "cobalt",
             58.9331,
             8,
-            "B",
+            B,
             4,
             "d",
             "transitionMetal",
             "[Ar] 3d<sup>7</sup> 4s<sup>2</sup>",
             "2 8 15 2",
-            "solid"
+            Phase.SOLID
         ),
         Element(
             28,
@@ -387,13 +389,13 @@ object Elements {
             "nickel",
             58.6934,
             8,
-            "B",
+            B,
             4,
             "d",
             "transitionMetal",
             "[Ar] 3d<sup>8</sup> 4s<sup>2</sup>",
             "2 8 16 2",
-            "solid"
+            Phase.SOLID
         ),
         Element(
             29,
@@ -401,13 +403,13 @@ object Elements {
             "copper",
             63.546,
             1,
-            "B",
+            B,
             4,
             "d",
             "transitionMetal",
             "[Ar] 3d<sup>10</sup> 4s<sup>1</sup>",
             "2 8 18 1",
-            "solid"
+            Phase.SOLID
         ),
         Element(
             30,
@@ -415,13 +417,13 @@ object Elements {
             "zinc",
             65.409,
             2,
-            "B",
+            B,
             4,
             "d",
             "postTransitionMetal",
             "[Ar] 3d<sup>10</sup> 4s<sup>2</sup>",
             "2 8 18 2",
-            "solid"
+            Phase.SOLID
         ),
         Element(
             31,
@@ -429,13 +431,13 @@ object Elements {
             "gallium",
             69.723,
             3,
-            "A",
+            A,
             4,
             "p",
             "postTransitionMetal",
             "[Ar] 3d<sup>10</sup> 4s<sup>2</sup> 4p<sup>1</sup>",
             "2 8 18 3",
-            "solid"
+            Phase.SOLID
         ),
         Element(
             32,
@@ -443,13 +445,13 @@ object Elements {
             "germanium",
             72.630,
             4,
-            "A",
+            A,
             4,
             "p",
             "metalloid",
             "[Ar] 3d<sup>10</sup> 4s<sup>2</sup> 4p<sup>2</sup>",
             "2 8 18 4",
-            "solid"
+            Phase.SOLID
         ),
         Element(
             33,
@@ -457,13 +459,13 @@ object Elements {
             "arsenic",
             74.9216,
             5,
-            "A",
+            A,
             4,
             "p",
             "metalloid",
             "[Ar] 3d<sup>10</sup> 4s<sup>2</sup> 4p<sup>3</sup>",
             "2 8 18 5",
-            "solid"
+            Phase.SOLID
         ),
         Element(
             34,
@@ -471,13 +473,13 @@ object Elements {
             "selenium",
             78.971,
             6,
-            "A",
+            A,
             4,
             "p",
             "reactiveNonmetal",
             "[Ar] 3d<sup>10</sup> 4s<sup>2</sup> 4p<sup>4</sup>",
             "2 8 18 6",
-            "solid"
+            Phase.SOLID
         ),
         Element(
             35,
@@ -485,13 +487,13 @@ object Elements {
             "bromine",
             79.904,
             7,
-            "A",
+            A,
             4,
             "p",
             "reactiveNonmetal",
             "[Ar] 3d<sup>10</sup> 4s<sup>2</sup> 4p<sup>5</sup>",
             "2 8 18 7",
-            "liquid"
+            Phase.LIQUID
         ),
         Element(
             36,
@@ -499,13 +501,13 @@ object Elements {
             "krypton",
             83.798,
             8,
-            "A",
+            A,
             4,
             "p",
             "nobleGas",
             "[Ar] 3d<sup>10</sup> 4s<sup>2</sup> 4p<sup>6</sup>",
             "2 8 18 8",
-            "gas"
+            Phase.GAS
         ),
         Element(
             37,
@@ -513,13 +515,13 @@ object Elements {
             "rubidium",
             85.4678,
             1,
-            "A",
+            A,
             5,
             "s",
             "alkaliMetal",
             "[Kr] 5s<sup>1</sup>",
             "2 8 18 8 1",
-            "solid"
+            Phase.SOLID
         ),
         Element(
             38,
@@ -527,13 +529,13 @@ object Elements {
             "strontium",
             87.62,
             2,
-            "A",
+            A,
             5,
             "s",
             "alkalineEarthMetal",
             "[Kr] 5s<sup>2</sup>",
             "2 8 18 8 2",
-            "solid"
+            Phase.SOLID
         ),
         Element(
             39,
@@ -541,13 +543,13 @@ object Elements {
             "yttrium",
             88.905,
             3,
-            "B",
+            B,
             5,
             "d",
             "transitionMetal",
             "[Kr] 4d<sup>1</sup> 5s<sup>2</sup>",
             "2 8 18 9 2",
-            "solid"
+            Phase.SOLID
         ),
         Element(
             40,
@@ -555,13 +557,13 @@ object Elements {
             "zirconium",
             91.224,
             4,
-            "B",
+            B,
             5,
             "d",
             "transitionMetal",
             "[Kr] 4d<sup>2</sup> 5s<sup>2</sup>",
             "2 8 18 10 2",
-            "solid"
+            Phase.SOLID
         ),
         Element(
             41,
@@ -569,13 +571,13 @@ object Elements {
             "niobium",
             92.906,
             5,
-            "B",
+            B,
             5,
             "d",
             "transitionMetal",
             "[Kr] 4d<sup>4</sup> 5s<sup>1</sup>",
             "2 8 18 12 1",
-            "solid"
+            Phase.SOLID
         ),
         Element(
             42,
@@ -583,13 +585,13 @@ object Elements {
             "molybdenum",
             95.94,
             6,
-            "B",
+            B,
             5,
             "d",
             "transitionMetal",
             "[Kr] 4d<sup>5</sup> 5s<sup>1</sup>",
             "2 8 18 13 1",
-            "solid"
+            Phase.SOLID
         ),
         Element(
             43,
@@ -597,13 +599,13 @@ object Elements {
             "technetium",
             97.906,
             7,
-            "B",
+            B,
             5,
             "d",
             "transitionMetal",
             "[Kr] 4d<sup>5</sup> 5s<sup>2</sup>",
             "2 8 18 13 2",
-            "solid"
+            Phase.SOLID
         ),
         Element(
             44,
@@ -611,13 +613,13 @@ object Elements {
             "ruthenium",
             101.07,
             8,
-            "B",
+            B,
             5,
             "d",
             "transitionMetal",
             "[Kr] 4d<sup>7</sup> 5s<sup>1</sup>",
             "2 8 18 15 1",
-            "solid"
+            Phase.SOLID
         ),
         Element(
             45,
@@ -625,13 +627,13 @@ object Elements {
             "rhodium",
             102.905,
             8,
-            "B",
+            B,
             5,
             "d",
             "transitionMetal",
             "[Kr] 4d<sup>8</sup> 5s<sup>1</sup>",
             "2 8 18 16 1",
-            "solid"
+            Phase.SOLID
         ),
         Element(
             46,
@@ -639,13 +641,13 @@ object Elements {
             "palladium",
             106.42,
             8,
-            "B",
+            B,
             5,
             "d",
             "transitionMetal",
             "[Kr] 4d<sup>10</sup>",
             "2 8 18 18",
-            "solid"
+            Phase.SOLID
         ),
         Element(
             47,
@@ -653,13 +655,13 @@ object Elements {
             "silver",
             107.868,
             1,
-            "B",
+            B,
             5,
             "d",
             "transitionMetal",
             "[Kr] 4d<sup>10</sup> 5s<sup>1</sup>",
             "2 8 18 18 1",
-            "solid"
+            Phase.SOLID
         ),
         Element(
             48,
@@ -667,13 +669,13 @@ object Elements {
             "cadmium",
             112.411,
             2,
-            "B",
+            B,
             5,
             "d",
             "postTransitionMetal",
             "[Kr] 4d<sup>10</sup> 5s<sup>2</sup>",
             "2 8 18 18 2",
-            "solid"
+            Phase.SOLID
         ),
         Element(
             49,
@@ -681,13 +683,13 @@ object Elements {
             "indium",
             114.818,
             3,
-            "A",
+            A,
             5,
             "p",
             "postTransitionMetal",
             "[Kr] 4d<sup>10</sup> 5s<sup>2</sup> 5p<sup>1</sup>",
             "2 8 18 18 3",
-            "solid"
+            Phase.SOLID
         ),
         Element(
             50,
@@ -695,13 +697,13 @@ object Elements {
             "tin",
             118.71,
             4,
-            "A",
+            A,
             5,
             "p",
             "postTransitionMetal",
             "[Kr] 4d<sup>10</sup> 5s<sup>2</sup> 5p<sup>2</sup>",
             "2 8 18 18 4",
-            "solid"
+            Phase.SOLID
         ),
         Element(
             51,
@@ -709,13 +711,13 @@ object Elements {
             "antimony",
             121.76,
             5,
-            "A",
+            A,
             5,
             "p",
             "metalloid",
             "[Kr] 4d<sup>10</sup> 5s<sup>2</sup> 5p<sup>3</sup>",
             "2 8 18 18 5",
-            "solid"
+            Phase.SOLID
         ),
         Element(
             52,
@@ -723,12 +725,13 @@ object Elements {
             "tellurium",
             127.6,
             6,
-            "A",
+            A,
             5,
             "p",
             "metalloid",
             "[Kr] 4d<sup>10</sup> 5s<sup>2</sup> 5p<sup>4</sup>",
-            "2 8 18 18 6", "solid"
+            "2 8 18 18 6",
+            Phase.SOLID
 
         ),
         Element(
@@ -737,13 +740,13 @@ object Elements {
             "iodine",
             126.904,
             7,
-            "A",
+            A,
             5,
             "p",
             "reactiveNonmetal",
             "[Kr] 4d<sup>10</sup> 5s<sup>2</sup> 5p<sup>5</sup>",
             "2 8 18 18 7",
-            "solid"
+            Phase.SOLID
         ),
         Element(
             54,
@@ -751,13 +754,13 @@ object Elements {
             "xenon",
             131.293,
             8,
-            "A",
+            A,
             5,
             "p",
             "nobleGas",
             "[Kr] 4d<sup>10</sup> 5s<sup>2</sup> 5p<sup>6</sup>",
             "2 8 18 18 8",
-            "gas"
+            Phase.GAS
         ),
         Element(
             55,
@@ -765,13 +768,13 @@ object Elements {
             "cesium",
             132.905,
             1,
-            "A",
+            A,
             6,
             "s",
             "alkaliMetal",
             "[Xe] 6s<sup>1</sup>",
             "2 8 18 18 8 1",
-            "solid"
+            Phase.SOLID
         ),
         Element(
             56,
@@ -779,13 +782,13 @@ object Elements {
             "barium",
             137.327,
             2,
-            "A",
+            A,
             6,
             "s",
             "alkalineEarthMetal",
             "[Xe] 6s<sup>2</sup>",
             "2 8 18 18 8 2",
-            "solid"
+            Phase.SOLID
         ),
         Element(
             57,
@@ -793,13 +796,13 @@ object Elements {
             "lanthanum",
             138.905,
             3,
-            "B",
+            B,
             6,
             "d",
             "lanthanide",
             "[Xe] 5d<sup>1</sup> 6s<sup>2</sup>",
             "2 8 18 18 9 2",
-            "solid"
+            Phase.SOLID
         ),
         Element(
             58,
@@ -807,13 +810,13 @@ object Elements {
             "cerium",
             140.116,
             0,
-            "",
+            NONE,
             6,
             "f",
             "lanthanide",
             "[Xe] 4f<sup>1</sup> 5d<sup>1</sup> 6s<sup>2</sup>",
             "2 8 18 19 9 2",
-            "solid"
+            Phase.SOLID
         ),
         Element(
             59,
@@ -821,13 +824,13 @@ object Elements {
             "praseodynium",
             140.904,
             0,
-            "",
+            NONE,
             6,
             "f",
             "lanthanide",
             "[Xe] 4f<sup>3</sup> 6s<sup>2</sup>",
             "2 8 18 21 8 2",
-            "solid"
+            Phase.SOLID
         ),
         Element(
             60,
@@ -835,13 +838,13 @@ object Elements {
             "neodymium",
             144.242,
             0,
-            "",
+            NONE,
             6,
             "f",
             "lanthanide",
             "[Xe] 4f<sup>4</sup> 6s<sup>2</sup>",
             "2 8 18 22 8 2",
-            "solid"
+            Phase.SOLID
         ),
         Element(
             61,
@@ -849,13 +852,13 @@ object Elements {
             "promethium",
             144.915,
             0,
-            "",
+            NONE,
             6,
             "f",
             "lanthanide",
             "[Xe] 4f<sup>5</sup> 6s<sup>2</sup>",
             "2 8 18 23 8 2",
-            "solid"
+            Phase.SOLID
         ),
         Element(
             62,
@@ -863,13 +866,13 @@ object Elements {
             "samarium",
             150.36,
             0,
-            "",
+            NONE,
             6,
             "f",
             "lanthanide",
             "[Xe] 4f<sup>6</sup> 6s<sup>2</sup>",
             "2 8 18 24 8 2",
-            "solid"
+            Phase.SOLID
         ),
         Element(
             63,
@@ -877,13 +880,13 @@ object Elements {
             "europium",
             151.964,
             0,
-            "",
+            NONE,
             6,
             "f",
             "lanthanide",
             "[Xe] 4f<sup>7</sup> 6s<sup>2</sup>",
             "2 8 18 25 8 2",
-            "solid"
+            Phase.SOLID
         ),
         Element(
             64,
@@ -891,13 +894,13 @@ object Elements {
             "gadolinium",
             157.25,
             0,
-            "",
+            NONE,
             6,
             "f",
             "lanthanide",
             "[Xe] 4f<sup>7</sup> 5d<sup>1</sup> 6s<sup>2</sup>",
             "2 8 18 25 9 2",
-            "solid"
+            Phase.SOLID
         ),
         Element(
             65,
@@ -905,13 +908,13 @@ object Elements {
             "terbium",
             158.925,
             0,
-            "",
+            NONE,
             6,
             "f",
             "lanthanide",
             "[Xe] 4f<sup>9</sup> 6s<sup>2</sup>",
             "2 8 18 27 8 2",
-            "solid"
+            Phase.SOLID
         ),
         Element(
             66,
@@ -919,13 +922,13 @@ object Elements {
             "dysprosium",
             162.5,
             0,
-            "",
+            NONE,
             6,
             "f",
             "lanthanide",
             "[Xe] 4f<sup>10</sup> 6s<sup>2</sup>",
             "2 8 18 28 8 2",
-            "solid"
+            Phase.SOLID
         ),
         Element(
             67,
@@ -933,13 +936,13 @@ object Elements {
             "holmium",
             164.93,
             0,
-            "",
+            NONE,
             6,
             "f",
             "lanthanide",
             "[Xe] 4f<sup>11</sup> 6s<sup>2</sup>",
             "2 8 18 29 8 2",
-            "solid"
+            Phase.SOLID
         ),
         Element(
             68,
@@ -947,13 +950,13 @@ object Elements {
             "erbium",
             167.259,
             0,
-            "",
+            NONE,
             6,
             "f",
             "lanthanide",
             "[Xe] 4f<sup>12</sup> 6s<sup>2</sup>",
             "2 8 18 30 8 2",
-            "solid"
+            Phase.SOLID
         ),
         Element(
             69,
@@ -961,13 +964,13 @@ object Elements {
             "thulium",
             168.934,
             0,
-            "",
+            NONE,
             6,
             "f",
             "lanthanide",
             "[Xe] 4f<sup>13</sup> 6s<sup>2</sup>",
             "2 8 18 31 8 2",
-            "solid"
+            Phase.SOLID
         ),
         Element(
             70,
@@ -975,13 +978,13 @@ object Elements {
             "ytterbium",
             173.04,
             0,
-            "",
+            NONE,
             6,
             "f",
             "lanthanide",
             "[Xe] 4f<sup>14</sup> 6s<sup>2</sup>",
             "2 8 18 32 8 2",
-            "solid"
+            Phase.SOLID
         ),
         Element(
             71,
@@ -989,13 +992,13 @@ object Elements {
             "lutetium",
             174.967,
             0,
-            "",
+            NONE,
             6,
             "f",
             "lanthanide",
             "[Xe] 4f<sup>14</sup> 5d<sup>1</sup> 6s<sup>2</sup>",
             "2 8 18 32 9 2",
-            "solid"
+            Phase.SOLID
         ),
         Element(
             72,
@@ -1003,13 +1006,13 @@ object Elements {
             "hafnium",
             178.49,
             4,
-            "B",
+            B,
             6,
             "d",
             "transitionMetal",
             "[Xe] 4f<sup>14</sup> 5d<sup>2</sup> 6s<sup>2</sup>",
             "2 8 18 32 10 2",
-            "solid"
+            Phase.SOLID
         ),
         Element(
             73,
@@ -1017,13 +1020,13 @@ object Elements {
             "tantalum",
             180.947,
             5,
-            "B",
+            B,
             6,
             "d",
             "transitionMetal",
             "[Xe] 4f<sup>14</sup> 5d<sup>3</sup> 6s<sup>2</sup>",
             "2 8 18 32 11 2",
-            "solid"
+            Phase.SOLID
         ),
         Element(
             74,
@@ -1031,13 +1034,13 @@ object Elements {
             "tungsten",
             183.84,
             6,
-            "B",
+            B,
             6,
             "d",
             "transitionMetal",
             "[Xe] 4f<sup>14</sup> 5d<sup>4</sup> 6s<sup>2</sup>",
             "2 8 18 32 12 2",
-            "solid"
+            Phase.SOLID
         ),
         Element(
             75,
@@ -1045,13 +1048,13 @@ object Elements {
             "rhenium",
             186.207,
             7,
-            "B",
+            B,
             6,
             "d",
             "transitionMetal",
             "[Xe] 4f<sup>14</sup> 5d<sup>5</sup> 6s<sup>2</sup>",
             "2 8 18 32 13 2",
-            "solid"
+            Phase.SOLID
         ),
         Element(
             76,
@@ -1059,13 +1062,13 @@ object Elements {
             "osmium",
             190.23,
             8,
-            "B",
+            B,
             6,
             "d",
             "transitionMetal",
             "[Xe] 4f<sup>14</sup> 5d<sup>6</sup> 6s<sup>2</sup>",
             "2 8 18 32 14 2",
-            "solid"
+            Phase.SOLID
         ),
         Element(
             77,
@@ -1073,13 +1076,13 @@ object Elements {
             "iridium",
             192.217,
             8,
-            "B",
+            B,
             6,
             "d",
             "transitionMetal",
             "[Xe] 4f<sup>14</sup> 5d<sup>7</sup> 6s<sup>2</sup>",
             "2 8 18 32 15 2",
-            "solid"
+            Phase.SOLID
         ),
         Element(
             78,
@@ -1087,13 +1090,13 @@ object Elements {
             "platinum",
             195.084,
             8,
-            "B",
+            B,
             6,
             "d",
             "transitionMetal",
             "[Xe] 4f<sup>14</sup> 5d<sup>9</sup> 6s<sup>1</sup>",
             "2 8 18 32 17 1",
-            "solid"
+            Phase.SOLID
         ),
         Element(
             79,
@@ -1101,13 +1104,13 @@ object Elements {
             "gold",
             196.966,
             1,
-            "B",
+            B,
             6,
             "d",
             "transitionMetal",
             "[Xe] 4f<sup>14</sup> 5d<sup>10</sup> 6s<sup>1</sup>",
             "2 8 18 32 18 1",
-            "solid"
+            Phase.SOLID
         ),
         Element(
             80,
@@ -1115,13 +1118,13 @@ object Elements {
             "mercury",
             200.59,
             2,
-            "B",
+            B,
             6,
             "d",
             "postTransitionMetal",
             "[Xe] 4f<sup>14</sup> 5d<sup>10</sup> 6s<sup>2</sup>",
             "2 8 18 32 18 2",
-            "liquid"
+            Phase.LIQUID
         ),
         Element(
             81,
@@ -1129,13 +1132,13 @@ object Elements {
             "thallium",
             204.383,
             3,
-            "B",
+            B,
             6,
             "p",
             "postTransitionMetal",
             "[Xe] 4f<sup>14</sup> 5d<sup>10</sup> 6s<sup>2</sup> 6p<sup>1</sup>",
             "2 8 18 32 18 3",
-            "solid"
+            Phase.SOLID
         ),
         Element(
             82,
@@ -1143,13 +1146,13 @@ object Elements {
             "lead",
             207.2,
             4,
-            "B",
+            B,
             6,
             "p",
             "postTransitionMetal",
             "[Xe] 4f<sup>14</sup> 5d<sup>10</sup> 6s<sup>2</sup> 6p<sup>2</sup>",
             "2 8 18 32 18 4",
-            "solid"
+            Phase.SOLID
         ),
         Element(
             83,
@@ -1157,13 +1160,13 @@ object Elements {
             "bismuth",
             208.980,
             5,
-            "B",
+            B,
             6,
             "p",
             "postTransitionMetal",
             "[Xe] 4f<sup>14</sup> 5d<sup>10</sup> 6s<sup>2</sup> 6p<sup>3</sup>",
             "2 8 18 32 18 5",
-            "solid"
+            Phase.SOLID
         ),
         Element(
             84,
@@ -1171,13 +1174,13 @@ object Elements {
             "polonium",
             208.9824,
             6,
-            "B",
+            B,
             6,
             "p",
             "postTransitionMetal",
             "[Xe] 4f<sup>14</sup> 5d<sup>10</sup> 6s<sup>2</sup> 6p<sup>4</sup>",
             "2 8 18 32 18 6",
-            "solid"
+            Phase.SOLID
         ),
         Element(
             85,
@@ -1185,13 +1188,13 @@ object Elements {
             "astatine",
             209.9871,
             7,
-            "A",
+            A,
             6,
             "p",
             "metalloid",
             "[Xe] 4f<sup>14</sup> 5d<sup>10</sup> 6s<sup>2</sup> 6p<sup>5</sup>",
             "2 8 18 32 18 7",
-            "solid"
+            Phase.SOLID
         ),
         Element(
             86,
@@ -1199,13 +1202,13 @@ object Elements {
             "radon",
             222.0176,
             8,
-            "A",
+            A,
             7,
             "p",
             "nobleGas",
             "[Xe] 4f<sup>14</sup> 5d<sup>10</sup> 6s<sup>2</sup> 6p<sup>6</sup>",
             "2 8 18 32 18 8",
-            "gas"
+            Phase.GAS
         ),
         Element(
             87,
@@ -1213,13 +1216,13 @@ object Elements {
             "francium",
             223.0197,
             1,
-            "A",
+            A,
             7,
             "s",
             "alkaliMetal",
             "[Rn] 7s<sup>1</sup>",
             "2 8 18 32 18 8 1",
-            "solid"
+            Phase.SOLID
         ),
         Element(
             88,
@@ -1227,13 +1230,13 @@ object Elements {
             "radium",
             226.0254,
             2,
-            "A",
+            A,
             7,
             "s",
             "alkalineEarthMetal",
             "[Rn] 7s<sup>2</sup>",
             "2 8 18 32 18 8 2",
-            "solid"
+            Phase.SOLID
         ),
         Element(
             89,
@@ -1241,13 +1244,13 @@ object Elements {
             "actinium",
             227.0278,
             3,
-            "B",
+            B,
             7,
             "d",
             "actinide",
             "[Rn] 6d<sup>1</sup> 7s<sup>2</sup>",
             "2 8 18 32 18 9 2",
-            "solid"
+            Phase.SOLID
         ),
         Element(
             90,
@@ -1255,13 +1258,13 @@ object Elements {
             "thorium",
             232.038,
             0,
-            "",
+            NONE,
             7,
             "f",
             "actinide",
             "[Rn] 6d<sup>2</sup> 7s<sup>2</sup>",
             "2 8 18 32 18 10 2",
-            "solid"
+            Phase.SOLID
         ),
         Element(
             91,
@@ -1269,13 +1272,13 @@ object Elements {
             "protactinium",
             231.0358,
             0,
-            "",
+            NONE,
             7,
             "f",
             "actinide",
             "[Rn] 5f<sup>2</sup> 6d<sup>1</sup> 7s<sup>2</sup>",
             "2 8 18 32 20 9 2",
-            "solid"
+            Phase.SOLID
         ),
         Element(
             92,
@@ -1283,13 +1286,13 @@ object Elements {
             "uranium",
             238.0289,
             0,
-            "",
+            NONE,
             7,
             "f",
             "actinide",
             "[Rn] 5f<sup>3</sup> 6d<sup>1</sup> 7s<sup>2</sup>",
             "2 8 18 32 21 9 2",
-            "solid"
+            Phase.SOLID
         ),
         Element(
             93,
@@ -1297,13 +1300,13 @@ object Elements {
             "neptunium",
             237.0482,
             0,
-            "",
+            NONE,
             7,
             "f",
             "actinide",
             "[Rn] 5f<sup>4</sup> 6d<sup>1</sup> 7s<sup>2</sup>",
             "2 8 18 32 22 9 2",
-            "solid"
+            Phase.SOLID
         ),
         Element(
             94,
@@ -1311,13 +1314,13 @@ object Elements {
             "plutonium",
             244.0642,
             0,
-            "",
+            NONE,
             7,
             "f",
             "actinide",
             "[Rn] 5f<sup>6</sup> 7s<sup>2</sup>",
             "2 8 18 32 24 8 2",
-            "solid"
+            Phase.SOLID
         ),
         Element(
             95,
@@ -1325,13 +1328,13 @@ object Elements {
             "americium",
             243.0614,
             0,
-            "",
+            NONE,
             7,
             "f",
             "actinide",
             "[Rn] 5f<sup>7</sup> 7s<sup>2</sup>",
             "2 8 18 32 25 8 2",
-            "solid"
+            Phase.SOLID
         ),
         Element(
             96,
@@ -1339,13 +1342,13 @@ object Elements {
             "curium",
             247.0703,
             0,
-            "",
+            NONE,
             7,
             "f",
             "actinide",
             "[Rn] 5f<sup>7</sup> 6d<sup>1</sup> 7s<sup>2</sup>",
             "2 8 18 32 25 9 2",
-            "solid"
+            Phase.SOLID
         ),
         Element(
             97,
@@ -1353,13 +1356,13 @@ object Elements {
             "berklium",
             247.0703,
             0,
-            "",
+            NONE,
             7,
             "f",
             "actinide",
             "[Rn] 5f<sup>9</sup> 7s<sup>2</sup>",
             "2 8 18 32 27 8 2",
-            "solid"
+            Phase.SOLID
         ),
         Element(
             98,
@@ -1367,13 +1370,13 @@ object Elements {
             "californium",
             251.0796,
             0,
-            "",
+            NONE,
             7,
             "f",
             "actinide",
             "[Rn] 5f<sup>10</sup> 7s<sup>2</sup>",
             "2 8 18 32 28 8 2",
-            "solid"
+            Phase.SOLID
         ),
         Element(
             99,
@@ -1381,13 +1384,13 @@ object Elements {
             "einsteinium",
             252.0829,
             0,
-            "",
+            NONE,
             7,
             "f",
             "actinide",
             "[Rn] 5f<sup>11</sup> 7s<sup>2</sup>",
             "2 8 18 32 29 8 2",
-            "solid"
+            Phase.SOLID
         ),
         Element(
             100,
@@ -1395,13 +1398,13 @@ object Elements {
             "fermium",
             257.0951,
             0,
-            "",
+            NONE,
             7,
             "f",
             "actinide",
             "[Rn] 5f<sup>12</sup> 7s<sup>2</sup>",
             "2 8 18 32 30 8 2",
-            "solid"
+            Phase.SOLID
         ),
         Element(
             101,
@@ -1409,13 +1412,13 @@ object Elements {
             "mendelevium",
             258.0951,
             0,
-            "",
+            NONE,
             7,
             "f",
             "actinide",
             "[Rn] 5f<sup>13</sup> 7s<sup>2</sup>",
             "2 8 18 32 31 8 2",
-            "solid"
+            Phase.SOLID
         ),
         Element(
             102,
@@ -1423,13 +1426,13 @@ object Elements {
             "nobelium",
             259.1009,
             0,
-            "",
+            NONE,
             7,
             "f",
             "actinide",
             "[Rn] 5f<sup>14</sup> 7s<sup>2</sup>",
             "2 8 18 32 32 8 2",
-            "solid"
+            Phase.SOLID
         ),
         Element(
             103,
@@ -1437,13 +1440,13 @@ object Elements {
             "lawrencium",
             266.1193,
             0,
-            "",
+            NONE,
             7,
             "f",
             "actinide",
             "[Rn] 5f<sup>14</sup> 7s<sup>2</sup> 7p<sup>1</sup>",
             "2 8 18 32 32 8 3",
-            "solid"
+            Phase.SOLID
         ),
         Element(
             104,
@@ -1451,13 +1454,13 @@ object Elements {
             "rutherfordium",
             267.0,
             4,
-            "B",
+            B,
             7,
             "d",
             "transitionMetal",
             "[Rn] 5f<sup>14</sup> 6d<sup>2</sup> 7s<sup>2</sup>",
             "2 8 18 32 32 10 2",
-            "solid"
+            Phase.SOLID
         ),
         Element(
             105,
@@ -1465,13 +1468,13 @@ object Elements {
             "dubnium",
             262.0,
             5,
-            "B",
+            B,
             7,
             "d",
             "transitionMetal",
             "[Rn] 5f<sup>14</sup> 6d<sup>3</sup> 7s<sup>2</sup>",
             "2 8 18 32 32 11 2",
-            "solid"
+            Phase.SOLID
         ),
         Element(
             106,
@@ -1479,13 +1482,13 @@ object Elements {
             "seaborgium",
             269.0,
             6,
-            "B",
+            B,
             7,
             "d",
             "transitionMetal",
             "[Rn] 5f<sup>14</sup> 6d<sup>4</sup> 7s<sup>2</sup>",
             "2 8 18 32 32 12 2",
-            "solid"
+            Phase.SOLID
         ),
         Element(
             107,
@@ -1493,13 +1496,13 @@ object Elements {
             "bohrium",
             270.0,
             7,
-            "B",
+            B,
             7,
             "d",
             "transitionMetal",
             "[Rn] 5f<sup>14</sup> 6d<sup>5</sup> 7s<sup>2</sup>",
             "2 8 18 32 32 13 2",
-            "unknownPhase"
+            Phase.UNKNOWN
         ),
         Element(
             108,
@@ -1507,13 +1510,13 @@ object Elements {
             "hassium",
             269.0,
             8,
-            "B",
+            B,
             7,
             "d",
             "transitionMetal",
             "[Rn] 5f<sup>14</sup> 6d<sup>6</sup> 7s<sup>2</sup>",
             "2 8 18 32 32 14 2",
-            "solid"
+            Phase.SOLID
         ),
         Element(
             109,
@@ -1521,13 +1524,13 @@ object Elements {
             "meitnerium",
             278.0,
             8,
-            "B",
+            B,
             7,
             "d",
             "transitionMetal",
             "[Rn] 5f<sup>14</sup> 6d<sup>7</sup> 7s<sup>2</sup>",
             "2 8 18 32 32 15 2",
-            "solid"
+            Phase.SOLID
         ),
         Element(
             110,
@@ -1535,13 +1538,13 @@ object Elements {
             "darmstadtium",
             281.1620,
             8,
-            "B",
+            B,
             7,
             "d",
             "transitionMetal",
             "[Rn] 5f<sup>14</sup> 6d<sup>8</sup> 7s<sup>2</sup>",
             "2 8 18 32 32 16 2",
-            "solid"
+            Phase.SOLID
         ),
         Element(
             111,
@@ -1549,13 +1552,13 @@ object Elements {
             "roentgenium",
             281.1684,
             1,
-            "B",
+            B,
             7,
             "d",
             "transitionMetal",
             "[Rn] 5f<sup>14</sup> 6d<sup>9</sup> 7s<sup>2</sup>",
             "2 8 18 32 32 17 2",
-            "solid"
+            Phase.SOLID
         ),
         Element(
             112,
@@ -1563,13 +1566,13 @@ object Elements {
             "copernicium",
             285.1744,
             2,
-            "B",
+            B,
             7,
             "d",
             "transitionMetal",
             "[Rn] 5f<sup>14</sup> 6d<sup>10</sup> 7s<sup>2</sup>",
             "2 8 18 32 32 18 2",
-            "liquid"
+            Phase.LIQUID_PREDICTED
         ),
         Element(
             113,
@@ -1577,13 +1580,13 @@ object Elements {
             "nihonium",
             286.181,
             3,
-            "A",
+            A,
             7,
             "p",
             "postTransitionMetal",
             "[Rn] 5f<sup>14</sup> 6d<sup>10</sup> 7s<sup>2</sup> 7p<sup>1</sup>",
             "2 8 18 32 32 18 3",
-            "solid"
+            Phase.SOLID
         ),
         Element(
             114,
@@ -1591,13 +1594,13 @@ object Elements {
             "flerovium",
             289.1904,
             4,
-            "A",
+            A,
             7,
             "p",
             "postTransitionMetal",
             "[Rn] 5f<sup>14</sup> 6d<sup>10</sup> 7s<sup>2</sup> 7p<sup>2</sup>",
             "2 8 18 32 32 18 4",
-            "gas"
+            Phase.LIQUID_PREDICTED
         ),
         Element(
             115,
@@ -1605,13 +1608,13 @@ object Elements {
             "moscovium",
             290.1943,
             5,
-            "A",
+            A,
             7,
             "p",
             "postTransitionMetal",
             "[Rn] 5f<sup>14</sup> 6d<sup>10</sup> 7s<sup>2</sup> 7p<sup>3</sup>",
             "2 8 18 32 32 18 5",
-            "solid"
+            Phase.SOLID
         ),
         Element(
             116,
@@ -1619,13 +1622,13 @@ object Elements {
             "livermorium",
             293.2045,
             6,
-            "A",
+            A,
             7,
             "p",
             "postTransitionMetal",
             "[Rn] 5f<sup>14</sup> 6d<sup>10</sup> 7s<sup>2</sup> 7p<sup>4</sup>",
             "2 8 18 32 32 18 6",
-            "solid"
+            Phase.SOLID
         ),
         Element(
             117,
@@ -1633,13 +1636,13 @@ object Elements {
             "tennessine",
             294.2104,
             7,
-            "A",
+            A,
             7,
             "p",
             "postTransitionMetal",
             "[Rn] 5f<sup>14</sup> 6d<sup>10</sup> 7s<sup>2</sup> 7p<sup>5</sup>",
             "2 8 18 32 32 18 7",
-            "solid"
+            Phase.SOLID
         ),
         Element(
             118,
@@ -1647,13 +1650,13 @@ object Elements {
             "oganesson",
             294.2139,
             8,
-            "A",
+            A,
             7,
             "p",
             "nobleGas",
             "[Rn] 5f<sup>14</sup> 6d<sup>10</sup> 7s<sup>2</sup> 7p<sup>6</sup>",
             "2 8 18 32 32 18 8",
-            "solid"
+            Phase.SOLID
         ),
     )
 }

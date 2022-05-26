@@ -5,6 +5,8 @@
     <string name="title_dashboard">Dashboard</string>
     <string name="title_games_pack">Games Pack</string>
     <string name="title_notifications">Notifications</string>
+
+
     <string name="hydrogen">Hydrogen</string>
     <string name="helium">Helium</string>
     <string name="lithium">Lithium</string>
@@ -128,6 +130,8 @@
     <string name="tennessine">Tennessine</string>
     <string name="oganesson">Oganesson</string>
 
+
+
     <string name="title_activity_email_login">Sign in</string>
     <string name="prompt_email">Email</string>
     <string name="prompt_password">Password</string>
@@ -138,6 +142,8 @@
     <string name="invalid_password">Password must be >5 characters</string>
     <string name="login_failed">"Login failed"</string>
 
+
+
     <string name="reactiveNonmetal">Reactive nonmetal</string>
     <string name="nobleGas">Noble gas</string>
     <string name="alkaliMetal">Alkali metal</string>
@@ -147,6 +153,8 @@
     <string name="transitionMetal">Transition metal</string>
     <string name="lanthanide">Lanthanide</string>
     <string name="actinide">Actinide</string>
+
+
 
     <string name="ammonium">Ammonium hydroxide</string>
     <string name="cesium1">Cesium hydroxide</string>
