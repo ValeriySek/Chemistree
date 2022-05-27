@@ -15,7 +15,7 @@ object Elements {
             1,
             "s",
             "reactiveNonmetal",
-            "1s<sup>1</sup>",
+            "1s1",
             "1",
             Phase.GAS
         ),
@@ -29,7 +29,7 @@ object Elements {
             1,
             "s",
             "nobleGas",
-            "1s<sup>2</sup>",
+            "1s2",
             "2",
             Phase.GAS
         ),
@@ -43,7 +43,7 @@ object Elements {
             2,
             "s",
             "alkaliMetal",
-            "[He] 2s<sup>1</sup>",
+            "[He] 2s1",
             "2 1",
             Phase.SOLID
         ),
@@ -57,7 +57,7 @@ object Elements {
             2,
             "s",
             "alkalineEarthMetal",
-            "[He] 2s<sup>2</sup>",
+            "[He] 2s2",
             "2 2",
             Phase.SOLID
         ),
@@ -71,7 +71,7 @@ object Elements {
             2,
             "p",
             "metalloid",
-            "[He] 2s<sup>2</sup> 2p<sup>1</sup>",
+            "[He] 2s2 2p1",
             "2 3",
             Phase.SOLID
         ),
@@ -85,7 +85,7 @@ object Elements {
             2,
             "p",
             "reactiveNonmetal",
-            "[He] 2s<sup>2</sup> 2p<sup>2</sup>",
+            "[He] 2s2 2p2",
             "2 4",
             Phase.SOLID
         ),
@@ -99,7 +99,7 @@ object Elements {
             2,
             "p",
             "reactiveNonmetal",
-            "[He] 2s<sup>2</sup> 2p<sup>3</sup>",
+            "[He] 2s2 2p3",
             "2 5",
             Phase.GAS
         ),
@@ -113,7 +113,7 @@ object Elements {
             2,
             "p",
             "reactiveNonmetal",
-            "[He] 2s<sup>2</sup> 2p<sup>4</sup>",
+            "[He] 2s2 2p4",
             "2 6",
             Phase.GAS
         ),
@@ -127,7 +127,7 @@ object Elements {
             2,
             "p",
             "reactiveNonmetal",
-            "[He] 2s<sup>2</sup> 2p<sup>5</sup>",
+            "[He] 2s2 2p5",
             "2 7",
             Phase.GAS
         ),
@@ -141,7 +141,7 @@ object Elements {
             2,
             "p",
             "nobleGas",
-            "[He] 2s<sup>2</sup> 2p<sup>6</sup>",
+            "[He] 2s2 2p6",
             "2 8",
             Phase.GAS
         ),
@@ -155,7 +155,7 @@ object Elements {
             3,
             "s",
             "alkaliMetal",
-            "[Ne] 3s<sup>1</sup>",
+            "[Ne] 3s1",
             "2 8 1",
             Phase.SOLID
         ),
@@ -169,7 +169,7 @@ object Elements {
             3,
             "s",
             "alkalineEarthMetal",
-            "[Ne] 3s<sup>2</sup>",
+            "[Ne] 3s2",
             "2 8 2",
             Phase.SOLID
         ),
@@ -183,7 +183,7 @@ object Elements {
             3,
             "p",
             "postTransitionMetal",
-            "[Ne] 3s<sup>2</sup> 3p<sup>1</sup>",
+            "[Ne] 3s2 3p1",
             "2 8 3",
             Phase.SOLID
         ),
@@ -197,7 +197,7 @@ object Elements {
             3,
             "p",
             "metalloid",
-            "[Ne] 3s<sup>2</sup> 3p<sup>2</sup>",
+            "[Ne] 3s2 3p2",
             "2 8 4",
             Phase.SOLID
         ),
@@ -211,7 +211,7 @@ object Elements {
             3,
             "p",
             "reactiveNonmetal",
-            "[Ne] 3s<sup>2</sup> 3p<sup>3</sup>",
+            "[Ne] 3s2 3p3",
             "2 8 5",
             Phase.SOLID
         ),
@@ -225,7 +225,7 @@ object Elements {
             3,
             "p",
             "reactiveNonmetal",
-            "[Ne] 3s<sup>2</sup> 3p<sup>4</sup>",
+            "[Ne] 3s2 3p4",
             "2 8 6",
             Phase.SOLID
         ),
@@ -239,7 +239,7 @@ object Elements {
             3,
             "p",
             "reactiveNonmetal",
-            "[Ne] 3s<sup>2</sup> 3p<sup>5</sup>",
+            "[Ne] 3s2 3p5",
             "2 8 7",
             Phase.GAS
         ),
@@ -253,7 +253,7 @@ object Elements {
             3,
             "p",
             "nobleGas",
-            "[Ne] 3s<sup>2</sup> 3p<sup>6</sup>",
+            "[Ne] 3s2 3p6",
             "2 8 8",
             Phase.GAS
         ),
@@ -267,7 +267,7 @@ object Elements {
             4,
             "s",
             "alkaliMetal",
-            "[Ar] 4s<sup>1</sup>",
+            "[Ar] 4s1",
             "2 8 8 1",
             Phase.SOLID
         ),
@@ -281,7 +281,7 @@ object Elements {
             4,
             "s",
             "alkalineEarthMetal",
-            "[Ar] 4s<sup>2</sup>",
+            "[Ar] 4s2",
             "2 8 8 2",
             Phase.SOLID
         ),
@@ -295,7 +295,7 @@ object Elements {
             4,
             "d",
             "transitionMetal",
-            "[Ar] 3d<sup>1</sup> 4s<sup>2</sup>",
+            "[Ar] 3d1 4s2",
             "2 8 9 2",
             Phase.SOLID
         ),
@@ -309,7 +309,7 @@ object Elements {
             4,
             "d",
             "transitionMetal",
-            "[Ar] 3d<sup>2</sup> 4s<sup>2</sup>",
+            "[Ar] 3d2 4s2",
             "2 8 10 2",
             Phase.SOLID
         ),
@@ -323,7 +323,7 @@ object Elements {
             4,
             "d",
             "transitionMetal",
-            "[Ar] 3d<sup>3</sup> 4s<sup>2</sup>",
+            "[Ar] 3d3 4s2",
             "2 8 11 2",
             Phase.SOLID
         ),
@@ -337,7 +337,7 @@ object Elements {
             4,
             "d",
             "transitionMetal",
-            "[Ar] 3d<sup>5</sup> 4s<sup>1</sup>",
+            "[Ar] 3d5 4s1",
             "2 8 13 1",
             Phase.SOLID
         ),
@@ -351,7 +351,7 @@ object Elements {
             4,
             "d",
             "transitionMetal",
-            "[Ar] 3d<sup>5</sup> 4s<sup>2</sup>",
+            "[Ar] 3d5 4s2",
             "2 8 13 2",
             Phase.SOLID
         ),
@@ -365,7 +365,7 @@ object Elements {
             4,
             "d",
             "transitionMetal",
-            "[Ar] 3d<sup>6</sup> 4s<sup>2</sup>",
+            "[Ar] 3d6 4s2",
             "2 8 14 2",
             Phase.SOLID
         ),
@@ -379,7 +379,7 @@ object Elements {
             4,
             "d",
             "transitionMetal",
-            "[Ar] 3d<sup>7</sup> 4s<sup>2</sup>",
+            "[Ar] 3d7 4s2",
             "2 8 15 2",
             Phase.SOLID
         ),
@@ -393,7 +393,7 @@ object Elements {
             4,
             "d",
             "transitionMetal",
-            "[Ar] 3d<sup>8</sup> 4s<sup>2</sup>",
+            "[Ar] 3d8 4s2",
             "2 8 16 2",
             Phase.SOLID
         ),
@@ -407,7 +407,7 @@ object Elements {
             4,
             "d",
             "transitionMetal",
-            "[Ar] 3d<sup>10</sup> 4s<sup>1</sup>",
+            "[Ar] 3d10 4s1",
             "2 8 18 1",
             Phase.SOLID
         ),
@@ -421,7 +421,7 @@ object Elements {
             4,
             "d",
             "postTransitionMetal",
-            "[Ar] 3d<sup>10</sup> 4s<sup>2</sup>",
+            "[Ar] 3d10 4s2",
             "2 8 18 2",
             Phase.SOLID
         ),
@@ -435,7 +435,7 @@ object Elements {
             4,
             "p",
             "postTransitionMetal",
-            "[Ar] 3d<sup>10</sup> 4s<sup>2</sup> 4p<sup>1</sup>",
+            "[Ar] 3d10 4s2 4p1",
             "2 8 18 3",
             Phase.SOLID
         ),
@@ -449,7 +449,7 @@ object Elements {
             4,
             "p",
             "metalloid",
-            "[Ar] 3d<sup>10</sup> 4s<sup>2</sup> 4p<sup>2</sup>",
+            "[Ar] 3d10 4s2 4p2",
             "2 8 18 4",
             Phase.SOLID
         ),
@@ -463,7 +463,7 @@ object Elements {
             4,
             "p",
             "metalloid",
-            "[Ar] 3d<sup>10</sup> 4s<sup>2</sup> 4p<sup>3</sup>",
+            "[Ar] 3d10 4s2 4p3",
             "2 8 18 5",
             Phase.SOLID
         ),
@@ -477,7 +477,7 @@ object Elements {
             4,
             "p",
             "reactiveNonmetal",
-            "[Ar] 3d<sup>10</sup> 4s<sup>2</sup> 4p<sup>4</sup>",
+            "[Ar] 3d10 4s2 4p4",
             "2 8 18 6",
             Phase.SOLID
         ),
@@ -491,7 +491,7 @@ object Elements {
             4,
             "p",
             "reactiveNonmetal",
-            "[Ar] 3d<sup>10</sup> 4s<sup>2</sup> 4p<sup>5</sup>",
+            "[Ar] 3d10 4s2 4p5",
             "2 8 18 7",
             Phase.LIQUID
         ),
@@ -505,7 +505,7 @@ object Elements {
             4,
             "p",
             "nobleGas",
-            "[Ar] 3d<sup>10</sup> 4s<sup>2</sup> 4p<sup>6</sup>",
+            "[Ar] 3d10 4s2 4p6",
             "2 8 18 8",
             Phase.GAS
         ),
@@ -519,7 +519,7 @@ object Elements {
             5,
             "s",
             "alkaliMetal",
-            "[Kr] 5s<sup>1</sup>",
+            "[Kr] 5s1",
             "2 8 18 8 1",
             Phase.SOLID
         ),
@@ -533,7 +533,7 @@ object Elements {
             5,
             "s",
             "alkalineEarthMetal",
-            "[Kr] 5s<sup>2</sup>",
+            "[Kr] 5s2",
             "2 8 18 8 2",
             Phase.SOLID
         ),
@@ -547,7 +547,7 @@ object Elements {
             5,
             "d",
             "transitionMetal",
-            "[Kr] 4d<sup>1</sup> 5s<sup>2</sup>",
+            "[Kr] 4d1 5s2",
             "2 8 18 9 2",
             Phase.SOLID
         ),
@@ -561,7 +561,7 @@ object Elements {
             5,
             "d",
             "transitionMetal",
-            "[Kr] 4d<sup>2</sup> 5s<sup>2</sup>",
+            "[Kr] 4d2 5s2",
             "2 8 18 10 2",
             Phase.SOLID
         ),
@@ -575,7 +575,7 @@ object Elements {
             5,
             "d",
             "transitionMetal",
-            "[Kr] 4d<sup>4</sup> 5s<sup>1</sup>",
+            "[Kr] 4d4 5s1",
             "2 8 18 12 1",
             Phase.SOLID
         ),
@@ -589,7 +589,7 @@ object Elements {
             5,
             "d",
             "transitionMetal",
-            "[Kr] 4d<sup>5</sup> 5s<sup>1</sup>",
+            "[Kr] 4d5 5s1",
             "2 8 18 13 1",
             Phase.SOLID
         ),
@@ -603,7 +603,7 @@ object Elements {
             5,
             "d",
             "transitionMetal",
-            "[Kr] 4d<sup>5</sup> 5s<sup>2</sup>",
+            "[Kr] 4d5 5s2",
             "2 8 18 13 2",
             Phase.SOLID
         ),
@@ -617,7 +617,7 @@ object Elements {
             5,
             "d",
             "transitionMetal",
-            "[Kr] 4d<sup>7</sup> 5s<sup>1</sup>",
+            "[Kr] 4d7 5s1",
             "2 8 18 15 1",
             Phase.SOLID
         ),
@@ -631,7 +631,7 @@ object Elements {
             5,
             "d",
             "transitionMetal",
-            "[Kr] 4d<sup>8</sup> 5s<sup>1</sup>",
+            "[Kr] 4d8 5s1",
             "2 8 18 16 1",
             Phase.SOLID
         ),
@@ -645,7 +645,7 @@ object Elements {
             5,
             "d",
             "transitionMetal",
-            "[Kr] 4d<sup>10</sup>",
+            "[Kr] 4d10",
             "2 8 18 18",
             Phase.SOLID
         ),
@@ -659,7 +659,7 @@ object Elements {
             5,
             "d",
             "transitionMetal",
-            "[Kr] 4d<sup>10</sup> 5s<sup>1</sup>",
+            "[Kr] 4d10 5s1",
             "2 8 18 18 1",
             Phase.SOLID
         ),
@@ -673,7 +673,7 @@ object Elements {
             5,
             "d",
             "postTransitionMetal",
-            "[Kr] 4d<sup>10</sup> 5s<sup>2</sup>",
+            "[Kr] 4d10 5s2",
             "2 8 18 18 2",
             Phase.SOLID
         ),
@@ -687,7 +687,7 @@ object Elements {
             5,
             "p",
             "postTransitionMetal",
-            "[Kr] 4d<sup>10</sup> 5s<sup>2</sup> 5p<sup>1</sup>",
+            "[Kr] 4d10 5s2 5p1",
             "2 8 18 18 3",
             Phase.SOLID
         ),
@@ -701,7 +701,7 @@ object Elements {
             5,
             "p",
             "postTransitionMetal",
-            "[Kr] 4d<sup>10</sup> 5s<sup>2</sup> 5p<sup>2</sup>",
+            "[Kr] 4d10 5s2 5p2",
             "2 8 18 18 4",
             Phase.SOLID
         ),
@@ -715,7 +715,7 @@ object Elements {
             5,
             "p",
             "metalloid",
-            "[Kr] 4d<sup>10</sup> 5s<sup>2</sup> 5p<sup>3</sup>",
+            "[Kr] 4d10 5s2 5p3",
             "2 8 18 18 5",
             Phase.SOLID
         ),
@@ -729,7 +729,7 @@ object Elements {
             5,
             "p",
             "metalloid",
-            "[Kr] 4d<sup>10</sup> 5s<sup>2</sup> 5p<sup>4</sup>",
+            "[Kr] 4d10 5s2 5p4",
             "2 8 18 18 6",
             Phase.SOLID
 
@@ -744,7 +744,7 @@ object Elements {
             5,
             "p",
             "reactiveNonmetal",
-            "[Kr] 4d<sup>10</sup> 5s<sup>2</sup> 5p<sup>5</sup>",
+            "[Kr] 4d10 5s2 5p5",
             "2 8 18 18 7",
             Phase.SOLID
         ),
@@ -758,7 +758,7 @@ object Elements {
             5,
             "p",
             "nobleGas",
-            "[Kr] 4d<sup>10</sup> 5s<sup>2</sup> 5p<sup>6</sup>",
+            "[Kr] 4d10 5s2 5p6",
             "2 8 18 18 8",
             Phase.GAS
         ),
@@ -772,7 +772,7 @@ object Elements {
             6,
             "s",
             "alkaliMetal",
-            "[Xe] 6s<sup>1</sup>",
+            "[Xe] 6s1",
             "2 8 18 18 8 1",
             Phase.SOLID
         ),
@@ -786,7 +786,7 @@ object Elements {
             6,
             "s",
             "alkalineEarthMetal",
-            "[Xe] 6s<sup>2</sup>",
+            "[Xe] 6s2",
             "2 8 18 18 8 2",
             Phase.SOLID
         ),
@@ -800,7 +800,7 @@ object Elements {
             6,
             "d",
             "lanthanide",
-            "[Xe] 5d<sup>1</sup> 6s<sup>2</sup>",
+            "[Xe] 5d1 6s2",
             "2 8 18 18 9 2",
             Phase.SOLID
         ),
@@ -814,7 +814,7 @@ object Elements {
             6,
             "f",
             "lanthanide",
-            "[Xe] 4f<sup>1</sup> 5d<sup>1</sup> 6s<sup>2</sup>",
+            "[Xe] 4f1 5d1 6s2",
             "2 8 18 19 9 2",
             Phase.SOLID
         ),
@@ -828,7 +828,7 @@ object Elements {
             6,
             "f",
             "lanthanide",
-            "[Xe] 4f<sup>3</sup> 6s<sup>2</sup>",
+            "[Xe] 4f3 6s2",
             "2 8 18 21 8 2",
             Phase.SOLID
         ),
@@ -842,7 +842,7 @@ object Elements {
             6,
             "f",
             "lanthanide",
-            "[Xe] 4f<sup>4</sup> 6s<sup>2</sup>",
+            "[Xe] 4f4 6s2",
             "2 8 18 22 8 2",
             Phase.SOLID
         ),
@@ -856,7 +856,7 @@ object Elements {
             6,
             "f",
             "lanthanide",
-            "[Xe] 4f<sup>5</sup> 6s<sup>2</sup>",
+            "[Xe] 4f5 6s2",
             "2 8 18 23 8 2",
             Phase.SOLID
         ),
@@ -870,7 +870,7 @@ object Elements {
             6,
             "f",
             "lanthanide",
-            "[Xe] 4f<sup>6</sup> 6s<sup>2</sup>",
+            "[Xe] 4f6 6s2",
             "2 8 18 24 8 2",
             Phase.SOLID
         ),
@@ -884,7 +884,7 @@ object Elements {
             6,
             "f",
             "lanthanide",
-            "[Xe] 4f<sup>7</sup> 6s<sup>2</sup>",
+            "[Xe] 4f7 6s2",
             "2 8 18 25 8 2",
             Phase.SOLID
         ),
@@ -898,7 +898,7 @@ object Elements {
             6,
             "f",
             "lanthanide",
-            "[Xe] 4f<sup>7</sup> 5d<sup>1</sup> 6s<sup>2</sup>",
+            "[Xe] 4f7 5d1 6s2",
             "2 8 18 25 9 2",
             Phase.SOLID
         ),
@@ -912,7 +912,7 @@ object Elements {
             6,
             "f",
             "lanthanide",
-            "[Xe] 4f<sup>9</sup> 6s<sup>2</sup>",
+            "[Xe] 4f9 6s2",
             "2 8 18 27 8 2",
             Phase.SOLID
         ),
@@ -926,7 +926,7 @@ object Elements {
             6,
             "f",
             "lanthanide",
-            "[Xe] 4f<sup>10</sup> 6s<sup>2</sup>",
+            "[Xe] 4f10 6s2",
             "2 8 18 28 8 2",
             Phase.SOLID
         ),
@@ -940,7 +940,7 @@ object Elements {
             6,
             "f",
             "lanthanide",
-            "[Xe] 4f<sup>11</sup> 6s<sup>2</sup>",
+            "[Xe] 4f11 6s2",
             "2 8 18 29 8 2",
             Phase.SOLID
         ),
@@ -954,7 +954,7 @@ object Elements {
             6,
             "f",
             "lanthanide",
-            "[Xe] 4f<sup>12</sup> 6s<sup>2</sup>",
+            "[Xe] 4f12 6s2",
             "2 8 18 30 8 2",
             Phase.SOLID
         ),
@@ -968,7 +968,7 @@ object Elements {
             6,
             "f",
             "lanthanide",
-            "[Xe] 4f<sup>13</sup> 6s<sup>2</sup>",
+            "[Xe] 4f<sup>13 6s2",
             "2 8 18 31 8 2",
             Phase.SOLID
         ),
@@ -982,7 +982,7 @@ object Elements {
             6,
             "f",
             "lanthanide",
-            "[Xe] 4f<sup>14</sup> 6s<sup>2</sup>",
+            "[Xe] 4f14 6s2",
             "2 8 18 32 8 2",
             Phase.SOLID
         ),
@@ -996,7 +996,7 @@ object Elements {
             6,
             "f",
             "lanthanide",
-            "[Xe] 4f<sup>14</sup> 5d<sup>1</sup> 6s<sup>2</sup>",
+            "[Xe] 4f14 5d1 6s2",
             "2 8 18 32 9 2",
             Phase.SOLID
         ),
@@ -1010,7 +1010,7 @@ object Elements {
             6,
             "d",
             "transitionMetal",
-            "[Xe] 4f<sup>14</sup> 5d<sup>2</sup> 6s<sup>2</sup>",
+            "[Xe] 4f14 5d2 6s2",
             "2 8 18 32 10 2",
             Phase.SOLID
         ),
@@ -1024,7 +1024,7 @@ object Elements {
             6,
             "d",
             "transitionMetal",
-            "[Xe] 4f<sup>14</sup> 5d<sup>3</sup> 6s<sup>2</sup>",
+            "[Xe] 4f14 5d3 6s2",
             "2 8 18 32 11 2",
             Phase.SOLID
         ),
@@ -1038,7 +1038,7 @@ object Elements {
             6,
             "d",
             "transitionMetal",
-            "[Xe] 4f<sup>14</sup> 5d<sup>4</sup> 6s<sup>2</sup>",
+            "[Xe] 4f14 5d4 6s2",
             "2 8 18 32 12 2",
             Phase.SOLID
         ),
@@ -1052,7 +1052,7 @@ object Elements {
             6,
             "d",
             "transitionMetal",
-            "[Xe] 4f<sup>14</sup> 5d<sup>5</sup> 6s<sup>2</sup>",
+            "[Xe] 4f14 5d5 6s2",
             "2 8 18 32 13 2",
             Phase.SOLID
         ),
@@ -1066,7 +1066,7 @@ object Elements {
             6,
             "d",
             "transitionMetal",
-            "[Xe] 4f<sup>14</sup> 5d<sup>6</sup> 6s<sup>2</sup>",
+            "[Xe] 4f14 5d6 6s2",
             "2 8 18 32 14 2",
             Phase.SOLID
         ),
@@ -1080,7 +1080,7 @@ object Elements {
             6,
             "d",
             "transitionMetal",
-            "[Xe] 4f<sup>14</sup> 5d<sup>7</sup> 6s<sup>2</sup>",
+            "[Xe] 4f14 5d7 6s2",
             "2 8 18 32 15 2",
             Phase.SOLID
         ),
@@ -1094,7 +1094,7 @@ object Elements {
             6,
             "d",
             "transitionMetal",
-            "[Xe] 4f<sup>14</sup> 5d<sup>9</sup> 6s<sup>1</sup>",
+            "[Xe] 4f14 5d9 6s1",
             "2 8 18 32 17 1",
             Phase.SOLID
         ),
@@ -1108,7 +1108,7 @@ object Elements {
             6,
             "d",
             "transitionMetal",
-            "[Xe] 4f<sup>14</sup> 5d<sup>10</sup> 6s<sup>1</sup>",
+            "[Xe] 4f14 5d10 6s1",
             "2 8 18 32 18 1",
             Phase.SOLID
         ),
@@ -1122,7 +1122,7 @@ object Elements {
             6,
             "d",
             "postTransitionMetal",
-            "[Xe] 4f<sup>14</sup> 5d<sup>10</sup> 6s<sup>2</sup>",
+            "[Xe] 4f14 5d10 6s2",
             "2 8 18 32 18 2",
             Phase.LIQUID
         ),
@@ -1136,7 +1136,7 @@ object Elements {
             6,
             "p",
             "postTransitionMetal",
-            "[Xe] 4f<sup>14</sup> 5d<sup>10</sup> 6s<sup>2</sup> 6p<sup>1</sup>",
+            "[Xe] 4f14 5d10 6s2 6p1",
             "2 8 18 32 18 3",
             Phase.SOLID
         ),
@@ -1150,7 +1150,7 @@ object Elements {
             6,
             "p",
             "postTransitionMetal",
-            "[Xe] 4f<sup>14</sup> 5d<sup>10</sup> 6s<sup>2</sup> 6p<sup>2</sup>",
+            "[Xe] 4f14 5d10 6s2 6p2",
             "2 8 18 32 18 4",
             Phase.SOLID
         ),
@@ -1164,7 +1164,7 @@ object Elements {
             6,
             "p",
             "postTransitionMetal",
-            "[Xe] 4f<sup>14</sup> 5d<sup>10</sup> 6s<sup>2</sup> 6p<sup>3</sup>",
+            "[Xe] 4f14 5d10 6s2 6p3",
             "2 8 18 32 18 5",
             Phase.SOLID
         ),
@@ -1178,7 +1178,7 @@ object Elements {
             6,
             "p",
             "postTransitionMetal",
-            "[Xe] 4f<sup>14</sup> 5d<sup>10</sup> 6s<sup>2</sup> 6p<sup>4</sup>",
+            "[Xe] 4f14 5d10 6s2 6p4",
             "2 8 18 32 18 6",
             Phase.SOLID
         ),
@@ -1192,7 +1192,7 @@ object Elements {
             6,
             "p",
             "metalloid",
-            "[Xe] 4f<sup>14</sup> 5d<sup>10</sup> 6s<sup>2</sup> 6p<sup>5</sup>",
+            "[Xe] 4f14 5d10 6s2 6p5",
             "2 8 18 32 18 7",
             Phase.SOLID
         ),
@@ -1206,7 +1206,7 @@ object Elements {
             7,
             "p",
             "nobleGas",
-            "[Xe] 4f<sup>14</sup> 5d<sup>10</sup> 6s<sup>2</sup> 6p<sup>6</sup>",
+            "[Xe] 4f14 5d10 6s2 6p6",
             "2 8 18 32 18 8",
             Phase.GAS
         ),
@@ -1220,7 +1220,7 @@ object Elements {
             7,
             "s",
             "alkaliMetal",
-            "[Rn] 7s<sup>1</sup>",
+            "[Rn] 7s1",
             "2 8 18 32 18 8 1",
             Phase.SOLID
         ),
@@ -1234,7 +1234,7 @@ object Elements {
             7,
             "s",
             "alkalineEarthMetal",
-            "[Rn] 7s<sup>2</sup>",
+            "[Rn] 7s2",
             "2 8 18 32 18 8 2",
             Phase.SOLID
         ),
@@ -1248,7 +1248,7 @@ object Elements {
             7,
             "d",
             "actinide",
-            "[Rn] 6d<sup>1</sup> 7s<sup>2</sup>",
+            "[Rn] 6d1 7s2",
             "2 8 18 32 18 9 2",
             Phase.SOLID
         ),
@@ -1262,7 +1262,7 @@ object Elements {
             7,
             "f",
             "actinide",
-            "[Rn] 6d<sup>2</sup> 7s<sup>2</sup>",
+            "[Rn] 6d2 7s2",
             "2 8 18 32 18 10 2",
             Phase.SOLID
         ),
@@ -1276,7 +1276,7 @@ object Elements {
             7,
             "f",
             "actinide",
-            "[Rn] 5f<sup>2</sup> 6d<sup>1</sup> 7s<sup>2</sup>",
+            "[Rn] 5f2 6d1 7s2",
             "2 8 18 32 20 9 2",
             Phase.SOLID
         ),
@@ -1290,7 +1290,7 @@ object Elements {
             7,
             "f",
             "actinide",
-            "[Rn] 5f<sup>3</sup> 6d<sup>1</sup> 7s<sup>2</sup>",
+            "[Rn] 5f3 6d1 7s2",
             "2 8 18 32 21 9 2",
             Phase.SOLID
         ),
@@ -1304,7 +1304,7 @@ object Elements {
             7,
             "f",
             "actinide",
-            "[Rn] 5f<sup>4</sup> 6d<sup>1</sup> 7s<sup>2</sup>",
+            "[Rn] 5f4 6d1 7s2",
             "2 8 18 32 22 9 2",
             Phase.SOLID
         ),
@@ -1318,7 +1318,7 @@ object Elements {
             7,
             "f",
             "actinide",
-            "[Rn] 5f<sup>6</sup> 7s<sup>2</sup>",
+            "[Rn] 5f6 7s2",
             "2 8 18 32 24 8 2",
             Phase.SOLID
         ),
@@ -1332,7 +1332,7 @@ object Elements {
             7,
             "f",
             "actinide",
-            "[Rn] 5f<sup>7</sup> 7s<sup>2</sup>",
+            "[Rn] 5f7 7s2",
             "2 8 18 32 25 8 2",
             Phase.SOLID
         ),
@@ -1346,7 +1346,7 @@ object Elements {
             7,
             "f",
             "actinide",
-            "[Rn] 5f<sup>7</sup> 6d<sup>1</sup> 7s<sup>2</sup>",
+            "[Rn] 5f7 6d1 7s2",
             "2 8 18 32 25 9 2",
             Phase.SOLID
         ),
@@ -1360,7 +1360,7 @@ object Elements {
             7,
             "f",
             "actinide",
-            "[Rn] 5f<sup>9</sup> 7s<sup>2</sup>",
+            "[Rn] 5f9 7s2",
             "2 8 18 32 27 8 2",
             Phase.SOLID
         ),
@@ -1374,7 +1374,7 @@ object Elements {
             7,
             "f",
             "actinide",
-            "[Rn] 5f<sup>10</sup> 7s<sup>2</sup>",
+            "[Rn] 5f10 7s2",
             "2 8 18 32 28 8 2",
             Phase.SOLID
         ),
@@ -1388,7 +1388,7 @@ object Elements {
             7,
             "f",
             "actinide",
-            "[Rn] 5f<sup>11</sup> 7s<sup>2</sup>",
+            "[Rn] 5f11 7s2",
             "2 8 18 32 29 8 2",
             Phase.SOLID
         ),
@@ -1402,7 +1402,7 @@ object Elements {
             7,
             "f",
             "actinide",
-            "[Rn] 5f<sup>12</sup> 7s<sup>2</sup>",
+            "[Rn] 5f12 7s2",
             "2 8 18 32 30 8 2",
             Phase.SOLID
         ),
@@ -1416,7 +1416,7 @@ object Elements {
             7,
             "f",
             "actinide",
-            "[Rn] 5f<sup>13</sup> 7s<sup>2</sup>",
+            "[Rn] 5f13 7s2",
             "2 8 18 32 31 8 2",
             Phase.SOLID
         ),
@@ -1430,7 +1430,7 @@ object Elements {
             7,
             "f",
             "actinide",
-            "[Rn] 5f<sup>14</sup> 7s<sup>2</sup>",
+            "[Rn] 5f14 7s2",
             "2 8 18 32 32 8 2",
             Phase.SOLID
         ),
@@ -1444,7 +1444,7 @@ object Elements {
             7,
             "f",
             "actinide",
-            "[Rn] 5f<sup>14</sup> 7s<sup>2</sup> 7p<sup>1</sup>",
+            "[Rn] 5f14 7s2 7p1",
             "2 8 18 32 32 8 3",
             Phase.SOLID
         ),
@@ -1458,7 +1458,7 @@ object Elements {
             7,
             "d",
             "transitionMetal",
-            "[Rn] 5f<sup>14</sup> 6d<sup>2</sup> 7s<sup>2</sup>",
+            "[Rn] 5f14 6d2 7s2",
             "2 8 18 32 32 10 2",
             Phase.SOLID
         ),
@@ -1472,7 +1472,7 @@ object Elements {
             7,
             "d",
             "transitionMetal",
-            "[Rn] 5f<sup>14</sup> 6d<sup>3</sup> 7s<sup>2</sup>",
+            "[Rn] 5f14 6d3 7s2",
             "2 8 18 32 32 11 2",
             Phase.SOLID
         ),
@@ -1486,7 +1486,7 @@ object Elements {
             7,
             "d",
             "transitionMetal",
-            "[Rn] 5f<sup>14</sup> 6d<sup>4</sup> 7s<sup>2</sup>",
+            "[Rn] 5f14 6d4 7s2",
             "2 8 18 32 32 12 2",
             Phase.SOLID
         ),
@@ -1500,7 +1500,7 @@ object Elements {
             7,
             "d",
             "transitionMetal",
-            "[Rn] 5f<sup>14</sup> 6d<sup>5</sup> 7s<sup>2</sup>",
+            "[Rn] 5f14 6d5 7s2",
             "2 8 18 32 32 13 2",
             Phase.UNKNOWN
         ),
@@ -1514,7 +1514,7 @@ object Elements {
             7,
             "d",
             "transitionMetal",
-            "[Rn] 5f<sup>14</sup> 6d<sup>6</sup> 7s<sup>2</sup>",
+            "[Rn] 5f14 6d6 7s2",
             "2 8 18 32 32 14 2",
             Phase.SOLID
         ),
@@ -1528,7 +1528,7 @@ object Elements {
             7,
             "d",
             "transitionMetal",
-            "[Rn] 5f<sup>14</sup> 6d<sup>7</sup> 7s<sup>2</sup>",
+            "[Rn] 5f14 6d7 7s2",
             "2 8 18 32 32 15 2",
             Phase.SOLID
         ),
@@ -1542,7 +1542,7 @@ object Elements {
             7,
             "d",
             "transitionMetal",
-            "[Rn] 5f<sup>14</sup> 6d<sup>8</sup> 7s<sup>2</sup>",
+            "[Rn] 5f14 6d8 7s2",
             "2 8 18 32 32 16 2",
             Phase.SOLID
         ),
@@ -1556,7 +1556,7 @@ object Elements {
             7,
             "d",
             "transitionMetal",
-            "[Rn] 5f<sup>14</sup> 6d<sup>9</sup> 7s<sup>2</sup>",
+            "[Rn] 5f14 6d9 7s2",
             "2 8 18 32 32 17 2",
             Phase.SOLID
         ),
@@ -1570,7 +1570,7 @@ object Elements {
             7,
             "d",
             "transitionMetal",
-            "[Rn] 5f<sup>14</sup> 6d<sup>10</sup> 7s<sup>2</sup>",
+            "[Rn] 5f14 6d10 7s2",
             "2 8 18 32 32 18 2",
             Phase.LIQUID_PREDICTED
         ),
@@ -1584,7 +1584,7 @@ object Elements {
             7,
             "p",
             "postTransitionMetal",
-            "[Rn] 5f<sup>14</sup> 6d<sup>10</sup> 7s<sup>2</sup> 7p<sup>1</sup>",
+            "[Rn] 5f14 6d10 7s2 7p1",
             "2 8 18 32 32 18 3",
             Phase.SOLID
         ),
@@ -1598,7 +1598,7 @@ object Elements {
             7,
             "p",
             "postTransitionMetal",
-            "[Rn] 5f<sup>14</sup> 6d<sup>10</sup> 7s<sup>2</sup> 7p<sup>2</sup>",
+            "[Rn] 5f14 6d10 7s2 7p2",
             "2 8 18 32 32 18 4",
             Phase.LIQUID_PREDICTED
         ),
@@ -1612,7 +1612,7 @@ object Elements {
             7,
             "p",
             "postTransitionMetal",
-            "[Rn] 5f<sup>14</sup> 6d<sup>10</sup> 7s<sup>2</sup> 7p<sup>3</sup>",
+            "[Rn] 5f14 6d10 7s2 7p3",
             "2 8 18 32 32 18 5",
             Phase.SOLID
         ),
@@ -1626,7 +1626,7 @@ object Elements {
             7,
             "p",
             "postTransitionMetal",
-            "[Rn] 5f<sup>14</sup> 6d<sup>10</sup> 7s<sup>2</sup> 7p<sup>4</sup>",
+            "[Rn] 5f14 6d10 7s2 7p4",
             "2 8 18 32 32 18 6",
             Phase.SOLID
         ),
@@ -1640,7 +1640,7 @@ object Elements {
             7,
             "p",
             "postTransitionMetal",
-            "[Rn] 5f<sup>14</sup> 6d<sup>10</sup> 7s<sup>2</sup> 7p<sup>5</sup>",
+            "[Rn] 5f14 6d10 7s2 7p5",
             "2 8 18 32 32 18 7",
             Phase.SOLID
         ),
@@ -1654,7 +1654,7 @@ object Elements {
             7,
             "p",
             "nobleGas",
-            "[Rn] 5f<sup>14</sup> 6d<sup>10</sup> 7s<sup>2</sup> 7p<sup>6</sup>",
+            "[Rn] 5f14 6d10 7s2 7p6",
             "2 8 18 32 32 18 8",
             Phase.SOLID
         ),
