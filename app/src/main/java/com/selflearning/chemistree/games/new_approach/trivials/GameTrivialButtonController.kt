@@ -28,7 +28,7 @@ class GameTrivialButtonController(
         }
 
         override fun bind(data: Any) {
-            data as GameTrivialAnswerData
+            data as GameAnswerData
             question = data.answerVariant
             view.text = data.answerVariant
             view.isClickable = data.isClickable

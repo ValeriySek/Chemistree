@@ -1,33 +1,23 @@
 package com.selflearning.chemistree.games.new_approach.trivials
 
 import android.graphics.Color
-import android.graphics.ColorFilter
-import android.graphics.PorterDuff
 import android.graphics.drawable.Drawable
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.Toast
-import androidx.appcompat.content.res.AppCompatResources
-import androidx.core.content.ContextCompat
 import androidx.core.graphics.drawable.DrawableCompat
-import androidx.core.view.children
 import androidx.core.view.get
-import com.selflearning.chemistree.R
 import com.selflearning.chemistree.adapter.ItemAnim
-import com.selflearning.chemistree.adapter.a.Adapter
-import com.selflearning.chemistree.adapter.a.ItemList
 import com.selflearning.chemistree.core.adapter.BaseAdapter
 import com.selflearning.chemistree.core.adapter.BindableItem
 import com.selflearning.chemistree.databinding.FragmentBlankBinding
 import com.selflearning.chemistree.games.new_approach.GameFragmentWithActions
 import com.selflearning.chemistree.games.new_approach.GameRepository
-import com.selflearning.chemistree.games.new_approach.GameStages
 import com.selflearning.chemistree.games.new_approach.game_utils.Shakable
 
 class GameTrivialsFragment : GameFragmentWithActions<GameState>(), Shakable {
@@ -106,7 +96,7 @@ class GameTrivialsFragment : GameFragmentWithActions<GameState>(), Shakable {
         binding.trivialsScoreTv.text = score.toString()
     }
 
-    private fun updateAnswers(answers: List<GameTrivialAnswerData>) {
+    private fun updateAnswers(answers: List<GameAnswerData>) {
         val list = answers.map {
             BindableItem(it, GameTrivialButtonController { answer->
                 gameViewModelWithActions.answer(answer)

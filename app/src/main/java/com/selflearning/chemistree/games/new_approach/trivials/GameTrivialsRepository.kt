@@ -52,14 +52,14 @@ class GameTrivialsRepository : GameRepository {
         formulaList: List<String>,
         name: String,
         name1: String
-    ): List<GameTrivialAnswerData> {
+    ): List<GameAnswerData> {
         return formulaList
             .shuffled()
             .minus(name)
             .slice(0..2)
             .plus(name)
             .shuffled()
-            .map { GameTrivialAnswerData(answerVariant = it, question = name1) }
+            .map { GameAnswerData(answerVariant = it, question = name1) }
 
     }
 

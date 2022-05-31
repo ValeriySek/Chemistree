@@ -11,19 +11,23 @@ object Elements {
             "hydrogen",
             1.0079,
             1,
+            1,
             A,
             1,
             "s",
             "reactiveNonmetal",
             "1s1",
             "1",
-            Phase.GAS
+            Phase.GAS,
+            AtomRadius("53", "31 ± 5", "120"),
+            listOf(" -1", " +1")
         ),
         Element(
             2,
             "He",
             "helium",
             4.0026,
+            18,
             8,
             A,
             1,
@@ -31,7 +35,9 @@ object Elements {
             "nobleGas",
             "1s2",
             "2",
-            Phase.GAS
+            Phase.GAS,
+            AtomRadius("31", "28", "140"),
+            listOf(" 0")
         ),
         Element(
             3,
@@ -39,13 +45,16 @@ object Elements {
             "lithium",
             6.941,
             1,
+            1,
             A,
             2,
             "s",
             "alkaliMetal",
             "[He] 2s1",
             "2 1",
-            Phase.SOLID
+            Phase.SOLID,
+            AtomRadius("152", "128 ± 7", "182"),
+            listOf(" +1")
         ),
         Element(
             4,
@@ -53,19 +62,23 @@ object Elements {
             "beryllium",
             9.0121,
             2,
+            2,
             A,
             2,
             "s",
             "alkalineEarthMetal",
             "[He] 2s2",
             "2 2",
-            Phase.SOLID
+            Phase.SOLID,
+            AtomRadius("112", "96 ± 3", "153"),
+            listOf("0", "+1", " +2")
         ),
         Element(
             5,
             "B",
             "boron",
             10.811,
+            13,
             3,
             A,
             2,
@@ -73,13 +86,16 @@ object Elements {
             "metalloid",
             "[He] 2s2 2p1",
             "2 3",
-            Phase.SOLID
+            Phase.SOLID,
+            AtomRadius("90", "84 ± 3", "192"),
+            listOf("-5", "-1", "+1", "+2", " +3")
         ),
         Element(
             6,
             "C",
             "carbon",
             12.0107,
+            14,
             4,
             A,
             2,
@@ -87,13 +103,16 @@ object Elements {
             "reactiveNonmetal",
             "[He] 2s2 2p2",
             "2 4",
-            Phase.SOLID
+            Phase.SOLID,
+            AtomRadius(),
+            listOf(" -4", " -3", " -2", " -1", " 0", " +1", " +2", " +3", " +4")
         ),
         Element(
             7,
             "N",
             "nitrogen",
             14.0067,
+            15,
             5,
             A,
             2,
@@ -101,13 +120,16 @@ object Elements {
             "reactiveNonmetal",
             "[He] 2s2 2p3",
             "2 5",
-            Phase.GAS
+            Phase.GAS,
+            AtomRadius(),
+            listOf(" -3", "-2", "-1", "0", "+1", "+2", " +3", " +4", " +5")
         ),
         Element(
             8,
             "O",
             "oxygen",
             15.9994,
+            16,
             6,
             A,
             2,
@@ -115,13 +137,16 @@ object Elements {
             "reactiveNonmetal",
             "[He] 2s2 2p4",
             "2 6",
-            Phase.GAS
+            Phase.GAS,
+            AtomRadius(),
+            listOf()
         ),
         Element(
             9,
             "F",
             "fluorine",
             18.9984,
+            17,
             7,
             A,
             2,
@@ -129,13 +154,16 @@ object Elements {
             "reactiveNonmetal",
             "[He] 2s2 2p5",
             "2 7",
-            Phase.GAS
+            Phase.GAS,
+            AtomRadius(),
+            listOf()
         ),
         Element(
             10,
             "Ne",
             "neon",
             20.1797,
+            18,
             8,
             A,
             2,
@@ -143,7 +171,9 @@ object Elements {
             "nobleGas",
             "[He] 2s2 2p6",
             "2 8",
-            Phase.GAS
+            Phase.GAS,
+            AtomRadius(),
+            listOf()
         ),
         Element(
             11,
@@ -151,13 +181,16 @@ object Elements {
             "sodium",
             22.9897,
             1,
+            1,
             A,
             3,
             "s",
             "alkaliMetal",
             "[Ne] 3s1",
             "2 8 1",
-            Phase.SOLID
+            Phase.SOLID,
+            AtomRadius(),
+            listOf()
         ),
         Element(
             12,
@@ -165,19 +198,23 @@ object Elements {
             "magnesium",
             24.305,
             2,
+            2,
             A,
             3,
             "s",
             "alkalineEarthMetal",
             "[Ne] 3s2",
             "2 8 2",
-            Phase.SOLID
+            Phase.SOLID,
+            AtomRadius(),
+            listOf()
         ),
         Element(
             13,
             "Al",
             "aluminum",
             26.9815,
+            13,
             3,
             A,
             3,
@@ -185,13 +222,16 @@ object Elements {
             "postTransitionMetal",
             "[Ne] 3s2 3p1",
             "2 8 3",
-            Phase.SOLID
+            Phase.SOLID,
+            AtomRadius(),
+            listOf()
         ),
         Element(
             14,
             "Si",
             "silicon",
             28.0855,
+            14,
             4,
             A,
             3,
@@ -199,13 +239,16 @@ object Elements {
             "metalloid",
             "[Ne] 3s2 3p2",
             "2 8 4",
-            Phase.SOLID
+            Phase.SOLID,
+            AtomRadius(),
+            listOf()
         ),
         Element(
             15,
             "P",
             "phosphorus",
             30.9737,
+            15,
             5,
             A,
             3,
@@ -213,13 +256,16 @@ object Elements {
             "reactiveNonmetal",
             "[Ne] 3s2 3p3",
             "2 8 5",
-            Phase.SOLID
+            Phase.SOLID,
+            AtomRadius(),
+            listOf()
         ),
         Element(
             16,
             "S",
             "sulfur",
             32.065,
+            16,
             6,
             A,
             3,
@@ -227,13 +273,16 @@ object Elements {
             "reactiveNonmetal",
             "[Ne] 3s2 3p4",
             "2 8 6",
-            Phase.SOLID
+            Phase.SOLID,
+            AtomRadius(),
+            listOf()
         ),
         Element(
             17,
             "Cl",
             "chlorine",
             35.453,
+            17,
             7,
             A,
             3,
@@ -241,13 +290,16 @@ object Elements {
             "reactiveNonmetal",
             "[Ne] 3s2 3p5",
             "2 8 7",
-            Phase.GAS
+            Phase.GAS,
+            AtomRadius(),
+            listOf()
         ),
         Element(
             18,
             "Ar",
             "argon",
             39.948,
+            18,
             8,
             A,
             3,
@@ -255,7 +307,9 @@ object Elements {
             "nobleGas",
             "[Ne] 3s2 3p6",
             "2 8 8",
-            Phase.GAS
+            Phase.GAS,
+            AtomRadius(),
+            listOf()
         ),
         Element(
             19,
@@ -263,13 +317,16 @@ object Elements {
             "potassium",
             39.0983,
             1,
+            1,
             A,
             4,
             "s",
             "alkaliMetal",
             "[Ar] 4s1",
             "2 8 8 1",
-            Phase.SOLID
+            Phase.SOLID,
+            AtomRadius(),
+            listOf()
         ),
         Element(
             20,
@@ -277,13 +334,16 @@ object Elements {
             "calcium",
             40.078,
             2,
+            2,
             A,
             4,
             "s",
             "alkalineEarthMetal",
             "[Ar] 4s2",
             "2 8 8 2",
-            Phase.SOLID
+            Phase.SOLID,
+            AtomRadius(),
+            listOf()
         ),
         Element(
             21,
@@ -291,13 +351,16 @@ object Elements {
             "scandium",
             44.9559,
             3,
+            3,
             B,
             4,
             "d",
             "transitionMetal",
             "[Ar] 3d1 4s2",
             "2 8 9 2",
-            Phase.SOLID
+            Phase.SOLID,
+            AtomRadius(),
+            listOf()
         ),
         Element(
             22,
@@ -305,13 +368,16 @@ object Elements {
             "titanium",
             47.867,
             4,
+            4,
             B,
             4,
             "d",
             "transitionMetal",
             "[Ar] 3d2 4s2",
             "2 8 10 2",
-            Phase.SOLID
+            Phase.SOLID,
+            AtomRadius(),
+            listOf()
         ),
         Element(
             23,
@@ -319,13 +385,16 @@ object Elements {
             "vanadium",
             50.9415,
             5,
+            5,
             B,
             4,
             "d",
             "transitionMetal",
             "[Ar] 3d3 4s2",
             "2 8 11 2",
-            Phase.SOLID
+            Phase.SOLID,
+            AtomRadius(),
+            listOf()
         ),
         Element(
             24,
@@ -333,13 +402,16 @@ object Elements {
             "chromium",
             51.9961,
             6,
+            6,
             B,
             4,
             "d",
             "transitionMetal",
             "[Ar] 3d5 4s1",
             "2 8 13 1",
-            Phase.SOLID
+            Phase.SOLID,
+            AtomRadius(),
+            listOf()
         ),
         Element(
             25,
@@ -347,13 +419,16 @@ object Elements {
             "manganese",
             54.938,
             7,
+            7,
             B,
             4,
             "d",
             "transitionMetal",
             "[Ar] 3d5 4s2",
             "2 8 13 2",
-            Phase.SOLID
+            Phase.SOLID,
+            AtomRadius(),
+            listOf()
         ),
         Element(
             26,
@@ -361,19 +436,23 @@ object Elements {
             "iron",
             55.845,
             8,
+            8,
             B,
             4,
             "d",
             "transitionMetal",
             "[Ar] 3d6 4s2",
             "2 8 14 2",
-            Phase.SOLID
+            Phase.SOLID,
+            AtomRadius(),
+            listOf()
         ),
         Element(
             27,
             "Co",
             "cobalt",
             58.9331,
+            9,
             8,
             B,
             4,
@@ -381,13 +460,16 @@ object Elements {
             "transitionMetal",
             "[Ar] 3d7 4s2",
             "2 8 15 2",
-            Phase.SOLID
+            Phase.SOLID,
+            AtomRadius(),
+            listOf()
         ),
         Element(
             28,
             "Ni",
             "nickel",
             58.6934,
+            10,
             8,
             B,
             4,
@@ -395,13 +477,16 @@ object Elements {
             "transitionMetal",
             "[Ar] 3d8 4s2",
             "2 8 16 2",
-            Phase.SOLID
+            Phase.SOLID,
+            AtomRadius(),
+            listOf()
         ),
         Element(
             29,
             "Cu",
             "copper",
             63.546,
+            11,
             1,
             B,
             4,
@@ -409,13 +494,16 @@ object Elements {
             "transitionMetal",
             "[Ar] 3d10 4s1",
             "2 8 18 1",
-            Phase.SOLID
+            Phase.SOLID,
+            AtomRadius(),
+            listOf()
         ),
         Element(
             30,
             "Zn",
             "zinc",
             65.409,
+            12,
             2,
             B,
             4,
@@ -423,13 +511,16 @@ object Elements {
             "postTransitionMetal",
             "[Ar] 3d10 4s2",
             "2 8 18 2",
-            Phase.SOLID
+            Phase.SOLID,
+            AtomRadius(),
+            listOf()
         ),
         Element(
             31,
             "Ga",
             "gallium",
             69.723,
+            13,
             3,
             A,
             4,
@@ -437,13 +528,16 @@ object Elements {
             "postTransitionMetal",
             "[Ar] 3d10 4s2 4p1",
             "2 8 18 3",
-            Phase.SOLID
+            Phase.SOLID,
+            AtomRadius(),
+            listOf()
         ),
         Element(
             32,
             "Ge",
             "germanium",
             72.630,
+            14,
             4,
             A,
             4,
@@ -451,13 +545,16 @@ object Elements {
             "metalloid",
             "[Ar] 3d10 4s2 4p2",
             "2 8 18 4",
-            Phase.SOLID
+            Phase.SOLID,
+            AtomRadius(),
+            listOf()
         ),
         Element(
             33,
             "As",
             "arsenic",
             74.9216,
+            15,
             5,
             A,
             4,
@@ -465,13 +562,16 @@ object Elements {
             "metalloid",
             "[Ar] 3d10 4s2 4p3",
             "2 8 18 5",
-            Phase.SOLID
+            Phase.SOLID,
+            AtomRadius(),
+            listOf()
         ),
         Element(
             34,
             "Se",
             "selenium",
             78.971,
+            16,
             6,
             A,
             4,
@@ -479,13 +579,16 @@ object Elements {
             "reactiveNonmetal",
             "[Ar] 3d10 4s2 4p4",
             "2 8 18 6",
-            Phase.SOLID
+            Phase.SOLID,
+            AtomRadius(),
+            listOf()
         ),
         Element(
             35,
             "Br",
             "bromine",
             79.904,
+            17,
             7,
             A,
             4,
@@ -493,13 +596,16 @@ object Elements {
             "reactiveNonmetal",
             "[Ar] 3d10 4s2 4p5",
             "2 8 18 7",
-            Phase.LIQUID
+            Phase.LIQUID,
+            AtomRadius(),
+            listOf()
         ),
         Element(
             36,
             "Kr",
             "krypton",
             83.798,
+            18,
             8,
             A,
             4,
@@ -507,7 +613,9 @@ object Elements {
             "nobleGas",
             "[Ar] 3d10 4s2 4p6",
             "2 8 18 8",
-            Phase.GAS
+            Phase.GAS,
+            AtomRadius(),
+            listOf()
         ),
         Element(
             37,
@@ -515,13 +623,16 @@ object Elements {
             "rubidium",
             85.4678,
             1,
+            1,
             A,
             5,
             "s",
             "alkaliMetal",
             "[Kr] 5s1",
             "2 8 18 8 1",
-            Phase.SOLID
+            Phase.SOLID,
+            AtomRadius(),
+            listOf()
         ),
         Element(
             38,
@@ -529,13 +640,16 @@ object Elements {
             "strontium",
             87.62,
             2,
+            2,
             A,
             5,
             "s",
             "alkalineEarthMetal",
             "[Kr] 5s2",
             "2 8 18 8 2",
-            Phase.SOLID
+            Phase.SOLID,
+            AtomRadius(),
+            listOf()
         ),
         Element(
             39,
@@ -543,13 +657,16 @@ object Elements {
             "yttrium",
             88.905,
             3,
+            3,
             B,
             5,
             "d",
             "transitionMetal",
             "[Kr] 4d1 5s2",
             "2 8 18 9 2",
-            Phase.SOLID
+            Phase.SOLID,
+            AtomRadius(),
+            listOf()
         ),
         Element(
             40,
@@ -557,13 +674,16 @@ object Elements {
             "zirconium",
             91.224,
             4,
+            4,
             B,
             5,
             "d",
             "transitionMetal",
             "[Kr] 4d2 5s2",
             "2 8 18 10 2",
-            Phase.SOLID
+            Phase.SOLID,
+            AtomRadius(),
+            listOf()
         ),
         Element(
             41,
@@ -571,13 +691,16 @@ object Elements {
             "niobium",
             92.906,
             5,
+            5,
             B,
             5,
             "d",
             "transitionMetal",
             "[Kr] 4d4 5s1",
             "2 8 18 12 1",
-            Phase.SOLID
+            Phase.SOLID,
+            AtomRadius(),
+            listOf()
         ),
         Element(
             42,
@@ -585,13 +708,16 @@ object Elements {
             "molybdenum",
             95.94,
             6,
+            6,
             B,
             5,
             "d",
             "transitionMetal",
             "[Kr] 4d5 5s1",
             "2 8 18 13 1",
-            Phase.SOLID
+            Phase.SOLID,
+            AtomRadius(),
+            listOf()
         ),
         Element(
             43,
@@ -599,13 +725,16 @@ object Elements {
             "technetium",
             97.906,
             7,
+            7,
             B,
             5,
             "d",
             "transitionMetal",
             "[Kr] 4d5 5s2",
             "2 8 18 13 2",
-            Phase.SOLID
+            Phase.SOLID,
+            AtomRadius(),
+            listOf()
         ),
         Element(
             44,
@@ -613,19 +742,23 @@ object Elements {
             "ruthenium",
             101.07,
             8,
+            8,
             B,
             5,
             "d",
             "transitionMetal",
             "[Kr] 4d7 5s1",
             "2 8 18 15 1",
-            Phase.SOLID
+            Phase.SOLID,
+            AtomRadius(),
+            listOf()
         ),
         Element(
             45,
             "Rh",
             "rhodium",
             102.905,
+            9,
             8,
             B,
             5,
@@ -633,13 +766,16 @@ object Elements {
             "transitionMetal",
             "[Kr] 4d8 5s1",
             "2 8 18 16 1",
-            Phase.SOLID
+            Phase.SOLID,
+            AtomRadius(),
+            listOf()
         ),
         Element(
             46,
             "Pd",
             "palladium",
             106.42,
+            10,
             8,
             B,
             5,
@@ -647,13 +783,16 @@ object Elements {
             "transitionMetal",
             "[Kr] 4d10",
             "2 8 18 18",
-            Phase.SOLID
+            Phase.SOLID,
+            AtomRadius(),
+            listOf()
         ),
         Element(
             47,
             "Ag",
             "silver",
             107.868,
+            11,
             1,
             B,
             5,
@@ -661,13 +800,16 @@ object Elements {
             "transitionMetal",
             "[Kr] 4d10 5s1",
             "2 8 18 18 1",
-            Phase.SOLID
+            Phase.SOLID,
+            AtomRadius(),
+            listOf()
         ),
         Element(
             48,
             "Cd",
             "cadmium",
             112.411,
+            12,
             2,
             B,
             5,
@@ -675,13 +817,16 @@ object Elements {
             "postTransitionMetal",
             "[Kr] 4d10 5s2",
             "2 8 18 18 2",
-            Phase.SOLID
+            Phase.SOLID,
+            AtomRadius(),
+            listOf()
         ),
         Element(
             49,
             "In",
             "indium",
             114.818,
+            13,
             3,
             A,
             5,
@@ -689,13 +834,16 @@ object Elements {
             "postTransitionMetal",
             "[Kr] 4d10 5s2 5p1",
             "2 8 18 18 3",
-            Phase.SOLID
+            Phase.SOLID,
+            AtomRadius(),
+            listOf()
         ),
         Element(
             50,
             "Sn",
             "tin",
             118.71,
+            14,
             4,
             A,
             5,
@@ -703,13 +851,16 @@ object Elements {
             "postTransitionMetal",
             "[Kr] 4d10 5s2 5p2",
             "2 8 18 18 4",
-            Phase.SOLID
+            Phase.SOLID,
+            AtomRadius(),
+            listOf()
         ),
         Element(
             51,
             "Sb",
             "antimony",
             121.76,
+            15,
             5,
             A,
             5,
@@ -717,13 +868,16 @@ object Elements {
             "metalloid",
             "[Kr] 4d10 5s2 5p3",
             "2 8 18 18 5",
-            Phase.SOLID
+            Phase.SOLID,
+            AtomRadius(),
+            listOf()
         ),
         Element(
             52,
             "Te",
             "tellurium",
             127.6,
+            16,
             6,
             A,
             5,
@@ -731,14 +885,16 @@ object Elements {
             "metalloid",
             "[Kr] 4d10 5s2 5p4",
             "2 8 18 18 6",
-            Phase.SOLID
-
+            Phase.SOLID,
+            AtomRadius(),
+            listOf()
         ),
         Element(
             53,
             "I",
             "iodine",
             126.904,
+            17,
             7,
             A,
             5,
@@ -746,13 +902,16 @@ object Elements {
             "reactiveNonmetal",
             "[Kr] 4d10 5s2 5p5",
             "2 8 18 18 7",
-            Phase.SOLID
+            Phase.SOLID,
+            AtomRadius(),
+            listOf()
         ),
         Element(
             54,
             "Xe",
             "xenon",
             131.293,
+            18,
             8,
             A,
             5,
@@ -760,7 +919,9 @@ object Elements {
             "nobleGas",
             "[Kr] 4d10 5s2 5p6",
             "2 8 18 18 8",
-            Phase.GAS
+            Phase.GAS,
+            AtomRadius(),
+            listOf()
         ),
         Element(
             55,
@@ -768,13 +929,16 @@ object Elements {
             "cesium",
             132.905,
             1,
+            1,
             A,
             6,
             "s",
             "alkaliMetal",
             "[Xe] 6s1",
             "2 8 18 18 8 1",
-            Phase.SOLID
+            Phase.SOLID,
+            AtomRadius(),
+            listOf()
         ),
         Element(
             56,
@@ -782,19 +946,23 @@ object Elements {
             "barium",
             137.327,
             2,
+            2,
             A,
             6,
             "s",
             "alkalineEarthMetal",
             "[Xe] 6s2",
             "2 8 18 18 8 2",
-            Phase.SOLID
+            Phase.SOLID,
+            AtomRadius(),
+            listOf()
         ),
         Element(
             57,
             "La",
             "lanthanum",
             138.905,
+            0,
             3,
             B,
             6,
@@ -802,7 +970,9 @@ object Elements {
             "lanthanide",
             "[Xe] 5d1 6s2",
             "2 8 18 18 9 2",
-            Phase.SOLID
+            Phase.SOLID,
+            AtomRadius(),
+            listOf()
         ),
         Element(
             58,
@@ -810,13 +980,16 @@ object Elements {
             "cerium",
             140.116,
             0,
+            0,
             NONE,
             6,
             "f",
             "lanthanide",
             "[Xe] 4f1 5d1 6s2",
             "2 8 18 19 9 2",
-            Phase.SOLID
+            Phase.SOLID,
+            AtomRadius(),
+            listOf()
         ),
         Element(
             59,
@@ -824,13 +997,16 @@ object Elements {
             "praseodynium",
             140.904,
             0,
+            0,
             NONE,
             6,
             "f",
             "lanthanide",
             "[Xe] 4f3 6s2",
             "2 8 18 21 8 2",
-            Phase.SOLID
+            Phase.SOLID,
+            AtomRadius(),
+            listOf()
         ),
         Element(
             60,
@@ -838,13 +1014,16 @@ object Elements {
             "neodymium",
             144.242,
             0,
+            0,
             NONE,
             6,
             "f",
             "lanthanide",
             "[Xe] 4f4 6s2",
             "2 8 18 22 8 2",
-            Phase.SOLID
+            Phase.SOLID,
+            AtomRadius(),
+            listOf()
         ),
         Element(
             61,
@@ -852,13 +1031,16 @@ object Elements {
             "promethium",
             144.915,
             0,
+            0,
             NONE,
             6,
             "f",
             "lanthanide",
             "[Xe] 4f5 6s2",
             "2 8 18 23 8 2",
-            Phase.SOLID
+            Phase.SOLID,
+            AtomRadius(),
+            listOf()
         ),
         Element(
             62,
@@ -866,13 +1048,16 @@ object Elements {
             "samarium",
             150.36,
             0,
+            0,
             NONE,
             6,
             "f",
             "lanthanide",
             "[Xe] 4f6 6s2",
             "2 8 18 24 8 2",
-            Phase.SOLID
+            Phase.SOLID,
+            AtomRadius(),
+            listOf()
         ),
         Element(
             63,
@@ -880,13 +1065,16 @@ object Elements {
             "europium",
             151.964,
             0,
+            0,
             NONE,
             6,
             "f",
             "lanthanide",
             "[Xe] 4f7 6s2",
             "2 8 18 25 8 2",
-            Phase.SOLID
+            Phase.SOLID,
+            AtomRadius(),
+            listOf()
         ),
         Element(
             64,
@@ -894,13 +1082,16 @@ object Elements {
             "gadolinium",
             157.25,
             0,
+            0,
             NONE,
             6,
             "f",
             "lanthanide",
             "[Xe] 4f7 5d1 6s2",
             "2 8 18 25 9 2",
-            Phase.SOLID
+            Phase.SOLID,
+            AtomRadius(),
+            listOf()
         ),
         Element(
             65,
@@ -908,13 +1099,16 @@ object Elements {
             "terbium",
             158.925,
             0,
+            0,
             NONE,
             6,
             "f",
             "lanthanide",
             "[Xe] 4f9 6s2",
             "2 8 18 27 8 2",
-            Phase.SOLID
+            Phase.SOLID,
+            AtomRadius(),
+            listOf()
         ),
         Element(
             66,
@@ -922,13 +1116,16 @@ object Elements {
             "dysprosium",
             162.5,
             0,
+            0,
             NONE,
             6,
             "f",
             "lanthanide",
             "[Xe] 4f10 6s2",
             "2 8 18 28 8 2",
-            Phase.SOLID
+            Phase.SOLID,
+            AtomRadius(),
+            listOf()
         ),
         Element(
             67,
@@ -936,13 +1133,16 @@ object Elements {
             "holmium",
             164.93,
             0,
+            0,
             NONE,
             6,
             "f",
             "lanthanide",
             "[Xe] 4f11 6s2",
             "2 8 18 29 8 2",
-            Phase.SOLID
+            Phase.SOLID,
+            AtomRadius(),
+            listOf()
         ),
         Element(
             68,
@@ -950,13 +1150,16 @@ object Elements {
             "erbium",
             167.259,
             0,
+            0,
             NONE,
             6,
             "f",
             "lanthanide",
             "[Xe] 4f12 6s2",
             "2 8 18 30 8 2",
-            Phase.SOLID
+            Phase.SOLID,
+            AtomRadius(),
+            listOf()
         ),
         Element(
             69,
@@ -964,13 +1167,16 @@ object Elements {
             "thulium",
             168.934,
             0,
+            0,
             NONE,
             6,
             "f",
             "lanthanide",
             "[Xe] 4f<sup>13 6s2",
             "2 8 18 31 8 2",
-            Phase.SOLID
+            Phase.SOLID,
+            AtomRadius(),
+            listOf()
         ),
         Element(
             70,
@@ -978,27 +1184,33 @@ object Elements {
             "ytterbium",
             173.04,
             0,
+            0,
             NONE,
             6,
             "f",
             "lanthanide",
             "[Xe] 4f14 6s2",
             "2 8 18 32 8 2",
-            Phase.SOLID
+            Phase.SOLID,
+            AtomRadius(),
+            listOf()
         ),
         Element(
             71,
             "Lu",
             "lutetium",
             174.967,
-            0,
-            NONE,
+            3,
+            3,
+            B,
             6,
-            "f",
+            "d",
             "lanthanide",
             "[Xe] 4f14 5d1 6s2",
             "2 8 18 32 9 2",
-            Phase.SOLID
+            Phase.SOLID,
+            AtomRadius(),
+            listOf()
         ),
         Element(
             72,
@@ -1006,13 +1218,16 @@ object Elements {
             "hafnium",
             178.49,
             4,
+            4,
             B,
             6,
             "d",
             "transitionMetal",
             "[Xe] 4f14 5d2 6s2",
             "2 8 18 32 10 2",
-            Phase.SOLID
+            Phase.SOLID,
+            AtomRadius(),
+            listOf()
         ),
         Element(
             73,
@@ -1020,13 +1235,16 @@ object Elements {
             "tantalum",
             180.947,
             5,
+            5,
             B,
             6,
             "d",
             "transitionMetal",
             "[Xe] 4f14 5d3 6s2",
             "2 8 18 32 11 2",
-            Phase.SOLID
+            Phase.SOLID,
+            AtomRadius(),
+            listOf()
         ),
         Element(
             74,
@@ -1034,13 +1252,16 @@ object Elements {
             "tungsten",
             183.84,
             6,
+            6,
             B,
             6,
             "d",
             "transitionMetal",
             "[Xe] 4f14 5d4 6s2",
             "2 8 18 32 12 2",
-            Phase.SOLID
+            Phase.SOLID,
+            AtomRadius(),
+            listOf()
         ),
         Element(
             75,
@@ -1048,13 +1269,16 @@ object Elements {
             "rhenium",
             186.207,
             7,
+            7,
             B,
             6,
             "d",
             "transitionMetal",
             "[Xe] 4f14 5d5 6s2",
             "2 8 18 32 13 2",
-            Phase.SOLID
+            Phase.SOLID,
+            AtomRadius(),
+            listOf()
         ),
         Element(
             76,
@@ -1062,19 +1286,23 @@ object Elements {
             "osmium",
             190.23,
             8,
+            8,
             B,
             6,
             "d",
             "transitionMetal",
             "[Xe] 4f14 5d6 6s2",
             "2 8 18 32 14 2",
-            Phase.SOLID
+            Phase.SOLID,
+            AtomRadius(),
+            listOf()
         ),
         Element(
             77,
             "Ir",
             "iridium",
             192.217,
+            9,
             8,
             B,
             6,
@@ -1082,13 +1310,16 @@ object Elements {
             "transitionMetal",
             "[Xe] 4f14 5d7 6s2",
             "2 8 18 32 15 2",
-            Phase.SOLID
+            Phase.SOLID,
+            AtomRadius(),
+            listOf()
         ),
         Element(
             78,
             "Pt",
             "platinum",
             195.084,
+            10,
             8,
             B,
             6,
@@ -1096,13 +1327,16 @@ object Elements {
             "transitionMetal",
             "[Xe] 4f14 5d9 6s1",
             "2 8 18 32 17 1",
-            Phase.SOLID
+            Phase.SOLID,
+            AtomRadius(),
+            listOf()
         ),
         Element(
             79,
             "Au",
             "gold",
             196.966,
+            11,
             1,
             B,
             6,
@@ -1110,13 +1344,16 @@ object Elements {
             "transitionMetal",
             "[Xe] 4f14 5d10 6s1",
             "2 8 18 32 18 1",
-            Phase.SOLID
+            Phase.SOLID,
+            AtomRadius(),
+            listOf()
         ),
         Element(
             80,
             "Hg",
             "mercury",
             200.59,
+            12,
             2,
             B,
             6,
@@ -1124,13 +1361,16 @@ object Elements {
             "postTransitionMetal",
             "[Xe] 4f14 5d10 6s2",
             "2 8 18 32 18 2",
-            Phase.LIQUID
+            Phase.LIQUID,
+            AtomRadius(),
+            listOf()
         ),
         Element(
             81,
             "Tl",
             "thallium",
             204.383,
+            13,
             3,
             B,
             6,
@@ -1138,13 +1378,16 @@ object Elements {
             "postTransitionMetal",
             "[Xe] 4f14 5d10 6s2 6p1",
             "2 8 18 32 18 3",
-            Phase.SOLID
+            Phase.SOLID,
+            AtomRadius(),
+            listOf()
         ),
         Element(
             82,
             "Pb",
             "lead",
             207.2,
+            14,
             4,
             B,
             6,
@@ -1152,13 +1395,16 @@ object Elements {
             "postTransitionMetal",
             "[Xe] 4f14 5d10 6s2 6p2",
             "2 8 18 32 18 4",
-            Phase.SOLID
+            Phase.SOLID,
+            AtomRadius(),
+            listOf()
         ),
         Element(
             83,
             "Bi",
             "bismuth",
             208.980,
+            15,
             5,
             B,
             6,
@@ -1166,13 +1412,16 @@ object Elements {
             "postTransitionMetal",
             "[Xe] 4f14 5d10 6s2 6p3",
             "2 8 18 32 18 5",
-            Phase.SOLID
+            Phase.SOLID,
+            AtomRadius(),
+            listOf()
         ),
         Element(
             84,
             "Po",
             "polonium",
             208.9824,
+            16,
             6,
             B,
             6,
@@ -1180,13 +1429,16 @@ object Elements {
             "postTransitionMetal",
             "[Xe] 4f14 5d10 6s2 6p4",
             "2 8 18 32 18 6",
-            Phase.SOLID
+            Phase.SOLID,
+            AtomRadius(),
+            listOf()
         ),
         Element(
             85,
             "At",
             "astatine",
             209.9871,
+            17,
             7,
             A,
             6,
@@ -1194,13 +1446,16 @@ object Elements {
             "metalloid",
             "[Xe] 4f14 5d10 6s2 6p5",
             "2 8 18 32 18 7",
-            Phase.SOLID
+            Phase.SOLID,
+            AtomRadius(),
+            listOf()
         ),
         Element(
             86,
             "Rn",
             "radon",
             222.0176,
+            18,
             8,
             A,
             7,
@@ -1208,7 +1463,9 @@ object Elements {
             "nobleGas",
             "[Xe] 4f14 5d10 6s2 6p6",
             "2 8 18 32 18 8",
-            Phase.GAS
+            Phase.GAS,
+            AtomRadius(),
+            listOf()
         ),
         Element(
             87,
@@ -1216,13 +1473,16 @@ object Elements {
             "francium",
             223.0197,
             1,
+            1,
             A,
             7,
             "s",
             "alkaliMetal",
             "[Rn] 7s1",
             "2 8 18 32 18 8 1",
-            Phase.SOLID
+            Phase.SOLID,
+            AtomRadius(),
+            listOf()
         ),
         Element(
             88,
@@ -1230,19 +1490,23 @@ object Elements {
             "radium",
             226.0254,
             2,
+            2,
             A,
             7,
             "s",
             "alkalineEarthMetal",
             "[Rn] 7s2",
             "2 8 18 32 18 8 2",
-            Phase.SOLID
+            Phase.SOLID,
+            AtomRadius(),
+            listOf()
         ),
         Element(
             89,
             "Ac",
             "actinium",
             227.0278,
+            0,
             3,
             B,
             7,
@@ -1250,7 +1514,9 @@ object Elements {
             "actinide",
             "[Rn] 6d1 7s2",
             "2 8 18 32 18 9 2",
-            Phase.SOLID
+            Phase.SOLID,
+            AtomRadius(),
+            listOf()
         ),
         Element(
             90,
@@ -1258,13 +1524,16 @@ object Elements {
             "thorium",
             232.038,
             0,
+            0,
             NONE,
             7,
             "f",
             "actinide",
             "[Rn] 6d2 7s2",
             "2 8 18 32 18 10 2",
-            Phase.SOLID
+            Phase.SOLID,
+            AtomRadius(),
+            listOf()
         ),
         Element(
             91,
@@ -1272,13 +1541,16 @@ object Elements {
             "protactinium",
             231.0358,
             0,
+            0,
             NONE,
             7,
             "f",
             "actinide",
             "[Rn] 5f2 6d1 7s2",
             "2 8 18 32 20 9 2",
-            Phase.SOLID
+            Phase.SOLID,
+            AtomRadius(),
+            listOf()
         ),
         Element(
             92,
@@ -1286,13 +1558,16 @@ object Elements {
             "uranium",
             238.0289,
             0,
+            0,
             NONE,
             7,
             "f",
             "actinide",
             "[Rn] 5f3 6d1 7s2",
             "2 8 18 32 21 9 2",
-            Phase.SOLID
+            Phase.SOLID,
+            AtomRadius(),
+            listOf()
         ),
         Element(
             93,
@@ -1300,13 +1575,16 @@ object Elements {
             "neptunium",
             237.0482,
             0,
+            0,
             NONE,
             7,
             "f",
             "actinide",
             "[Rn] 5f4 6d1 7s2",
             "2 8 18 32 22 9 2",
-            Phase.SOLID
+            Phase.SOLID,
+            AtomRadius(),
+            listOf()
         ),
         Element(
             94,
@@ -1314,13 +1592,16 @@ object Elements {
             "plutonium",
             244.0642,
             0,
+            0,
             NONE,
             7,
             "f",
             "actinide",
             "[Rn] 5f6 7s2",
             "2 8 18 32 24 8 2",
-            Phase.SOLID
+            Phase.SOLID,
+            AtomRadius(),
+            listOf()
         ),
         Element(
             95,
@@ -1328,13 +1609,16 @@ object Elements {
             "americium",
             243.0614,
             0,
+            0,
             NONE,
             7,
             "f",
             "actinide",
             "[Rn] 5f7 7s2",
             "2 8 18 32 25 8 2",
-            Phase.SOLID
+            Phase.SOLID,
+            AtomRadius(),
+            listOf()
         ),
         Element(
             96,
@@ -1342,13 +1626,16 @@ object Elements {
             "curium",
             247.0703,
             0,
+            0,
             NONE,
             7,
             "f",
             "actinide",
             "[Rn] 5f7 6d1 7s2",
             "2 8 18 32 25 9 2",
-            Phase.SOLID
+            Phase.SOLID,
+            AtomRadius(),
+            listOf()
         ),
         Element(
             97,
@@ -1356,13 +1643,16 @@ object Elements {
             "berklium",
             247.0703,
             0,
+            0,
             NONE,
             7,
             "f",
             "actinide",
             "[Rn] 5f9 7s2",
             "2 8 18 32 27 8 2",
-            Phase.SOLID
+            Phase.SOLID,
+            AtomRadius(),
+            listOf()
         ),
         Element(
             98,
@@ -1370,13 +1660,16 @@ object Elements {
             "californium",
             251.0796,
             0,
+            0,
             NONE,
             7,
             "f",
             "actinide",
             "[Rn] 5f10 7s2",
             "2 8 18 32 28 8 2",
-            Phase.SOLID
+            Phase.SOLID,
+            AtomRadius(),
+            listOf()
         ),
         Element(
             99,
@@ -1384,13 +1677,16 @@ object Elements {
             "einsteinium",
             252.0829,
             0,
+            0,
             NONE,
             7,
             "f",
             "actinide",
             "[Rn] 5f11 7s2",
             "2 8 18 32 29 8 2",
-            Phase.SOLID
+            Phase.SOLID,
+            AtomRadius(),
+            listOf()
         ),
         Element(
             100,
@@ -1398,13 +1694,16 @@ object Elements {
             "fermium",
             257.0951,
             0,
+            0,
             NONE,
             7,
             "f",
             "actinide",
             "[Rn] 5f12 7s2",
             "2 8 18 32 30 8 2",
-            Phase.SOLID
+            Phase.SOLID,
+            AtomRadius(),
+            listOf()
         ),
         Element(
             101,
@@ -1412,13 +1711,16 @@ object Elements {
             "mendelevium",
             258.0951,
             0,
+            0,
             NONE,
             7,
             "f",
             "actinide",
             "[Rn] 5f13 7s2",
             "2 8 18 32 31 8 2",
-            Phase.SOLID
+            Phase.SOLID,
+            AtomRadius(),
+            listOf()
         ),
         Element(
             102,
@@ -1426,27 +1728,33 @@ object Elements {
             "nobelium",
             259.1009,
             0,
+            0,
             NONE,
             7,
             "f",
             "actinide",
             "[Rn] 5f14 7s2",
             "2 8 18 32 32 8 2",
-            Phase.SOLID
+            Phase.SOLID,
+            AtomRadius(),
+            listOf()
         ),
         Element(
             103,
             "Lr",
             "lawrencium",
             266.1193,
-            0,
-            NONE,
+            3,
+            3,
+            B,
             7,
-            "f",
+            "d",
             "actinide",
             "[Rn] 5f14 7s2 7p1",
             "2 8 18 32 32 8 3",
-            Phase.SOLID
+            Phase.SOLID,
+            AtomRadius(),
+            listOf()
         ),
         Element(
             104,
@@ -1454,13 +1762,16 @@ object Elements {
             "rutherfordium",
             267.0,
             4,
+            4,
             B,
             7,
             "d",
             "transitionMetal",
             "[Rn] 5f14 6d2 7s2",
             "2 8 18 32 32 10 2",
-            Phase.SOLID
+            Phase.SOLID,
+            AtomRadius(),
+            listOf()
         ),
         Element(
             105,
@@ -1468,13 +1779,16 @@ object Elements {
             "dubnium",
             262.0,
             5,
+            5,
             B,
             7,
             "d",
             "transitionMetal",
             "[Rn] 5f14 6d3 7s2",
             "2 8 18 32 32 11 2",
-            Phase.SOLID
+            Phase.SOLID,
+            AtomRadius(),
+            listOf()
         ),
         Element(
             106,
@@ -1482,13 +1796,16 @@ object Elements {
             "seaborgium",
             269.0,
             6,
+            6,
             B,
             7,
             "d",
             "transitionMetal",
             "[Rn] 5f14 6d4 7s2",
             "2 8 18 32 32 12 2",
-            Phase.SOLID
+            Phase.SOLID,
+            AtomRadius(),
+            listOf()
         ),
         Element(
             107,
@@ -1496,13 +1813,16 @@ object Elements {
             "bohrium",
             270.0,
             7,
+            7,
             B,
             7,
             "d",
             "transitionMetal",
             "[Rn] 5f14 6d5 7s2",
             "2 8 18 32 32 13 2",
-            Phase.UNKNOWN
+            Phase.UNKNOWN,
+            AtomRadius(),
+            listOf()
         ),
         Element(
             108,
@@ -1510,19 +1830,23 @@ object Elements {
             "hassium",
             269.0,
             8,
+            8,
             B,
             7,
             "d",
             "transitionMetal",
             "[Rn] 5f14 6d6 7s2",
             "2 8 18 32 32 14 2",
-            Phase.SOLID
+            Phase.SOLID,
+            AtomRadius(),
+            listOf()
         ),
         Element(
             109,
             "Mt",
             "meitnerium",
             278.0,
+            9,
             8,
             B,
             7,
@@ -1530,13 +1854,16 @@ object Elements {
             "transitionMetal",
             "[Rn] 5f14 6d7 7s2",
             "2 8 18 32 32 15 2",
-            Phase.SOLID
+            Phase.SOLID,
+            AtomRadius(),
+            listOf()
         ),
         Element(
             110,
             "Ds",
             "darmstadtium",
             281.1620,
+            10,
             8,
             B,
             7,
@@ -1544,13 +1871,16 @@ object Elements {
             "transitionMetal",
             "[Rn] 5f14 6d8 7s2",
             "2 8 18 32 32 16 2",
-            Phase.SOLID
+            Phase.SOLID,
+            AtomRadius(),
+            listOf()
         ),
         Element(
             111,
             "Rg",
             "roentgenium",
             281.1684,
+            11,
             1,
             B,
             7,
@@ -1558,13 +1888,16 @@ object Elements {
             "transitionMetal",
             "[Rn] 5f14 6d9 7s2",
             "2 8 18 32 32 17 2",
-            Phase.SOLID
+            Phase.SOLID,
+            AtomRadius(),
+            listOf()
         ),
         Element(
             112,
             "Cn",
             "copernicium",
             285.1744,
+            12,
             2,
             B,
             7,
@@ -1572,13 +1905,16 @@ object Elements {
             "transitionMetal",
             "[Rn] 5f14 6d10 7s2",
             "2 8 18 32 32 18 2",
-            Phase.LIQUID_PREDICTED
+            Phase.LIQUID_PREDICTED,
+            AtomRadius(),
+            listOf()
         ),
         Element(
             113,
             "Nh",
             "nihonium",
             286.181,
+            13,
             3,
             A,
             7,
@@ -1586,13 +1922,16 @@ object Elements {
             "postTransitionMetal",
             "[Rn] 5f14 6d10 7s2 7p1",
             "2 8 18 32 32 18 3",
-            Phase.SOLID
+            Phase.SOLID,
+            AtomRadius(),
+            listOf()
         ),
         Element(
             114,
             "Fl",
             "flerovium",
             289.1904,
+            14,
             4,
             A,
             7,
@@ -1600,13 +1939,16 @@ object Elements {
             "postTransitionMetal",
             "[Rn] 5f14 6d10 7s2 7p2",
             "2 8 18 32 32 18 4",
-            Phase.LIQUID_PREDICTED
+            Phase.LIQUID_PREDICTED,
+            AtomRadius(),
+            listOf()
         ),
         Element(
             115,
             "Mc",
             "moscovium",
             290.1943,
+            15,
             5,
             A,
             7,
@@ -1614,13 +1956,16 @@ object Elements {
             "postTransitionMetal",
             "[Rn] 5f14 6d10 7s2 7p3",
             "2 8 18 32 32 18 5",
-            Phase.SOLID
+            Phase.SOLID,
+            AtomRadius(),
+            listOf()
         ),
         Element(
             116,
             "Lv",
             "livermorium",
             293.2045,
+            16,
             6,
             A,
             7,
@@ -1628,13 +1973,16 @@ object Elements {
             "postTransitionMetal",
             "[Rn] 5f14 6d10 7s2 7p4",
             "2 8 18 32 32 18 6",
-            Phase.SOLID
+            Phase.SOLID,
+            AtomRadius(),
+            listOf()
         ),
         Element(
             117,
             "Ts",
             "tennessine",
             294.2104,
+            17,
             7,
             A,
             7,
@@ -1642,13 +1990,16 @@ object Elements {
             "postTransitionMetal",
             "[Rn] 5f14 6d10 7s2 7p5",
             "2 8 18 32 32 18 7",
-            Phase.SOLID
+            Phase.SOLID,
+            AtomRadius(),
+            listOf()
         ),
         Element(
             118,
             "Og",
             "oganesson",
             294.2139,
+            18,
             8,
             A,
             7,
@@ -1656,7 +2007,9 @@ object Elements {
             "nobleGas",
             "[Rn] 5f14 6d10 7s2 7p6",
             "2 8 18 32 32 18 8",
-            Phase.SOLID
+            Phase.SOLID,
+            AtomRadius(),
+            listOf()
         ),
     )
 }
