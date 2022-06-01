@@ -9,7 +9,6 @@ import com.selflearning.chemistree.games.new_approach.GameRepository
 import com.selflearning.chemistree.games.new_approach.GameStages
 import com.selflearning.chemistree.games.new_approach.trivials.GameAnswerData
 import selflearning.chemistree.domain.chemistry.elements.Elements
-import selflearning.chemistree.domain.chemistry.elements.electronsOnLastShell
 import java.util.*
 
 data class GameState(

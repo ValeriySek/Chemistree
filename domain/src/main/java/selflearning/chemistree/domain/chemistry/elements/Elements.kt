@@ -1172,7 +1172,7 @@ object Elements {
             6,
             "f",
             "lanthanide",
-            "[Xe] 4f<sup>13 6s2",
+            "[Xe] 4f13 6s2",
             "2 8 18 31 8 2",
             Phase.SOLID,
             AtomRadius(),

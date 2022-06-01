@@ -16,7 +16,7 @@ class MendeleevTable : AppCompatActivity() {
         table.setTableRender(RenderMendeleevTable(table))
 //
         table.setData(LongTableElementsList.elements)
-        table.animates()
+//        table.animates()
 //        if (savedInstanceState == null) {
 //            getSupportFragmentManager()
 //                    .beginTransaction()
