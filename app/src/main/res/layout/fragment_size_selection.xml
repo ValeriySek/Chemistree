@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/size_selection_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/cSmoWhite"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:orientation="horizontal"
+        tools:layout_height="56dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="56dp"
+            android:gravity="center_vertical"
+            android:text="string/size_selection_toolbar_title" />
+
+        <ImageButton
+            android:id="@+id/size_selection_close_btn"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:layout_gravity="center|end"
+            android:background="?attr/actionBarItemBackground"
+            android:contentDescription="string/content_description"
+            android:padding="16dp" />
+
+        <View
+            android:id="@+id/size_selection_divider"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_gravity="bottom"
+            android:alpha="0" />
+
+    </FrameLayout>
+
+</FrameLayout>

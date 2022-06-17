@@ -29,8 +29,7 @@ import java.util.*
 import javax.inject.Inject
 
 import android.widget.TextView
-
-
+import androidx.fragment.app.FragmentTransaction
 
 
 class HomeFragment : Fragment() {
@@ -208,16 +207,25 @@ class HomeFragment : Fragment() {
 
         signOut.setOnClickListener(View.OnClickListener {
 
-            getData()
+
+            showDialog()
 
 
 
-            val bitmap = Bitmap.createBitmap(binding.container.measuredWidth, binding.container.measuredHeight, Bitmap.Config.ARGB_8888)
-            val canvas = Canvas(bitmap)
-            binding.container.draw(canvas)
-            binding.imgCont.setImageBitmap(bitmap)
 
 
+
+
+//            getData()
+//
+//
+//
+//            val bitmap = Bitmap.createBitmap(binding.container.measuredWidth, binding.container.measuredHeight, Bitmap.Config.ARGB_8888)
+//            val canvas = Canvas(bitmap)
+//            binding.container.draw(canvas)
+//            binding.imgCont.setImageBitmap(bitmap)
+//
+//
 
 
 
@@ -261,6 +269,22 @@ class HomeFragment : Fragment() {
 
 
         return binding.root
+    }
+
+    fun showDialog() {
+        val fragmentManager = parentFragmentManager
+        val newFragment = Dialog()
+        newFragment.show(fragmentManager, "MenuDialog")
+        // The device is smaller, so show the fragment fullscreen
+//        val transaction = fragmentManager.beginTransaction()
+//        // For a little polish, specify a transition animation
+//        transaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
+//        // To make it fullscreen, use the 'content' root view as the container
+//        // for the fragment, which is always the root view for the activity
+//        transaction
+//            .add(android.R.id.content, newFragment)
+//            .addToBackStack(null)
+//            .commit()
     }
 
     private fun getData() {

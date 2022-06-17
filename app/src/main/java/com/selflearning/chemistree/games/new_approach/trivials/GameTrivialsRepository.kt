@@ -7,6 +7,8 @@ import com.selflearning.chemistree.games.models.GameModel
 import com.selflearning.chemistree.games.models.GameQuestion
 import com.selflearning.chemistree.games.new_approach.GameRepository
 import com.selflearning.chemistree.games.new_approach.GameStages
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.launch
 import java.util.*
 
 data class GameState(
@@ -17,7 +19,7 @@ data class GameState(
     var wastedLives: Int = 0
 )
 
-class GameTrivialsRepository : GameRepository {
+class GameTrivialsRepository() : GameRepository {
 
     private val dataList by lazy { trivials }
 
@@ -33,19 +35,19 @@ class GameTrivialsRepository : GameRepository {
     private val questionsQueue: Queue<GameModel> = LinkedList()
 
     init {
-        val temporaryList = dataList
-            .shuffled()
-            .slice(0..5)
-        val formulaList = temporaryList.map { it.formula }
-        temporaryList.forEach { trivial ->
-            questionsQueue.offer(
-                GameModel(
-                    GameQuestion(trivial.name(), trivial.formula),
-                    getAuxiliaryList(formulaList, trivial.formula, trivial.name())
+            val temporaryList = dataList
+                .shuffled()
+                .slice(0..5)
+            val formulaList = temporaryList.map { it.formula }
+            temporaryList.forEach { trivial ->
+                questionsQueue.offer(
+                    GameModel(
+                        GameQuestion(trivial.name(), trivial.formula),
+                        getAuxiliaryList(formulaList, trivial.formula, trivial.name())
+                    )
                 )
-            )
-        }
-        Log.i("TAGGG", questionsQueue.toString())
+            }
+            Log.i("TAGGG", questionsQueue.toString())
     }
 
     private fun getAuxiliaryList(

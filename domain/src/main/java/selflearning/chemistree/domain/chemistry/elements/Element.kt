@@ -52,9 +52,27 @@ data class Element(
     )
 
 
-    fun electronsPerOrbital(electronConfiguration: String) =
+    /**
+     * Return List of electron orbitals in format [3d10, 4s2, 4p5]
+     *
+     * */
+    private fun electronsPerOrbital(electronConfiguration: String) =
         electronConfiguration.split(" ")
 
+    /**
+     * Return full List of electron orbitals in format [1s2, 2s2, 2p1]
+     *
+     * */
+    fun electronsConfigurationFull() =
+        electronsPerOrbital(fullElectronConfiguration())
+
+
+    /**
+     * Return List of electron orbitals in format [3d10, 4s2, 4p5]
+     *
+     * */
+    fun electronsConfigurationLastPeriod() =
+        electronsPerOrbital(electronConfigurationOfPeriod())
 
     //        orbitals.forEach {
 //            val shell = it.shell()
@@ -78,12 +96,16 @@ data class Element(
         }
     }
 
-    fun String.shell() = substring(0, 1).toInt()
-    fun String.orbital() = substring(1, 2)
-    fun String.electrons() = substring(2).toInt()
+    private fun String.shell() = substring(0, 1).toInt()
+    private fun String.orbital() = substring(1, 2)
+    private fun String.electrons() = substring(2).toInt()
 
     fun electronsOnLastShell() = electronsPerShell.split(" ").last().toInt()
 
+
+    /**
+     * return el config of last period in format "2s2 2p1"
+     * */
     fun electronConfigurationOfPeriod() =
         electronConfiguration.replace("(\\[[A-Z][a-z]?\\]\\s)?".toRegex(), "")
 
@@ -99,9 +121,41 @@ data class Element(
                 elementSymbolInBricks.toRegex(),
                 element.electronConfiguration
             )
-            return fullElectronConfiguration(config)
+            fullElectronConfiguration(config)
         }
     }
+
+    fun formulaOfLastShell() = electronConfigurationOfPeriod().replace(
+        "([1-8])([spdf][0-9])".toRegex(),
+        "$2"
+    )
+
+
+    fun isElectronFormulaOfLastShell(formula: String) =
+        formulaOfLastShell() == formula
+
+
+    fun sumOfUnpairElectrons() =
+        getOrbitals(electronConfigurationOfPeriod()).sumOf { orbital ->
+            orbital.unpairElectrons
+        }
+
+    fun hasUnpairElectrons() = sumOfUnpairElectrons() > 0
+
+    fun String.unpairElectrons(electrons: Int) =
+        if (electrons <= maxElectronsPerShell() / 2)
+            electrons
+        else
+            maxElectronsPerShell() - electrons
+
+    fun String.maxElectronsPerShell() = when (this) {
+        "s" -> 2
+        "p" -> 6
+        "d" -> 10
+        else -> 14
+    }
+
+//    fun String.valenсeElectrons(electrons: Int) =
 
 }
 
@@ -110,34 +164,30 @@ data class Orbital(
     val orbital: String,
     val electrons: Int,
     val unpairElectrons: Int
-)
-
-
-fun String.maxElectronsPerShell() = when (this) {
-    "s" -> 2
-    "p" -> 6
-    "d" -> 10
-    else -> 14
+) {
+    val hasUnpairsElectrons = unpairElectrons > 0
 }
 
-fun String.unpairElectrons(electrons: Int) =
-    if (electrons <= this.maxElectronsPerShell() / 2)
-        electrons
-    else
-        this.maxElectronsPerShell() - electrons
-
-//fun String.valenсeElectrons(electrons: Int) =
 
 
 fun main() {
-    val el = Elements.elements.toList()[75].apply {
-//        electronsPerOrbital(electronConfigurationOfPeriod())
-//        electronsPerOrbital(fullElectronConfiguration())
-        getOrbitals(fullElectronConfiguration()).forEach {
-
-            println(it)
-        }
+    val el = Elements.elements.toList()[74].apply {
+//        println(electronsPerOrbital(electronConfigurationOfPeriod()))
+        println(isElectronFormulaOfLastShell("f14"))
+//        getOrbitals(fullElectronConfiguration()).forEach {
+//
+//            println(it)
+//        }
     }
+
+//    Elements.elements.forEach {
+////        electronsPerOrbital(electronConfigurationOfPeriod())
+////        electronsPerOrbital(fullElectronConfiguration())
+//        val sum = it.sumOfUnpairElectrons()
+//        if (sum > 0) {
+//            println("Element: ${it.symbol}, ${it.electronConfigurationOfPeriod()}, $sum, ${it.hasUnpairElectrons()}")
+//        }
+//    }
 //    print(el.block.valentnElectrons(el.electronsOnLastShell()))
 //    print(el.electronConfigurationOfPeriod())
 }

@@ -5,6 +5,7 @@ import android.graphics.drawable.Drawable
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -12,6 +13,7 @@ import android.widget.ImageView
 import android.widget.Toast
 import androidx.core.graphics.drawable.DrawableCompat
 import androidx.core.view.get
+import androidx.lifecycle.lifecycleScope
 import com.selflearning.chemistree.adapter.ItemAnim
 import com.selflearning.chemistree.core.adapter.BaseAdapter
 import com.selflearning.chemistree.core.adapter.BindableItem

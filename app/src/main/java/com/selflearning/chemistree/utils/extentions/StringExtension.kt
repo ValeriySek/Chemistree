@@ -2,10 +2,13 @@ package com.selflearning.chemistree.utils.extentions
 
 import android.text.Html
 import android.text.Spanned
-import com.selflearning.chemistree.utils.PATTERN_FOR_MOLECULE
-import com.selflearning.chemistree.utils.PATTERN_FOR_REACTION
-import com.selflearning.chemistree.utils.PATTERN_FOR_SHELL
+import com.selflearning.chemistree.utils.*
 import java.util.*
+
+
+val PATTERN_FOR_MOLECULE = sub("$1")
+val PATTERN_FOR_REACTION = "$1${sub("$2")}"
+val PATTERN_FOR_SHELL = "$1${sup("$2")}"
 
 fun String.replaceOnSubstringSpanned(): Spanned {
     return Html.fromHtml(this.replaceOnSubstringString())
