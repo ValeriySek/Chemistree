@@ -8,6 +8,7 @@ import com.selflearning.chemistree.games.models.GameQuestion
 import com.selflearning.chemistree.games.new_approach.GameRepository
 import com.selflearning.chemistree.games.new_approach.GameStages
 import com.selflearning.chemistree.games.new_approach.trivials.GameAnswerData
+import selflearning.chemistree.domain.chemistry.elements.Element
 import selflearning.chemistree.domain.chemistry.elements.Elements
 import java.util.*
 
@@ -19,8 +20,59 @@ data class GameState(
 )
 
 enum class GameTypes {
+
+    /**
+     * Определите, атомы каких двух из указанных в ряду элементов
+     * имеют на внешнем энергетическом уровне [n] электронов.
+     * */
     ELECTRONS_ON_LAST_SHELL,
-    ELECTRONS_UNTIL_FULL
+
+    /**
+     * Определите, двум атомам каких из указанных элементов до
+     * завершения внешнего уровня не хватает [n] электрона.
+     * */
+    ELECTRONS_UNTIL_FULL,
+
+    /**
+     * Определите, атомы каких двух из указанных в ряду элементов имеют
+     * в основном состоянии [n] неспаренный электрон.
+     * [or]
+     * Определите, атомы каких из указанных элементов не имеют в основном
+     * состоянии неспаренных электронов.
+     * [or]
+     * Определите, у каких из указанных элементов число неспаренных
+     * электронов в основном состоянии превышает номер периода.
+     * */
+    FIND_UNPAIR_ELECTRONS,
+
+    /**
+     * Определите, атомы каких двух из указанных элементов имеют [n] валентных электронов.
+     * */
+    FIND_VALENCE_ELECTRONS,
+
+    /**
+     * Определите, в атомах каких двух из указанных элементов
+     * (в основном состоянии) общее число s-электронов превосходит общее
+     * число p-электронов.
+     * */
+    COMPARING_S_P_ELECTRONS_COUNT,
+
+    /**
+     * Определите, атомы каких из указанных элементов имеют в основном состоянии [n] s-электрона.
+     * */
+    COUNT_S_P_ELECTRONS,
+
+    /**
+     * Определите, атомы каких из указанных в ряду элементов в
+     * основном состоянии имеют электронную формулу внешнего энергетического уровня ns1 .
+     * */
+    FIND_BY_ELECTRON_FORMULA,
+
+    /**
+     * Определите, атомы каких из указанных в ряду элементов в основном
+     * состоянии имеют одинаковое количество электронов на внешнем энергетическом уровне.
+     * */
+    THE_SAME_COUNT_OF_ELECTRONS
 }
 
 fun main() {
@@ -56,20 +108,9 @@ class GameElectronConfigurationRepository : GameRepository {
                     temporaryList -= element
                     val question =
                         "Какой элемент имеет ${element.electronsOnLastShell()} электронов на внешнем энергетическом уровне "
-                    GameModel(
-                        GameQuestion(
-                            question,
-                            element.symbol
-                        ),
-                        getAuxiliaryList(
-                            getTemporaryList().map { it.symbol }.toList(),
-                            element.symbol,
-                            question
-                        )
-                    )
+                    getGame(question, element)
                 }
                 GameTypes.ELECTRONS_UNTIL_FULL -> {
-
                     val element = temporaryList.filter {
                         it.electronsOnLastShell() < 8
                     }.random()
@@ -77,22 +118,12 @@ class GameElectronConfigurationRepository : GameRepository {
 
                     val question =
                         "Какому элементу не хватает ${8 - element.electronsOnLastShell()} электронов до заполнения внешнего уровня "
-                    GameModel(
-                        GameQuestion(
-                            question,
-                            element.symbol
-                        ),
-                        getAuxiliaryList(
-                            getTemporaryList().map { it.symbol }.toList(),
-                            element.symbol,
-                            question
-                        )
-                    )
+                    getGame(question, element)
                 }
             }
         }
-        games.forEach {
 
+        games.forEach {
             print(it)
         }
         temporaryList.forEach { trivial ->
@@ -104,6 +135,20 @@ class GameElectronConfigurationRepository : GameRepository {
 //            )
         }
 //        Log.i("TAGGG", questionsQueue.toString())
+    }
+
+    private fun getGame(q: String, el: Element): GameModel {
+       return GameModel(
+            GameQuestion(
+                q,
+                el.symbol
+            ),
+            getAuxiliaryList(
+                getTemporaryList().map { it.symbol }.toList(),
+                el.symbol,
+                q
+            )
+        )
     }
 
 

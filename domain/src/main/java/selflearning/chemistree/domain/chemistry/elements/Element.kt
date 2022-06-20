@@ -8,21 +8,21 @@ const val elementSymbolInBricks = "\\[[A-Z][a-z]?\\]"
 
 @Parcelize
 data class Element(
-    val atomicNumber: Int,
-    val symbol: String,
-    val title: String,
-    val weight: Double,
-    val group: Int,
-    val groupOld: Int,
-    val subgroup: Subgroup,
-    val period: Int,
-    val block: String,
-    val elementCategory: String,
-    val electronConfiguration: String,
-    val electronsPerShell: String,
-    val phase: Phase,
-    val atomRadius: AtomRadius,
-    val oxidationStates: List<String>
+    val atomicNumber: Int = 0,
+    val symbol: String = "",
+    val title: String = "",
+    val weight: Double = .0,
+    val group: Int = 0,
+    val groupOld: Int = 0,
+    val subgroup: Subgroup = Subgroup.NONE,
+    val period: Int = 0,
+    val block: String = "",
+    val elementCategory: String = "",
+    val electronConfiguration: String = "",
+    val electronsPerShell: String = "",
+    val phase: Phase = Phase.UNKNOWN,
+    val atomRadius: AtomRadius = AtomRadius(),
+    val oxidationStates: List<String> = listOf()
 ) : Data(), Parcelable {
 
     constructor(
