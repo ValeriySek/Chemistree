@@ -7,6 +7,7 @@ import com.selflearning.chemistree.games.models.GameModel
 import com.selflearning.chemistree.games.models.GameQuestion
 import com.selflearning.chemistree.games.new_approach.GameRepository
 import com.selflearning.chemistree.games.new_approach.GameStages
+import com.selflearning.chemistree.games.new_approach.electron_configuration.game_type.ElectronsOnLastShell
 import com.selflearning.chemistree.games.new_approach.trivials.GameAnswerData
 import selflearning.chemistree.domain.chemistry.elements.Element
 import selflearning.chemistree.domain.chemistry.elements.Elements
@@ -27,52 +28,52 @@ enum class GameTypes {
      * */
     ELECTRONS_ON_LAST_SHELL,
 
-    /**
-     * Определите, двум атомам каких из указанных элементов до
-     * завершения внешнего уровня не хватает [n] электрона.
-     * */
-    ELECTRONS_UNTIL_FULL,
-
-    /**
-     * Определите, атомы каких двух из указанных в ряду элементов имеют
-     * в основном состоянии [n] неспаренный электрон.
-     * [or]
-     * Определите, атомы каких из указанных элементов не имеют в основном
-     * состоянии неспаренных электронов.
-     * [or]
-     * Определите, у каких из указанных элементов число неспаренных
-     * электронов в основном состоянии превышает номер периода.
-     * */
-    FIND_UNPAIR_ELECTRONS,
-
-    /**
-     * Определите, атомы каких двух из указанных элементов имеют [n] валентных электронов.
-     * */
-    FIND_VALENCE_ELECTRONS,
-
-    /**
-     * Определите, в атомах каких двух из указанных элементов
-     * (в основном состоянии) общее число s-электронов превосходит общее
-     * число p-электронов.
-     * */
-    COMPARING_S_P_ELECTRONS_COUNT,
-
-    /**
-     * Определите, атомы каких из указанных элементов имеют в основном состоянии [n] s-электрона.
-     * */
-    COUNT_S_P_ELECTRONS,
-
-    /**
-     * Определите, атомы каких из указанных в ряду элементов в
-     * основном состоянии имеют электронную формулу внешнего энергетического уровня ns1 .
-     * */
-    FIND_BY_ELECTRON_FORMULA,
-
-    /**
-     * Определите, атомы каких из указанных в ряду элементов в основном
-     * состоянии имеют одинаковое количество электронов на внешнем энергетическом уровне.
-     * */
-    THE_SAME_COUNT_OF_ELECTRONS
+//    /**
+//     * Определите, двум атомам каких из указанных элементов до
+//     * завершения внешнего уровня не хватает [n] электрона.
+//     * */
+//    ELECTRONS_UNTIL_FULL,
+//
+//    /**
+//     * Определите, атомы каких двух из указанных в ряду элементов имеют
+//     * в основном состоянии [n] неспаренный электрон.
+//     * [or]
+//     * Определите, атомы каких из указанных элементов не имеют в основном
+//     * состоянии неспаренных электронов.
+//     * [or]
+//     * Определите, у каких из указанных элементов число неспаренных
+//     * электронов в основном состоянии превышает номер периода.
+//     * */
+//    FIND_UNPAIR_ELECTRONS,
+//
+//    /**
+//     * Определите, атомы каких двух из указанных элементов имеют [n] валентных электронов.
+//     * */
+//    FIND_VALENCE_ELECTRONS,
+//
+//    /**
+//     * Определите, в атомах каких двух из указанных элементов
+//     * (в основном состоянии) общее число s-электронов превосходит общее
+//     * число p-электронов.
+//     * */
+//    COMPARING_S_P_ELECTRONS_COUNT,
+//
+//    /**
+//     * Определите, атомы каких из указанных элементов имеют в основном состоянии [n] s-электрона.
+//     * */
+//    COUNT_S_P_ELECTRONS,
+//
+//    /**
+//     * Определите, атомы каких из указанных в ряду элементов в
+//     * основном состоянии имеют электронную формулу внешнего энергетического уровня ns1 .
+//     * */
+//    FIND_BY_ELECTRON_FORMULA,
+//
+//    /**
+//     * Определите, атомы каких из указанных в ряду элементов в основном
+//     * состоянии имеют одинаковое количество электронов на внешнем энергетическом уровне.
+//     * */
+//    THE_SAME_COUNT_OF_ELECTRONS
 }
 
 fun main() {
@@ -97,28 +98,32 @@ class GameElectronConfigurationRepository : GameRepository {
 
     init {
         val temporaryList = getTemporaryList().toMutableList()
-        val gameTypes = (0..10).map {
+        val gameTypes = (0..5).map {
             GameTypes.values().random()
         }
         val games = gameTypes.map {
             when (it) {
                 GameTypes.ELECTRONS_ON_LAST_SHELL -> {
 
-                    val element = temporaryList.random()
-                    temporaryList -= element
-                    val question =
-                        "Какой элемент имеет ${element.electronsOnLastShell()} электронов на внешнем энергетическом уровне "
-                    getGame(question, element)
+                    ElectronsOnLastShell().getGameModel()
+//                    val element = temporaryList.random()
+//                    temporaryList = (temporaryList - element) as MutableList<Element>
+//                    val question =
+//                        "Какой элемент имеет ${element.electronsOnLastShell()} электронов на внешнем энергетическом уровне "
+//                    getGame(question, element)
                 }
-                GameTypes.ELECTRONS_UNTIL_FULL -> {
-                    val element = temporaryList.filter {
-                        it.electronsOnLastShell() < 8
-                    }.random()
-                    temporaryList -= element
-
-                    val question =
-                        "Какому элементу не хватает ${8 - element.electronsOnLastShell()} электронов до заполнения внешнего уровня "
-                    getGame(question, element)
+//                GameTypes.ELECTRONS_UNTIL_FULL -> {
+//                    val element = temporaryList.filter {
+//                        it.electronsOnLastShell() < 8
+//                    }.random()
+//                    temporaryList -= element
+//
+//                    val question =
+//                        "Какому элементу не хватает ${8 - element.electronsOnLastShell()} электронов до заполнения внешнего уровня "
+//                    getGame(question, element)
+//                }
+                else -> {
+                    getGame("", temporaryList[0])
                 }
             }
         }
@@ -154,7 +159,7 @@ class GameElectronConfigurationRepository : GameRepository {
 
     fun getTemporaryList() = dataList
         .filter {
-            it.period < 6
+            it.period < 3
         }
         .filter {
             it.block == "s" || it.block == "p"
