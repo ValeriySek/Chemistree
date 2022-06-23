@@ -13,7 +13,8 @@ data class PreGameModel(
 @Parcelize
 data class GameQuestion(
     val question: String = "",
-    val answer: String = ""
+    val answer: String = "",
+    val questionHash: Int = 0
 ) : Parcelable
 
 @Parcelize

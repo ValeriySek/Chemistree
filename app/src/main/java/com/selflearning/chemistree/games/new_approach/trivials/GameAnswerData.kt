@@ -7,7 +7,7 @@ import kotlinx.parcelize.Parcelize
 data class GameAnswerData(
     val answerVariant: String = "",
     val isCorrect: Boolean? = null,
-    val question: String = "",
+    val questionHash: Int = 0,
     val isClickable: Boolean = true
 ) : Parcelable {
 }

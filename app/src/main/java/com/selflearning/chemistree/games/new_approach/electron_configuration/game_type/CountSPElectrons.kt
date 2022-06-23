@@ -6,10 +6,10 @@ import com.selflearning.chemistree.games.new_approach.electron_configuration.gam
 import com.selflearning.chemistree.games.new_approach.electron_configuration.game_type.ElementGameType.Companion.temporaryListt
 import selflearning.chemistree.domain.chemistry.elements.Element
 
-class ElectronsOnLastShell: ElementGameType {
+class CountSPElectrons : ElementGameType {
 
     override fun getGameModel(): GameModel {
-        println("ElectronsOnLastShell temporaryListSize = ${temporaryListt.size}")
+        println("CountSPElectrons temporaryListSize = ${temporaryListt.size}")
         val element = temporaryListt.random()
         temporaryListt = temporaryListt - element
         val question = getQuestion(element)
@@ -21,7 +21,8 @@ class ElectronsOnLastShell: ElementGameType {
                 question.hashCode()
             ),
             getAuxiliaryList(
-                getTemporaryList().filter { it.electronsOnLastShell() != element.electronsOnLastShell() }.map { it.symbol }.toList(),
+                getTemporaryList().filter { getElectronsCount(it, "s") != getElectronsCount(element, "s") }
+                    .map { it.symbol }.toList(),
                 element.symbol,
                 question.hashCode()
             )
@@ -29,6 +30,11 @@ class ElectronsOnLastShell: ElementGameType {
     }
 
     private fun getQuestion(element: Element): String {
-        return "Какой элемент имеет ${element.electronsOnLastShell()} электронов на внешнем энергетическом уровне "
+        val sCount = getElectronsCount(element, "s")
+        return "Какой элемент имеют в основном состоянии $sCount s-электронов "
     }
+
+    private fun getElectronsCount(element: Element, orbital: String) = element.getOrbitals(element.fullElectronConfiguration())
+        .filter { it.orbital == orbital }
+        .sumOf { it.electrons }
 }

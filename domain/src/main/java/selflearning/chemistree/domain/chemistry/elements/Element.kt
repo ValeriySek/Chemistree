@@ -155,7 +155,10 @@ data class Element(
         else -> 14
     }
 
-//    fun String.valenсeElectrons(electrons: Int) =
+    fun valenceElectrons(): Int {
+        return if (block == "s" || block == "p") groupOld
+        else error("WE DON'T KNOW YET")
+    }
 
 }
 
@@ -167,7 +170,6 @@ data class Orbital(
 ) {
     val hasUnpairsElectrons = unpairElectrons > 0
 }
-
 
 
 fun main() {

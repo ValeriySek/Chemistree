@@ -7,7 +7,7 @@ import com.selflearning.chemistree.games.models.GameModel
 import com.selflearning.chemistree.games.models.GameQuestion
 import com.selflearning.chemistree.games.new_approach.GameRepository
 import com.selflearning.chemistree.games.new_approach.GameStages
-import com.selflearning.chemistree.games.new_approach.electron_configuration.game_type.ElectronsOnLastShell
+import com.selflearning.chemistree.games.new_approach.electron_configuration.game_type.*
 import com.selflearning.chemistree.games.new_approach.trivials.GameAnswerData
 import selflearning.chemistree.domain.chemistry.elements.Element
 import selflearning.chemistree.domain.chemistry.elements.Elements
@@ -22,12 +22,12 @@ data class GameState(
 
 enum class GameTypes {
 
-    /**
-     * Определите, атомы каких двух из указанных в ряду элементов
-     * имеют на внешнем энергетическом уровне [n] электронов.
-     * */
-    ELECTRONS_ON_LAST_SHELL,
-
+//    /**
+//     * Определите, атомы каких двух из указанных в ряду элементов
+//     * имеют на внешнем энергетическом уровне [n] электронов.
+//     * */
+//    ELECTRONS_ON_LAST_SHELL,
+//
 //    /**
 //     * Определите, двум атомам каких из указанных элементов до
 //     * завершения внешнего уровня не хватает [n] электрона.
@@ -50,14 +50,14 @@ enum class GameTypes {
 //     * Определите, атомы каких двух из указанных элементов имеют [n] валентных электронов.
 //     * */
 //    FIND_VALENCE_ELECTRONS,
-//
-//    /**
-//     * Определите, в атомах каких двух из указанных элементов
-//     * (в основном состоянии) общее число s-электронов превосходит общее
-//     * число p-электронов.
-//     * */
-//    COMPARING_S_P_ELECTRONS_COUNT,
-//
+
+    /**
+     * Определите, в атомах каких двух из указанных элементов
+     * (в основном состоянии) общее число s-электронов превосходит общее
+     * число p-электронов.
+     * */
+    COMPARING_S_P_ELECTRONS_COUNT,
+
 //    /**
 //     * Определите, атомы каких из указанных элементов имеют в основном состоянии [n] s-электрона.
 //     * */
@@ -98,33 +98,32 @@ class GameElectronConfigurationRepository : GameRepository {
 
     init {
         val temporaryList = getTemporaryList().toMutableList()
-        val gameTypes = (0..5).map {
+        val gameTypes = (0..9).map {
             GameTypes.values().random()
         }
         val games = gameTypes.map {
             when (it) {
-                GameTypes.ELECTRONS_ON_LAST_SHELL -> {
-
-                    ElectronsOnLastShell().getGameModel()
-//                    val element = temporaryList.random()
-//                    temporaryList = (temporaryList - element) as MutableList<Element>
-//                    val question =
-//                        "Какой элемент имеет ${element.electronsOnLastShell()} электронов на внешнем энергетическом уровне "
-//                    getGame(question, element)
-                }
-//                GameTypes.ELECTRONS_UNTIL_FULL -> {
-//                    val element = temporaryList.filter {
-//                        it.electronsOnLastShell() < 8
-//                    }.random()
-//                    temporaryList -= element
-//
-//                    val question =
-//                        "Какому элементу не хватает ${8 - element.electronsOnLastShell()} электронов до заполнения внешнего уровня "
-//                    getGame(question, element)
+//                GameTypes.ELECTRONS_ON_LAST_SHELL -> {
+//                    ElectronsOnLastShell().getGameModel()
 //                }
-                else -> {
-                    getGame("", temporaryList[0])
+//                GameTypes.ELECTRONS_UNTIL_FULL -> {
+//                    ElectronsUntilFull().getGameModel()
+//                }
+//                GameTypes.FIND_VALENCE_ELECTRONS -> {
+//                    FindValenceElectrons().getGameModel()
+//                }
+                GameTypes.COMPARING_S_P_ELECTRONS_COUNT -> {
+                    ComparingSPElectronsCount().getGameModel()
                 }
+//                GameTypes.COUNT_S_P_ELECTRONS -> {
+//                    CountSPElectrons().getGameModel()
+//                }
+//                GameTypes.FIND_BY_ELECTRON_FORMULA -> {
+//                    FindByElectronFormula().getGameModel()
+//                }
+//                else -> {
+//                    getGame("", temporaryList[0])
+//                }
             }
         }
 
@@ -142,19 +141,19 @@ class GameElectronConfigurationRepository : GameRepository {
 //        Log.i("TAGGG", questionsQueue.toString())
     }
 
-    private fun getGame(q: String, el: Element): GameModel {
-       return GameModel(
-            GameQuestion(
-                q,
-                el.symbol
-            ),
-            getAuxiliaryList(
-                getTemporaryList().map { it.symbol }.toList(),
-                el.symbol,
-                q
-            )
-        )
-    }
+//    private fun getGame(q: String, el: Element): GameModel {
+//       return GameModel(
+//            GameQuestion(
+//                q,
+//                el.symbol
+//            ),
+//            getAuxiliaryList(
+//                getTemporaryList().map { it.symbol }.toList(),
+//                el.symbol,
+//                q
+//            )
+//        )
+//    }
 
 
     fun getTemporaryList() = dataList
@@ -165,20 +164,20 @@ class GameElectronConfigurationRepository : GameRepository {
             it.block == "s" || it.block == "p"
         }
 
-    private fun getAuxiliaryList(
-        formulaList: List<String>,
-        name: String,
-        name1: String
-    ): List<GameAnswerData> {
-        return formulaList
-            .shuffled()
-            .minus(name)
-            .slice(0..3)
-            .plus(name)
-            .shuffled()
-            .map { GameAnswerData(answerVariant = it, question = name1) }
-
-    }
+//    private fun getAuxiliaryList(
+//        formulaList: List<String>,
+//        name: String,
+//        name1: String
+//    ): List<GameAnswerData> {
+//        return formulaList
+//            .shuffled()
+//            .minus(name)
+//            .slice(0..3)
+//            .plus(name)
+//            .shuffled()
+//            .map { GameAnswerData(answerVariant = it, question = name1) }
+//
+//    }
 
 
     override fun getData(): GameStages {

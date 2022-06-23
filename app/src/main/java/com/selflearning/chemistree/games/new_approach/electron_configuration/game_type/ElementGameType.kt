@@ -7,8 +7,6 @@ import selflearning.chemistree.domain.chemistry.elements.Elements
 
 interface ElementGameType {
 
-
-
     companion object {
 
         private val dataList: Sequence<Element> = Elements.elements
@@ -25,15 +23,16 @@ interface ElementGameType {
     fun getAuxiliaryList(
         formulaList: List<String>,
         name: String,
-        name1: String
+        questionHash: Int
     ): List<GameAnswerData> {
+//        println("getAuxiliaryList ${formulaList.size}")
         return formulaList
             .shuffled()
             .minus(name)
-            .slice(0..3)
+            .slice(0..2)
             .plus(name)
             .shuffled()
-            .map { GameAnswerData(answerVariant = it, question = name1) }
+            .map { GameAnswerData(answerVariant = it, questionHash = questionHash) }
 
     }
 

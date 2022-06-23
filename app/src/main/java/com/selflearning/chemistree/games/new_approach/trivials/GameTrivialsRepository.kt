@@ -43,7 +43,7 @@ class GameTrivialsRepository() : GameRepository {
                 questionsQueue.offer(
                     GameModel(
                         GameQuestion(trivial.name(), trivial.formula),
-                        getAuxiliaryList(formulaList, trivial.formula, trivial.name())
+                        getAuxiliaryList(formulaList, trivial.formula, trivial.name().hashCode())
                     )
                 )
             }
@@ -53,7 +53,7 @@ class GameTrivialsRepository() : GameRepository {
     private fun getAuxiliaryList(
         formulaList: List<String>,
         name: String,
-        name1: String
+        name1: Int
     ): List<GameAnswerData> {
         return formulaList
             .shuffled()
@@ -61,7 +61,7 @@ class GameTrivialsRepository() : GameRepository {
             .slice(0..2)
             .plus(name)
             .shuffled()
-            .map { GameAnswerData(answerVariant = it, question = name1) }
+            .map { GameAnswerData(answerVariant = it, questionHash = name1) }
 
     }
 
