@@ -6,7 +6,7 @@ import com.selflearning.chemistree.games.new_approach.electron_configuration.gam
 import com.selflearning.chemistree.games.new_approach.electron_configuration.game_type.ElementGameType.Companion.temporaryListt
 import selflearning.chemistree.domain.chemistry.elements.Element
 
-class ElectronsUntilFull : ElementGameType {
+object ElectronsUntilFull : ElementGame(), ElementGameType {
 
     override fun getGameModel(): GameModel {
         println("ElectronsUntilFull temporaryListSize = ${temporaryListt.size}")
@@ -16,6 +16,7 @@ class ElectronsUntilFull : ElementGameType {
             it.electronsOnLastShell() < maxElectrons
         }.random()
         temporaryListt = temporaryListt - element
+        println("ElectronsUntilFull temporaryList = $temporaryListt")
         val question = getQuestion(element)
 
         return GameModel(
@@ -25,12 +26,19 @@ class ElectronsUntilFull : ElementGameType {
                 question.hashCode()
             ),
             getAuxiliaryList(
-                getTemporaryList().filter { maxElectrons - it.electronsOnLastShell() != maxElectrons - element.electronsOnLastShell() }.map { it.symbol }.toList(),
+                getTemporaryList().filter { maxElectrons - it.electronsOnLastShell() != maxElectrons - element.electronsOnLastShell() }
+                    .map { it.symbol }.toList(),
                 element.symbol,
                 question.hashCode()
             )
         )
     }
+
+    override fun hasContent() = temporaryListt.any {
+            val maxElectrons = if (it.period == 1) 2 else 8
+            it.electronsOnLastShell() < maxElectrons
+        }
+
 
     private fun getQuestion(element: Element): String {
         return "Какому элементу не хватает ${8 - element.electronsOnLastShell()} электронов до заполнения внешнего уровня "

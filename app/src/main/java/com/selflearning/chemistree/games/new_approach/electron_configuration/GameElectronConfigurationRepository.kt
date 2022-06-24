@@ -22,17 +22,17 @@ data class GameState(
 
 enum class GameTypes {
 
-//    /**
+    //    /**
 //     * Определите, атомы каких двух из указанных в ряду элементов
 //     * имеют на внешнем энергетическом уровне [n] электронов.
 //     * */
-//    ELECTRONS_ON_LAST_SHELL,
-//
-//    /**
-//     * Определите, двум атомам каких из указанных элементов до
-//     * завершения внешнего уровня не хватает [n] электрона.
-//     * */
-//    ELECTRONS_UNTIL_FULL,
+    ELECTRONS_ON_LAST_SHELL,
+
+    /**
+     * Определите, двум атомам каких из указанных элементов до
+     * завершения внешнего уровня не хватает [n] электрона.
+     * */
+    ELECTRONS_UNTIL_FULL,
 //
 //    /**
 //     * Определите, атомы каких двух из указанных в ряду элементов имеют
@@ -46,29 +46,29 @@ enum class GameTypes {
 //     * */
 //    FIND_UNPAIR_ELECTRONS,
 //
+    /**
+     * Определите, атомы каких двух из указанных элементов имеют [n] валентных электронов.
+     * */
+    FIND_VALENCE_ELECTRONS,
+
 //    /**
-//     * Определите, атомы каких двух из указанных элементов имеют [n] валентных электронов.
+//     * Определите, в атомах каких двух из указанных элементов
+//     * (в основном состоянии) общее число s-электронов превосходит общее
+//     * число p-электронов.
 //     * */
-//    FIND_VALENCE_ELECTRONS,
+//    COMPARING_S_P_ELECTRONS_COUNT,
 
     /**
-     * Определите, в атомах каких двух из указанных элементов
-     * (в основном состоянии) общее число s-электронов превосходит общее
-     * число p-электронов.
+     * Определите, атомы каких из указанных элементов имеют в основном состоянии [n] s-электрона.
      * */
-    COMPARING_S_P_ELECTRONS_COUNT,
+    COUNT_S_P_ELECTRONS,
 
-//    /**
-//     * Определите, атомы каких из указанных элементов имеют в основном состоянии [n] s-электрона.
-//     * */
-//    COUNT_S_P_ELECTRONS,
-//
-//    /**
-//     * Определите, атомы каких из указанных в ряду элементов в
-//     * основном состоянии имеют электронную формулу внешнего энергетического уровня ns1 .
-//     * */
-//    FIND_BY_ELECTRON_FORMULA,
-//
+    /**
+     * Определите, атомы каких из указанных в ряду элементов в
+     * основном состоянии имеют электронную формулу внешнего энергетического уровня ns1 .
+     * */
+    FIND_BY_ELECTRON_FORMULA,
+
 //    /**
 //     * Определите, атомы каких из указанных в ряду элементов в основном
 //     * состоянии имеют одинаковое количество электронов на внешнем энергетическом уровне.
@@ -91,69 +91,34 @@ class GameElectronConfigurationRepository : GameRepository {
 
     private val countAnswerVariants = 3
 
-//    private val intRange = (0..dataList.lastIndex).toList()
-
 
     private val questionsQueue: Queue<GameModel> = LinkedList()
 
     init {
-        val temporaryList = getTemporaryList().toMutableList()
-        val gameTypes = (0..9).map {
-            GameTypes.values().random()
-        }
-        val games = gameTypes.map {
-            when (it) {
-//                GameTypes.ELECTRONS_ON_LAST_SHELL -> {
-//                    ElectronsOnLastShell().getGameModel()
-//                }
-//                GameTypes.ELECTRONS_UNTIL_FULL -> {
-//                    ElectronsUntilFull().getGameModel()
-//                }
-//                GameTypes.FIND_VALENCE_ELECTRONS -> {
-//                    FindValenceElectrons().getGameModel()
-//                }
-                GameTypes.COMPARING_S_P_ELECTRONS_COUNT -> {
-                    ComparingSPElectronsCount().getGameModel()
-                }
-//                GameTypes.COUNT_S_P_ELECTRONS -> {
-//                    CountSPElectrons().getGameModel()
-//                }
-//                GameTypes.FIND_BY_ELECTRON_FORMULA -> {
-//                    FindByElectronFormula().getGameModel()
-//                }
-//                else -> {
-//                    getGame("", temporaryList[0])
-//                }
+        val l = mutableListOf<ElementGameType>(
+            FindByElectronFormula,
+            CountSPElectrons,
+            ComparingSPElectronsCount,
+            FindValenceElectrons,
+            ElectronsUntilFull,
+            ElectronsOnLastShell
+        )
+        val games = (0..9).map {
+            val game = l.random()
+            val hasContent = game.hasContent()
+            if (hasContent) game.getGameModel()
+            else {
+                l.remove(game)
+                l.random().getGameModel()
             }
         }
-
         games.forEach {
+            questionsQueue.offer(it)
+        }
+        questionsQueue.forEach {
             print(it)
         }
-        temporaryList.forEach { trivial ->
-//            questionsQueue.offer(
-            GameModel(
-                GameQuestion(),
-//                    getAuxiliaryList(formulaList, )
-            )
-//            )
-        }
-//        Log.i("TAGGG", questionsQueue.toString())
     }
-
-//    private fun getGame(q: String, el: Element): GameModel {
-//       return GameModel(
-//            GameQuestion(
-//                q,
-//                el.symbol
-//            ),
-//            getAuxiliaryList(
-//                getTemporaryList().map { it.symbol }.toList(),
-//                el.symbol,
-//                q
-//            )
-//        )
-//    }
 
 
     fun getTemporaryList() = dataList
@@ -163,22 +128,6 @@ class GameElectronConfigurationRepository : GameRepository {
         .filter {
             it.block == "s" || it.block == "p"
         }
-
-//    private fun getAuxiliaryList(
-//        formulaList: List<String>,
-//        name: String,
-//        name1: String
-//    ): List<GameAnswerData> {
-//        return formulaList
-//            .shuffled()
-//            .minus(name)
-//            .slice(0..3)
-//            .plus(name)
-//            .shuffled()
-//            .map { GameAnswerData(answerVariant = it, question = name1) }
-//
-//    }
-
 
     override fun getData(): GameStages {
         val hasLives = state.lives > 0
@@ -231,12 +180,4 @@ class GameElectronConfigurationRepository : GameRepository {
                 isClickable = false
             )
         }
-
-    private fun getRandom(range: MutableList<Int>): Int {
-        val index = range.random()
-        range -= index
-        return index
-    }
-
-    private fun Trivial.name() = names[0].trivialNames[0].name
 }

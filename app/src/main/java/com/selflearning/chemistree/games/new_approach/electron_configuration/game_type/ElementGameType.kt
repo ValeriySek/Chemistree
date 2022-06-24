@@ -37,4 +37,6 @@ interface ElementGameType {
     }
 
     fun getGameModel(): GameModel
+
+    fun hasContent(): Boolean
 }

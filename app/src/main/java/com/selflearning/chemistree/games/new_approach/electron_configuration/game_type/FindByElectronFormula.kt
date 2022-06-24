@@ -6,12 +6,13 @@ import com.selflearning.chemistree.games.new_approach.electron_configuration.gam
 import com.selflearning.chemistree.games.new_approach.electron_configuration.game_type.ElementGameType.Companion.temporaryListt
 import selflearning.chemistree.domain.chemistry.elements.Element
 
-class FindByElectronFormula : ElementGameType {
+object FindByElectronFormula : ElementGame(), ElementGameType {
 
     override fun getGameModel(): GameModel {
         println("FindByElectronFormula temporaryListSize = ${temporaryListt.size}")
         val element = temporaryListt.random()
         temporaryListt = temporaryListt - element
+        println("FindByElectronFormula temporaryList = $temporaryListt")
         val question = getQuestion(element)
 
         return GameModel(
@@ -21,12 +22,15 @@ class FindByElectronFormula : ElementGameType {
                 question.hashCode()
             ),
             getAuxiliaryList(
-                getTemporaryList().filter { it.formulaOfLastShell() != element.formulaOfLastShell() }.map { it.symbol }.toList(),
+                getTemporaryList().filter { it.formulaOfLastShell() != element.formulaOfLastShell() }
+                    .map { it.symbol }.toList(),
                 element.symbol,
                 question.hashCode()
             )
         )
     }
+
+    override fun hasContent() = temporaryListt.isNotEmpty()
 
     private fun getQuestion(element: Element): String {
         return "Определите, атомы каких из указанных в ряду элементов в основном состоянии имеют электронную формулу внешнего энергетического уровня ${element.formulaOfLastShell()} "
