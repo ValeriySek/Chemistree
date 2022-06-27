@@ -78,9 +78,6 @@ enum class GameTypes {
 
 fun main() {
     val f = GameElectronConfigurationRepository()
-    f.getTemporaryList().toList().forEach {
-//        println(it)
-    }
 }
 
 class GameElectronConfigurationRepository : GameRepository {
@@ -119,15 +116,6 @@ class GameElectronConfigurationRepository : GameRepository {
             print(it)
         }
     }
-
-
-    fun getTemporaryList() = dataList
-        .filter {
-            it.period < 3
-        }
-        .filter {
-            it.block == "s" || it.block == "p"
-        }
 
     override fun getData(): GameStages {
         val hasLives = state.lives > 0

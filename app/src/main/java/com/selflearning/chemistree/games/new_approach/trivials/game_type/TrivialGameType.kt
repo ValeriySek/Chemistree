@@ -1,22 +1,21 @@
-package com.selflearning.chemistree.games.new_approach.electron_configuration.game_type
+package com.selflearning.chemistree.games.new_approach.trivials.game_type
 
+import com.selflearning.chemistree.domain.chemistry.trivials.Trivial
+import com.selflearning.chemistree.domain.chemistry.trivials.trivials
 import com.selflearning.chemistree.games.models.GameModel
 import com.selflearning.chemistree.games.new_approach.trivials.GameAnswerData
 import selflearning.chemistree.domain.chemistry.elements.Element
 import selflearning.chemistree.domain.chemistry.elements.Elements
 
-interface ElementGameType {
+interface TrivialGameType {
 
     companion object {
 
-        private val dataList by lazy { Elements.elements }
+        private val dataList by lazy { trivials }
+//        private val dataList: List<Trivial> = trivials
         fun getTemporaryList() = dataList
-            .filter {
-                it.period < 3
-            }
-            .filter {
-                it.block == "s" || it.block == "p"
-            }
+            .shuffled()
+            .slice(0..5)
         var temporaryListt = getTemporaryList().toList()
     }
 
@@ -25,7 +24,6 @@ interface ElementGameType {
         name: String,
         questionHash: Int
     ): List<GameAnswerData> {
-//        println("getAuxiliaryList ${formulaList.size}")
         return formulaList
             .shuffled()
             .minus(name)
