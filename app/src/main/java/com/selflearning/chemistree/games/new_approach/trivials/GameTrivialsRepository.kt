@@ -7,6 +7,7 @@ import com.selflearning.chemistree.games.models.GameModel
 import com.selflearning.chemistree.games.models.GameQuestion
 import com.selflearning.chemistree.games.new_approach.GameRepository
 import com.selflearning.chemistree.games.new_approach.GameStages
+import com.selflearning.chemistree.games.new_approach.trivials.game_type.TrivialByName
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
 import java.util.*
@@ -16,8 +17,13 @@ data class GameState(
     val score: Int = 0,
     val gameModel: GameModel = GameModel(),
     var lives: Int = 0,
-    var wastedLives: Int = 0
+    var wastedLives: Int = 0,
+    var additionalInfo: String = ""
 )
+
+fun main() {
+    GameTrivialsRepository()
+}
 
 class GameTrivialsRepository() : GameRepository {
 
@@ -29,40 +35,21 @@ class GameTrivialsRepository() : GameRepository {
 
     private lateinit var trivial: Trivial
 
-    private val intRange = (0..dataList.lastIndex).toList()
-
 
     private val questionsQueue: Queue<GameModel> = LinkedList()
 
     init {
-            val temporaryList = dataList
-                .shuffled()
-                .slice(0..5)
-            val formulaList = temporaryList.map { it.formula }
-            temporaryList.forEach { trivial ->
-                questionsQueue.offer(
-                    GameModel(
-                        GameQuestion(trivial.name(), trivial.formula),
-                        getAuxiliaryList(formulaList, trivial.formula, trivial.name().hashCode())
-                    )
-                )
-            }
-            Log.i("TAGGG", questionsQueue.toString())
-    }
+        val games = (0..5).map {
+            TrivialByName().getGameModel()
+        }
 
-    private fun getAuxiliaryList(
-        formulaList: List<String>,
-        name: String,
-        name1: Int
-    ): List<GameAnswerData> {
-        return formulaList
-            .shuffled()
-            .minus(name)
-            .slice(0..2)
-            .plus(name)
-            .shuffled()
-            .map { GameAnswerData(answerVariant = it, questionHash = name1) }
+        games.forEach {
+            questionsQueue.offer(it)
+        }
 
+        questionsQueue.forEach {
+            println(it)
+        }
     }
 
 
@@ -88,7 +75,8 @@ class GameTrivialsRepository() : GameRepository {
             ),
             lives = if (isRightAnswer) state.lives else --state.lives,
             wastedLives = if (isRightAnswer) state.wastedLives else ++state.wastedLives,
-            score = if (isRightAnswer) state.score + 420 else state.score - 140
+            score = if (isRightAnswer) state.score + 420 else state.score - 140,
+            additionalInfo = if (isRightAnswer) "" else getAdditionalInfo(answer)
         )
         questionsQueue.remove()
         return if (isRightAnswer) {
@@ -96,6 +84,12 @@ class GameTrivialsRepository() : GameRepository {
         } else {
             GameStages.WrongAnswer(state, listOf())
         }
+    }
+
+    private fun getAdditionalInfo(answer: String): String {
+        val trivial = dataList.first { it.formula == answer }
+        val trivialName = trivial.name()
+        return "$answer это ${trivialName}, а ${state.gameModel.gameQuestion.question} это ${state.gameModel.gameQuestion.answer}"
     }
 
     /**
@@ -123,6 +117,4 @@ class GameTrivialsRepository() : GameRepository {
         range -= index
         return index
     }
-
-    private fun Trivial.name() = names[0].trivialNames[0].name
 }

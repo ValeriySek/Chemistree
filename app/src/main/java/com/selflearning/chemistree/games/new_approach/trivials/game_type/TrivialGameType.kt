@@ -14,8 +14,8 @@ interface TrivialGameType {
         private val dataList by lazy { trivials }
 //        private val dataList: List<Trivial> = trivials
         fun getTemporaryList() = dataList
-            .shuffled()
-            .slice(0..5)
+//            .shuffled()
+//            .slice(0..5)
         var temporaryListt = getTemporaryList().toList()
     }
 

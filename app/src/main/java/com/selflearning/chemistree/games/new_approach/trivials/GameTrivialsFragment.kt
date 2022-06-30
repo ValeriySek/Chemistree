@@ -68,6 +68,7 @@ class GameTrivialsFragment : GameFragmentWithActions<GameState>(), Shakable {
 
     override fun onWrongAnswer(data: GameState) {
         updateLives(data.wastedLives)
+        Log.i("TAGGG", data.additionalInfo)
         onAnswer(data)
     }
 
