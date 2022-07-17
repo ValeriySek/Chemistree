@@ -1,24 +1,13 @@
-package com.selflearning.chemistree.games.new_approach.electron_configuration
+package com.selflearning.chemistree.games.new_approach.games.electron_configuration
 
 import android.util.Log
-import com.selflearning.chemistree.domain.chemistry.trivials.Trivial
-import com.selflearning.chemistree.domain.chemistry.trivials.trivials
-import com.selflearning.chemistree.games.models.GameModel
-import com.selflearning.chemistree.games.models.GameQuestion
-import com.selflearning.chemistree.games.new_approach.GameRepository
-import com.selflearning.chemistree.games.new_approach.GameStages
-import com.selflearning.chemistree.games.new_approach.electron_configuration.game_type.*
-import com.selflearning.chemistree.games.new_approach.trivials.GameAnswerData
-import selflearning.chemistree.domain.chemistry.elements.Element
-import selflearning.chemistree.domain.chemistry.elements.Elements
+import com.selflearning.chemistree.games.new_approach.*
+import com.selflearning.chemistree.games.new_approach.GameRepository.Companion.questionsQueue
+import com.selflearning.chemistree.games.new_approach.data.ForSave
+import com.selflearning.chemistree.games.new_approach.data.GameState
+import com.selflearning.chemistree.games.new_approach.data.SavedData
+import com.selflearning.chemistree.games.new_approach.games.electron_configuration.game_type.*
 import java.util.*
-
-data class GameState(
-    val score: Int = 0,
-    val gameModel: GameModel = GameModel(),
-    var lives: Int = 0,
-    var wastedLives: Int = 0
-)
 
 enum class GameTypes {
 
@@ -82,25 +71,18 @@ fun main() {
 
 class GameElectronConfigurationRepository : GameRepository {
 
-    private val dataList by lazy { Elements.elements }
-
-    private var state = GameState(lives = 4)
-
-    private val countAnswerVariants = 3
-
-
-    private val questionsQueue: Queue<GameModel> = LinkedList()
+    override var state: GameState = GameState(lives = 4)
 
     init {
         val l = mutableListOf<ElementGameType>(
-            FindByElectronFormula,
+//            FindByElectronFormula,
             CountSPElectrons,
             ComparingSPElectronsCount,
-            FindValenceElectrons,
-            ElectronsUntilFull,
-            ElectronsOnLastShell
+//            FindValenceElectrons,
+//            ElectronsUntilFull,
+//            ElectronsOnLastShell
         )
-        val games = (0..9).map {
+        val games = (0..4).map {
             val game = l.random()
             val hasContent = game.hasContent()
             if (hasContent) game.getGameModel()
@@ -117,22 +99,12 @@ class GameElectronConfigurationRepository : GameRepository {
         }
     }
 
-    override fun getData(): GameStages {
-        val hasLives = state.lives > 0
-        val hasQuestions = questionsQueue.size > 0
-        return if (hasLives && hasQuestions) {
-            state = state.copy(gameModel = questionsQueue.element())
-            GameStages.NewQuestion(state)
-        } else {
-            GameStages.GameEnd(state)
-        }
-    }
-
     /**
      *
      * */
     override fun answer(answer: String): GameStages {
         val isRightAnswer = answer == state.gameModel.gameQuestion.answer
+        Log.i("TAGGG", "firstElementBefore ${questionsQueue.element()}")
         state = state.copy(
             gameModel = state.gameModel.copy(
                 auxiliaryList = updateAnswerList(answer, isRightAnswer)
@@ -141,7 +113,9 @@ class GameElectronConfigurationRepository : GameRepository {
             wastedLives = if (isRightAnswer) state.wastedLives else ++state.wastedLives,
             score = if (isRightAnswer) state.score + 420 else state.score - 140
         )
-        questionsQueue.remove()
+        val firstElement = questionsQueue.remove()
+        if (!isRightAnswer) addElementAgainToEnd()
+        Log.i("TAGGG", "firstElement $firstElement")
         return if (isRightAnswer) {
             GameStages.RightAnswer(state, listOf())
         } else {
@@ -149,23 +123,45 @@ class GameElectronConfigurationRepository : GameRepository {
         }
     }
 
+    private fun addElementAgainToEnd() {
+        SavedData.list.add(
+            ForSave(
+                0,
+                state.gameModel.gameQuestion.question,
+                state.gameModel.gameQuestion.answer
+            )
+        )
+
+        questionsQueue.offer(
+            state.gameModel.copy(
+                auxiliaryList = state.gameModel.auxiliaryList.filter {
+                    it.isCorrect == null
+                }.map {
+                    it.copy(
+                        isClickable = true
+                    )
+                }
+            )
+        )
+    }
+
     /**
      *
      * */
-    private fun updateAnswerList(
-        answer: String,
-        isRightAnswer: Boolean
-    ) = state
-        .gameModel
-        .auxiliaryList
-        .map {
-            if (it.answerVariant == answer) {
-                it.copy(
-                    isCorrect = isRightAnswer,
-                    isClickable = false
-                )
-            } else it.copy(
-                isClickable = false
-            )
-        }
+//    private fun updateAnswerList(
+//        answer: String,
+//        isRightAnswer: Boolean
+//    ) = state
+//        .gameModel
+//        .auxiliaryList
+//        .map {
+//            if (it.answerVariant == answer) {
+//                it.copy(
+//                    isCorrect = isRightAnswer,
+//                    isClickable = false
+//                )
+//            } else it.copy(
+//                isClickable = false
+//            )
+//        }
 }

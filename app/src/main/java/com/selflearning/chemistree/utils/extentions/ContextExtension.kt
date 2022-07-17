@@ -2,6 +2,7 @@ package com.selflearning.chemistree.utils.extentions
 
 import android.content.Context
 import android.util.DisplayMetrics
+import android.util.Log
 import android.util.TypedValue
 import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
@@ -9,6 +10,7 @@ import androidx.datastore.preferences.core.intPreferencesKey
 import androidx.datastore.preferences.preferencesDataStore
 
 fun Context.getStringResource(name: String): String {
+    Log.i("TAGGG", "packageName ${this.packageName}")
     return this.resources.getString(this.resources.getIdentifier(name, "string", this.packageName))
 }
 

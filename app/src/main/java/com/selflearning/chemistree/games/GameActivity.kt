@@ -4,7 +4,7 @@ import android.os.Bundle
 import androidx.fragment.app.Fragment
 import com.selflearning.chemistree.MenuDialogFragment
 import com.selflearning.chemistree.R
-import com.selflearning.chemistree.games.new_approach.trivials.GameTrivialsFragment
+import com.selflearning.chemistree.games.new_approach.GameFragment
 import com.selflearning.chemistree.utils.ActivityUtilities
 import com.selflearning.chemistree.utils.AppConstants
 
@@ -32,7 +32,7 @@ class GameActivity : BaseGameActivity(), GameInterface {
 //            1 -> GameFragment4.getInstance(this)
 //            2 -> GameFragment2.getInstance(this)
 //            3 -> GameFragment1.getInstance(this)
-            else -> GameTrivialsFragment.newInstance()
+            else -> GameFragment.newInstance()
         }
 
     private fun createDialog() {

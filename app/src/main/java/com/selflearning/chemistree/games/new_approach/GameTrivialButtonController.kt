@@ -1,10 +1,11 @@
-package com.selflearning.chemistree.games.new_approach.trivials
+package com.selflearning.chemistree.games.new_approach
 
 import android.graphics.Color
 import android.util.Log
 import android.view.ViewGroup
 import com.selflearning.chemistree.core.adapter.BindableItemController
 import com.selflearning.chemistree.core.adapter.BindableViewHolder
+import com.selflearning.chemistree.games.new_approach.data.GameAnswerData
 import com.selflearning.chemistree.games.new_approach.game_utils.Shakable
 import com.selflearning.chemistree.views.buttons.SharpMaterialButton
 

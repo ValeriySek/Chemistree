@@ -1,9 +1,10 @@
-package com.selflearning.chemistree.games.new_approach.electron_configuration.game_type
+package com.selflearning.chemistree.games.new_approach.games.electron_configuration.game_type
 
 import com.selflearning.chemistree.games.models.GameModel
 import com.selflearning.chemistree.games.models.GameQuestion
-import com.selflearning.chemistree.games.new_approach.electron_configuration.game_type.ElementGameType.Companion.getTemporaryList
-import com.selflearning.chemistree.games.new_approach.electron_configuration.game_type.ElementGameType.Companion.temporaryListt
+import com.selflearning.chemistree.games.new_approach.games.electron_configuration.game_type.ElementGameType.Companion.getTemporaryList
+import com.selflearning.chemistree.games.new_approach.games.electron_configuration.game_type.ElementGameType.Companion.temporaryListt
+import com.selflearning.chemistree.games.new_approach.game_utils.questions.LanguageFactory.lang
 import selflearning.chemistree.domain.chemistry.elements.Element
 
 object CountSPElectrons : ElementGame(), ElementGameType {
@@ -39,7 +40,7 @@ object CountSPElectrons : ElementGame(), ElementGameType {
 
     private fun getQuestion(element: Element): String {
         val sCount = getElectronsCount(element, "s")
-        return "Какой элемент имеют в основном состоянии $sCount s-электронов "
+        return String.format(lang().countSPElectrons(1), sCount, "s")
     }
 
     private fun getElectronsCount(element: Element, orbital: String) =

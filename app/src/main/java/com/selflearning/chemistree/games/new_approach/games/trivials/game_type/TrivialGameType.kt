@@ -1,11 +1,8 @@
-package com.selflearning.chemistree.games.new_approach.trivials.game_type
+package com.selflearning.chemistree.games.new_approach.games.trivials.game_type
 
-import com.selflearning.chemistree.domain.chemistry.trivials.Trivial
 import com.selflearning.chemistree.domain.chemistry.trivials.trivials
 import com.selflearning.chemistree.games.models.GameModel
-import com.selflearning.chemistree.games.new_approach.trivials.GameAnswerData
-import selflearning.chemistree.domain.chemistry.elements.Element
-import selflearning.chemistree.domain.chemistry.elements.Elements
+import com.selflearning.chemistree.games.new_approach.data.GameAnswerData
 
 interface TrivialGameType {
 

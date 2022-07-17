@@ -1,4 +1,4 @@
-package com.selflearning.chemistree.games.new_approach.trivials
+package com.selflearning.chemistree.games.new_approach.data
 
 import android.os.Parcelable
 import kotlinx.parcelize.Parcelize

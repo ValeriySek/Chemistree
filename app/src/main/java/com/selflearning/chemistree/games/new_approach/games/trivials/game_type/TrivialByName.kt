@@ -1,11 +1,11 @@
-package com.selflearning.chemistree.games.new_approach.trivials.game_type
+package com.selflearning.chemistree.games.new_approach.games.trivials.game_type
 
 import com.selflearning.chemistree.games.models.GameModel
 import com.selflearning.chemistree.games.models.GameQuestion
-import com.selflearning.chemistree.games.new_approach.trivials.game_type.TrivialGameType.Companion.getTemporaryList
-import com.selflearning.chemistree.games.new_approach.trivials.game_type.TrivialGameType.Companion.temporaryListt
+import com.selflearning.chemistree.games.new_approach.games.trivials.game_type.TrivialGameType.Companion.getTemporaryList
+import com.selflearning.chemistree.games.new_approach.games.trivials.game_type.TrivialGameType.Companion.temporaryListt
 
-class TrivialByName: TrivialGameType {
+object TrivialByName: TrivialGameType {
 
     override fun getGameModel(): GameModel {
         val trivial = temporaryListt.random()

@@ -1,12 +1,14 @@
 package com.selflearning.chemistree.games.new_approach
 
-interface GameLifecycle<T> {
+import com.selflearning.chemistree.games.new_approach.data.GameState
 
-    fun onNewQuestion(data: T)
+interface GameLifecycle {
 
-    fun onRightAnswer(data: T)
+    fun onNewQuestion(data: GameState)
 
-    fun onWrongAnswer(data: T)
+    fun onRightAnswer(data: GameState)
 
-    fun onFinishGame(data: T)
+    fun onWrongAnswer(data: GameState)
+
+    fun onFinishGame(data: GameState)
 }

@@ -6,9 +6,8 @@ import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.selflearning.chemistree.games.new_approach.game_utils.Vibratorable
-import com.selflearning.chemistree.games.new_approach.trivials.GameState
 
-abstract class GameFragmentWithActions<T> : Fragment(), GameLifecycle<T>, Vibratorable {
+abstract class GameFragmentWithActions : Fragment(), GameLifecycle, Vibratorable {
 
     abstract val gameRepository: GameRepository
 
@@ -23,19 +22,17 @@ abstract class GameFragmentWithActions<T> : Fragment(), GameLifecycle<T>, Vibrat
             Log.i("TAHH", "gameState $it")
             when(it) {
                 is GameStages.NewQuestion -> {
-                    onNewQuestion(it.data as T)
+                    onNewQuestion(it.data)
                 }
                 is GameStages.RightAnswer -> {
-                    onRightAnswer(it.data as T)
-//                    onAnswer(it.data as T)
+                    onRightAnswer(it.data)
                 }
                 is GameStages.WrongAnswer -> {
                     vibrate()
-                    onWrongAnswer(it.data as T)
-//                    onAnswer(it.data as T)
+                    onWrongAnswer(it.data)
                 }
                 is GameStages.GameEnd -> {
-                    onFinishGame(it.data as T)
+                    onFinishGame(it.data)
                 }
             }
         }

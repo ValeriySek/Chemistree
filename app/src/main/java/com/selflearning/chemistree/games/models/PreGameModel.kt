@@ -1,7 +1,7 @@
 package com.selflearning.chemistree.games.models
 
 import android.os.Parcelable
-import com.selflearning.chemistree.games.new_approach.trivials.GameAnswerData
+import com.selflearning.chemistree.games.new_approach.data.GameAnswerData
 import kotlinx.parcelize.Parcelize
 
 @Parcelize

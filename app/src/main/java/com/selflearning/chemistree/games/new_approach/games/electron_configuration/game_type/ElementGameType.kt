@@ -1,8 +1,7 @@
-package com.selflearning.chemistree.games.new_approach.electron_configuration.game_type
+package com.selflearning.chemistree.games.new_approach.games.electron_configuration.game_type
 
 import com.selflearning.chemistree.games.models.GameModel
-import com.selflearning.chemistree.games.new_approach.trivials.GameAnswerData
-import selflearning.chemistree.domain.chemistry.elements.Element
+import com.selflearning.chemistree.games.new_approach.data.GameAnswerData
 import selflearning.chemistree.domain.chemistry.elements.Elements
 
 interface ElementGameType {
@@ -25,7 +24,6 @@ interface ElementGameType {
         name: String,
         questionHash: Int
     ): List<GameAnswerData> {
-//        println("getAuxiliaryList ${formulaList.size}")
         return formulaList
             .shuffled()
             .minus(name)

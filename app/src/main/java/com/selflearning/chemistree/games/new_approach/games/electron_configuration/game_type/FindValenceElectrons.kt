@@ -1,9 +1,9 @@
-package com.selflearning.chemistree.games.new_approach.electron_configuration.game_type
+package com.selflearning.chemistree.games.new_approach.games.electron_configuration.game_type
 
 import com.selflearning.chemistree.games.models.GameModel
 import com.selflearning.chemistree.games.models.GameQuestion
-import com.selflearning.chemistree.games.new_approach.electron_configuration.game_type.ElementGameType.Companion.getTemporaryList
-import com.selflearning.chemistree.games.new_approach.electron_configuration.game_type.ElementGameType.Companion.temporaryListt
+import com.selflearning.chemistree.games.new_approach.games.electron_configuration.game_type.ElementGameType.Companion.getTemporaryList
+import com.selflearning.chemistree.games.new_approach.games.electron_configuration.game_type.ElementGameType.Companion.temporaryListt
 import selflearning.chemistree.domain.chemistry.elements.Element
 
 object FindValenceElectrons : ElementGame(), ElementGameType {

@@ -3,6 +3,7 @@ package com.selflearning.chemistree.feature.f_home
 import android.animation.ObjectAnimator
 import android.animation.PropertyValuesHolder
 import android.animation.StateListAnimator
+import android.content.res.Resources
 import android.graphics.*
 import android.os.Bundle
 import android.util.Log
@@ -30,6 +31,7 @@ import javax.inject.Inject
 
 import android.widget.TextView
 import androidx.fragment.app.FragmentTransaction
+import com.selflearning.chemistree.utils.extentions.getStringResource
 
 
 class HomeFragment : Fragment() {
@@ -178,7 +180,12 @@ class HomeFragment : Fragment() {
 //        animation2 = AnimationUtils.loadAnimation(getActivity(), R.anim.rottion_anti_clockwize);
 //        imageViewInner.startAnimation(animation1);
 //        imageViewOuter.startAnimation(animation2);
-        Toast.makeText(activity, "" + Locale.getDefault().language, Toast.LENGTH_SHORT).show()
+
+
+        val ru = Locale.getDefault().language.equals(Locale("ru").language)
+        val en = Locale.getDefault().language.equals(Locale("en").language)
+        textView.text = "locale ${Locale.getDefault().language}: ru $ru, en $en"
+        Toast.makeText(activity, "locale ${Locale.getDefault().language}: ru $ru, en $en", Toast.LENGTH_SHORT).show()
 
         val sla = StateListAnimator()
 
