@@ -3,8 +3,9 @@ package com.selflearning.chemistree.games.new_approach.games.trivials.game_type
 import com.selflearning.chemistree.domain.chemistry.trivials.trivials
 import com.selflearning.chemistree.games.models.GameModel
 import com.selflearning.chemistree.games.new_approach.data.GameAnswerData
+import com.selflearning.chemistree.games.new_approach.game_utils.Game
 
-interface TrivialGameType {
+interface TrivialGameType : Game {
 
     companion object {
 
@@ -16,22 +17,8 @@ interface TrivialGameType {
         var temporaryListt = getTemporaryList().toList()
     }
 
-    fun getAuxiliaryList(
-        formulaList: List<String>,
-        name: String,
-        questionHash: Int
-    ): List<GameAnswerData> {
-        return formulaList
-            .shuffled()
-            .minus(name)
-            .slice(0..2)
-            .plus(name)
-            .shuffled()
-            .map { GameAnswerData(answerVariant = it, questionHash = questionHash) }
-
-    }
-
     fun getGameModel(): GameModel
 
     fun hasContent(): Boolean
+
 }

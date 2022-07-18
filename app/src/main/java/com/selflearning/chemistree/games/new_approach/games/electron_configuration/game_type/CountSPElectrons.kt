@@ -5,6 +5,8 @@ import com.selflearning.chemistree.games.models.GameQuestion
 import com.selflearning.chemistree.games.new_approach.games.electron_configuration.game_type.ElementGameType.Companion.getTemporaryList
 import com.selflearning.chemistree.games.new_approach.games.electron_configuration.game_type.ElementGameType.Companion.temporaryListt
 import com.selflearning.chemistree.games.new_approach.game_utils.questions.LanguageFactory.lang
+import com.selflearning.chemistree.games.new_approach.games.electron_configuration.game_type.ElementGame
+import com.selflearning.chemistree.games.new_approach.games.electron_configuration.game_type.ElementGameType
 import selflearning.chemistree.domain.chemistry.elements.Element
 
 object CountSPElectrons : ElementGame(), ElementGameType {

@@ -22,7 +22,6 @@ import com.selflearning.chemistree.games.new_approach.data.GameState
 import com.selflearning.chemistree.games.new_approach.data.SavedData
 import com.selflearning.chemistree.games.new_approach.game_utils.Shakable
 import com.selflearning.chemistree.games.new_approach.games.acids.GameAcidsRepository
-import com.selflearning.chemistree.games.new_approach.games.trivials.GameTrivialsRepository
 
 class GameFragment : GameFragmentWithActions(), Shakable {
 
@@ -85,6 +84,7 @@ class GameFragment : GameFragmentWithActions(), Shakable {
     override fun onFinishGame(data: GameState) {
         Toast.makeText(requireContext(), "Game End", Toast.LENGTH_SHORT).show()
         Log.i("TAGGG", "SavedData  -->  ${SavedData.list}")
+        Log.i("TAGGG", "GameHistory  -->  ${data.answerHistory}")
     }
 
     private fun updateLives(lives: Int) {
