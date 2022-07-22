@@ -22,11 +22,12 @@ import com.selflearning.chemistree.games.new_approach.data.GameState
 import com.selflearning.chemistree.games.new_approach.data.SavedData
 import com.selflearning.chemistree.games.new_approach.game_utils.Shakable
 import com.selflearning.chemistree.games.new_approach.games.acids.GameAcidsRepository
+import com.selflearning.chemistree.games.new_approach.games.bases.GameBasesRepository
 
 class GameFragment : GameFragmentWithActions(), Shakable {
 
     override val gameRepository: GameRepository
-        get() = GameAcidsRepository(requireContext())
+        get() = GameBasesRepository(requireContext())
 
     private var baseAdapter = BaseAdapter()
 

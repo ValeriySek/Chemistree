@@ -3,7 +3,6 @@ package com.selflearning.chemistree.games.new_approach.games.acids.game_type
 import android.content.Context
 import com.selflearning.chemistree.games.models.GameModel
 import com.selflearning.chemistree.games.models.GameQuestion
-import com.selflearning.chemistree.games.new_approach.games.acids.game_type.AcidGameType
 import com.selflearning.chemistree.games.new_approach.games.acids.game_type.AcidGameType.Companion.getTemporaryList
 import com.selflearning.chemistree.games.new_approach.games.acids.game_type.AcidGameType.Companion.temporaryListt
 import com.selflearning.chemistree.utils.extentions.getStringResource

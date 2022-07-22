@@ -160,6 +160,35 @@ data class Element(
         else error("WE DON'T KNOW YET")
     }
 
+    fun getPeriods(periodType: PeriodType) =
+        if (periodType == PeriodType.OLD) (1..8) else (1..18)
+
+    fun getGroups() = (1..8)
+
+}
+
+fun metalProperties(
+    properties: Properties,
+    axis: Axis,
+    metalProperties: MetalProperties,
+    list: List<Int>
+): Boolean {
+    val dir = isIncreased(list)
+    if (dir == Dir._312) return false
+    val metal = if (properties == Properties.INCREASE) {
+        if (axis == Axis.PERIOD) {
+            dir == Dir._321
+        } else {
+            dir == Dir._123
+        }
+    } else {
+        if (axis == Axis.PERIOD) {
+            dir == Dir._123
+        } else {
+            dir == Dir._321
+        }
+    }
+    return if (metalProperties == MetalProperties.METAL) metal else !metal
 }
 
 data class Orbital(
@@ -171,16 +200,138 @@ data class Orbital(
     val hasUnpairsElectrons = unpairElectrons > 0
 }
 
+fun isIncreased(list: List<Int>): Dir {
+    if (list.size < 2) error("List have to contains at least 2 elements")
+    if (list[0] < list[1]) {
+        for (i in 1..list.lastIndex) {
+            if (list[i - 1] > list[i]) return Dir._312
+        }
+        return Dir._123
+    } else {
+        for (i in 1..list.lastIndex) {
+            if (list[i - 1] < list[i]) return Dir._312
+        }
+        return Dir._321
+    }
+}
+
 
 fun main() {
-    val el = Elements.elements.toList()[74].apply {
-//        println(electronsPerOrbital(electronConfigurationOfPeriod()))
-        println(isElectronFormulaOfLastShell("f14"))
-//        getOrbitals(fullElectronConfiguration()).forEach {
-//
-//            println(it)
-//        }
-    }
+//    val el = Elements.elements.toList()[74].apply {
+////        println(electronsPerOrbital(electronConfigurationOfPeriod()))
+//        println(isElectronFormulaOfLastShell("f14"))
+////        getOrbitals(fullElectronConfiguration()).forEach {
+////
+////            println(it)
+////        }
+//    }
+
+//    println(isIncreased(listOf(1, 2, 3)))
+//    println(isIncreased(listOf(3, 2, 1)))
+//    println(isIncreased(listOf(0, 2, 1)))
+    println(
+        metalProperties(
+            Properties.INCREASE, Axis.PERIOD,
+            MetalProperties.METAL, listOf(1, 2, 3)
+        )
+    )
+    println(
+        metalProperties(
+            Properties.INCREASE, Axis.PERIOD,
+            MetalProperties.NONMETAL, listOf(1, 2, 3)
+        )
+    )
+    println()
+    println(
+        metalProperties(
+            Properties.INCREASE, Axis.GROUP,
+            MetalProperties.METAL, listOf(1, 2, 3)
+        )
+    )
+    println(
+        metalProperties(
+            Properties.INCREASE, Axis.GROUP,
+            MetalProperties.NONMETAL, listOf(1, 2, 3)
+        )
+    )
+    println()
+    println(
+        metalProperties(
+            Properties.DECREASE, Axis.PERIOD,
+            MetalProperties.METAL, listOf(1, 2, 3)
+        )
+    )
+    println(
+        metalProperties(
+            Properties.DECREASE, Axis.PERIOD,
+            MetalProperties.NONMETAL, listOf(1, 2, 3)
+        )
+    )
+    println()
+    println(
+        metalProperties(
+            Properties.DECREASE, Axis.GROUP,
+            MetalProperties.METAL, listOf(1, 2, 3)
+        )
+    )
+    println(
+        metalProperties(
+            Properties.DECREASE, Axis.GROUP,
+            MetalProperties.NONMETAL, listOf(1, 2, 3)
+        )
+    )
+    println()
+    println(
+        metalProperties(
+            Properties.INCREASE, Axis.PERIOD,
+            MetalProperties.METAL, listOf(3, 2, 1)
+        )
+    )
+    println(
+        metalProperties(
+            Properties.INCREASE, Axis.PERIOD,
+            MetalProperties.NONMETAL, listOf(3, 2, 1)
+        )
+    )
+    println()
+    println(
+        metalProperties(
+            Properties.INCREASE, Axis.GROUP,
+            MetalProperties.METAL, listOf(3, 2, 1)
+        )
+    )
+    println(
+        metalProperties(
+            Properties.INCREASE, Axis.GROUP,
+            MetalProperties.NONMETAL, listOf(3, 2, 1)
+        )
+    )
+    println()
+    println(
+        metalProperties(
+            Properties.DECREASE, Axis.PERIOD,
+            MetalProperties.METAL, listOf(3, 2, 1)
+        )
+    )
+    println(
+        metalProperties(
+            Properties.DECREASE, Axis.PERIOD,
+            MetalProperties.NONMETAL, listOf(3, 2, 1)
+        )
+    )
+    println()
+    println(
+        metalProperties(
+            Properties.DECREASE, Axis.GROUP,
+            MetalProperties.METAL, listOf(3, 2, 1)
+        )
+    )
+    println(
+        metalProperties(
+            Properties.DECREASE, Axis.GROUP,
+            MetalProperties.NONMETAL, listOf(3, 2, 1)
+        )
+    )
 
 //    Elements.elements.forEach {
 ////        electronsPerOrbital(electronConfigurationOfPeriod())
@@ -192,6 +343,13 @@ fun main() {
 //    }
 //    print(el.block.valentnElectrons(el.electronsOnLastShell()))
 //    print(el.electronConfigurationOfPeriod())
+}
+
+fun Any.equalsToAll(items: Iterable<Any>): Boolean {
+    return items.all {
+        println("this $this == it $it")
+        this == it
+    }
 }
 
 
@@ -216,3 +374,30 @@ data class AtomRadius(
     val vanDerWaalsRadius: String = "0",
     val ionicRadius: String = "0"
 ) : Parcelable
+
+enum class PeriodType {
+    OLD,
+    NEW
+}
+
+enum class Properties {
+    INCREASE,
+    DECREASE
+}
+
+enum class MetalProperties {
+    METAL,
+    NONMETAL
+}
+
+
+enum class Axis {
+    GROUP,
+    PERIOD
+}
+
+enum class Dir {
+    _123,
+    _321,
+    _312
+}

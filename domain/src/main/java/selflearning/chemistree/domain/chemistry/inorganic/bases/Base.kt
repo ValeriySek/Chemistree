@@ -4,12 +4,12 @@ import selflearning.chemistree.domain.chemistry.inorganic.Inorganic
 
 class Base(
         val id: Int,
-        val formula: String?,
-        val name: String?,
-        val nameCation: String?,
-        val cation: String?,
+        val formula: String,
+        val name: String,
+        val nameCation: String,
+        val cation: String,
         val oxidationState: Int,
-        val classification: String?,
+        val classification: String,
         val difficult: Int
 ) : Inorganic {
     //    @Ignore
@@ -25,12 +25,12 @@ class Base(
     //        this.difficult = difficult;
     //        this.classification = classification;
     //    }
-    constructor(formula: String?,
-                name: String?,
+    constructor(formula: String,
+                name: String,
 //                nameCation: String?,
                 oxidationState: Int,
-                cation: String?,
-                classification: String?,
+                cation: String,
+                classification: String,
                 difficult: Int) : this(
             id = -1,
             formula,
