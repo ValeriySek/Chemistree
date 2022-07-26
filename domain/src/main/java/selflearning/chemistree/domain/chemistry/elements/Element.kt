@@ -2,6 +2,7 @@ package selflearning.chemistree.domain.chemistry.elements
 
 import android.os.Parcelable
 import kotlinx.android.parcel.Parcelize
+import selflearning.chemistree.domain.chemistry.elements.Elements.elements
 
 const val elementSymbolInBricks = "\\[[A-Z][a-z]?\\]"
 
@@ -159,12 +160,38 @@ data class Element(
         return if (block == "s" || block == "p") groupOld
         else error("WE DON'T KNOW YET")
     }
+}
 
-    fun getPeriods(periodType: PeriodType) =
-        if (periodType == PeriodType.OLD) (1..8) else (1..18)
+fun getPeriods(groupType: GroupType) =
+    if (groupType == GroupType.OLD) (1..8) else (1..18)
 
-    fun getGroups() = (1..8)
+fun getGroups() = (1..8)
 
+
+fun ionizationEnergy(
+    properties: Properties,
+    axis: Axis,
+    list: List<Int>
+): Boolean {
+    return metalProperties(
+        properties,
+        axis,
+        MetalProperties.METAL,
+        list
+    )
+}
+
+fun atomRadius(
+    properties: Properties,
+    axis: Axis,
+    list: List<Int>
+): Boolean {
+    return metalProperties(
+        properties,
+        axis,
+        MetalProperties.METAL,
+        list
+    )
 }
 
 fun metalProperties(
@@ -175,20 +202,43 @@ fun metalProperties(
 ): Boolean {
     val dir = isIncreased(list)
     if (dir == Dir._312) return false
-    val metal = if (properties == Properties.INCREASE) {
-        if (axis == Axis.PERIOD) {
-            dir == Dir._321
+    val metal = if (properties == Properties.INCREASE) { // увеличение
+        if (axis == Axis.Period) {
+            dir == Dir._321  // увеличение справа налево в Периоде
         } else {
-            dir == Dir._123
+            dir == Dir._123  // увеличение сверху вниз в Группе
         }
     } else {
-        if (axis == Axis.PERIOD) {
-            dir == Dir._123
+        if (axis == Axis.Period) {  // ослабление
+            dir == Dir._123  // ослабление слева направо в Периоде
         } else {
-            dir == Dir._321
+            dir == Dir._321  // ослабление снизу вверх в Группе
         }
     }
     return if (metalProperties == MetalProperties.METAL) metal else !metal
+}
+
+fun electronegativity(
+    properties: Properties,
+    axis: Axis,
+    list: List<Int>
+): Boolean {
+    val dir = isIncreased(list)
+    if (dir == Dir._312) return false
+
+    return if (properties == Properties.INCREASE) { // увеличение
+        if (axis == Axis.Period) {
+            dir == Dir._123  // увеличение слева направо в Периоде
+        } else {
+            dir == Dir._321  // увеличение снизу вверх в Группе
+        }
+    } else {
+        if (axis == Axis.Period) {  // ослабление
+            dir == Dir._321  // ослабление справа налево в Периоде
+        } else {
+            dir == Dir._123  // ослабление сверху вниз в Группе
+        }
+    }
 }
 
 data class Orbital(
@@ -229,109 +279,26 @@ fun main() {
 //    println(isIncreased(listOf(1, 2, 3)))
 //    println(isIncreased(listOf(3, 2, 1)))
 //    println(isIncreased(listOf(0, 2, 1)))
+
+    val elsStr = listOf("Be", "C", "Mg", "S", "P")
+
+    val els = elsStr.map {
+        elements.first { element ->
+            element.symbol == it
+        }
+    }
+    println(atomRadius(
+        Properties.DECREASE, Axis.Period, els.map { it.atomicNumber }
+    ))
+    println()
+
     println(
         metalProperties(
-            Properties.INCREASE, Axis.PERIOD,
+            Properties.INCREASE, Axis.Period,
             MetalProperties.METAL, listOf(1, 2, 3)
         )
     )
-    println(
-        metalProperties(
-            Properties.INCREASE, Axis.PERIOD,
-            MetalProperties.NONMETAL, listOf(1, 2, 3)
-        )
-    )
-    println()
-    println(
-        metalProperties(
-            Properties.INCREASE, Axis.GROUP,
-            MetalProperties.METAL, listOf(1, 2, 3)
-        )
-    )
-    println(
-        metalProperties(
-            Properties.INCREASE, Axis.GROUP,
-            MetalProperties.NONMETAL, listOf(1, 2, 3)
-        )
-    )
-    println()
-    println(
-        metalProperties(
-            Properties.DECREASE, Axis.PERIOD,
-            MetalProperties.METAL, listOf(1, 2, 3)
-        )
-    )
-    println(
-        metalProperties(
-            Properties.DECREASE, Axis.PERIOD,
-            MetalProperties.NONMETAL, listOf(1, 2, 3)
-        )
-    )
-    println()
-    println(
-        metalProperties(
-            Properties.DECREASE, Axis.GROUP,
-            MetalProperties.METAL, listOf(1, 2, 3)
-        )
-    )
-    println(
-        metalProperties(
-            Properties.DECREASE, Axis.GROUP,
-            MetalProperties.NONMETAL, listOf(1, 2, 3)
-        )
-    )
-    println()
-    println(
-        metalProperties(
-            Properties.INCREASE, Axis.PERIOD,
-            MetalProperties.METAL, listOf(3, 2, 1)
-        )
-    )
-    println(
-        metalProperties(
-            Properties.INCREASE, Axis.PERIOD,
-            MetalProperties.NONMETAL, listOf(3, 2, 1)
-        )
-    )
-    println()
-    println(
-        metalProperties(
-            Properties.INCREASE, Axis.GROUP,
-            MetalProperties.METAL, listOf(3, 2, 1)
-        )
-    )
-    println(
-        metalProperties(
-            Properties.INCREASE, Axis.GROUP,
-            MetalProperties.NONMETAL, listOf(3, 2, 1)
-        )
-    )
-    println()
-    println(
-        metalProperties(
-            Properties.DECREASE, Axis.PERIOD,
-            MetalProperties.METAL, listOf(3, 2, 1)
-        )
-    )
-    println(
-        metalProperties(
-            Properties.DECREASE, Axis.PERIOD,
-            MetalProperties.NONMETAL, listOf(3, 2, 1)
-        )
-    )
-    println()
-    println(
-        metalProperties(
-            Properties.DECREASE, Axis.GROUP,
-            MetalProperties.METAL, listOf(3, 2, 1)
-        )
-    )
-    println(
-        metalProperties(
-            Properties.DECREASE, Axis.GROUP,
-            MetalProperties.NONMETAL, listOf(3, 2, 1)
-        )
-    )
+    groupsOfElements(Axis.Group.New, elsStr)
 
 //    Elements.elements.forEach {
 ////        electronsPerOrbital(electronConfigurationOfPeriod())
@@ -345,9 +312,21 @@ fun main() {
 //    print(el.electronConfigurationOfPeriod())
 }
 
+fun groupsOfElements(axis: Axis, list: List<String>) {
+    val elements = list.map {
+        elements.first { element -> element.symbol == it }
+    }
+    elements.groupByLocality(axis)
+}
+
+fun List<Element>.groupByLocality(axis: Axis) = groupBy {
+    if (axis == Axis.Period) it.period else {
+        if (axis == Axis.Group.Old) it.groupOld else it.group
+    }
+}
+
 fun Any.equalsToAll(items: Iterable<Any>): Boolean {
     return items.all {
-        println("this $this == it $it")
         this == it
     }
 }
@@ -375,7 +354,7 @@ data class AtomRadius(
     val ionicRadius: String = "0"
 ) : Parcelable
 
-enum class PeriodType {
+enum class GroupType {
     OLD,
     NEW
 }
@@ -391,9 +370,13 @@ enum class MetalProperties {
 }
 
 
-enum class Axis {
-    GROUP,
-    PERIOD
+sealed class Axis {
+    sealed class Group : Axis() {
+        object Old : Group()
+        object New : Group()
+    }
+
+    object Period : Axis()
 }
 
 enum class Dir {
